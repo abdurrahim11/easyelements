@@ -1,0 +1,18 @@
+.ele-meta-box-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.ele-meta-box-row select {
+    border: 1px solid #e5e5e5 !important;
+    width: 168px;
+}
+
+.ele-meta-box-row label {
+    width: 129px;
+}

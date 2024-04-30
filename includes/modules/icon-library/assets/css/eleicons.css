@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'easyelements';
+  src: url(../fonts/easyelements.woff?roma9n) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.ele {
+  font-family: 'easyelements' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ele-icon-right-arrow:before {
+  content: "\e906";
+}
+.ele-icon-arrow-point-to-down:before {
+  content: "\e900";
+}
+.ele-icon-down-arrow:before {
+  content: "\e901";
+}
+.ele-icon-left-arrows:before {
+  content: "\e902";
+}
+.ele-icon-link:before {
+  content: "\e903";
+}
+.ele-icon-plus:before {
+  content: "\e904";
+}
+.ele-icon-up-arrow:before {
+  content: "\e905";
+}
+.ele-icon-view:before {
+  content: "\e907";
+}
+.ele-icon-easy-elements:before {
+  content: "\e908";
+}

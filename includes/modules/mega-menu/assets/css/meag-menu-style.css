@@ -1,0 +1,345 @@
+/* switcher code start*/
+.ele-setting-switcher input {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.ele-setting-switcher label {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 23px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.ele-setting-switcher input + label:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.ele-setting-switcher input:checked + label {
+    background: #3e77fc;
+}
+
+.ele-setting-switcher input:checked + label:after {
+    left: 24px;
+}
+
+/* Basic menu page code start*/
+#ele-megamenu-trigger {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display:         inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin-left: 16px;
+    vertical-align: middle;
+}
+
+#ele-megamenu-trigger h3 {
+    display: inline-block;
+    margin: 0;
+    margin-left: 8px;
+    color: #444;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#ele-megamenu-trigger h3 label {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    vertical-align: top;
+    font-weight: 700;
+}
+
+.ele_is_mega_disabled  .ele-menu-trigger {
+    visibility: hidden!important
+}
+
+.menu-item-handle .item-title{
+    width:100%
+}
+
+.ele-menu-trigger{
+    text-decoration:none!important;
+    cursor:pointer;
+    opacity:0;
+    -webkit-transition:all .3s ease 0s;
+    transition:all .3s ease 0s;
+    z-index:1;
+    position: absolute;
+    background: #3e77fc;
+    color: #ffff;
+    padding: 7px 10px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+    border-radius: 2px;
+    left: 50%;
+}
+
+.ele-menu-trigger:hover {
+    color: #FFFFFF;
+    background: #2966f4;
+}
+
+.menu-item.menu-item-depth-0:hover .ele-menu-trigger{
+    opacity:1
+}
+
+/* Modal pop up start*/
+.ele-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+    animation: fadeIn 0.5s ease; /* Apply fadeIn animation */
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#ele-mega-menu-modal .ele-modal-content {
+    margin: 0 auto;
+    animation: slideIn 0.5s ease; /* Apply slideIn animation */
+    margin-top: 5%;
+    overflow: hidden;
+    padding: 0;
+    max-width: 651px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, .2);
+    box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, .2);
+}
+
+#ele-menu-builder-modal .ele-modal-content {
+    width: calc(100vw - 70px);
+    height: calc(100vh - 70px);
+    margin: 35px 25px;
+    border-radius: 3px;
+    background: #f1f3f5;
+    -webkit-box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, .2);
+    box-shadow: 2px 8px 23px 3px rgba(0, 0, 0, .2);
+    position: relative;
+}
+
+#easyelements-menu-builder-iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.ele-close-area {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99999999999999999;
+    background: red;
+    padding: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        margin-top: 4%;
+        opacity: 0;
+    }
+    to {
+        margin-top: 5%;
+        opacity: 1;
+    }
+}
+
+.ele-modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease;
+    margin-top: -5px;
+}
+
+.ele-close-area span {
+    color: #ffff;
+}
+
+.ele-modal-close:hover,
+.ele-modal-close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Modal pop up contain start*/
+.spinner.loading{
+    visibility:visible
+}
+
+.ele-menu-width-container.is_disabled {
+    display: none;
+}
+
+.ele-ele-switch-wrapper {
+    text-align: center
+}
+
+.ele-modal-header {
+    padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.ele-modal-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.ele-modal-header-logo {
+    height: 37px;
+    width: 37px;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+.ele-modal-body {
+    height: 60vh;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.ele-option-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.ele-option-label {
+    width: 200px;
+    margin: 0;
+}
+
+.ele-option-control select {
+    border: 1px solid #e5e5e5 !important;
+    width: 168px;
+}
+
+#easyelements-menu-builder-trigger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 4px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#easyelements-menu-builder-trigger img {
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+}
+
+.ele-modal-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 10px;
+    border-top: 1px solid #e8e8e8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
