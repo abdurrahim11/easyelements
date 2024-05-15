@@ -1,0 +1,21 @@
+.ele-widget-icon:after, [class*=elementor-control-section_ele] .elementor-section-title:after {
+    content: 'EE';
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: #a7a7a7;
+    font-size: 9px;
+    font-weight: 400;
+    padding: 1px 2px;
+    line-height: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    font-family: "Open Sans", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[class*=elementor-control-section_ele] .elementor-section-title:after {
+    top: 50%;
+    right: 10%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

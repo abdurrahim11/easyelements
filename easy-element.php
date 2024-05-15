@@ -62,7 +62,6 @@ if ( ! class_exists( 'Easy_Elements' ) ) {
             define( 'ELE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
             define( 'ELE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
             define( 'ELE_ADMIN_ASSETS_UR', plugin_dir_url( __FILE__ ) . 'assets/admin/' );
-            define( 'ELE_WIDGET_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/widgets/' );
             define( 'ELE_WIDGET_ASSETS_PATH', plugin_dir_path( __FILE__ ) . 'includes/elementor-widgets/' );
             define( 'ELE_KITS_BASE_API_URL', 'https://api.easyelementspro.com/wp-json/custom-api/v1/' );
             define( 'ELE_VERSION', time() );
@@ -209,6 +208,26 @@ function test_ajax_install_plugin( $slug ) {
 
     wp_send_json_success( $status );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

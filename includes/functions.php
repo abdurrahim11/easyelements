@@ -668,7 +668,7 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
  * Contain masking shape list
  */
 function ele_elementor_masking_shape_list( $element ) {
-    $dir        = ELE_PLUGIN_URL . 'includes/elementor-widgets/team/masking-shape';
+    $dir        = ELE_PLUGIN_URL . 'includes/elementor-widgets/team/masking-shape/';
     $shape_name = 'shape';
     $extension  = '.svg';
     $list       = array();

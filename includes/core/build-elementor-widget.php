@@ -19,8 +19,8 @@ class build_Elementor_Widget {
     }
 
     private function initialize() {
-        new \EasyElements\Elementor_Widgets\Register_Widget_Categories();
-        new \EasyElements\Elementor_Widgets\Enqueue_Scripts();
+        new \EasyElements\Elementor_Widgets\Init\Register_Widget_Categories();
+        new \EasyElements\Elementor_Widgets\Init\Enqueue_Scripts();
     }
 
     public function register_widget( $widgets_manager ) {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace EasyElements\Elementor_Widgets;
+namespace EasyElements\Elementor_Widgets\Init;
 
 
 class Register_Widget_Categories {

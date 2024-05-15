@@ -250,7 +250,7 @@ class Modal_Popup extends Widget_Base {
                 'label'       => __( 'Provide External URL', 'ele-addons' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
-                'default'     => 'https://eledevs.com',
+                'default'     => 'https://joydevs.com',
                 'placeholder' => __( 'Place External Page URL', 'ele-addons' ),
                 'condition'   => [
                     'ele_modal_content' => 'external_page'

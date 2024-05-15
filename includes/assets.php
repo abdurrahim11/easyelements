@@ -22,6 +22,45 @@ class Assets {
      * Front css js enqueue
      */
     public function front_end_enqueue() {
+        wp_register_style(
+            'cubeportfolio',
+            ELE_PLUGIN_URL . 'assets/libs/cubeportfolio/css/cubeportfolio.min.css',
+            null,
+            ELE_VERSION
+        );
+
+        wp_register_style(
+            'owl-carousel',
+            ELE_PLUGIN_URL . 'assets/libs/carousel/css/owl.carousel.min.css',
+            null,
+            ELE_VERSION
+        );
+
+        wp_register_script(
+            'cubeportfolio',
+            ELE_PLUGIN_URL . 'assets/libs/cubeportfolio/js/jquery.cubeportfolio.min.js',
+            array( 'jquery' ),
+            ELE_VERSION,
+            true
+        );
+
+        wp_register_script(
+            'owl-carousel',
+            ELE_PLUGIN_URL . 'assets/libs/carousel/js/owl.carousel.min.js',
+            array( 'jquery' ),
+            ELE_VERSION,
+            true
+        );
+
+        wp_register_script(
+            'anime',
+            ELE_PLUGIN_URL . 'assets/libs/anime/js/anime.min.js',
+            array( 'jquery' ),
+            ELE_VERSION,
+            true
+        );
+
+
         wp_enqueue_script( 'ele-frontend', ELE_PLUGIN_URL . 'assets/front-end/js/front-end.js', array( 'jquery' ), ELE_VERSION, true );
 
         $js = $this->common_js();

@@ -2528,7 +2528,15 @@
 /**
 Team
  */
-
+.ele-team-layout-12:hover .ele-team-social-list,
+.ele-team-layout-2:hover .ele-team-social-list,
+.ele-team-layout-3:hover .ele-team-social-list,
+.ele-team-layout-4:hover .ele-team-content,
+.ele-team-layout-5:hover .ele-team-image::before,
+.ele-team-layout-5:hover .ele-team-social-list,
+.ele-team-layout-6:hover .ele-team-social-list {
+    opacity: 1;
+}
 
 .ele-team-content {
     padding: 30px;
