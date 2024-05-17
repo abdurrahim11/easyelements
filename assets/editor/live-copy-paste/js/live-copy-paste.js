@@ -1,4 +1,4 @@
-// Wrap everything in an immediately invoked function expression (IIFE) for encapsulation
+ // Wrap everything in an immediately invoked function expression (IIFE) for encapsulation
 (function() {
 
   // Function to recursively assign unique IDs to elements in an array
@@ -157,11 +157,12 @@
       elementor.hooks.addFilter("elements/" + type + "/contextMenuGroups", function(groups, element) {
         contextMenuGroups.push(element);
         // Add custom actions to context menu
-        groups.push({
+        //groups.push({
+        groups.splice(index + 1, 0, {
           name: "premium_" + type,
           actions: [{
             name: "premium_addons_copy",
-            title: "EE Copy Element",
+            title: "EE | Copy Element",
             icon: "pa-dash-icon",
             callback: function() {
               const copiedElementData = {
@@ -176,7 +177,7 @@
             }
           }, {
             name: "premium_addons_paste",
-            title: "EE Paste Element",
+            title: "EE | Paste Element",
             icon: "pa-dash-icon",
             callback: function() {
               xdLocalStorage.getItem("premium-c-p-element", function(item) {
@@ -186,7 +187,7 @@
           },
             {
               name: "premium_addons_copy_all",
-              title: "EE Copy Page",
+              title: "EE | Copy Full Page",
               icon: "pa-dash-icon",
               callback: function() {
                 const copiedSections = Object.values(elementor.getPreviewView().children._views).map(function(view) {
@@ -205,7 +206,7 @@
             },
             {
               name: "premium_addons_paste_all",
-              title: "EE Paste Page",
+              title: "EE | Paste Full Page",
               icon: "pa-dash-icon",
               callback: function() {
                 let allSections = '';
