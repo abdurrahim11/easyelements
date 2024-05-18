@@ -16,13 +16,13 @@ class Init {
 
     public function __construct() {
         add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'live_copy_enqueue' ] );
-        add_action( 'wp_ajax_premium_cross_cp_import', array( $this, 'cross_cp_fetch_content_data' ) );
+        add_action( 'wp_ajax_easy_elements_cross_cp_import', array( $this, 'cross_cp_fetch_content_data' ) );
     }
 
     public function live_copy_enqueue(){
         wp_enqueue_script(
             'ele-live-copy-storage',
-            ELE_PLUGIN_URL . 'assets/editor/live-copy-paste/js/xdLocalStorage.js',
+            ELE_PLUGIN_URL . 'includes/modules/live-copy-paste/assets/js/xdLocalStorage.js',
             array(),
             ELE_VERSION,
             true
@@ -30,7 +30,7 @@ class Init {
 
         wp_enqueue_script(
             'ele-live-copy-scripts',
-            ELE_PLUGIN_URL . 'assets/editor/live-copy-paste/js/live-copy-paste.js',
+            ELE_PLUGIN_URL . 'includes/modules/live-copy-paste/assets/js/live-copy-paste.js',
             array(
                 'jquery',
                 'elementor-editor',
@@ -49,10 +49,10 @@ class Init {
 
         wp_localize_script(
             'ele-live-copy-scripts',
-            'premium_cross_cp',
+            'easy_elements_cross_cp',
             array(
                 'ajax_url'            => admin_url( 'admin-ajax.php' ),
-                'nonce'               => wp_create_nonce( 'premium_cross_cp_import' ),
+                'nonce'               => wp_create_nonce( 'easy_elements_cross_cp_import' ),
                 'elementorCompatible' => $elementor_old,
             )
         );
@@ -60,16 +60,16 @@ class Init {
 
 
     public static function cross_cp_fetch_content_data() {
-        check_ajax_referer( 'premium_cross_cp_import', 'nonce' );
+        check_ajax_referer( 'easy_elements_cross_cp_import', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( __( 'Not a valid user', 'premium-addons-for-elementor' ), 403 );
+            wp_send_json_error( __( 'Not a valid user', 'easy_elements-addons-for-elementor' ), 403 );
         }
 
         $media_import = isset( $_POST['copy_content'] ) ? wp_unslash( $_POST['copy_content'] ) : '';
 
         if ( empty( $media_import ) ) {
-            wp_send_json_error( __( 'Empty Content.', 'premium-addons-for-elementor' ) );
+            wp_send_json_error( __( 'Empty Content.', 'easy_elements-addons-for-elementor' ) );
         }
 
         $media_import = array( json_decode( $media_import, true ) );

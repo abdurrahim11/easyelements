@@ -8,7 +8,7 @@ window.XdUtils = window.XdUtils || function () {
     return {
         extend: a
     }
-}(), window.xdLocalStorage = window.xdLocalStorage || function () {
+}(), window.eleXdLocalStorage = window.eleXdLocalStorage || function () {
     function a(a) {
         k[a.id] && (k[a.id](a), delete k[a.id])
     }
@@ -40,7 +40,7 @@ window.XdUtils = window.XdUtils || function () {
     }
 
     function e() {
-        return l ? !!m || (console.log("You must wait for iframe ready message before using the api."), !1) : (console.log("You must call xdLocalStorage.init() before using it."), !1)
+        return l ? !!m || (console.log("You must wait for iframe ready message before using the api."), !1) : (console.log("You must call eleXdLocalStorage.init() before using it."), !1)
     }
 
     function f() {
@@ -59,7 +59,7 @@ window.XdUtils = window.XdUtils || function () {
     return {
         init: function (a) {
             if (!a.iframeUrl) throw "You must specify iframeUrl";
-            if (l) return void console.log("xdLocalStorage was already initialized!");
+            if (l) return void console.log("eleXdLocalStorage was already initialized!");
             l = !0, f() ? d(a) : document.addEventListener ? document.addEventListener("readystatechange", function () {
                 f() && d(a)
             }) : document.attachEvent("readystatechange", function () {
