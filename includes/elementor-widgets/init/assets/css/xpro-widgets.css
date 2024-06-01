@@ -114,37 +114,37 @@ body.rtl .lg-outer {
 }
 .ele-owl-navigation-horizontal-style-5 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-horizontal-style-5 button.swiper-button-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e933";
 }
 .ele-owl-navigation-horizontal-style-5 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-horizontal-style-5 button.swiper-button-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e934";
 }
 .ele-owl-navigation-horizontal-style-6 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-horizontal-style-6 button.swiper-button-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e912";
 }
 .ele-owl-navigation-horizontal-style-6 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-horizontal-style-6 button.swiper-button-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e913";
 }
 .ele-owl-navigation-horizontal-style-7 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-horizontal-style-7 button.swiper-button-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\ea21";
 }
 .ele-owl-navigation-horizontal-style-7 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-horizontal-style-7 button.swiper-button-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\ea22";
 }
@@ -198,37 +198,37 @@ body.rtl .lg-outer {
 }
 .ele-owl-navigation-vertical-style-5 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-vertical-style-5 .swiper-nav button.swiper-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e935";
 }
 .ele-owl-navigation-vertical-style-5 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-vertical-style-5 .swiper-nav button.swiper-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e932";
 }
 .ele-owl-navigation-vertical-style-6 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-vertical-style-6 .swiper-nav button.swiper-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e917";
 }
 .ele-owl-navigation-vertical-style-6 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-vertical-style-6 .swiper-nav button.swiper-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e910";
 }
 .ele-owl-navigation-vertical-style-7 .owl-nav button.owl-prev::before,
 .ele-swiper-navigation-vertical-style-7 .swiper-nav button.swiper-prev::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e918";
 }
 .ele-owl-navigation-vertical-style-7 .owl-nav button.owl-next::before,
 .ele-swiper-navigation-vertical-style-7 .swiper-nav button.swiper-next::after {
-    font-family: ele-icons;
+    font-family: eles;
     font-weight: 400;
     content: "\e911";
 }
@@ -1190,7 +1190,7 @@ body.ele-preview-active {
 .ele-preview-arrow.ele-preview-inactive {
     cursor: not-allowed !important;
 }
-.elementor-widget-ele-icon-box > .elementor-widget-container {
+.elementor-widget-ele-box > .elementor-widget-container {
     position: relative;
     overflow: initial;
 }

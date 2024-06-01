@@ -547,7 +547,7 @@
         },
 
         initEasyTempsButton: function () {
-            var addEasyTemplate = '<div id="easy-library-btn" class="elementor-add-section-area-button" title="Add Easy Template"><i class="ele ele-icon-easy-elements"></i></div>',
+            var addEasyTemplate = '<div id="easy-library-btn" class="elementor-add-section-area-button" title="Add Easy Template"><i class="ele ele-easy-elements"></i></div>',
                 addSectionTmpl = $("#tmpl-elementor-add-section");
 
 

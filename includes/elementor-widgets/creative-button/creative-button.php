@@ -24,7 +24,7 @@ class Creative_Button extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'elei elei-motion-button';
+        return 'ele ele-creative-button ele-widget-icon';
     }
 
     public function get_categories() {

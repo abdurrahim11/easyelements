@@ -3792,7 +3792,7 @@ Info box
     border-radius: .29412rem 0 .29412rem 0;
     display: inline-block;
 }
-.ele-wid-con .ele-icon-box-badge {
+.ele-wid-con .ele-box-badge {
     position: absolute;
     line-height: 1;
     z-index: 2;

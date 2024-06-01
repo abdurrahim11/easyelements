@@ -505,7 +505,7 @@ class Info_Box extends Widget_Base {
                     'unit' => 'px',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ele-wid-con .ele-icon-box-badge' => 'left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-wid-con .ele-box-badge' => 'left: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'ele_icon_box_badge_position'  => 'custom'
@@ -535,7 +535,7 @@ class Info_Box extends Widget_Base {
                     'unit' => 'px',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ele-wid-con .ele-icon-box-badge' => 'top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-wid-con .ele-box-badge' => 'top: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'ele_icon_box_badge_position'  => 'custom'
@@ -1913,7 +1913,7 @@ class Info_Box extends Widget_Base {
         <?php endif; ?>
 
         <?php if($settings['ele_icon_box_badge_control'] == 'yes' && $settings['ele_icon_box_badge_title'] != '') : ?>
-            <div class="ele-icon-box-badge ele_position_<?php echo esc_attr($settings['ele_icon_box_badge_position']);?>">
+            <div class="ele-box-badge ele_position_<?php echo esc_attr($settings['ele_icon_box_badge_position']);?>">
                 <span class="ele-badge"><?php echo esc_html($settings['ele_icon_box_badge_title'])?></span>
             </div>
         <?php endif; ?>

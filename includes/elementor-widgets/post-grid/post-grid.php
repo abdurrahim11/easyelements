@@ -26,114 +26,35 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Post_Grid extends Widget_Base {
 
-	/**
-	 * Get widget name.
-	 *
-	 *
-	 * @return string Widget name.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_name() {
 		return 'ele-post-grid';
 	}
 
-	/**
-	 * Get widget title.
-	 *
-	 *
-	 * @return string Widget title.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_title() {
 		return __( 'Post Grid', 'easy-elements' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 *
-	 * @return string Widget icon.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_icon() {
-		return 'xi-post-grid ele-widget-icon';
+		return 'eicon-posts-grid ele-widget-icon';
 	}
 
-	/**
-	 * Get widget categories.
-	 *
-	 * Retrieve the list of categories the image widget belongs to.
-	 *
-	 * Used to determine where to display the widget in the editor.
-	 *
-	 * @return array Widget categories.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_categories() {
         return [ 'easy-elements' ];
 	}
 
-	/**
-	 * Get widget keywords.
-	 *
-	 * Retrieve the list of keywords the widget belongs to.
-	 *
-	 * @return array Widget keywords.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_keywords() {
 		return array( 'post', 'grid', 'blog', 'posts', 'query' );
 	}
 
-	/**
-	 * Retrieve the list of style the widget depended on.
-	 *
-	 * Used to set style dependencies required to run the widget.
-	 *
-	 * @return array Widget style dependencies.
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 */
 	public function get_style_depends() {
 
 		return array( 'cubeportfolio' );
 	}
 
-	/**
-	 * Retrieve the list of scripts the widget depended on.
-	 *
-	 * Used to set scripts dependencies required to run the widget.
-	 *
-	 * @return array Widget scripts dependencies.
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 */
 	public function get_script_depends() {
 		return array( 'cubeportfolio' );
 	}
 
-	/**
-	 * Register widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 
 		$post_types                   = ele_elementor_get_post_types();

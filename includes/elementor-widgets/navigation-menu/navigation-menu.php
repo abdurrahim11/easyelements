@@ -111,7 +111,7 @@ class Navigation_Menu extends Widget_Base {
                     'inline' => [
                         'none' => [
                             'label' => esc_html__( 'Default', 'easy-elements' ),
-                            'icon' => 'ele ele-icon-down-arrow',
+                            'icon' => 'ele ele-down-arrow',
                         ],
                         'icon' => [
                             'label' => esc_html__( 'Icon Library', 'easy-elements' ),

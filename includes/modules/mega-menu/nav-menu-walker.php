@@ -206,7 +206,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu {
             if(!empty($args->submenu_indicator_icon)) {
                 $submenu_indicator .= $args->submenu_indicator_icon;
             } else {
-                $submenu_indicator .= '<i aria-hidden="true" class="ele ele-icon-down-arrow easyelements-submenu-indicator"></i>';
+                $submenu_indicator .= '<i aria-hidden="true" class="ele ele-down-arrow easyelements-submenu-indicator"></i>';
             }
         }
         if ( $depth > 0 ) {

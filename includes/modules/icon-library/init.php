@@ -13,7 +13,7 @@ class Init {
     }
 
     public function enqueue_frontend() {
-        wp_enqueue_style( 'ele-icons', $this->icon_library_url . 'assets/css/eleicons.css', array(), ELE_VERSION );
+        wp_enqueue_style( 'eles', $this->icon_library_url . 'assets/css/eleicons.css', array(), ELE_VERSION );
     }
 
     public function add_easy_elements_icons_tab( $font ) {
@@ -21,9 +21,9 @@ class Init {
             'name'          => 'easyelements',
             'label'         => esc_html__( 'EasyElements Icon', 'easy-elements' ),
             'url'           => $this->icon_library_url . 'assets/css/eleicons.css?ver=' . ELE_VERSION,
-            'prefix'        => 'ele-icon-',
+            'prefix'        => 'ele-',
             'displayPrefix' => 'ele',
-            'labelIcon'     => 'ele ele-icon-plus',
+            'labelIcon'     => 'ele ele-plus',
             'ver'           => ELE_VERSION,
             'fetchJson'     =>  $this->icon_library_url .'assets/js/eleicons.json?v=' . ELE_VERSION,
             'native'        => true,

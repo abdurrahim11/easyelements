@@ -7,7 +7,7 @@
 
     // Initialize AestheticIconPicker
     var iconPicker = AestheticIconPicker({
-        'selector': '#ele-icon-picker-wrap',
+        'selector': '#ele-picker-wrap',
         // must be an ID
         'onClick': '#ele-select-icon',
     });

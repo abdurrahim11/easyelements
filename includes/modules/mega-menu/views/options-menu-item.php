@@ -95,8 +95,8 @@
                 <div class="ele-option-row">
                     <strong class="ele-option-label"><?php esc_html_e( 'Select icon', 'easy-elements' ); ?></strong>
                     <div class="ele-option-control">
-                        <div class="ele-icon-picker-wrap" id="ele-icon-picker-wrap">
-                            <ul class="ele-icon-picker">
+                        <div class="ele-picker-wrap" id="ele-picker-wrap">
+                            <ul class="ele-picker">
                                 <li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
                                 <li id='ele-select-icon' class="ele-select-icon" title="Icon Library"><i class="fas fa-circle"></i></li>
                                 <input type="hidden" name="icon_value" id="easyelements-menu-icon-field"  value="">

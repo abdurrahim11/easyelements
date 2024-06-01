@@ -44,7 +44,7 @@ class Horizontal_Timeline extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'xi-horizontal-timeline ele-widget-icon';
+		return 'eicon-timeline ele-widget-icon';
 	}
 
 	public function get_categories() {

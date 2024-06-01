@@ -34,6 +34,7 @@
                 eletype: type === "widget" ? element.model.get("widgetType") : null,
                 elecode: element.model.toJSON()
               };
+
               eleXdLocalStorage.setItem("easy_elements-c-p-element", JSON.stringify(copiedElementData), function() {
                 elementor.notifications.showToast({
                   message: elementor.translate('Copied')

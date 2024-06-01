@@ -23,7 +23,7 @@ class Vertical_Menu extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-nav-menu ele-widget-icon';
+        return 'eicon-navigation-vertical ele-widget-icon';
     }
 
     public function get_categories() {

@@ -31,7 +31,7 @@ class Init {
             wp_enqueue_style( 'wp-color-picker' );
 
             wp_enqueue_style(
-                'aesthetic-ele-icon-picker-fonts',
+                'aesthetic-ele-picker-fonts',
                 ELE_PLUGIN_URL . 'assets/libs/font-awesome/css/all.min.css',
                 null,
                 ELE_VERSION
