@@ -26,7 +26,7 @@ class Info_Box extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-nav-menu ele-widget-icon ';
+        return 'ele ele-info-box ele-widget-icon ';
     }
 
     public function get_categories() {
@@ -1800,7 +1800,7 @@ class Info_Box extends Widget_Base {
                         if ( $is_new || $migrated ) {
 
                             // new icon
-                            Icons_Manager::render_icon( $settings['ele_icon_box_header_icons'], [ 'aria-hidden' => 'true', 'class'  => 'elementkit-infobox-icon' ] );
+                            ele_render_icon( $settings['ele_icon_box_header_icons'], [ 'aria-hidden' => 'true', 'class'  => 'elementkit-infobox-icon' ] );
                         } else {
                             ?>
                             <i class="<?php echo esc_attr($settings['ele_icon_box_header_icon']); ?> elementkit-infobox-icon" aria-hidden="true"></i>
@@ -1846,7 +1846,7 @@ class Info_Box extends Widget_Base {
                                             if ( $is_new || $migrated ) {
 
                                                 // new icon
-                                                Icons_Manager::render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
+                                                ele_render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
                                             } else {
                                                 ?>
                                                 <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
@@ -1866,7 +1866,7 @@ class Info_Box extends Widget_Base {
                                             if ( $is_new || $migrated ) {
 
                                                 // new icon
-                                                Icons_Manager::render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
+                                                ele_render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
                                             } else {
                                                 ?>
                                                 <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
@@ -1897,7 +1897,7 @@ class Info_Box extends Widget_Base {
                 $is_new = empty( $settings['ele_icon_box_water_mark_icon'] );
                 if ( $is_new || $migrated ) {
                     // new icon
-                    Icons_Manager::render_icon( $settings['ele_icon_box_water_mark_icons'], [ 'aria-hidden' => 'true' ] );
+                    ele_render_icon( $settings['ele_icon_box_water_mark_icons'], [ 'aria-hidden' => 'true' ] );
                 } else {
                     ?>
                     <i class="<?php echo esc_attr($settings['ele_icon_box_water_mark_icon']); ?>" aria-hidden="true"></i>

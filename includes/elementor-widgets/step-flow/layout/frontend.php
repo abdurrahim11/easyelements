@@ -11,7 +11,7 @@ $layout = ( 'none' !== $settings['separator_layout_style'] ) ? ' ele-step-' . $s
 
 		<?php
 		if ( $settings['step_flow_icon'] ) {
-			Icons_Manager::render_icon( $settings['step_flow_icon'], array( 'aria-hidden' => 'true' ) );
+			ele_render_icon( $settings['step_flow_icon'], array( 'aria-hidden' => 'true' ) );
 		}
 		?>
 

@@ -491,6 +491,11 @@
 .easyelements-menu-hamburger {
     color: #000;
 }
+
+.easyelements-menu-hamburger:focus {
+    outline: none;
+}
+
 @media (max-width: 1024px) {
     .easyelements-menu-overlay {
         display: block;

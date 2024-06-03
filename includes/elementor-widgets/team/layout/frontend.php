@@ -43,7 +43,7 @@ $title_attr .= $settings['title_link']['url'] ? ' href="' . esc_url( $settings['
 				?>
 			<li class="elementor-repeater-item-<?php echo esc_attr( $icon['_id'] ); ?>">
 				<<?php echo esc_attr( $html_tag ); ?> <?php ele_kses( $attr ); ?> class="ele-team-social-icon ele-svg-icon">
-				<?php Icons_Manager::render_icon( $icon['social_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+				<?php ele_render_icon( $icon['social_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 				</<?php echo esc_attr( $html_tag ); ?>>
 				</li>
 			<?php } ?>
@@ -76,7 +76,7 @@ $title_attr .= $settings['title_link']['url'] ? ' href="' . esc_url( $settings['
 			?>
 		<li class="elementor-repeater-item-<?php echo esc_attr( $icon['_id'] ); ?>">
 			<<?php echo esc_attr( $html_tag ); ?> <?php ele_kses( $attr ); ?> class="ele-team-social-icon ele-svg-icon">
-			<?php Icons_Manager::render_icon( $icon['social_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+			<?php ele_render_icon( $icon['social_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 			</<?php echo esc_attr( $html_tag ); ?>>
 			</li>
 		<?php } ?>

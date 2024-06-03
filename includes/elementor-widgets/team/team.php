@@ -67,7 +67,7 @@ class Team extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'xi-team-grid ele-widget-icon';
+		return 'ele ele-team-member ele-widget-icon';
 	}
 
 	/**

@@ -42,7 +42,7 @@
 
 			<?php
 			if ( 'icon' === $item['hot_media_type'] ) {
-				\Elementor\Icons_Manager::render_icon( $item['hot_icon'], array( 'aria-hidden' => 'true' ) );
+				ele_render_icon( $item['hot_icon'], array( 'aria-hidden' => 'true' ) );
 			}
 			if ( 'image' === $item['hot_media_type'] ) {
 				echo wp_kses_post( \Elementor\Group_Control_Image_Size::get_attachment_image_html( $item, 'spots_thumbnail', 'spots_image' ) );

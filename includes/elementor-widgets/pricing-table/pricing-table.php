@@ -78,7 +78,7 @@ class Pricing_Table extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'xi-pricing ele-widget-icon';
+		return 'ele ele-pricing-table ele-widget-icon';
 	}
 
 	/**

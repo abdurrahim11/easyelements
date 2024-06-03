@@ -50,7 +50,7 @@ class Progress_Bar extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'xi-progress-bar ele-widget-icon';
+		return 'ele ele-progress-bar ele-widget-icon';
 	}
 
 	/**

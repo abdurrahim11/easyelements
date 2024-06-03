@@ -62,7 +62,7 @@ class Step_Flow extends Widget_Base {
 	 *
 	 */
 	public function get_icon() {
-		return 'eicon-share-arrow ele-widget-icon';
+		return 'ele ele-step-flow ele-widget-icon';
 	}
 
 	/**

@@ -687,3 +687,34 @@ function ele_elementor_masking_shape_list( $element ) {
 
     return array_merge( $list );
 }
+
+
+
+function ele_render_icon( $icon, $attributes = array() ) {
+    $classes = array( $icon['value'] );
+
+
+    if ( ! empty( $attributes['class'] ) ) {
+        $classes[] = $attributes['class'];
+        unset( $attributes['class'] );
+    }
+
+    // Add aria-hidden attribute if not present.
+    if ( ! isset( $attributes['aria-hidden'] ) ) {
+        $attributes['aria-hidden'] = 'true';
+    }
+
+    // Escape attributes for security.
+    $escaped_attributes = array_map( 'esc_attr', $attributes );
+
+    // Generate the <i> tag.
+    $icon_html = sprintf(
+        '<i class="%s" %s></i>',
+        esc_attr( implode( ' ', $classes ) ),
+        join( ' ', array_map( function( $key, $value ) {
+            return esc_attr( $key ) . '="' . esc_attr( $value ) . '"';
+        }, array_keys( $escaped_attributes ), $escaped_attributes ) )
+    );
+
+    echo ele_kses( $icon_html );
+}

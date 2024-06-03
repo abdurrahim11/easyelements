@@ -28,7 +28,7 @@ class Navigation_Menu extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-nav-menu ele-widget-icon ';
+        return 'ele ele-nav-menu ele-widget-icon ';
     }
 
     public function get_categories() {
@@ -1593,7 +1593,7 @@ class Navigation_Menu extends Widget_Base {
                 /**
                  * Show Icon or, SVG
                  */
-                Icons_Manager::render_icon( $settings['easyelements_hamburger_icon'], [ 'aria-hidden' => 'true', 'class' => 'ele-menu-icon' ] );
+                ele_render_icon( $settings['easyelements_hamburger_icon'], [ 'aria-hidden' => 'true', 'class' => 'ele-menu-icon' ] );
                 ?>
             </button>
             <?php

@@ -21,7 +21,7 @@ $title_attr .= $settings['name_link']['url'] ? ' href="' . esc_url( $settings['n
 
 	<?php if ( 'yes' === $settings['show_quote'] && $settings['quote_icon']['value'] && '6' !== $settings['layout'] && '9' !== $settings['layout'] && '10' !== $settings['layout'] ) : ?>
 		<span class="ele-testimonial-quote">
-			<?php \Elementor\Icons_Manager::render_icon( $settings['quote_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+			<?php ele_render_icon( $settings['quote_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 		</span>
 	<?php endif; ?>
 

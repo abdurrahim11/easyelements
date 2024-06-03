@@ -30,7 +30,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-testimonial ele-widget-icon';
+		return 'ele ele-testimonials ele-widget-icon';
 	}
 
 	/**

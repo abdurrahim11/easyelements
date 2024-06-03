@@ -35,7 +35,7 @@ class Post_Grid extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-posts-grid ele-widget-icon';
+		return 'ele ele-post-grid ele-widget-icon';
 	}
 
 	public function get_categories() {

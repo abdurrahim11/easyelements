@@ -29,7 +29,7 @@ class Hot_Spot extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'xi-hot-spot ele-widget-icon';
+		return 'eicon-hotspot ele-widget-icon';
 	}
 
 	public function get_categories() {

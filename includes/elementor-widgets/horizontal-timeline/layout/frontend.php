@@ -40,7 +40,7 @@ use Elementor\Icons_Manager;
 							<div class="ele-horizontal-timeline-media ele-svg-icon">
 								<?php
 								if ( 'icon' === $item['bullet_media_type'] && $item['icon'] ) {
-									Icons_Manager::render_icon( $item['icon'], array( 'aria-hidden' => 'true' ) );
+									ele_render_icon( $item['icon'], array( 'aria-hidden' => 'true' ) );
 								}
 
 								if ( 'image' === $item['bullet_media_type'] && $item['image'] ) {
