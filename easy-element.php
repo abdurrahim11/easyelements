@@ -248,3 +248,5 @@ function change_icon_output_to_i_tag( $icon, $icon_data ) {
 
 // Hook the filter to change icon output
 add_filter( 'elementor/icons/render', 'change_icon_output_to_i_tag', 10, 2 );
+
+//This is testing
