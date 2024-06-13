@@ -1180,6 +1180,7 @@ class Navigation_Menu extends Widget_Base {
                 'selectors' => [
                     '{{WRAPPER}} .easyelements-menu-hamburger .easyelements-menu-hamburger-icon' => 'background-color: {{VALUE}}',
                     '{{WRAPPER}} .easyelements-menu-hamburger > .ele-menu-icon' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easyelements-menu-hamburger > .ele-menu-icon' => 'fill: {{VALUE}}',
                 ],
             ]
         );

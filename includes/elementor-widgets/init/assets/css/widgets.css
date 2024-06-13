@@ -212,6 +212,11 @@
     margin-right: 20px;
     margin-bottom: 20px;
 }
+
+.easyelements-navbar-nav-default .easyelements-menu-close:focus {
+    outline: none;
+}
+
 .easyelements-navbar-nav-default .easyelements-dropdown-has > a {
     position: relative;
 }

@@ -1125,7 +1125,8 @@ class Pricing_Table extends Widget_Base {
 					'unit' => 'px',
 					'size' => 14,
 				),
-				'selectors'  => array(
+				'selectors'  => array(				
+					'{{WRAPPER}} .ele-pricing-feature-icon svg' => 'width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .ele-pricing-feature-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 				),
 			)
@@ -1224,6 +1225,7 @@ class Pricing_Table extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-list li.active' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .ele-pricing-features-list li.active svg' => 'fill: {{VALUE}}',
 				),
 			)
 		);
