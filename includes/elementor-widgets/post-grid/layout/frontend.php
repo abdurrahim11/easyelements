@@ -44,19 +44,19 @@ $content = preg_replace( '`[[^]]*]`', '', $content);
 				<?php foreach ( $settings['show_meta'] as $meta ) : ?>
 					<?php if ( 'date' === $meta ) : ?>
 						<li class="ele-post-grid-meta-date">
-							<?php ele_render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php the_time( get_option( 'date_format' ) ); ?>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'category' === $meta && get_the_category_list() ) : ?>
 						<li class="ele-post-grid-meta-category">
-							<?php ele_render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<span><?php echo wp_kses_post( get_the_category_list( ', ' ) ); ?></span>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'comments' === $meta ) : ?>
 						<li class="ele-post-grid-meta-comments">
-							<?php ele_render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php comments_number( esc_html__( 'No Comments', 'easy-elements' ), esc_html__( '1 Comment', 'easy-elements' ), esc_html__( '% Comments', 'easy-elements' ) ); ?>
 						</li>
 					<?php endif; ?>
@@ -74,19 +74,19 @@ $content = preg_replace( '`[[^]]*]`', '', $content);
 				<?php foreach ( $settings['show_meta'] as $meta ) : ?>
 					<?php if ( 'date' === $meta ) : ?>
 						<li class="ele-post-grid-meta-date">
-							<?php ele_render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php the_time( get_option( 'date_format' ) ); ?>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'category' === $meta && get_the_category_list() ) : ?>
 						<li class="ele-post-grid-meta-category">
-							<?php ele_render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<span><?php echo wp_kses_post( get_the_category_list( ', ' ) ); ?></span>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'comments' === $meta ) : ?>
 						<li class="ele-post-grid-meta-comments">
-							<?php ele_render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php comments_number( esc_html__( 'No Comments', 'easy-elements' ), esc_html__( '1 Comment', 'easy-elements' ), esc_html__( '% Comments', 'easy-elements' ) ); ?>
 						</li>
 					<?php endif; ?>
@@ -121,19 +121,19 @@ $content = preg_replace( '`[[^]]*]`', '', $content);
 				<?php foreach ( $settings['show_meta'] as $meta ) : ?>
 					<?php if ( 'date' === $meta ) : ?>
 						<li class="ele-post-grid-meta-date">
-							<?php ele_render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['date_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php the_time( get_option( 'date_format' ) ); ?>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'category' === $meta && get_the_category_list() ) : ?>
 						<li class="ele-post-grid-meta-category">
-							<?php ele_render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['category_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<span><?php echo wp_kses_post( get_the_category_list( ', ' ) ); ?></span>
 						</li>
 					<?php endif; ?>
 					<?php if ( 'comments' === $meta ) : ?>
 						<li class="ele-post-grid-meta-comments">
-							<?php ele_render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+							<?php \Elementor\Icons_Manager::render_icon( $settings['comments_icon'], array( 'aria-hidden' => 'true' ) ); ?>
 							<?php comments_number( esc_html__( 'No Comments', 'easy-elements' ), esc_html__( '1 Comment', 'easy-elements' ), esc_html__( '% Comments', 'easy-elements' ) ); ?>
 						</li>
 					<?php endif; ?>

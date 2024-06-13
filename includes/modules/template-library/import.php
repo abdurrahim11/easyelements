@@ -10,7 +10,6 @@ class Import {
 
     public function __construct() {
         add_action( 'elementor/ajax/register_actions', [ $this, 'register_ajax_actions' ] );
-
     }
 
     public function register_ajax_actions( Ajax $ajax ) {

@@ -223,28 +223,3 @@ function test_ajax_install_plugin( $slug ) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Filter to change the icon HTML output to use <i> tag instead of SVG.
- */
-function change_icon_output_to_i_tag( $icon, $icon_data ) {
-    if ( 'fontawesome' === $icon_data['library'] ) {
-        // If the icon library is Font Awesome, generate <i> tag
-        $icon = '<i class="' . esc_attr( $icon_data['value'] ) . '"></i>';
-    }
-    return $icon;
-}
-
-// Hook the filter to change icon output
-add_filter( 'elementor/icons/render', 'change_icon_output_to_i_tag', 10, 2 );

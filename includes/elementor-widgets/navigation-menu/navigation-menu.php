@@ -28,7 +28,7 @@ class Navigation_Menu extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'ele ele-nav-menu ele-widget-icon ';
+        return 'ele ele-nav-menu ele-widget-icon';
     }
 
     public function get_categories() {
@@ -1586,14 +1586,14 @@ class Navigation_Menu extends Widget_Base {
                  */
                 if ( $settings['easyelements_hamburger_icon']['value'] === '' ):
                     ?>
-                    <span class="easyelements-menu-hamburger-icon"></span><span class="easyelements-menu-hamburger-icon"></span><span class="easyelements-menu-hamburger-icon"></span>
+                    <i class="ele ele-menu"></i>
                 <?php
                 endif;
 
                 /**
                  * Show Icon or, SVG
                  */
-                ele_render_icon( $settings['easyelements_hamburger_icon'], [ 'aria-hidden' => 'true', 'class' => 'ele-menu-icon' ] );
+                \Elementor\Icons_Manager::render_icon( $settings['easyelements_hamburger_icon'], [ 'aria-hidden' => 'true', 'class' => 'ele-menu-icon' ] );
                 ?>
             </button>
             <?php

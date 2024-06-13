@@ -1179,11 +1179,11 @@ class Modal_Popup extends Widget_Base {
                     <a href="#" <?php echo $this->get_render_attribute_string('ele_modal_action');?> >
 						<span class="ele-modal-action-icon-<?php echo esc_attr($settings['ele_modal_btn_icon_align']);?>">
 							<?php if( 'left' === $settings['ele_modal_btn_icon_align'] && !empty( $settings['ele_modal_btn_icon']['value'] ) ) {
-                                ele_render_icon( $settings['ele_modal_btn_icon'], [ 'aria-hidden' => 'true' ] );
+                                \Elementor\Icons_Manager::render_icon( $settings['ele_modal_btn_icon'], [ 'aria-hidden' => 'true' ] );
                             }
                             echo esc_html( $settings['ele_modal_btn_text'] );
                             if( 'right' === $settings['ele_modal_btn_icon_align'] && !empty( $settings['ele_modal_btn_icon']['value'] ) ) {
-                                ele_render_icon( $settings['ele_modal_btn_icon'], [ 'aria-hidden' => 'true' ] );
+                                \Elementor\Icons_Manager::render_icon( $settings['ele_modal_btn_icon'], [ 'aria-hidden' => 'true' ] );
                             } ;?>
 						</span>
                     </a>

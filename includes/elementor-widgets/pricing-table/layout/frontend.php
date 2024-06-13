@@ -36,7 +36,7 @@ if ( $settings['button_link']['custom_attributes'] ) {
 	<?php if ( 'before_header' === $settings['media_position'] ) { ?>
 		<?php if ( 'icon' === $settings['media_type'] && $settings['icon']['value'] ) : ?>
 			<div class="ele-pricing-icon">
-				<?php ele_render_icon( $settings['icon'], array( 'aria-hidden' => 'true' ) ); ?>
+				<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], array( 'aria-hidden' => 'true' ) ); ?>
 			</div>
 		<?php endif; ?>
 		<?php if ( 'image' === $settings['media_type'] && $settings['image']['url'] ) : ?>
@@ -55,7 +55,7 @@ if ( $settings['button_link']['custom_attributes'] ) {
 	<?php if ( 'after_header' === $settings['media_position'] ) { ?>
 		<?php if ( 'icon' === $settings['media_type'] && $settings['icon']['value'] ) : ?>
 			<div class="ele-pricing-icon">
-				<?php ele_render_icon( $settings['icon'], array( 'aria-hidden' => 'true' ) ); ?>
+				<?php \Elementor\Icons_Manager::render_icon( $settings['icon'], array( 'aria-hidden' => 'true' ) ); ?>
 			</div>
 		<?php endif; ?>
 		<?php if ( 'image' === $settings['media_type'] && $settings['image']['url'] ) : ?>
@@ -111,7 +111,7 @@ if ( $settings['button_link']['custom_attributes'] ) {
 					<li class="<?php echo esc_attr( $item['status'] ); ?>">
 
 						<?php if ( $item['icon'] ) : ?>
-							<span class="ele-pricing-feature-icon"><?php ele_render_icon( $item['icon'], array( 'aria-hidden' => 'true' ) ); ?></span>
+							<span class="ele-pricing-feature-icon"><?php \Elementor\Icons_Manager::render_icon( $item['icon'], array( 'aria-hidden' => 'true' ) ); ?></span>
 						<?php endif; ?>
 
 						<?php if ( $item['title_text'] ) : ?>
