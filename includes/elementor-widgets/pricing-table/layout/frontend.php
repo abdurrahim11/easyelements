@@ -118,7 +118,7 @@ if ( $settings['button_link']['custom_attributes'] ) {
 							<span class="ele-pricing-feature-title">
 							<?php echo esc_html( $item['title_text'] ); ?>
 								<?php if ( $item['tooltip_text'] ) : ?>
-									<i class="fas fa-question ele-pricing-tooltip-toggle">
+									<i class="ele-pricing-feature-icon ele-pricing-tooltip-toggle"></i>
 								<span class="ele-pricing-tooltip">
 									<?php echo wp_kses_post( $item['tooltip_text'] ); ?>
 								</span>

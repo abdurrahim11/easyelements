@@ -593,7 +593,7 @@ class Pricing_Table extends Widget_Base {
 				'label'       => __( 'Text', 'ele-elementor-addons' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => __( 'easy_elements', 'ele-elementor-addons' ),
+				'default'     => __( 'Recommended', 'ele-elementor-addons' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
