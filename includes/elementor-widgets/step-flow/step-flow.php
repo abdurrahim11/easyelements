@@ -246,17 +246,17 @@ class Step_Flow extends Widget_Base {
 				'range'      => array(
 					'px' => array(
 						'min' => 0,
-						'max' => 200,
+						'max' => 300,
 					),
 				),
 				'default'    => array(
 					'unit' => 'px',
-					'size' => 50,
+					'size' => 120,
 
 				),
 				'selectors'  => array(
 					'{{WRAPPER}}'                      => '--ele-step-flow-icon-padding: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .ele-step-flow-icon' => 'padding: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ele-step-flow-icon' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);

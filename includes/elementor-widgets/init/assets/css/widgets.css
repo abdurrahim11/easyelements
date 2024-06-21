@@ -3225,6 +3225,9 @@ testimonial
     line-height: 1;
     margin-bottom: 30px;
 }
+.ele-testimonial-rating svg{
+    width: 14px;
+}
 .ele-rating-layout-num {
     padding: 5px 10px;
     border-radius: 20px;
@@ -4412,7 +4415,6 @@ step-flow
     -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 2rem;
-    padding: 50px;
     border-radius: 50%;
     background-color: #e9ecf0;
     color: #2b2b2b;
@@ -4499,6 +4501,7 @@ step-flow
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
 .ele-step-flow-icon .ele-step-flow-badge {
     position: absolute;
     padding: 8px;
@@ -4523,6 +4526,19 @@ step-flow
     line-height: 1.5;
 }
 
+/***********************************
+Step Flow Widget Separator Hide on Tablet and Mobile write by Papan Biswas
+***********************************/
+@media (max-width: 767px) {
+    .ele-step-flow-icon .ele-step-flow-circle.mobile{
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    .ele-step-flow-icon .ele-step-flow-circle.tablet{
+        display: none;
+    }
+}
 
 
 
@@ -5022,6 +5038,10 @@ Hotspot
 .ele-hotspot-item .ele-hotspot-item-wrap > i {
     color: #6ec1e4;
     font-size: 18px;
+}
+.ele-hotspot-item .ele-hotspot-item-wrap > svg {
+    fill: #6ec1e4;
+    width: 18px;
 }
 .ele-hotspot-item .ele-hotspot-item-wrap > img {
     max-width: 100%;

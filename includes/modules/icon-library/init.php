@@ -23,7 +23,7 @@ class Init {
             'url'           => $this->icon_library_url . 'assets/css/eleicons.css?ver=' . ELE_VERSION,
             'prefix'        => 'ele-',
             'displayPrefix' => 'ele',
-            'labelIcon'     => 'ele ele-plus',
+            'labelIcon'     => 'ele ele-easy-elements',
             'ver'           => ELE_VERSION,
             'fetchJson'     =>  $this->icon_library_url .'assets/js/eleicons.json?v=' . ELE_VERSION,
             'native'        => true,

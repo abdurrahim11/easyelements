@@ -25,7 +25,7 @@
 .ele-creative-button:before {
   content: "\e937";
 }
-.ele-horizontal-timeline:before {
+.ele-horizontal-timelines:before {
   content: "\ea20";
 }
 .ele-info-box:before {
@@ -40,7 +40,7 @@
 .ele-pricing-table:before {
   content: "\ea24";
 }
-.ele-progress-bar:before {
+.ele-progress:before {
   content: "\ea25";
 }
 .ele-step-flow:before {

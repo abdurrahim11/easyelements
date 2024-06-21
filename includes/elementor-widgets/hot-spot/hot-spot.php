@@ -501,6 +501,7 @@ class Hot_Spot extends Widget_Base {
 				),
 				'selectors'  => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > i'   => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > svg'   => 'width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > img' => 'width: {{SIZE}}{{UNIT}}; min-width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > svg' => 'width: {{SIZE}}{{UNIT}}; height: auto;',
 				),
@@ -541,6 +542,7 @@ class Hot_Spot extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > svg' => 'fill: {{VALUE}};',
 				),
 			)
 		);

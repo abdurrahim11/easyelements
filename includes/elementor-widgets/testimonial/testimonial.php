@@ -745,6 +745,7 @@ class Testimonial extends Widget_Base {
 				),
 				'selectors'  => array(
 					'{{WRAPPER}} .ele-testimonial-rating' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ele-testimonial-rating svg' => 'width: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -767,6 +768,7 @@ class Testimonial extends Widget_Base {
 				),
 				'selectors'  => array(
 					'{{WRAPPER}} .ele-testimonial-rating > i' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .ele-testimonial-rating > svg' => 'margin-right: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -777,7 +779,7 @@ class Testimonial extends Widget_Base {
 				'label'     => __( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .ele-testimonial-rating, {{WRAPPER}} .ele-rating-layout-star > i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .ele-testimonial-rating, {{WRAPPER}} .ele-rating-layout-star > svg' => 'fill: {{VALUE}}',
 				),
 			)
 		);
@@ -788,7 +790,7 @@ class Testimonial extends Widget_Base {
 				'label'     => __( 'Filled', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .ele-rating-layout-star > .ele-rating-filled' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .ele-rating-layout-star > svg.fill' => 'fill: {{VALUE}}',
 				),
 				'condition' => array(
 					'ratting_style' => 'star',
