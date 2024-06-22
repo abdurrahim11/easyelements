@@ -5334,9 +5334,47 @@ Horizontal
     top: 50%;
 }
 
-
-
-
+[class*="ele-owl-navigation-horizontal"] .owl-nav button.owl-prev::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f053";
+}
+[class*="ele-owl-navigation-horizontal"] .owl-nav button.owl-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\e906";
+}
+.ele-owl-theme.owl-carousel .owl-nav button.owl-next, .ele-owl-theme.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: var(--e-global-color-primary);
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+}
+.ele-owl-theme.owl-carousel .owl-nav button.owl-next {
+    right: 0;
+}
+.ele-elementor-post-pagination .page-numbers.dots, .ele-owl-theme.owl-carousel .owl-nav button.disabled {
+    cursor: no-drop;
+}
+.ele-owl-theme.owl-carousel .owl-nav button.disabled::before, .ele-swiper-slider-theme .swiper-button-next.swiper-button-disabled:after, .ele-swiper-slider-theme .swiper-button-prev.swiper-button-disabled:after {
+    opacity: 0.3;
+}
 
 /**
 badge
