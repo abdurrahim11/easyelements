@@ -3,7 +3,6 @@
 use Elementor\Icons_Manager;
 
 $layout = ( 'none' !== $settings['separator_layout_style'] ) ? ' ele-step-' . $settings['separator_layout_style'] : '';
-$hide_on = $settings['separator_hide_on'];
 ?>
 
 <!-- Step Flow -->
@@ -18,7 +17,7 @@ $hide_on = $settings['separator_hide_on'];
 
 		<!-- Separator -->
 		<?php if ( 'yes' === $settings['step_flow_separator'] ) { ?>
-			<span class="ele-step-flow-<?php echo esc_attr( $settings['separator_layout_style'] ); ?> <?php echo $hide_on;?>"></span>
+			<span class="ele-step-flow-<?php echo esc_attr( $settings['separator_layout_style'] ); ?>"></span>
 		<?php } ?>
 
 		<!-- Badge -->

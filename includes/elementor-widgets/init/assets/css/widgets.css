@@ -839,6 +839,7 @@
         display: none;
     }
 }
+
 .ele-vertical-menu-tigger {
     display: block;
     background: #ffb25d;
@@ -3198,6 +3199,7 @@ Team
     padding: 50px 0 0;
 }
 
+
 /**
 testimonial
  */
@@ -3669,6 +3671,7 @@ Info box
 }
 .ele-wid-con .ele-infobox .icon-hover svg {
     max-width: 100px;
+    width: 100px;
     height: auto;
     vertical-align: middle;
 }
@@ -4526,22 +4529,27 @@ step-flow
     line-height: 1.5;
 }
 
-/***********************************
-Step Flow Widget Separator Hide on Tablet and Mobile write by Papan Biswas
-***********************************/
-@media (max-width: 767px) {
-    .ele-step-flow-icon .ele-step-flow-circle.mobile{
-        display: none;
+/******************************************************
+Step Flow Responsive Css Write by Papan Biswas
+******************************************************/
+@media screen and (max-width: 1024px){
+    .ele-step-flow-separator-disable-tablet .ele-step-flow-arrow, 
+    .ele-step-flow-separator-disable-tablet .ele-step-flow-circle, 
+    .ele-step-flow-separator-disable-tablet .ele-step-flow-line, 
+    .ele-step-flow-separator-disable-tablet .ele-step-flow-line-arrow {
+    display: none;
     }
 }
-@media (max-width: 1024px) {
-    .ele-step-flow-icon .ele-step-flow-circle.tablet{
-        display: none;
+
+@media screen and (max-width: 767px){
+    .ele-step-flow-separator-disable-mobile .ele-step-flow-arrow, 
+    .ele-step-flow-separator-disable-mobile .ele-step-flow-circle, 
+    .ele-step-flow-separator-disable-mobile .ele-step-flow-line, 
+    .ele-step-flow-separator-disable-mobile .ele-step-flow-line-arrow, 
+    .ele-table-responsive .ele-table-head {
+    display: none;
     }
 }
-
-
-
 
 
 
