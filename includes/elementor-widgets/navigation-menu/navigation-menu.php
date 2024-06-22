@@ -1179,8 +1179,8 @@ class Navigation_Menu extends Widget_Base {
                 'default' => 'rgba(0, 0, 0, 0.5)',
                 'selectors' => [
                     '{{WRAPPER}} .easyelements-menu-hamburger .easyelements-menu-hamburger-icon' => 'background-color: {{VALUE}}',
-                    '{{WRAPPER}} .easyelements-menu-hamburger > .ele-menu-icon' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .easyelements-menu-hamburger > .ele-menu-icon' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .easyelements-menu-hamburger > i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .easyelements-menu-hamburger > svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
