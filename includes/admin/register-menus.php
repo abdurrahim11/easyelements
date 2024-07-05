@@ -31,7 +31,7 @@ class Register_Menus {
         $capability = 'manage_options';
         $parent_slug = 'easy-elements';
 
-        add_menu_page( esc_html__( 'Easy Elements', 'easy-elements' ), esc_html__( 'Easy Elements', 'easy-elements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ), 'dashicons-calendar-alt', 58.50 );
+        add_menu_page( esc_html__( 'Easy Elements', 'easy-elements' ), esc_html__( 'Easy Elements', 'easy-elements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ), ELE_PLUGIN_URL . 'assets/admin/images/logo-icon.gif', 58.50 );
         add_submenu_page( $parent_slug, esc_html__( 'Easy Elements', 'easy-elements' ), esc_html__( 'Easy Elements', 'easy-elements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ) );
         add_submenu_page(
             $parent_slug,

@@ -72,6 +72,7 @@ class Assets {
      */
     public function admin_enqueue() {
         wp_enqueue_style( 'ele-backend', ELE_PLUGIN_URL . 'assets/admin/css/backend.css', null, ELE_VERSION );
+        wp_enqueue_style( 'ele-dashboard', ELE_PLUGIN_URL . 'assets/admin/css/dashboard.css', null, ELE_VERSION );
 
         wp_enqueue_script( 'ele-backend', ELE_PLUGIN_URL . 'assets/admin/js/backend.js', array( 'jquery' ), ELE_VERSION, true );
 
