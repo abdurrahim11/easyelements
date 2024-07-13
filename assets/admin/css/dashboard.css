@@ -38,8 +38,14 @@
   display: inline-block;
   transition: 0.3s;
 }
+.ee-white{
+  color: var(--ee-color-white);
+}
 .ee-box-shadow {
   box-shadow: initial;
+}
+.ee-mb-24{
+  margin-bottom: 24px;
 }
 .ee-dashboard-tab-wrapper a:focus,
 .ee-body-wrapper a:focus {
@@ -112,6 +118,9 @@
 }
 .ee-body-content-right {
   width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .ee-support-info-wrapper {
   display: grid;
@@ -209,7 +218,6 @@
   padding: 32px;
   background: var(--Primary-primary-500);
   border-radius: 8px;
-  margin-bottom: 32px;
 }
 .ee-feature-request-header {
   display: flex;
@@ -406,6 +414,10 @@
   display: flex;
   gap: 32px;
 }
+.ee-elements-dashboard-wrapper.ee-support{
+  max-width: 1240px;
+  margin: auto;
+}
 
 .ee-system-info-list {
   overflow: auto;
@@ -436,6 +448,21 @@
 .ee-system-info-list tbody tr {
   border-bottom: 1px solid var(--ee-color-secondery);
 }
+
+
+/******************* Support Tab ****************/
+.ee-support-features{
+  list-style: square;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
 
 /* Popup container - can be anything you want */
 .ee-popup {
