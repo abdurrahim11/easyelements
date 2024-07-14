@@ -132,6 +132,7 @@
             <div class="ee-elements-header-switcher-control">
                 <div class="ee-elements-header-switcher ee-secondery-p">Disable All</div>
                 <div class="ee-elements-header-switcher">
+                    
                 <label class="ee-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ee-elements-slider round"></span>
