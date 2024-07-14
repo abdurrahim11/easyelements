@@ -37,10 +37,7 @@
                             </div>
                             <div class="ee-video-header-left-content">
                                 <h2 class="ee-secondery-heading">Video Tutorials</h2>
-                                <p class="ee-secondery-p">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Hic, necessitatibus.
-                                </p>
+                                <p class="ee-secondery-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus. </p>
                             </div>
                         </div>
                         <div class="ee-video-header-right">
@@ -112,7 +109,7 @@
                     <p class="ee-secondery-p">
                     Copy and paste fully designed sections from the Easy Elements website directly to your website.
                     </p>
-                    <a class="ee-button" href="#" target="_blank">Request a Feature</a>
+                    <a class="ee-button" href="#" target="_blank">How it works?</a>
                 </div>
             </div>
         </div>
@@ -122,11 +119,8 @@
 <div id="elements" class="ee-body-wrapper">
     <div class="ee-elements-dashboard ee-box-shadow">
         <div class="ee-elements-header-content">
-            <h2 class="ee-secondery-heading">Global Control</h2>
-            <p class="ee-secondery-p">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Hic, necessitatibus.
-            </p>
+            <h2 class="ee-secondery-heading">Elements Control</h2>
+            <p class="ee-secondery-p">You can disable the default controls from these settings and enable the required controls.</p>
         </div>
         <div class="ee-elements-header-switcher-controls">
             <div class="ee-elements-header-switcher-control">
@@ -145,12 +139,12 @@
             </div>
         </div>
     </div>
-    <h3 class="ee-control-elements-heading">Content Elements</h3>
+   <!-- <h3 class="ee-control-elements-heading">Content Elements</h3> -->
     <div class="ee-elements-control-switchers-wrapper">
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
+                <h3>Nav Menu</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -164,7 +158,119 @@
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-popular">Popular</span>
             <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
+                <h3>Vertical Menu</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Post Grid</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Step Flow</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Team</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Testimonial</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Horizontal Timeline</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Hotspot</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Progress Bar</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Pricing</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -192,7 +298,7 @@
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
+                <h3>Info Box</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -206,164 +312,7 @@
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <h3 class="ee-control-elements-heading">Content Elements</h3>
-    <div class="ee-elements-control-switchers-wrapper">
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
+                <h3>Modal Popup</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -376,15 +325,14 @@
         </div>
     </div>
 </div>
+<!-- Elements Control End Here -->
 
+<!-- Features Control Start from Here -->
 <div id="features" class="ee-body-wrapper">
     <div class="ee-elements-dashboard ee-box-shadow">
         <div class="ee-elements-header-content">
             <h2 class="ee-secondery-heading">Feature Control</h2>
-            <p class="ee-secondery-p">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Hic, necessitatibus.
-            </p>
+            <p class="ee-secondery-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus.</p>
         </div>
         <div class="ee-elements-header-switcher-controls">
             <div class="ee-elements-header-switcher-control">
@@ -402,12 +350,25 @@
             </div>
         </div>
     </div>
-    <h3 class="ee-control-elements-heading">Content Elements</h3>
     <div class="ee-elements-control-switchers-wrapper">
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Live Copy Paste</h3>
+                <h3>Header & Footer Builder</h3>
+                <div class="ee-elements-control">
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
+                    <label class="ee-elements-switch">
+                        <input type="checkbox" checked>
+                        <span class="ee-elements-slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ee-elements-control-item">
+            <span class="ee-elements-update-label ee-update">Updated</span>
+            <div class="ee-elements-controls">
+                <h3>Megamenu Builder</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -435,7 +396,7 @@
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Live Copy Paste</h3>
+                <h3>Floating Effects</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
@@ -449,178 +410,7 @@
         <div class="ee-elements-control-item">
             <span class="ee-elements-update-label ee-update">Updated</span>
             <div class="ee-elements-controls">
-                <h3>Live Copy Paste</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Live Copy Paste</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Mega Menu Builder </h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <h3 class="ee-control-elements-heading">Content Elements</h3>
-    <div class="ee-elements-control-switchers-wrapper">
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
-                <div class="ee-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
-                    <label class="ee-elements-switch">
-                        <input type="checkbox" checked>
-                        <span class="ee-elements-slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="ee-elements-control-item">
-            <span class="ee-elements-update-label ee-update">Updated</span>
-            <div class="ee-elements-controls">
-                <h3>Creative Button</h3>
+                <h3>Custom Css</h3>
                 <div class="ee-elements-control">
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ee-tooltip">Documentation</span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ee-tooltip">Tutorial</span></a>
