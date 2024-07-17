@@ -615,6 +615,8 @@ img.ee-promo-banner-mobile {
   /****************** Responsive Tab CSS ********************/
   .ee-dashboard-tabs a span {
     display: none;
+    font-weight: 400;
+    font-size: 14px;
   }
 
   .ee-dashboard-tabs a.active span {
@@ -626,9 +628,14 @@ img.ee-promo-banner-mobile {
   }
 
   .ee-dashboard-tabs a {
-    padding: 12px 16px;
+    gap: 5px;
+    padding: 8px 12px;
   }
-
+  
+  .ee-dashboard-tabs a svg {
+    width: 16px;
+    height: 16px;
+}
   .ee-body-wrapper {
     padding: 10px;
     padding-left: 0;
