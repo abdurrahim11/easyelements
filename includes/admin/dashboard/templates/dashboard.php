@@ -11,7 +11,9 @@
 <div id="dashboard" class="ee-body-wrapper active">
     <div class="ee-welcome-dashboard">
         <div class="ee-header-banner">
-            <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/hero-banner.png" alt="" />           
+            <img class="ee-promo-banner-desktop" src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/hero-banner.png" alt="" />           
+            <img class="ee-promo-banner-tablet" src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/hero-banner.png" alt="" />           
+            <img class="ee-promo-banner-mobile" src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/hero-banner.png" alt="" />           
         </div>
         <div class="ee-body-content-wrapper">
             <div class="ee-body-content-left">

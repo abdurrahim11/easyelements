@@ -1,22 +1,22 @@
 .ele-widget-icon:after, [class*=elementor-control-section_ele] .elementor-section-title:after {
-    content: 'EE';
+    display: inline-block;
     position: absolute;
     top: 3px;
     right: 3px;
-    color: #a7a7a7;
-    font-size: 9px;
-    font-weight: 400;
-    padding: 1px 2px;
-    line-height: 10px;
-    display: inline-block;
     border-radius: 2px;
+    padding: 1px 2px;
+    content: 'EE';
+    color: #a7a7a7;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 10px;
     font-family: "Open Sans", Roboto, Helvetica, Arial, sans-serif;
 }
 
 [class*=elementor-control-section_ele] .elementor-section-title:after {
+    -webkit-transform: translateY(-50%);
     top: 50%;
     right: 10%;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -24,55 +24,55 @@
 Easy Elements Team Widget Mask Image Shape Style Css write by Papan Biswas
 **************************************************/
 .elementor-control-image-selector-wrapper {
+    -ms-flex-wrap: wrap;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    overflow-y: scroll;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-top: 10px;
     margin-right: -6px;
     margin-left: -6px;
     max-height: 160px;
+    overflow-y: scroll;
 }
 
 .elementor-control-image-selector-wrapper input[type=radio] {
     position: absolute;
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
 }
 .elementor-control-image-selector-wrapper input:checked+.elementor-image-selector-label {
-    border-color: #a4afb7;
     opacity: 1;
+    border-color: #a4afb7;
 }
 .elementor-control-image-selector-wrapper .elementor-image-selector-label {
-    overflow: hidden;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 calc((100% - 18px)/ 3);
-    flex: 0 0 calc((100% - 18px)/ 3);
-    margin: 3px;
-    padding: 3px;
-    border: 3px solid transparent;
-    border-radius: 4px;
-    opacity: .5;
-    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    flex: 0 0 calc((100% - 18px)/ 3);
+    opacity: .5;
+    cursor: pointer;
+    margin: 3px;
+    border: 3px solid transparent;
+    border-radius: 4px;
+    padding: 3px;
+    overflow: hidden;
     user-select: none;
 }
 .elementor-control-image-selector-wrapper .elementor-image-selector-label>img {
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
 .elementor-screen-only, .screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible {
+    clip: rect(0,0,0,0);
     position: absolute;
     top: -10000em;
+    margin: -1px;
+    border: 0;
+    padding: 0;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    padding: 0;
     overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
 }
