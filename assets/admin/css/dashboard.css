@@ -1,17 +1,17 @@
 :root {
-  --ee-color-bg: #f3f3f3;
-  --ee-color-white: #ffffff;
-  --ee-color-black: #3a3a3a;
-  --ee-color-text: #7e7e7e;
+  --ele-color-bg: #f3f3f3;
+  --ele-color-white: #ffffff;
+  --ele-color-black: #3a3a3a;
+  --ele-color-text: #7e7e7e;
   --Primary-primary-500: #3e77fc;
-  --ee-color-secondery: #ecf1ff;
+  --ele-color-secondery: #ecf1ff;
 }
 
-.ee-body-wrapper a {
+.ele-body-wrapper a {
   text-decoration: none;
 }
 
-.ee-secondery-heading {
+.ele-secondery-heading {
   margin: 0;
   margin-bottom: 8px;
   font-style: normal;
@@ -22,7 +22,7 @@
   text-align: left;
 }
 
-.ee-secondery-p {
+.ele-secondery-p {
   margin: 0;
   font-style: normal;
   font-weight: 400;
@@ -31,7 +31,7 @@
   font-family: "Segoe UI";
 }
 
-.ee-button {
+.ele-button {
   display: inline-block;
   transition: 0.3s;
   border-radius: 8px;
@@ -43,20 +43,20 @@
   font-family: "Segoe UI";
 }
 
-.ee-white {
-  color: var(--ee-color-white);
+.ele-white {
+  color: var(--ele-color-white);
 }
 
-.ee-box-shadow {
+.ele-box-shadow {
   box-shadow: initial;
 }
 
-.ee-mb-24 {
+.ele-mb-24 {
   margin-bottom: 24px;
 }
 
-.ee-dashboard-tab-wrapper a:focus,
-.ee-body-wrapper a:focus {
+.ele-dashboard-tab-wrapper a:focus,
+.ele-body-wrapper a:focus {
   outline: 0;
   box-shadow: initial;
 }
@@ -65,27 +65,27 @@
   Dashboard Tab Wrapper
   ************************/
 
-.ee-dashboard-tab-wrapper {
+.ele-dashboard-tab-wrapper {
   text-align: center;
 }
 
-.ee-dashboard-tabs {
+.ele-dashboard-tabs {
   display: inline-flex;
   justify-content: center;
   margin-top: 32px;
   border-radius: 8px;
-  background: var(--ee-color-white);
+  background: var(--ele-color-white);
   padding: 24px 32px;
 }
 
-.ee-dashboard-tabs a {
+.ele-dashboard-tabs a {
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
   border-radius: 8px;
   padding: 16px 26px;
-  color: var(--ee-color-black);
+  color: var(--ele-color-black);
   font-weight: 600;
   font-size: 16px;
   line-height: 140%;
@@ -93,87 +93,87 @@
   text-decoration: none;
 }
 
-.ee-dashboard-tabs a.active {
+.ele-dashboard-tabs a.active {
   background: var(--Primary-primary-500);
-  color: var(--ee-color-white);
+  color: var(--ele-color-white);
 }
 
-.ee-dashboard-tabs a svg {
-  fill: var(--ee-color-black);
+.ele-dashboard-tabs a svg {
+  fill: var(--ele-color-black);
   width: 20px;
   height: 20px;
 }
 
-.ee-dashboard-tabs a.active svg {
+.ele-dashboard-tabs a.active svg {
   fill: #ffffff;
 }
 
-.ee-body-wrapper {
+.ele-body-wrapper {
   display: none;
   padding: 30px 50px 40px 40px;
 }
 
-.ee-body-wrapper.active {
+.ele-body-wrapper.active {
   display: block;
 }
 
-.ee-body-content-wrapper {
+.ele-body-content-wrapper {
   display: flex;
   gap: 32px;
 }
 
-.ee-header-banner {
+.ele-header-banner {
   margin-bottom: 30px;
 }
 
-.ee-header-banner img {
+.ele-header-banner img {
   max-width: 100%;
 }
 
-img.ee-promo-banner-tablet,
-img.ee-promo-banner-mobile {
+img.ele-promo-banner-tablet,
+img.ele-promo-banner-mobile {
   display: none;
 }
 
-.ee-body-content-left {
-  width: 75%;
+.ele-body-content-left {
+  width: 65%;
 }
 
-.ee-body-content-right {
+.ele-body-content-right {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 25%;
+  width: 35%;
 }
 
-.ee-support-info-wrapper {
+.ele-support-info-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
   margin-bottom: 40px;
 }
 
-.ee-support-item {
+.ele-support-item {
   display: flex;
   align-items: center;
   gap: 16px;
   transition: 0.3s;
   border-radius: 8px;
-  background: var(--ee-color-white);
+  background: var(--ele-color-white);
   padding: 24px;
   max-width: 100%;
 }
 
-.ee-support-item:hover {
+.ele-support-item:hover {
   background: var(--Primary-primary-500);
 }
 
-.ee-support-item:hover h3 {
-  color: var(--ee-color-white);
+.ele-support-item:hover h3 {
+  color: var(--ele-color-white);
 }
 
-.ee-support-item h3,
-.ee-control-elements-heading {
+.ele-support-item h3,
+.ele-control-elements-heading {
   margin: 0;
   color: #3a3a3a;
   font-style: normal;
@@ -183,163 +183,89 @@ img.ee-promo-banner-mobile {
   font-family: "Segoe UI";
 }
 
-.ee-video-tutorial-wrapper {
-  border-radius: 8px;
-  background: var(--ee-color-white);
-  padding: 32px;
-}
 
-.ee-video-tutorial-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.ee-video-header-left {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.ee-video-header-left-content h2 {
-  color: var(--ee-color-black);
-}
-
-.ee-video-header-left-content p {
-  color: var(--ee-color-text);
-}
-
-.ee-video-header-right a {
-  background: var(--ee-color-secondery);
-  color: var(--Primary-primary-500);
-}
-
-.ee-video-header-right a:hover,
-.ee-live-copy-paste-wrapper a:hover {
-  background: var(--Primary-primary-500);
-  color: var(--ee-color-secondery);
-}
-
-.ee-video-tutorial-item {
-  position: relative;
-  width: 100%;
-}
-
-.ee-video-tutorials-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.ee-video-tutorial-item img {
-  cursor: pointer;
-  width: 100%;
-}
-
-.ee-video-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  background: transparent;
-}
-
-.ee-video-tutorial-item h3 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  color: var(--ee-color-white);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 120%;
-  font-family: "Segoe UI";
-}
-
-.ee-feature-request-wrapper {
+.ele-feature-request-wrapper {
   border-radius: 8px;
   background: var(--Primary-primary-500);
   padding: 32px;
 }
 
-.ee-feature-request-header {
+.ele-feature-request-header {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.ee-feature-request-header h3 {
-  color: var(--ee-color-white);
+.ele-feature-request-header h3 {
+  color: var(--ele-color-white);
 }
 
-.ee-feature-request-wrapper p {
+.ele-feature-request-wrapper p {
   margin: 24px 0;
-  color: var(--ee-color-white);
+  color: var(--ele-color-white);
 }
 
-.ee-feature-request-wrapper a {
+.ele-feature-request-wrapper a {
   background: var(--Color-White-White-400, #fff);
   color: var(--Primary-primary-500, #3e77fc);
 }
 
-.ee-live-copy-paste-wrapper {
+.ele-template-library-wrapper {
   border-radius: 8px;
-  background: var(--ee-color-white);
+  background: var(--ele-color-white);
   padding: 32px;
 }
-
-.ee-live-copy-paste {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.ele-template-library {
+  margin-bottom: 15px;
 }
 
-.ee-live-copy-paste-wrapper p {
-  margin: 24px 0;
+.ele-template-library img {
+  max-width: 100%;
 }
 
-.ee-live-copy-paste-wrapper a {
-  background: var(--ee-color-secondery);
-  color: var(--Primary-primary-500);
+.ele-template-library-wrapper p {
+  margin: 0 0 24px 0
+}
+
+.ele-template-library-wrapper a {
+  background: var(--ele-color-black);
+  color: var(--ele-color-white);
 }
 
 /********************************
  Elements Tab Style
  ********************************/
-.ee-elements-dashboard {
+.ele-elements-dashboard {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
   border-radius: 8px;
-  background: var(--ee-color-white);
+  background: var(--ele-color-white);
   padding: 40px;
 }
 
-.ee-elements-header-switcher-controls {
+.ele-elements-header-switcher-controls {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 40px;
 }
 
-.ee-elements-header-switcher-control {
+.ele-elements-header-switcher-control {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.ee-elements-header-save-settings .ee-button {
+.ele-elements-header-save-settings .ele-button {
   cursor: pointer;
   border: none;
   background: var(--Primary-primary-500);
-  color: var(--ee-color-white);
+  color: var(--ele-color-white);
 }
 
-.ee-elements-control-switchers-wrapper {
+.ele-elements-control-switchers-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 34px 24px;
@@ -347,62 +273,62 @@ img.ee-promo-banner-mobile {
   margin-bottom: 36px;
 }
 
-.ee-elements-update-label {
+.ele-elements-update-label {
   position: absolute;
   top: -15px;
   border-radius: 4px;
-  background: var(--ee-color-text);
+  background: var(--ele-color-text);
   padding: 6px 12px;
   color: #fff;
   font-weight: 400;
   font-size: 14px;
 }
 
-.ee-elements-control-item {
+.ele-elements-control-item {
   position: relative;
   border-radius: 8px;
   background: #ffffff;
   padding: 24px;
 }
 
-.ee-elements-controls {
+.ele-elements-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.ee-elements-controls h3 {
+.ele-elements-controls h3 {
   margin: 0;
 }
 
-.ee-elements-control {
+.ele-elements-control {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.ee-elements-control a {
+.ele-elements-control a {
   position: relative;
 }
 
-.ee-elements-control a:hover .ee-tooltip {
+.ele-elements-control a:hover .ele-tooltip {
   display: block;
 }
 
-.ee-tooltip {
+.ele-tooltip {
   display: none;
   position: absolute;
   top: -34px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 4px;
-  background: var(--ee-color-black);
+  background: var(--ele-color-black);
   padding: 3px 5px;
-  color: var(--ee-color-white);
+  color: var(--ele-color-white);
   font-size: 13px;
 }
 
-.ee-tooltip::after {
+.ele-tooltip::after {
   -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
   position: absolute;
   bottom: -7px;
@@ -410,30 +336,30 @@ img.ee-promo-banner-mobile {
   transform: translateX(-50%);
   clip-path: polygon(100% 0, 0 0, 50% 100%);
   border-radius: 3px;
-  background: var(--ee-color-black);
+  background: var(--ele-color-black);
   width: 15px;
   height: 8px;
   content: "";
 }
 
-.ee-elements-update-label.ee-popular {
+.ele-elements-update-label.ele-popular {
   background: var(--Primary-primary-500);
 }
 
-.ee-elements-switch {
+.ele-elements-switch {
   display: inline-block;
   position: relative;
   width: 57px;
   height: 30px;
 }
 
-.ee-elements-switch input {
+.ele-elements-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.ee-elements-slider {
+.ele-elements-slider {
   -webkit-transition: 0.4s;
   position: absolute;
   top: 0;
@@ -442,57 +368,57 @@ img.ee-promo-banner-mobile {
   left: 0;
   transition: 0.4s;
   cursor: pointer;
-  background-color: var(--ee-color-bg);
+  background-color: var(--ele-color-bg);
 }
 
-.ee-elements-slider:before {
+.ele-elements-slider:before {
   -webkit-transition: 0.4s;
   position: absolute;
   bottom: 5px;
   left: 5px;
   transition: 0.4s;
-  background-color: var(--ee-color-white);
+  background-color: var(--ele-color-white);
   width: 20px;
   height: 20px;
   content: "";
 }
 
-.ee-elements-switch input:checked + .ee-elements-slider {
+.ele-elements-switch input:checked + .ele-elements-slider {
   background-color: var(--Primary-primary-500);
 }
 
-.ee-elements-switch input:focus + .ee-elements-slider {
+.ele-elements-switch input:focus + .ele-elements-slider {
   box-shadow: initial;
 }
 
-.ee-elements-switch input:checked + .ee-elements-slider:before {
+.ele-elements-switch input:checked + .ele-elements-slider:before {
   transform: translateX(26px);
 }
 
-.ee-elements-slider.round {
+.ele-elements-slider.round {
   border-radius: 34px;
 }
 
-.ee-elements-slider.round:before {
+.ele-elements-slider.round:before {
   border-radius: 50%;
 }
 
-.ee-elements-dashboard-wrapper {
+.ele-elements-dashboard-wrapper {
   display: flex;
   gap: 32px;
 }
 
-.ee-elements-dashboard-wrapper.ee-support {
+.ele-elements-dashboard-wrapper.ele-support {
   margin: auto;
   max-width: 1240px;
 }
 
-.ee-system-info-list {
+.ele-system-info-list {
   width: 100%;
   overflow: auto;
 }
 
-.ee-system-info-list table {
+.ele-system-info-list table {
   border-collapse: collapse;
   border-spacing: 1px;
   width: 100%;
@@ -501,31 +427,31 @@ img.ee-promo-banner-mobile {
   text-align: left;
 }
 
-.ee-system-info-list th {
+.ele-system-info-list th {
   border-radius: 4px;
-  background-color: var(--ee-color-secondery);
+  background-color: var(--ele-color-secondery);
   padding: 14px 10px;
-  color: var(--ee-color-black);
+  color: var(--ele-color-black);
 }
 
-.ee-system-info-list td {
-  background-color: var(--ee-color-white);
+.ele-system-info-list td {
+  background-color: var(--ele-color-white);
   padding: 10px;
-  color: var(--ee-color-black);
+  color: var(--ele-color-black);
 }
 
-.ee-system-info-list tbody tr {
-  border-bottom: 1px solid var(--ee-color-secondery);
+.ele-system-info-list tbody tr {
+  border-bottom: 1px solid var(--ele-color-secondery);
 }
 
 /******************* Support Tab ****************/
-.ee-support-features {
+.ele-support-features {
   margin-left: 20px;
   list-style: square;
 }
 
 /* Popup container - can be anything you want */
-.ee-popup {
+.ele-popup {
   display: none;
   position: fixed;
   top: 0;
@@ -539,7 +465,7 @@ img.ee-promo-banner-mobile {
 }
 
 /* Popup content */
-.ee-popup-content {
+.ele-popup-content {
   position: relative;
   margin: auto;
   background-color: #fff;
@@ -549,63 +475,59 @@ img.ee-promo-banner-mobile {
 }
 
 /* Close button */
-.ee-close {
+.ele-close {
   position: absolute;
   top: -20px;
   right: -26px;
-  color: var(--ee-color-white);
+  color: var(--ele-color-white);
   font-size: 28px;
 }
 
-.ee-close:hover,
-.ee-close:focus {
+.ele-close:hover,
+.ele-close:focus {
   cursor: pointer;
   color: black;
   text-decoration: none;
 }
 
 @media screen and (max-width: 1024px) {
-  .ee-body-wrapper {
+  .ele-body-wrapper {
     padding: 30px;
     padding-left: 20px;
   }
 
-  .ee-promo-banner-desktop,
-  .ee-promo-banner-mobile {
+  .ele-promo-banner-desktop,
+  .ele-promo-banner-mobile {
     display: none;
   }
 
-  .ee-promo-banner-tablet {
+  .ele-promo-banner-tablet {
     display: block !important;
   }
 
-  .ee-body-content-left {
+  .ele-body-content-left {
     width: 60%;
   }
 
-  .ee-body-content-right {
+  .ele-body-content-right {
     width: 40%;
   }
 
-  .ee-video-header-right {
-    display: none;
-  }
-
-  .ee-secondery-heading {
+  .ele-secondery-heading {
     font-size: 18px;
   }
 
   /****************** Elements CSS ********************/
-  .ee-elements-dashboard {
+  .ele-elements-dashboard {
     flex-direction: column;
     gap: 30px;
   }
 
-  .ee-elements-header-content h2 {
+  .ele-elements-header-content h2 {
     text-align: center;
   }
 
-  .ee-elements-dashboard-wrapper {
+  .ele-elements-dashboard-wrapper {
     flex-direction: column;
     gap: 0px;
   }
@@ -613,84 +535,80 @@ img.ee-promo-banner-mobile {
 
 @media screen and (max-width: 768px) {
   /****************** Responsive Tab CSS ********************/
-  .ee-dashboard-tabs a span {
+  .ele-dashboard-tabs a span {
     display: none;
     font-weight: 400;
-    font-size: 14px;
   }
 
-  .ee-dashboard-tabs a.active span {
+  .ele-dashboard-tabs a.active span {
     display: block;
   }
 
-  .ee-dashboard-tabs {
+  .ele-dashboard-tabs {
     padding: 12px 12px;
   }
 
-  .ee-dashboard-tabs a {
+  .ele-dashboard-tabs a {
     gap: 5px;
     padding: 8px 12px;
   }
   
-  .ee-dashboard-tabs a svg {
+  .ele-dashboard-tabs a svg {
     width: 16px;
     height: 16px;
 }
-  .ee-body-wrapper {
+  .ele-body-wrapper {
     padding: 10px;
     padding-left: 0;
   }
 
-  .ee-promo-banner-desktop,
-  .ee-promo-banner-tablet {
+  .ele-promo-banner-desktop,
+  .ele-promo-banner-tablet {
     display: none !important;
   }
 
-  .ee-promo-banner-mobile {
+  .ele-promo-banner-mobile {
     display: block !important;
   }
 
-  .ee-body-content-wrapper {
+  .ele-body-content-wrapper {
     flex-direction: column;
   }
 
-  .ee-body-content-left,
-  .ee-body-content-right {
+  .ele-body-content-left,
+  .ele-body-content-right {
     width: 100%;
   }
 
-  .ee-support-info-wrapper {
+  .ele-support-info-wrapper {
     gap: 24px;
   }
 
-  .ee-header-banner {
+  .ele-header-banner {
     margin-bottom: 20px;
   }
 
-  .ee-support-info-wrapper {
+  .ele-support-info-wrapper {
     margin-bottom: 24px;
   }
 
-  .ee-video-tutorial-wrapper {
-    padding: 24px;
-  }
 
   /****************** Elements CSS ********************/
-  .ee-elements-header-switcher-controls {
+  .ele-elements-header-switcher-controls {
     flex-direction: column;
     gap: 30px;
   }
 
   /************** System Info Responsive ***************/
-  .ee-elements-dashboard {
+  .ele-elements-dashboard {
     padding: 20px;
   }
 
-  .ee-system-info-list th {
+  .ele-system-info-list th {
     padding: 10px 10px;
   }
 
-  .ee-system-info-list td {
+  .ele-system-info-list td {
     padding: 10px;
   }
 }
