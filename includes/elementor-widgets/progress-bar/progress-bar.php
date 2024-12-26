@@ -36,7 +36,7 @@ class Progress_Bar extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __( 'Progress Bar', 'ele-elementor-addons' );
+		return __( 'Progress Bar', 'easy-elements' );
 	}
 
 	/**
@@ -111,32 +111,32 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_general',
 			array(
-				'label' => __( 'General', 'ele-elementor-addons' ),
+				'label' => __( 'General', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'layout',
 			array(
-				'label'   => esc_html__( 'Layout', 'ele-elementor-addons' ),
+				'label'   => esc_html__( 'Layout', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '1',
 				'options' => array(
-					'1'  => esc_html__( 'Style 1', 'ele-elementor-addons' ),
-					'2'  => esc_html__( 'Style 2', 'ele-elementor-addons' ),
-					'3'  => esc_html__( 'Style 3', 'ele-elementor-addons' ),
-					'4'  => esc_html__( 'Style 4', 'ele-elementor-addons' ),
-					'5'  => esc_html__( 'Style 5', 'ele-elementor-addons' ),
-					'6'  => esc_html__( 'Style 6', 'ele-elementor-addons' ),
-					'7'  => esc_html__( 'Style 7', 'ele-elementor-addons' ),
-					'8'  => esc_html__( 'Style 8', 'ele-elementor-addons' ),
-					'9'  => esc_html__( 'Style 9', 'ele-elementor-addons' ),
-					'10' => esc_html__( 'Style 10', 'ele-elementor-addons' ),
-					'11' => esc_html__( 'Style 11', 'ele-elementor-addons' ),
-					'12' => esc_html__( 'Style 12', 'ele-elementor-addons' ),
-					'13' => esc_html__( 'Style 13', 'ele-elementor-addons' ),
-					'14' => esc_html__( 'Style 14', 'ele-elementor-addons' ),
-					'15' => esc_html__( 'Style 15', 'ele-elementor-addons' ),
+					'1'  => esc_html__( 'Style 1', 'easy-elements' ),
+					'2'  => esc_html__( 'Style 2', 'easy-elements' ),
+					'3'  => esc_html__( 'Style 3', 'easy-elements' ),
+					'4'  => esc_html__( 'Style 4', 'easy-elements' ),
+					'5'  => esc_html__( 'Style 5', 'easy-elements' ),
+					'6'  => esc_html__( 'Style 6', 'easy-elements' ),
+					'7'  => esc_html__( 'Style 7', 'easy-elements' ),
+					'8'  => esc_html__( 'Style 8', 'easy-elements' ),
+					'9'  => esc_html__( 'Style 9', 'easy-elements' ),
+					'10' => esc_html__( 'Style 10', 'easy-elements' ),
+					'11' => esc_html__( 'Style 11', 'easy-elements' ),
+					'12' => esc_html__( 'Style 12', 'easy-elements' ),
+					'13' => esc_html__( 'Style 13', 'easy-elements' ),
+					'14' => esc_html__( 'Style 14', 'easy-elements' ),
+					'15' => esc_html__( 'Style 15', 'easy-elements' ),
 				),
 			)
 		);
@@ -144,10 +144,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title',
 			array(
-				'label'       => esc_html__( 'Title', 'ele-elementor-addons' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'WordPress', 'ele-elementor-addons' ),
+				'default'     => __( 'WordPress', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -157,7 +157,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'value',
 			array(
-				'label'              => esc_html__( 'Percentage', 'ele-elementor-addons' ),
+				'label'              => esc_html__( 'Percentage', 'easy-elements' ),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 100,
@@ -173,10 +173,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'show_count',
 			array(
-				'label'              => __( 'Show Count', 'ele-elementor-addons' ),
+				'label'              => __( 'Show Count', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => __( 'Show', 'ele-elementor-addons' ),
-				'label_off'          => __( 'Hide', 'ele-elementor-addons' ),
+				'label_on'           => __( 'Show', 'easy-elements' ),
+				'label_off'          => __( 'Hide', 'easy-elements' ),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -186,7 +186,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'duration',
 			array(
-				'label'              => esc_html__( 'Animation Duration', 'ele-elementor-addons' ),
+				'label'              => esc_html__( 'Animation Duration', 'easy-elements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px' ),
 				'frontend_available' => true,
@@ -208,19 +208,19 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'align',
 			array(
-				'label'     => __( 'Alignment', 'ele-elementor-addons' ),
+				'label'     => __( 'Alignment', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'ele-elementor-addons' ),
+						'title' => __( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'ele-elementor-addons' ),
+						'title' => __( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'ele-elementor-addons' ),
+						'title' => __( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -239,7 +239,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_title',
 			array(
-				'label' => __( 'Title', 'ele-elementor-addons' ),
+				'label' => __( 'Title', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -248,7 +248,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'ele-elementor-addons' ),
+				'label'    => __( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-progress-title',
 			)
 		);
@@ -256,7 +256,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			array(
-				'label'     => __( 'Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-title' => 'color: {{VALUE}}',
@@ -267,7 +267,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			array(
-				'label'      => __( 'Margin', 'ele-elementor-addons' ),
+				'label'      => __( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -282,7 +282,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_counter',
 			array(
-				'label' => __( 'Counter', 'ele-elementor-addons' ),
+				'label' => __( 'Counter', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -291,7 +291,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'counter_typography',
-				'label'    => __( 'Typography', 'ele-elementor-addons' ),
+				'label'    => __( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-progress-counter',
 			)
 		);
@@ -299,7 +299,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_color',
 			array(
-				'label'     => __( 'Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-counter' => 'color: {{VALUE}}',
@@ -310,7 +310,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_secondary_color',
 			array(
-				'label'     => __( 'Decrement Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Decrement Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-bar-layout-6 .ele-progress-count-less-wrapper' => 'color: {{VALUE}}',
@@ -324,7 +324,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_bg_color',
 			array(
-				'label'     => __( 'Background Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-bar-layout-3 .ele-progress-counter,{{WRAPPER}} .ele-progress-bar-layout-7 .ele-progress-counter,
@@ -342,7 +342,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_shape_color',
 			array(
-				'label'     => __( 'Shape Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Shape Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-control' => 'background-color: {{VALUE}}',
@@ -357,7 +357,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_bg_size',
 			array(
-				'label'      => __( 'Background Size', 'ele-elementor-addons' ),
+				'label'      => __( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -379,7 +379,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'counter_border_color',
 			array(
-				'label'     => __( 'Border Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-bar-layout-7 .ele-progress-counter::before,{{WRAPPER}} .ele-progress-bar-layout-11 .ele-progress-track::after,{{WRAPPER}} .ele-progress-bar-layout-12 .ele-progress-counter' => 'border-color: {{VALUE}}',
@@ -393,7 +393,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'counter_margin',
 			array(
-				'label'      => __( 'Margin', 'ele-elementor-addons' ),
+				'label'      => __( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -407,7 +407,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_bar',
 			array(
-				'label' => __( 'Track', 'ele-elementor-addons' ),
+				'label' => __( 'Track', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -415,7 +415,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'bar_height',
 			array(
-				'label'      => __( 'Height', 'ele-elementor-addons' ),
+				'label'      => __( 'Height', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -435,7 +435,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'bar_bg',
-				'label'    => __( 'Background', 'ele-elementor-addons' ),
+				'label'    => __( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-progress-bar,{{WRAPPER}}  .ele-progress-bar-layout-11 .ele-progress-track::after',
@@ -446,7 +446,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'bar_shadow',
-				'label'    => __( 'Bar Shadow', 'ele-elementor-addons' ),
+				'label'    => __( 'Bar Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-progress-bar',
 			)
 		);
@@ -455,7 +455,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'bar_border',
-				'label'    => __( 'Border', 'ele-elementor-addons' ),
+				'label'    => __( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-progress-bar',
 			)
 		);
@@ -463,7 +463,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'bar_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'ele-elementor-addons' ),
+				'label'      => __( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -475,7 +475,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'bar_padding',
 			array(
-				'label'      => __( 'Padding', 'ele-elementor-addons' ),
+				'label'      => __( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -487,7 +487,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'bar_margin',
 			array(
-				'label'      => __( 'Margin', 'ele-elementor-addons' ),
+				'label'      => __( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -501,7 +501,7 @@ class Progress_Bar extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_track',
 			array(
-				'label' => __( 'Bar', 'ele-elementor-addons' ),
+				'label' => __( 'Bar', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -509,10 +509,10 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'track_striped',
 			array(
-				'label'        => __( 'Striped', 'ele-elementor-addons' ),
+				'label'        => __( 'Striped', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'ele-elementor-addons' ),
-				'label_off'    => __( 'Hide', 'ele-elementor-addons' ),
+				'label_on'     => __( 'Show', 'easy-elements' ),
+				'label_off'    => __( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'selectors'    => array(
 					'{{WRAPPER}} .ele-progress-track' => 'background-size: 1rem 1rem; background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);',
@@ -527,7 +527,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'track_bg',
-				'label'     => __( 'Background', 'ele-elementor-addons' ),
+				'label'     => __( 'Background', 'easy-elements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}} .ele-progress-track',
@@ -541,7 +541,7 @@ class Progress_Bar extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'      => 'track_border',
-				'label'     => __( 'Border', 'ele-elementor-addons' ),
+				'label'     => __( 'Border', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-progress-track',
 				'condition' => array(
 					'layout!' => array( '9', '10' ),
@@ -552,7 +552,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_control(
 			'track_striped_color',
 			array(
-				'label'     => __( 'Striped Color', 'ele-elementor-addons' ),
+				'label'     => __( 'Striped Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-progress-track' => 'background: repeating-linear-gradient(to right,{{VALUE}},{{VALUE}} 10px,transparent 10px,transparent 12px)',
@@ -566,7 +566,7 @@ class Progress_Bar extends Widget_Base {
 		$this->add_responsive_control(
 			'track_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'ele-elementor-addons' ),
+				'label'      => __( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
