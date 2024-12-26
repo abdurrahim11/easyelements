@@ -108,7 +108,7 @@
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
                     <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox">
                         <span class="ele-elements-slider round"></span>
                     </label>
                 </div>

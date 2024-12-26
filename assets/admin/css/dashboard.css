@@ -293,12 +293,28 @@ img.ele-promo-banner-mobile {
 
 .ele-elements-controls {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
 }
 
 .ele-elements-controls h3 {
   margin: 0;
+}
+.ele-elements-controls h3::after {
+  position: absolute;
+  top: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 100%;
+  background: #707070;
+  width: 13px;
+  height: 13px;
+  content: "?";
+  color: #fff;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
 }
 
 .ele-elements-control {
