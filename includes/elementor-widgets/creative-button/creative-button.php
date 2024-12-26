@@ -32,7 +32,7 @@ class Creative_Button extends Widget_Base {
     }
 
     public function get_keywords() {
-        return array( 'button', 'btn', 'advance', 'link', 'creative', 'creative-utton'  );
+        return array( 'button', 'btn', 'advance', 'link', 'creative', 'creative-button', 'advanced button' );
     }
 
     protected function register_controls()
@@ -529,18 +529,13 @@ class Creative_Button extends Widget_Base {
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
                     '{{WRAPPER}} .ele-creative-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--iconica > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--winona > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--winona::after' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--rayen > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--rayen::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--nina' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--nina::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-
                     '{{WRAPPER}} .ele-creative-btn.ele-stl--hermosa.ele-eft--bloom span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'separator'  => 'before',
@@ -815,7 +810,5 @@ class Creative_Button extends Widget_Base {
         $this->add_render_attribute( 'wrap', 'data-magnetic', $settings['magnetic_enable'] ? $settings['magnetic_enable'] : 'no' );
         $this->{'render_' . $settings['btn_style'] . '_markup'}( $settings );
     }
-
-
 
 }
