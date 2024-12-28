@@ -5,7 +5,7 @@
                 <img src="<?php echo ELE_ADMIN_ASSETS_UR .'images/logo.gif'; ?>" alt="Easy Elements" class="ele-modal-header-logo">
                 <span>Mega Menu</span>
             </div>
-            <span class="ele-modal-close">&times;</span>
+            <span class="ele-modal-close" data-dismiss="modal">&times;</span>
         </div>
         <div class="ele-modal-body">
             <div class="ele-table-option-wrapper">
