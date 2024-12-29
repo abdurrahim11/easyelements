@@ -66,7 +66,7 @@ class Library_Source extends Source_Local {
             foreach ($template_result['dependencies'] as $dependency) {
                 $plugin_slug = $dependency['slug'];
                 if (!$this->is_plugin_installed( dirname( $plugin_slug ) )) {
-                    $install_result = $this->install_plugin_by_slug($plugin_slug);
+                    $install_result = $this->install_plugin_by_slug( dirname( $plugin_slug ) );
                     if (is_wp_error($install_result)) {
                         throw new \Exception(__('Error installing plugin', 'easy-elements'));
                     }
