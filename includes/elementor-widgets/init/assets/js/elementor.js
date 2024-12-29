@@ -11,15 +11,17 @@
                 loading_class = "easyelements-submenu-indicator eicon-loading eicon-animation-spin";
 
             if (ajax_loader.length && !target.hasClass("ele-ajax-loading")) {
-
                 $.ajax({
                     url: window.easyelements.resturl + "megamenu/megamenu_content",
                     type: "get",
-                    data: { id: ajax_loader.data("id") },
+                    data: {id: ajax_loader.data("id")},
                     beforeSend: function () {
                         target.addClass("ele-ajax-loading");
                         submenu_indicator.removeClass(original_class).addClass(loading_class);
-                        $(document).width() <= Number(responsive_breakpoint) ? submenu_indicator.css({ border: "none" }) : submenu_indicator.css({ "padding-right": 0, "margin-right": "5px" });
+                        $(document).width() <= Number(responsive_breakpoint) ? submenu_indicator.css({border: "none"}) : submenu_indicator.css({
+                            "padding-right": 0,
+                            "margin-right": "5px"
+                        });
                     },
                     success: function (response) {
                         target.removeClass("ele-ajax-loading");
@@ -58,7 +60,7 @@
 
                 $(window)
                     .on("resize", function () {
-                        element.find(".easyelements-megamenu-panel").css({ top: menu_container_height });
+                        element.find(".easyelements-megamenu-panel").css({top: menu_container_height});
                     })
                     .trigger("resize");
 
@@ -74,7 +76,7 @@
                         parent_element.find(".easyelements-megamenu-panel").css("max-width", $(window).width());
 
                         $(window).on("resize", function () {
-                            parent_element.find(".easyelements-megamenu-panel").css({ left: left_position + "px" });
+                            parent_element.find(".easyelements-megamenu-panel").css({left: left_position + "px"});
                         }).trigger("resize");
                     }
 
@@ -95,21 +97,21 @@
                         if (typeof vertical_menu === "string") {
                             if (/^[0-9]/.test(vertical_menu)) {
                                 $(window).on("resize", function () {
-                                    mega_menu_panel.css({ width: vertical_menu });
+                                    mega_menu_panel.css({width: vertical_menu});
                                     $(document).width() > Number(responsive_breakpoint) || mega_menu_panel.removeAttr("style");
                                 }).trigger("resize");
                             } else {
                                 $(window).on("resize", function () {
-                                    mega_menu_panel.css({ width: vertical_menu + "px" });
+                                    mega_menu_panel.css({width: vertical_menu + "px"});
                                     $(document).width() > Number(responsive_breakpoint) || mega_menu_panel.removeAttr("style");
                                 }).trigger("resize");
                             }
                         } else {
-                            mega_menu_panel.css({ width: vertical_menu + "px" });
+                            mega_menu_panel.css({width: vertical_menu + "px"});
                         }
                     } else {
                         $(window).on("resize", function () {
-                            mega_menu_panel.css({ width: vertical_menu + "px" });
+                            mega_menu_panel.css({width: vertical_menu + "px"});
                             $(document).width() > Number(responsive_breakpoint) || mega_menu_panel.removeAttr("style");
                         }).trigger("resize");
                     }
@@ -166,7 +168,7 @@
                 function () {
                     if ("yes" === settings.show_count) {
                         progressCount.animate(
-                            { Counter: settings.value },
+                            {Counter: settings.value},
                             {
                                 duration: 1000 * settings.duration.size || 3000,
                                 easing: "swing",
@@ -177,12 +179,11 @@
                             }
                         );
                     }
-                    progressTrack.animate({ width: settings.value + "%" }, 1000 * settings.duration.size || 3000);
+                    progressTrack.animate({width: settings.value + "%"}, 1000 * settings.duration.size || 3000);
                 },
-                { offset: "100%" }
+                {offset: "100%"}
             );
         },
-
 
 
         hot_spot: function (element) {
@@ -194,8 +195,6 @@
                 e(this).find(".ele-hotspot-tooltip-text").toggleClass("active");
             });
         },
-
-
 
 
         horizontal_timeline: function (element) {
@@ -211,21 +210,21 @@
                     equalHeightDivs.each(function () {
                         maxHeight = Math.max(maxHeight, $(this).outerHeight());
                     });
-                    equalHeightDivs.parent().css({ minHeight: maxHeight + "px" });
+                    equalHeightDivs.parent().css({minHeight: maxHeight + "px"});
                 } else {
                     let contentDivs = element.find(".ele-horizontal-timeline-content > div"),
                         contentMaxHeight = 0;
                     contentDivs.each(function () {
                         contentMaxHeight = Math.max(contentMaxHeight, $(this).outerHeight());
                     });
-                    contentDivs.parent().css({ minHeight: contentMaxHeight + "px" });
+                    contentDivs.parent().css({minHeight: contentMaxHeight + "px"});
 
                     let dateDivs = element.find(".ele-horizontal-timeline-date > div"),
                         dateMaxHeight = 0;
                     dateDivs.each(function () {
                         dateMaxHeight = Math.max(dateMaxHeight, $(this).outerHeight());
                     });
-                    dateDivs.parent().css({ minHeight: dateMaxHeight + "px" });
+                    dateDivs.parent().css({minHeight: dateMaxHeight + "px"});
                 }
             }
 
@@ -248,7 +247,11 @@
                 autoplayTimeout: "yes" === settings.autoplay ? 1000 * settings.autoplay_timeout.size : 3000,
                 autoplayHoverPause: true,
                 smartSpeed: 500,
-                responsive: { 0: { items: settings.item_per_row_mobile || 1 }, 768: { items: settings.item_per_row_tablet || 1 }, 1024: { items: settings.item_per_row || 2 } },
+                responsive: {
+                    0: {items: settings.item_per_row_mobile || 1},
+                    768: {items: settings.item_per_row_tablet || 1},
+                    1024: {items: settings.item_per_row || 2}
+                },
             });
 
             setTimeout(function () {
@@ -261,14 +264,6 @@
                 }, 500);
             });
         },
-
-
-
-
-
-
-
-
 
 
         team: function (teamElement) {
@@ -326,12 +321,6 @@
         },
 
 
-
-
-
-
-
-
         post_grid: function (element) {
             let elementSettings = easyelements.getElementSettings(element),
                 gridMain = element.find(".ele-post-grid-main");
@@ -341,9 +330,30 @@
                     gridAdjustment: "responsive",
                     lightboxGallery: false,
                     mediaQueries: [
-                        { width: elementorFrontend.config.breakpoints.lg, cols: elementSettings.desktopColumns || 3, options: { gapHorizontal: elementSettings.desktopGap || 0, gapVertical: elementSettings.desktopGap || 0 } },
-                        { width: elementorFrontend.config.breakpoints.md, cols: elementSettings.tabletColumns || 2, options: { gapHorizontal: elementSettings.tabletGap || 0, gapVertical: elementSettings.tabletGap || 0 } },
-                        { width: 0, cols: elementSettings.mobileColumns || 1, options: { gapHorizontal: elementSettings.mobileGap || 0, gapVertical: elementSettings.mobileGap || 0 } },
+                        {
+                            width: elementorFrontend.config.breakpoints.lg,
+                            cols: elementSettings.desktopColumns || 3,
+                            options: {
+                                gapHorizontal: elementSettings.desktopGap || 0,
+                                gapVertical: elementSettings.desktopGap || 0
+                            }
+                        },
+                        {
+                            width: elementorFrontend.config.breakpoints.md,
+                            cols: elementSettings.tabletColumns || 2,
+                            options: {
+                                gapHorizontal: elementSettings.tabletGap || 0,
+                                gapVertical: elementSettings.tabletGap || 0
+                            }
+                        },
+                        {
+                            width: 0,
+                            cols: elementSettings.mobileColumns || 1,
+                            options: {
+                                gapHorizontal: elementSettings.mobileGap || 0,
+                                gapVertical: elementSettings.mobileGap || 0
+                            }
+                        },
                     ],
                     displayType: "default",
                     displayTypeSpeed: 0,
@@ -378,7 +388,6 @@
             return settings;
         },
         model_popup: function ($scope, $) {
-
             var modalWrapper = $scope.find('.ele-modal').eq(0),
                 modalOverlayWrapper = $scope.find('.ele-modal-overlay'),
                 modalItem = $scope.find('.ele-modal-item'),
@@ -443,8 +452,6 @@
                 }
             });
         }
-        
-
     };
 
     // Initializing easyelements

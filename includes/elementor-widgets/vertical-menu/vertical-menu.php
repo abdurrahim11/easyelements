@@ -2,8 +2,6 @@
 
 namespace EasyElements\Elementor_Widgets\Vertical_Menu;
 
-
-
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
@@ -34,41 +32,41 @@ class Vertical_Menu extends Widget_Base {
         return ['ele', 'menu', 'nav-menu', 'nav', 'navigation', 'navigation-menu', 'mega', 'megamenu', 'mega-menu', 'header-menu', 'footer-menu', 'sidebar-menu', 'primary-menu', 'secondary-menu', 'mobile-menu', 'dropdown-menu', 'horizontal-menu', 'vertical-menu', 'responsive-menu', 'custom-menu', 'menu-bar', 'site-menu', 'main-menu', 'top-menu', 'sub-menu', 'side-menu'];
     }
 
-    public function get_help_url() {
-        return 'https://wpmet.com/doc/vertical-mega-menu/';
-    }
+    public function get_navigation_menus() {
+        $menus_list = array();
+        $navigation_menus = wp_get_nav_menus();
 
-    public function get_menus(){
-        $list = [];
-        $menus = wp_get_nav_menus();
-        foreach($menus as $menu){
-            $list[$menu->slug] = $menu->name;
+        foreach ( $navigation_menus as $menu ) {
+            $menus_list[ $menu->slug ] = $menu->name;
         }
 
-        return $list;
+        return $menus_list;
     }
 
     protected function register_controls() {
 
+        // Start Vertical Menu Content Section
         $this->start_controls_section(
-            'easyelements_vertical_menu_content_tab',
+            'ele_section_vertical_menu_content',
             [
                 'label' => esc_html__('Vertical Menu', 'easy-elements'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
+        // Add Control for Selecting Navigation Menu
         $this->add_control(
-            'easyelements_nav_menu',
-            [
+            'ele_control_nav_menu',
+            args: [
                 'label'     =>  esc_html__( 'Select Menu', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
-                'options'   => $this->get_menus(),
+                'options'   => $this->get_navigation_menus(),
             ]
         );
 
+        // Add Control for Badge Position
         $this->add_control(
-            'easyelements_vertical_menu_badge_position',
+            'ele_control_vertical_menu_badge_position',
             [
                 'label' => esc_html__( 'Badge Position', 'easy-elements' ),
                 'type' => Controls_Manager::SWITCHER,
@@ -78,15 +76,17 @@ class Vertical_Menu extends Widget_Base {
             ]
         );
 
+        // Add Divider
         $this->add_control(
             'divider_1',
             ['type' => Controls_Manager::DIVIDER]
         );
 
+        // Add Control for Toggle Visibility
         $this->add_control(
-            'easyelements_vertical_menu_show_toggle',
+            'ele_vertical_menu_toggle_visibility',
             [
-                'label' => esc_html__( 'Toggle', 'easy-elements' ),
+                'label' => esc_html__( 'Toggle Visibility', 'easy-elements' ),
                 'type' => Controls_Manager::SWITCHER,
                 'label_on' => esc_html__( 'Show', 'easy-elements' ),
                 'label_off' => esc_html__( 'Hide', 'easy-elements' ),
@@ -94,6 +94,7 @@ class Vertical_Menu extends Widget_Base {
             ]
         );
 
+        // Add Control for Showing Toggle on All Pages
         $this->add_control(
             'easyelements_vertical_menu_show_active_or_not',
             [
@@ -103,14 +104,14 @@ class Vertical_Menu extends Widget_Base {
                 'label_off' => esc_html__( 'Hide', 'easy-elements' ),
                 'return_value' => 'yes',
                 'condition' => [
-                    'easyelements_vertical_menu_show_toggle' => 'yes'
+                    'ele_vertical_menu_toggle_visibility' => 'yes'
                 ]
             ]
         );
 
-
+        // Add Control for Showing Toggle on Home Page Only
         $this->add_control(
-            'easyelements_vertical_menu_is_toggle_for_frontpage',
+            'ele_control_vertical_menu_show_toggle_on_home',
             [
                 'label' => esc_html__( 'Show Toggle only on home', 'easy-elements' ),
                 'type'  => Controls_Manager::SWITCHER,
@@ -124,8 +125,9 @@ class Vertical_Menu extends Widget_Base {
             ]
         );
 
+        // Add Control for Enabling Hover
         $this->add_control(
-            'toggler_hover',
+            'control_enable_toggle_hover',
             [
                 'label'     => esc_html__( 'Enable Hover', 'easy-elements' ),
                 'type'      => Controls_Manager::SWITCHER,
@@ -133,25 +135,27 @@ class Vertical_Menu extends Widget_Base {
                     '{{WRAPPER}} .ele-vertical-main-menu-on-click:hover > .ele-vertical-menu-container' => 'opacity: 1; visibility: visible;',
                 ],
                 'condition' => [
-                    'easyelements_vertical_menu_show_toggle' => 'yes',
+                    'ele_vertical_menu_toggle_visibility' => 'yes',
                 ],
             ]
         );
 
+        // Add Divider
         $this->add_control(
             'divider_2',
             ['type' => Controls_Manager::DIVIDER]
         );
 
+        // Add Control for Toggle Title
         $this->add_control(
-            'easyelements_vertical_menu_toggle_title',
+            'ele_control_vertical_menu_toggle_title',
             [
                 'label' => esc_html__( 'Title', 'easy-elements' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__( 'All Categories', 'easy-elements' ),
                 'placeholder' => esc_html__( 'Type your title here', 'easy-elements' ),
                 'condition' => [
-                    'easyelements_vertical_menu_show_toggle' => 'yes'
+                    'ele_vertical_menu_toggle_visibility' => 'yes'
                 ],
                 'dynamic' => [
                     'active' => true,
@@ -159,15 +163,17 @@ class Vertical_Menu extends Widget_Base {
             ]
         );
 
+        // Start Controls Tabs for Icon Settings
         $this->start_controls_tabs(
-            'easyelements_vertical_nav_menu_tabs',
+            'ele_vertical_nav_menu_tabs',
             [
                 'condition' => [
-                    'easyelements_vertical_menu_show_toggle' => 'yes'
+                    'ele_vertical_menu_toggle_visibility' => 'yes'
                 ]
             ]
         );
-        // right icon
+
+        // Start Tab
         $this->start_controls_tab(
             'easyelements_vertical_nav_menu_right_icon_tab',
             [
@@ -176,7 +182,7 @@ class Vertical_Menu extends Widget_Base {
         );
 
         $this->add_control(
-            'easyelements_vertical_menu_toggle_title_icon_right',
+            'ele_control_vertical_menu_toggle_title_icon_right',
             [
                 'label' => __( 'Menu Icon Left', 'easy-elements' ),
                 'type' => Controls_Manager::ICONS,
@@ -194,7 +200,7 @@ class Vertical_Menu extends Widget_Base {
         );
 
         $this->add_control(
-            'easyelements_vertical_menu_toggle_title_icon_left',
+            'ele_control_vertical_menu_toggle_title_icon_left',
             [
                 'label' => __( 'Menu Icon Right', 'easy-elements' ),
                 'type' => Controls_Manager::ICONS,
@@ -226,7 +232,7 @@ class Vertical_Menu extends Widget_Base {
                 'label' => __( 'Toggle Button', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
-                    'easyelements_vertical_menu_show_toggle' => 'yes'
+                    'ele_vertical_menu_toggle_visibility' => 'yes'
                 ]
             ]
         );
@@ -298,7 +304,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_tab();
 
-        // Active
         $this->start_controls_tab(
             'easyelements_vertical_menu_toggle_style_active_tab',
             [
@@ -333,7 +338,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_section();
 
-        // Main menu
         $this->start_controls_section(
             'ele_vertical_menu_container_style_tab',
             [
@@ -375,7 +379,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_section();
 
-        // Menu items
         $this->start_controls_section(
             'ele_vertical_menu_items_style_tab',
             [
@@ -387,7 +390,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_tabs(
             'easyelements_vertical_menu_items_style_control_tabs'
         );
-        // Normal
+
         $this->start_controls_tab(
             'easyelements_vertical_menu_items_style_noraml_tab',
             [
@@ -450,7 +453,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_tab();
 
-        // Hover
         $this->start_controls_tab(
             'easyelements_vertical_menu_items_style_hover_tab',
             [
@@ -476,7 +478,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_section();
 
-        // Sub Menu items
         $this->start_controls_section(
             'ele_vertical_sub_menu_items_style_tab',
             [
@@ -488,7 +489,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_tabs(
             'easyelements_vertical_sub_menu_items_style_control_tabs'
         );
-        // Normal
+
         $this->start_controls_tab(
             'easyelements_vertical_sub_menu_items_style_noraml_tab',
             [
@@ -558,7 +559,6 @@ class Vertical_Menu extends Widget_Base {
 
         $this->end_controls_tab();
 
-        // Hover
         $this->start_controls_tab(
             'easyelements_vertical_sub_menu_items_style_hover_tab',
             [
@@ -592,55 +592,59 @@ class Vertical_Menu extends Widget_Base {
         echo '</div>';
     }
 
-    protected function vertical_menu_icon($props, $classname) {
-        if ($props && $props['value'] !== '') {
-            if ($props['library'] !== 'svg') { ?>
-                <i class="<?php echo esc_attr($props['value'] .' '. $classname); ?> vertical-menu-icon"></i>
+    protected function render_vertical_menu_icon($icon_properties, $additional_classes) {
+        if ($icon_properties && $icon_properties['value'] !== '') {
+            if ($icon_properties['library'] !== 'svg') { ?>
+                <i class="<?php echo esc_attr($icon_properties['value'] . ' ' . $additional_classes); ?> vertical-menu-icon"></i>
             <?php } else { ?>
-                <img class="<?php echo esc_attr($classname); ?> vertical-menu-icon" src="<?php echo esc_url($props['value']['url']); ?>" alt="vertical menu icon">
+                <img class="<?php echo esc_attr($additional_classes); ?> vertical-menu-icon" src="<?php echo esc_url($icon_properties['value']['url']); ?>" alt="vertical menu icon">
             <?php }
         }
     }
 
-    protected function render_raw( ) {
-        $settings = $this->get_settings_for_display();
-        extract($settings);
+    protected function render_raw() {
+        // Get settings for display
+        $display_settings = $this->get_settings_for_display();
+        extract($display_settings);
 
+        // Check if a menu is selected
         if ($easyelements_nav_menu !== '') {
-            $active_vertical_menu_toggle = $easyelements_vertical_menu_show_active_or_not == 'yes' ? 'vertical-menu-active' : '';
+            // Determine if the vertical menu should be active
+            $active_vertical_menu_class = $easyelements_vertical_menu_show_active_or_not == 'yes' ? 'vertical-menu-active' : '';
 
-            if( $easyelements_vertical_menu_is_toggle_for_frontpage === 'yes' && is_front_page()  ) {
-                $active_vertical_menu_toggle = 'vertical-menu-active';
+            // Check if the vertical menu should be active on the homepage
+            if ($ele_control_vertical_menu_show_toggle_on_home === 'yes' && is_front_page()) {
+                $active_vertical_menu_class = 'vertical-menu-active';
             }
-
             ?>
             <div
-                class="ele-vertical-main-menu-wraper <?php echo esc_attr($easyelements_vertical_menu_show_toggle == 'yes' ? 'ele-vertical-main-menu-on-click' : '') ?> <?php echo esc_attr( $active_vertical_menu_toggle ) ?> <?php echo esc_attr($easyelements_vertical_menu_badge_position == 'yes' ? 'badge-position-right' : 'badge-position-left') ?>"
+                    class="ele-vertical-main-menu-wrapper <?php echo esc_attr($ele_vertical_menu_toggle_visibility == 'yes' ? 'ele-vertical-main-menu-on-click' : '') ?> <?php echo esc_attr($active_vertical_menu_class) ?> <?php echo esc_attr($ele_control_vertical_menu_badge_position == 'yes' ? 'badge-position-right' : 'badge-position-left') ?>"
             >
-                <?php if ($easyelements_vertical_menu_show_toggle == 'yes') { ?>
-                    <a href="#" class="ele-vertical-menu-tigger">
-                        <?php $this->vertical_menu_icon($easyelements_vertical_menu_toggle_title_icon_right, 'vertical-menu-right-icon'); ?>
-                        <?php if ($easyelements_vertical_menu_toggle_title !== '') { ?>
-                            <span class="ele-vertical-menu-tigger-title"><?php echo esc_html($easyelements_vertical_menu_toggle_title);?></span>
-                        <?php }; ?>
-                        <?php $this->vertical_menu_icon($easyelements_vertical_menu_toggle_title_icon_left, 'vertical-menu-left-icon'); ?>
+                <?php if ($ele_vertical_menu_toggle_visibility == 'yes') { ?>
+                    <a href="#" class="ele-vertical-menu-trigger">
+                        <?php $this->render_vertical_menu_icon($ele_control_vertical_menu_toggle_title_icon_right, 'vertical-menu-right-icon'); ?>
+                        <?php if ($ele_control_vertical_menu_toggle_title !== '') { ?>
+                            <span class="ele-vertical-menu-trigger-title"><?php echo esc_html($ele_control_vertical_menu_toggle_title); ?></span>
+                        <?php } ?>
+                        <?php $this->render_vertical_menu_icon($ele_control_vertical_menu_toggle_title_icon_left, 'vertical-menu-left-icon'); ?>
                     </a>
-                <?php }; ?>
+                <?php } ?>
                 <?php
-                if($settings['easyelements_nav_menu'] != '' && wp_get_nav_menu_items($settings['easyelements_nav_menu']) !== false && count(wp_get_nav_menu_items($settings['easyelements_nav_menu'])) > 0){
-                    $args = [
+                // Check if the selected menu exists and has items
+                if ($display_settings['ele_control_nav_menu'] != '' && wp_get_nav_menu_items($display_settings['ele_control_nav_menu']) !== false && count(wp_get_nav_menu_items($display_settings['ele_control_nav_menu'])) > 0) {
+                    $menu_args = [
                         'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                         'container'       => 'div',
                         'container_class' => 'ele-vertical-menu-container',
-                        'menu'         	  => $settings['easyelements_nav_menu'],
-                        'menu_class'      => 'ele-vertical-navbar-nav submenu-click-on-' . $settings['submenu_click_area'],
+                        'menu'            => $display_settings['ele_control_nav_menu'],
+                        'menu_class'      => 'ele-vertical-navbar-nav submenu-click-on-' . $display_settings['submenu_click_area'],
                         'depth'           => 4,
                         'echo'            => true,
                         'fallback_cb'     => 'wp_page_menu',
                         'walker'          => (class_exists('\EasyElements\Modules\Mega_Menu\Nav_Menu_Walker') ? new \EasyElements\Modules\Mega_Menu\Nav_Menu_Walker() : '' )
                     ];
 
-                    wp_nav_menu($args);
+                    wp_nav_menu($menu_args);
                 }
                 ?>
             </div>

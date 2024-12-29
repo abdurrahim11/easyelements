@@ -64,7 +64,7 @@ class Navigation_Menu extends Widget_Base {
         );
 
         $this->add_control(
-            'easyelements_nav_menu',
+            'ele_control_nav_menu',
             [
                 'label'     => esc_html__( 'Select menu', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
@@ -1543,7 +1543,7 @@ class Navigation_Menu extends Widget_Base {
         $settings = $this->get_settings_for_display();
 
         // Return if menu not selected
-        if(empty($settings['easyelements_nav_menu'])) {
+        if(empty($settings['ele_control_nav_menu'])) {
             return;
         }
 
@@ -1575,7 +1575,7 @@ class Navigation_Menu extends Widget_Base {
     protected function render_raw( ) {
         $settings = $this->get_settings_for_display();
 
-        if($settings['easyelements_nav_menu'] != '' && wp_get_nav_menu_items($settings['easyelements_nav_menu']) !== false && count(wp_get_nav_menu_items($settings['easyelements_nav_menu'])) > 0){
+        if($settings['ele_control_nav_menu'] != '' && wp_get_nav_menu_items($settings['ele_control_nav_menu']) !== false && count(wp_get_nav_menu_items($settings['ele_control_nav_menu'])) > 0){
             /**
              * Hamburger Toggler Button
              */
@@ -1635,9 +1635,9 @@ class Navigation_Menu extends Widget_Base {
             $args = [
                 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' . $markup,
                 'container'       => 'div',
-                'container_id'    => 'ele-megamenu-' . $settings['easyelements_nav_menu'],
+                'container_id'    => 'ele-megamenu-' . $settings['ele_control_nav_menu'],
                 'container_class' => join(' ', $container_classes),
-                'menu'         	  => $settings['easyelements_nav_menu'],
+                'menu'         	  => $settings['ele_control_nav_menu'],
                 'menu_class'      => 'easyelements-navbar-nav ' . $settings['easyelements_main_menu_position'] .' submenu-click-on-'. $settings['submenu_click_area'],
                 'depth'           => 4,
                 'echo'            => true,
