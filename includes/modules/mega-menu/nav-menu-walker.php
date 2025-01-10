@@ -1,21 +1,19 @@
 <?php
-
-
 namespace EasyElements\Modules\Mega_Menu;
 
 use EasyElements\Modules\Mega_Menu\Init;
 
 class Nav_Menu_Walker extends \Walker_Nav_Menu {
 
-    public $menu_Settings;
 
-    // custom methods
+    // Retrieve the meta data for a menu item
     public function get_item_meta( $menu_item_id ) {
         $meta_key = Init::$menuitem_settings_key;
-        $data     = get_post_meta( $menu_item_id, $meta_key, true );
-        $data     = (array) json_decode( $data );
+        $menu_item_meta_data = get_post_meta( $menu_item_id, $meta_key, true );
+        $menu_item_meta_data = (array) json_decode( $menu_item_meta_data );
 
-        $default = array(
+        // Set default settings for the menu item
+        $default_menu_item_settings = array(
             'menu_id'                         => null,
             'menu_has_child'                  => '',
             'menu_enable'                     => 0,
@@ -30,291 +28,192 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu {
             'megamenu_width_type'             => 'default_width',
             'megamenu_ajax_load'              => 'no',
         );
-        return array_merge( $default, $data );
+        return array_merge( $default_menu_item_settings, $menu_item_meta_data );
     }
 
+    // Check if a menu is a megamenu
     public function is_megamenu( $menu_slug ) {
-        $menu_obj = wp_get_nav_menu_object($menu_slug);
-        $menu_slug = ( ( ( gettype( $menu_obj ) == 'object' ) && ( isset( $menu_obj->slug ) ) ) ? $menu_obj->slug : $menu_slug );
+        $menu_object = wp_get_nav_menu_object($menu_slug);
+        $menu_slug = ( ( ( gettype( $menu_object ) == 'object' ) && ( isset( $menu_object->slug ) ) ) ? $menu_object->slug : $menu_slug );
 
         $cache_key = 'easyelements_megamenu_data_' . $menu_slug;
-        $cached    = wp_cache_get( $cache_key );
-        if ( false !== $cached ) {
-            return $cached;
+        $cached_data = wp_cache_get( $cache_key );
+        if ( false !== $cached_data ) {
+            return $cached_data;
         }
 
-        $return = 0;
+        $is_megamenu_enabled = 0;
 
         $active_modules_list = \EasyElements\Core\Modules_List::get_active_modules_list();
-        $settings = ele_get_option( Init::$megamenu_settings_key, array() );
-        $term     = get_term_by( 'slug', $menu_slug, 'nav_menu' );
+        $megamenu_settings = ele_get_option( Init::$megamenu_settings_key, array() );
+        $menu_term = get_term_by( 'slug', $menu_slug, 'nav_menu' );
 
-
+        // Check if the megamenu module is active and enabled for the menu location
         if ( in_array( 'mega-menu', array_keys( $active_modules_list ) )
-            && isset( $term->term_id )
-            && isset( $settings[ 'menu_location_' . $term->term_id ] )
-            && $settings[ 'menu_location_' . $term->term_id ]['ele_is_enabled'] == '1' ) {
-
-            $return = 1;
+            && isset( $menu_term->term_id )
+            && isset( $megamenu_settings[ 'menu_location_' . $menu_term->term_id ] )
+            && $megamenu_settings[ 'menu_location_' . $menu_term->term_id ]['ele_is_enabled'] == '1' ) {
+            $is_megamenu_enabled = 1;
         }
 
-        wp_cache_set( $cache_key, $return );
-        return $return;
+        wp_cache_set( $cache_key, $is_megamenu_enabled );
+        return $is_megamenu_enabled;
     }
 
-    public function is_megamenu_item( $item_meta, $menu ) {
-        if ( $this->is_megamenu( $menu ) == 1 && $item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
+    // Check if a menu item is a megamenu item
+    public function is_megamenu_item( $menu_item_meta, $menu ) {
+        if ( $this->is_megamenu( $menu ) == 1 && $menu_item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
             return true;
         }
         return false;
     }
 
-    /**
-     * Starts the list before the elements are added.
-     *
-     * @see Walker::start_lvl()
-     *
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param int    $depth  Depth of menu item. Used for padding.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     */
+    // Start the level output for the menu
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent  = str_repeat( "\t", $depth );
-        $output .= "\n$indent<ul class=\"easyelements-dropdown easyelements-submenu-panel\">\n";
+        $indentation  = str_repeat( "\t", $depth );
+        $output .= "\n$indentation<ul class=\"easyelements-dropdown easyelements-submenu-panel\">\n";
     }
-    /**
-     * Ends the list of after the elements are added.
-     *
-     * @see Walker::end_lvl()
-     *
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param int    $depth  Depth of menu item. Used for padding.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     */
+
+    // End the level output for the menu
     public function end_lvl( &$output, $depth = 0, $args = array() ) {
-        $indent  = str_repeat( "\t", $depth );
-        $output .= "$indent</ul>\n";
+        $indentation  = str_repeat( "\t", $depth );
+        $output .= "$indentation</ul>\n";
     }
-    /**
-     * Start the element output.
-     *
-     * @see Walker::start_el()
-     *
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param object $item   Menu item data object.
-     * @param int    $depth  Depth of menu item. Used for padding.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     * @param int    $id     Current item ID.
-     */
-    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $indent    = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        $classes   = empty( $item->classes ) ? array() : (array) $item->classes;
-        $classes[] = 'menu-item-' . $item->ID;
 
-        /**
-         * Filter the CSS class(es) applied to a menu item's list item element.
-         *
-         * @since 3.0.0
-         * @since 4.1.0 The `$depth` parameter was added.
-         *
-         * @param array  $classes The CSS classes that are applied to the menu item's `<li>` element.
-         * @param object $item    The current menu item.
-         * @param array  $args    An array of {@see wp_nav_menu()} arguments.
-         * @param int    $depth   Depth of menu item. Used for padding.
-         */
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
-        // New
+    // Start the element output for the menu item
+    public function start_el( &$output, $menu_item, $depth = 0, $args = array(), $id = 0 ) {
+        $indentation    = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+        $menu_classes   = empty( $menu_item->classes ) ? array() : (array) $menu_item->classes;
+        $menu_classes[] = 'menu-item-' . $menu_item->ID;
+
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $menu_classes ), $menu_item, $args, $depth ) );
         $class_names     .= ' nav-item';
-        $item_meta        = $this->get_item_meta( $item->ID );
-        $is_megamenu_item = $this->is_megamenu_item( $item_meta, $args->menu );
+        $menu_item_meta        = $this->get_item_meta( $menu_item->ID );
+        $is_megamenu_item = $this->is_megamenu_item( $menu_item_meta, $args->menu );
 
-        if ( in_array( 'menu-item-has-children', $classes ) || $is_megamenu_item == true ) {
-            $class_names .= ' easyelements-dropdown-has ' . $item_meta['vertical_megamenu_position_type'] . ' easyelements-dropdown-menu-' . $item_meta['megamenu_width_type'] . '';
+        // Add additional classes if the item has children or is a megamenu item
+        if ( in_array( 'menu-item-has-children', $menu_classes ) || $is_megamenu_item == true ) {
+            $class_names .= ' easyelements-dropdown-has ' . $menu_item_meta['vertical_megamenu_position_type'] . ' easyelements-dropdown-menu-' . $menu_item_meta['megamenu_width_type'];
         }
 
         if ( $is_megamenu_item == true ) {
             $class_names .= ' easyelements-megamenu-has';
         }
 
-        if ( $item_meta['mobile_submenu_content_type'] == 'builder_content' ) {
+        if ( $menu_item_meta['mobile_submenu_content_type'] == 'builder_content' ) {
             $class_names .= ' easyelements-mobile-builder-content';
         }
 
-        if ( in_array( 'current-menu-item', $classes ) ) {
+        if ( in_array( 'current-menu-item', $menu_classes ) ) {
             $class_names .= ' active';
         }
 
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-        /**
-         * Filter the ID applied to a menu item's list item element.
-         *
-         * @since 3.0.1
-         * @since 4.1.0 The `$depth` parameter was added.
-         *
-         * @param string $menu_id The ID that is applied to the menu item's `<li>` element.
-         * @param object $item    The current menu item.
-         * @param array  $args    An array of {@see wp_nav_menu()} arguments.
-         * @param int    $depth   Depth of menu item. Used for padding.
-         */
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-        // New
-        $data_attr = '';
-        switch ( $item_meta['megamenu_width_type'] ) {
+        $menu_item_id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth );
+        $menu_item_id = $menu_item_id ? ' id="' . esc_attr( $menu_item_id ) . '"' : '';
+
+        // Set data attributes based on the menu item meta
+        $data_attribute = '';
+        switch ( $menu_item_meta['megamenu_width_type'] ) {
             case 'default_width':
-                $data_attr = esc_attr( ' data-vertical-menu=750px' );
+                $data_attribute = esc_attr( ' data-vertical-menu=750px' );
                 break;
 
             case 'full_width':
-                $data_attr = ' data-vertical-menu=""';
+                $data_attribute = ' data-vertical-menu=""';
                 break;
 
             case 'custom_width':
-                $data_attr = $item_meta['vertical_menu_width'] === '' ? esc_attr( ' data-vertical-menu=750px' ) : esc_attr( ' data-vertical-menu=' . $item_meta['vertical_menu_width'] . '' );
+                $data_attribute = $menu_item_meta['vertical_menu_width'] === '' ? esc_attr( ' data-vertical-menu=750px' ) : esc_attr( ' data-vertical-menu=' . $menu_item_meta['vertical_menu_width'] );
                 break;
 
             default:
-                $data_attr = esc_attr( ' data-vertical-menu=750px' );
+                $data_attribute = esc_attr( ' data-vertical-menu=750px' );
                 break;
         }
-        //
-        $output        .= $indent . '<li' . $id . $class_names . $data_attr . '>';
-        $atts           = array();
-        $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-        $atts['target'] = ! empty( $item->target ) ? $item->target : '';
-        $atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
-        $atts['href']   = ! empty( $item->url ) ? $item->url : '';
 
-        $submenu_indicator = '';
+        $output        .= $indentation . '<li' . $menu_item_id . $class_names . $data_attribute . '>';
+        $anchor_attributes           = array();
+        $anchor_attributes['title']  = ! empty( $menu_item->attr_title ) ? $menu_item->attr_title : '';
+        $anchor_attributes['target'] = ! empty( $menu_item->target ) ? $menu_item->target : '';
+        $anchor_attributes['rel']    = ! empty( $menu_item->xfn ) ? $menu_item->xfn : '';
+        $anchor_attributes['href']   = ! empty( $menu_item->url ) ? $menu_item->url : '';
 
-        // New
+        $submenu_indicator_icon = '';
+
+        // Add classes and indicators for top-level menu items
         if ( $depth === 0 ) {
-            $atts['class'] = 'ele-menu-nav-link';
+            $anchor_attributes['class'] = 'ele-menu-nav-link';
         }
-        if ( $depth === 0 && in_array( 'menu-item-has-children', $classes ) ) {
-            $atts['class'] .= ' ele-menu-dropdown-toggle';
+        if ( $depth === 0 && in_array( 'menu-item-has-children', $menu_classes ) ) {
+            $anchor_attributes['class'] .= ' ele-menu-dropdown-toggle';
         }
-        if ( in_array( 'menu-item-has-children', $classes ) || $is_megamenu_item == true ) {
-            // Use an if statement to conditionally display the submenu indicator icon
+        if ( in_array( 'menu-item-has-children', $menu_classes ) || $is_megamenu_item == true ) {
             if(!empty($args->submenu_indicator_icon)) {
-                $submenu_indicator .= $args->submenu_indicator_icon;
+                $submenu_indicator_icon .= $args->submenu_indicator_icon;
             } else {
-                $submenu_indicator .= '<i aria-hidden="true" class="ele ele-down-arrow easyelements-submenu-indicator"></i>';
+                $submenu_indicator_icon .= '<i aria-hidden="true" class="ele ele-down-arrow easyelements-submenu-indicator"></i>';
             }
         }
         if ( $depth > 0 ) {
-            $manual_class   = array_values( $classes )[0] . ' ' . 'dropdown-item';
-            $atts ['class'] = $manual_class;
+            $manual_class   = array_values( $menu_classes )[0] . ' ' . 'dropdown-item';
+            $anchor_attributes ['class'] = $manual_class;
         }
-        if ( in_array( 'current-menu-item', $item->classes ) ) {
-            $atts['class'] .= ' active';
+        if ( in_array( 'current-menu-item', $menu_item->classes ) ) {
+            $anchor_attributes['class'] .= ' active';
         }
 
-        //
-        /**
-         * Filter the HTML attributes applied to a menu item's anchor element.
-         *
-         * @since 3.6.0
-         * @since 4.1.0 The `$depth` parameter was added.
-         *
-         * @param array $atts {
-         *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
-         *
-         *     @type string $title  Title attribute.
-         *     @type string $target Target attribute.
-         *     @type string $rel    The rel attribute.
-         *     @type string $href   The href attribute.
-         * }
-         * @param object $item  The current menu item.
-         * @param array  $args  An array of {@see wp_nav_menu()} arguments.
-         * @param int    $depth Depth of menu item. Used for padding.
-         */
-        $atts       = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
-        $attributes = '';
-        foreach ( $atts as $attr => $value ) {
+        $anchor_attributes       = apply_filters( 'nav_menu_link_attributes', $anchor_attributes, $menu_item, $args, $depth );
+        $attributes_list = '';
+        foreach ( $anchor_attributes as $attr => $value ) {
             if ( ! empty( $value ) ) {
                 $value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                $attributes .= ' ' . $attr . '="' . $value . '"';
+                $attributes_list .= ' ' . $attr . '="' . $value . '"';
             }
         }
         $item_output = $args->before;
-        // New
+        $item_output .= '<a' . $attributes_list . '>';
 
-        //
-        $item_output .= '<a' . $attributes . '>';
-
+        // Add badge and icon for megamenu items
         if ( $this->is_megamenu( $args->menu ) == 1 ) {
-            // add badge text
-            if ( $item_meta['menu_badge_text'] != '' ) {
-                $badge_style        = 'background:' . $item_meta['menu_badge_background'] . '; color:' . $item_meta['menu_badge_color'];
-                $badge_carret_style = 'border-top-color:' . $item_meta['menu_badge_background'];
-                $item_output       .= '<span style="' . $badge_style . '" class="ele-menu-badge">' . $item_meta['menu_badge_text'] . '<i style="' . $badge_carret_style . '" class="ele-menu-badge-arrow"></i></span>';
+            if ( $menu_item_meta['menu_badge_text'] != '' ) {
+                $badge_style        = 'background:' . $menu_item_meta['menu_badge_background'] . '; color:' . $menu_item_meta['menu_badge_color'];
+                $badge_carret_style = 'border-top-color:' . $menu_item_meta['menu_badge_background'];
+                $item_output       .= '<span style="' . $badge_style . '" class="ele-menu-badge">' . $menu_item_meta['menu_badge_text'] . '<i style="' . $badge_carret_style . '" class="ele-menu-badge-arrow"></i></span>';
             }
 
-            // add menu icon & style
-            if ( $item_meta['menu_icon'] != '' ) {
-                $icon_style   = 'color:' . $item_meta['menu_icon_color'];
-                $item_output .= '<i class="ele-menu-icon ' . $item_meta['menu_icon'] . '" style="' . $icon_style . '" ></i>';
+            if ( $menu_item_meta['menu_icon'] != '' ) {
+                $icon_style   = 'color:' . $menu_item_meta['menu_icon_color'];
+                $item_output .= '<i class="ele-menu-icon ' . $menu_item_meta['menu_icon'] . '" style="' . $icon_style . '" ></i>';
             }
         }
 
-        /** This filter is documented in wp-includes/post-template.php */
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= $submenu_indicator . '</a>';
+        $item_output .= $args->link_before . apply_filters( 'the_title', $menu_item->title, $menu_item->ID ) . $args->link_after;
+        $item_output .= $submenu_indicator_icon . '</a>';
         $item_output .= $args->after;
-        /**
-         * Filter a menu item's starting output.
-         *
-         * The menu item's starting output only includes `$args->before`, the opening `<a>`,
-         * the menu item's title, the closing `</a>`, and `$args->after`. Currently, there is
-         * no filter for modifying the opening and closing `<li>` for a menu item.
-         *
-         * @since 3.0.0
-         *
-         * @param string $item_output The menu item's starting HTML output.
-         * @param object $item        Menu item data object.
-         * @param int    $depth       Depth of menu item. Used for padding.
-         * @param array  $args        An array of {@see wp_nav_menu()} arguments.
-         */
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $menu_item, $depth, $args );
     }
-    /**
-     * Ends the element output, if needed.
-     *
-     * @see Walker::end_el()
-     *
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference. Used to append additional content.
-     * @param object $item   Page data object. Not used.
-     * @param int    $depth  Depth of page. Not Used.
-     * @param array  $args   An array of arguments. @see wp_nav_menu()
-     */
-    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+
+    // End the element output for the menu item
+    public function end_el( &$output, $menu_item, $depth = 0, $args = array() ) {
         if ( $depth === 0 ) {
             if ( $this->is_megamenu( $args->menu ) == 1 ) {
-                $item_meta = $this->get_item_meta( $item->ID );
-                if ( $item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
-                    $builder_post_title = 'dynamic-content-megamenu-menuitem' . $item->ID;
-                    $builder_post       = ele_get_page_by_title( $builder_post_title, 'easyelements_content' );
-                    $output            .= '<div class="easyelements-megamenu-panel">';
+                $menu_item_meta = $this->get_item_meta( $menu_item->ID );
+                if ( $menu_item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
+                    $builder_post_title = 'dynamic-content-megamenu-menuitem' . $menu_item->ID;
+                    $builder_post = ele_get_page_by_title( $builder_post_title, 'easyelements_content' );
+                    $output .= '<div class="easyelements-megamenu-panel">';
                     if ( $builder_post != null ) {
-                        $elementor = \Elementor\Plugin::instance();
-                        $mega_menu_output = $elementor->frontend->get_builder_content_for_display( $builder_post->ID );
+                        $elementor_instance = \Elementor\Plugin::instance();
+                        $megamenu_output = $elementor_instance->frontend->get_builder_content_for_display( $builder_post->ID );
 
-                        // if ajax load is enable and not elementor editor mode
-                        if(!empty($item_meta['megamenu_ajax_load']) && $item_meta['megamenu_ajax_load'] == 'yes') {
-                            $mega_menu_output = sprintf('<div class="megamenu-ajax-load" data-id="%1$s"></div>', $builder_post->ID);
+                        if(!empty($menu_item_meta['megamenu_ajax_load']) && $menu_item_meta['megamenu_ajax_load'] == 'yes') {
+                            $megamenu_output = sprintf('<div class="megamenu-ajax-load" data-id="%1$s"></div>', $builder_post->ID);
                         }
 
-                        $output .= $mega_menu_output;
+                        $output .= $megamenu_output;
                     } else {
                         $output .= esc_html__( 'No content found', 'easy-elements' );
                     }

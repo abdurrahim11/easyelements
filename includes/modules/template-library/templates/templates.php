@@ -6,23 +6,23 @@
             <div class="elementor-loader-box"></div>
             <div class="elementor-loader-box"></div>
         </div>
-        <div class="elementor-loading-title">Loading</div>
+        <div class="elementor-loading-title"><?php esc_html_e( 'Loading', 'easy-elements' ); ?></div>
     </div>
 </script>
 
-<script type="text/html" id="view-easy-elements-template-library-header">
+<script type="text/html" id="easy-elements-view-template-library-header">
     <div id="easy-elements-template-library-header-logo-area">
         <div class="elementor-templates-modal__header__logo">
             <span class="ele-template-library-logo-area">
                 <img src="<?php echo esc_url( ELE_ADMIN_ASSETS_UR );?>images/logo.gif" alt="Easy Elements Logo" class="ele-template-library-logo">
             </span>
-            <span class="elementor-templates-modal__header__logo__title">Easy Elements</span>
+            <span class="elementor-templates-modal__header__logo__title"><?php esc_html_e( 'Easy Elements', 'easy-elements' ); ?></span>
         </div>
     </div>
     <div id="easy-elements-template-library-header-tabs"></div>
     <div id="easy-elements-template-library-header-actions"></div>
     <div id="easy-elements-template-library-header-close-modal" class="elementor-template-library-header-item" title="<?php esc_html_e('Close', 'easy-elements'); ?>">
-        <i class="eicon-close" title="Close"></i>
+        <i class="eicon-close" title="<?php esc_attr_e( 'Close', 'easy-elements' ); ?>"></i>
     </div>
 </script>
 
@@ -31,14 +31,14 @@
     <div class="easy-elements-templates-wrap">
         <div id="elementor-template-library-toolbar">
 
-            <p class="search-result-counter" style="display: none"><span>0</span> item(s) found!</p>
+            <p class="search-result-counter" style="display: none"><span>0</span><?php esc_html_e( 'item(s) found!', 'easy-elements' ); ?></p>
 
             <div id="elementor-template-library-filter-toolbar-remote" class="elementor-template-library-filter-toolbar"></div>
 
             <div id="elementor-template-library-filter-text-wrapper">
 
-                <label for="elementor-template-library-filter-text" class="elementor-screen-only">Search Templates:</label>
-                <input id="elementor-template-library-filter-text" placeholder="Search">
+                <label for="elementor-template-library-filter-text" class="elementor-screen-only"><?php esc_html_e( 'Search Templates:', 'easy-elements' ); ?></label>
+                <input id="elementor-template-library-filter-text" placeholder="<?php esc_attr_e( 'Search', 'easy-elements' ); ?>">
                 <i class="eicon-search"></i>
             </div>
         </div>
@@ -76,7 +76,7 @@
             <img src="{{ thumbnail }}" alt="">
         </div>
         <# if ( newDemoRateDate < date ) { #>
-        <span class="bdt-new-item">NEW</span>
+        <span class="bdt-new-item"><?php esc_html_e( 'NEW', 'easy-elements' ); ?></span>
         <# } #>
     </div>
     <div class="elementor-template-library-template-controls">
@@ -119,7 +119,7 @@
     <iframe></iframe>
 </script>
 
-<script type="text/html"  id="view-easy-elements-template-library-header-back">
+<script type="text/html"  id="easy-elements-view-template-library-header-back">
     <button type="button" class="easy-elements-template-library-back">
         <i class="dashicons dashicons-arrow-left-alt2"></i>
         <?php esc_html_e( 'Back to Library', 'easy-elements' ); ?>

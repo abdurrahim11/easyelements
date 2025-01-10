@@ -10,13 +10,7 @@ use Elementor\Icons_Manager;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
-
 class Info_Box extends Widget_Base {
-
-    public $base;
-
     public function get_name() {
         return 'ele-info-box';
     }
@@ -721,15 +715,15 @@ class Info_Box extends Widget_Base {
                 'type'  => Controls_Manager::CHOOSE,
                 'options' => [
                     'top'    => [
-                        'title' => __( 'Top', 'easy-elements' ),
+                        'title' => esc_html__( 'Top', 'easy-elements' ),
                         'icon'  => 'eicon-v-align-top',
                     ],
                     'middle' => [
-                        'title' => __( 'Middle', 'easy-elements' ),
+                        'title' => esc_html__( 'Middle', 'easy-elements' ),
                         'icon'  => 'eicon-v-align-middle',
                     ],
                     'bottom' => [
-                        'title' => __( 'Bottom', 'easy-elements' ),
+                        'title' => esc_html__( 'Bottom', 'easy-elements' ),
                         'icon'  => 'eicon-v-align-bottom',
                     ],
                 ],
@@ -1712,216 +1706,193 @@ class Info_Box extends Widget_Base {
         echo '</div>';
     }
 
-    protected function render_raw( ) {
+    protected function render_raw() {
         $settings = $this->get_settings_for_display();
 
-        $icon_image_post =  $settings['ele_icon_box_icon_position'];
-        $icon_pos_class = '';
-        $icon_pos_class .= $icon_image_post == 'right'  ? 'ele-icon-right' : '';
-        $icon_pos_class .= $icon_image_post == 'left'  ? 'media' : '';
-        $content_alignment = $settings['ele_icon_box_text_align_responsive'];
+        $icon_position = $settings['ele_icon_box_icon_position'];
+        $icon_position_class = '';
+        $icon_position_class .= $icon_position == 'right' ? 'ele-icon-right' : '';
+        $icon_position_class .= $icon_position == 'left' ? 'media' : '';
+        $text_alignment = $settings['ele_icon_box_text_align_responsive'];
 
-        if($icon_image_post == 'top'){
-            $text_align = $settings['ele_icon_box_text_align_responsive'].' '.'icon-top-align';
-        }else{
-            $text_align =  $icon_image_post.' '.'icon-lef-right-aligin';
+        if ($icon_position == 'top') {
+            $text_align_class = $settings['ele_icon_box_text_align_responsive'] . ' ' . 'icon-top-align';
+        } else {
+            $text_align_class = $icon_position . ' ' . 'icon-left-right-align';
         }
-        $enable_overlay_color = '';
-        if($settings['ele_icon_box_show_overlay'] == 'yes') {
-            $enable_overlay_color = 'gradient-active';
+        $overlay_color_class = '';
+        if ($settings['ele_icon_box_show_overlay'] == 'yes') {
+            $overlay_color_class = 'gradient-active';
         }
 
-        $ele_icon_box_show_image = '';
-        if($settings['ele_icon_box_show_image_overlay'] == 'yes') {
-            $ele_icon_box_show_image = 'image-active';
+        $image_overlay_class = '';
+        if ($settings['ele_icon_box_show_image_overlay'] == 'yes') {
+            $image_overlay_class = 'image-active';
         }
-        // info box style
 
-        $this->add_render_attribute( 'infobox_wrapper', 'class', 'ele-infobox' );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', 'text-'.(empty($content_alignment) && $icon_image_post == 'top' ? 'center' : $content_alignment));
-        $this->add_render_attribute( 'infobox_wrapper', 'class', 'text-'.$text_align );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', 'elementor-animation-' . $settings['ele_icon_box_info_box_hover_animation'] );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', $icon_pos_class );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', $enable_overlay_color );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', $ele_icon_box_show_image );
-        $this->add_render_attribute( 'infobox_wrapper', 'class', $settings['ele_icon_box_section_bg_hover_color_direction'] );
+        // Info box style
+        $this->add_render_attribute('infobox_wrapper', 'class', 'ele-infobox');
+        $this->add_render_attribute('infobox_wrapper', 'class', 'text-' . (empty($text_alignment) && $icon_position == 'top' ? 'center' : $text_alignment));
+        $this->add_render_attribute('infobox_wrapper', 'class', 'text-' . $text_align_class);
+        $this->add_render_attribute('infobox_wrapper', 'class', 'elementor-animation-' . $settings['ele_icon_box_info_box_hover_animation']);
+        $this->add_render_attribute('infobox_wrapper', 'class', $icon_position_class);
+        $this->add_render_attribute('infobox_wrapper', 'class', $overlay_color_class);
+        $this->add_render_attribute('infobox_wrapper', 'class', $image_overlay_class);
+        $this->add_render_attribute('infobox_wrapper', 'class', $settings['ele_icon_box_section_bg_hover_color_direction']);
 
-		// Title HTML Tag
-		$options_ele_icon_box_title_size = array_keys([
-			'h1' => 'H1',
-			'h2' => 'H2',
-			'h3' => 'H3',
-			'h4' => 'H4',
-			'h5' => 'H5',
-			'h6' => 'H6',
-			'div' => 'div',
-			'span' => 'span',
-			'p' => 'p',
-		]);
-		$ele_icon_box_title_size_esc = ele_esc_options( $settings['ele_icon_box_title_size'], $options_ele_icon_box_title_size, 'h3');
+        // Title HTML Tag
+        $title_tag_options = array_keys([
+            'h1' => 'H1',
+            'h2' => 'H2',
+            'h3' => 'H3',
+            'h4' => 'H4',
+            'h5' => 'H5',
+            'h6' => 'H6',
+            'div' => 'div',
+            'span' => 'span',
+            'p' => 'p',
+        ]);
+        $title_tag = ele_esc_options($settings['ele_icon_box_title_size'], $title_tag_options, 'h3');
 
         // Icon
-
-        $image = '';
-        if ( ! empty( $settings['ele_icon_box_show_image']['url'] ) && $settings['ele_icon_box_show_image_overlay'] == 'yes') {
-            $this->add_render_attribute( 'image', 'src', $settings['ele_icon_box_show_image']['url'] );
-            $this->add_render_attribute( 'image', 'alt', Control_Media::get_image_alt( $settings['ele_icon_box_show_image'] ) );
+        $image_html = '';
+        if (!empty($settings['ele_icon_box_show_image']['url']) && $settings['ele_icon_box_show_image_overlay'] == 'yes') {
+            $this->add_render_attribute('image', 'src', $settings['ele_icon_box_show_image']['url']);
+            $this->add_render_attribute('image', 'alt', Control_Media::get_image_alt($settings['ele_icon_box_show_image']));
 
             $image_html = ele_get_attachment_image_html($settings, 'ele_icon_box_show_image');
 
-
-            $image = '<figure class="image-hover">' . $image_html . '</figure>';
+            $image_html = '<figure class="image-hover">' . $image_html . '</figure>';
         }
-        // Button
-        $btn_text = $settings['ele_icon_box_btn_text'];
-        $btn_url = (! empty( $settings['ele_icon_box_btn_url']['url'])) ? $settings['ele_icon_box_btn_url']['url'] : '';
 
-		// Get Link  attributes
-		if ( ! empty( $settings['ele_icon_box_global_link']['url'] ) ) {
-			$this->add_link_attributes( 'ele_icon_box_global_link', $settings['ele_icon_box_global_link'] );
-		}
+        // Button
+        $button_text = $settings['ele_icon_box_btn_text'];
+        $button_url = (!empty($settings['ele_icon_box_btn_url']['url'])) ? $settings['ele_icon_box_btn_url']['url'] : '';
+
+        // Get Link attributes
+        if (!empty($settings['ele_icon_box_global_link']['url'])) {
+            $this->add_link_attributes('ele_icon_box_global_link', $settings['ele_icon_box_global_link']);
+        }
 
         ?>
         <!-- link opening -->
-        <?php if($settings['ele_icon_box_show_global_link'] == 'yes' && $settings['ele_icon_box_enable_btn'] != 'yes' && (!empty( $settings['ele_icon_box_global_link']['url']))) : ?>
-        <a <?php $this->print_render_attribute_string('ele_icon_box_global_link'); ?> class="ele_global_links">
-        <?php endif; ?>
+        <?php if ($settings['ele_icon_box_show_global_link'] == 'yes' && $settings['ele_icon_box_enable_btn'] != 'yes' && (!empty($settings['ele_icon_box_global_link']['url']))) { ?>
+            <a <?php $this->print_render_attribute_string('ele_icon_box_global_link'); ?> class="ele_global_links">
+        <?php } ?>
         <!-- end link opening -->
 
-        <div <?php echo $this->get_render_attribute_string( 'infobox_wrapper' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
-        <?php if(! empty($settings['ele_icon_box_header_icons']) && $settings['ele_icon_box_enable_header_icon'] == 'icon' ) : ?>
-            <div class="ele-box-header <?php echo 'elementor-animation-'.esc_attr($settings['ele_icon_icons_hover_animation']); ?>">
-                <div class="ele-info-box-icon  <?php echo ($settings['ele_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
-                    <?php
-
-                        $migrated = isset( $settings['__fa4_migrated']['ele_icon_box_header_icons'] );
-                        // Check if its a new widget without previously selected icon using the old Icon control
-                        $is_new = empty( $settings['ele_icon_box_header_icon'] );
-                        if ( $is_new || $migrated ) {
-
-                            // new icon
-                            \Elementor\Icons_Manager::render_icon( $settings['ele_icon_box_header_icons'], [ 'aria-hidden' => 'true', 'class'  => 'ele-infobox-icon' ] );
+        <div <?php echo $this->get_render_attribute_string('infobox_wrapper'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
+            <?php if (!empty($settings['ele_icon_box_header_icons']) && $settings['ele_icon_box_enable_header_icon'] == 'icon') { ?>
+                <div class="ele-box-header <?php echo 'elementor-animation-' . esc_attr($settings['ele_icon_icons_hover_animation']); ?>">
+                    <div class="ele-info-box-icon <?php echo ($settings['ele_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
+                        <?php
+                        $migrated = isset($settings['__fa4_migrated']['ele_icon_box_header_icons']);
+                        $is_new = empty($settings['ele_icon_box_header_icon']);
+                        if ($is_new || $migrated) {
+                            \Elementor\Icons_Manager::render_icon($settings['ele_icon_box_header_icons'], ['aria-hidden' => 'true', 'class' => 'ele-infobox-icon']);
                         } else {
                             ?>
                             <i class="<?php echo esc_attr($settings['ele_icon_box_header_icon']); ?> ele-infobox-icon" aria-hidden="true"></i>
                             <?php
                         }
-                    ?>
-
-                </div>
-          </div>
-        <?php endif;?>
-        <?php if(! empty($settings['ele_icon_box_header_image']) && $settings['ele_icon_box_enable_header_icon'] == 'image' ) : ?>
-            <div class="ele-box-header">
-                <div class="ele-info-box-icon <?php echo ($settings['ele_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
-                    <?php
-                    echo ele_kses( ele_get_attachment_image_html($settings, 'ele_icon_box_header_image') );
-				    ?>
-                </div>
-          </div>
-        <?php endif;?>
-        <div class="box-body">
-            <?php if ($settings['ele_icon_box_title_text'] != '') { ?>
-                <<?php echo esc_attr($ele_icon_box_title_size_esc); ?> class="ele-info-box-title">
-                    <?php echo esc_html($settings['ele_icon_box_title_text']); ?>
-                </<?php echo esc_attr($ele_icon_box_title_size_esc); ?>>
-            <?php } ?>
-            <?php if($settings['ele_icon_box_description_text'] != ''): ?>
-		  <p><?php echo ele_kses( $settings['ele_icon_box_description_text'] ); ?></p>
-            <?php endif; ?>
-            <?php if($settings['ele_icon_box_enable_btn'] == 'yes') :  ?>
-                <div class="box-footer <?php if($settings['ele_icon_box_enable_hover_btn']== 'yes'){echo esc_attr("enable_hover_btn");} else {echo esc_attr("disable_hover_button");}?>">
-                    <div class="btn-wraper">
-                        <?php
-                            switch ($settings['ele_icon_box_icon_align']) {
-                                case 'right': ?>
-                                    <a href="<?php echo esc_url( $btn_url ); ?>"  target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-'.esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
-                                        <?php echo esc_html( $btn_text ); ?>
-
-                                        <?php
-                                            // new icon
-                                            $migrated = isset( $settings['__fa4_migrated']['ele_icon_box_icons'] );
-                                            // Check if its a new widget without previously selected icon using the old Icon control
-                                            $is_new = empty( $settings['ele_icon_box_icon'] );
-                                            if ( $is_new || $migrated ) {
-
-                                                // new icon
-                                                \Elementor\Icons_Manager::render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
-                                            } else {
-                                                ?>
-                                                <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
-                                                <?php
-                                            }
-                                        ?>
-
-                                    </a>
-                                    <?php break;
-                                case 'left': ?>
-                                    <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-'.esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
-                                        <?php
-                                            // new icon
-                                            $migrated = isset( $settings['__fa4_migrated']['ele_icon_box_icons'] );
-                                            // Check if its a new widget without previously selected icon using the old Icon control
-                                            $is_new = empty( $settings['ele_icon_box_icon'] );
-                                            if ( $is_new || $migrated ) {
-
-                                                // new icon
-                                                \Elementor\Icons_Manager::render_icon( $settings['ele_icon_box_icons'], [ 'aria-hidden' => 'true' ] );
-                                            } else {
-                                                ?>
-                                                <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
-                                                <?php
-                                            }
-                                        ?>
-                                        <?php echo esc_html( $btn_text ); ?>
-                                    </a>
-                                    <?php break;
-                                default: ?>
-                                    <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-'.esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
-                                        <?php echo esc_html( $btn_text ); ?>
-                                    </a>
-                                    <?php break;
-                            }
                         ?>
                     </div>
                 </div>
-            <?php endif; ?>
+            <?php } ?>
+            <?php if (!empty($settings['ele_icon_box_header_image']) && $settings['ele_icon_box_enable_header_icon'] == 'image') { ?>
+                <div class="ele-box-header">
+                    <div class="ele-info-box-icon <?php echo ($settings['ele_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
+                        <?php
+                        echo ele_kses(ele_get_attachment_image_html($settings, 'ele_icon_box_header_image'));
+                        ?>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="box-body">
+                <?php if ($settings['ele_icon_box_title_text'] != '') { ?>
+                <<?php echo esc_attr($title_tag); ?> class="ele-info-box-title">
+                <?php echo esc_html($settings['ele_icon_box_title_text']); ?>
+            </<?php echo esc_attr($title_tag); ?>>
+        <?php } ?>
+            <?php if ($settings['ele_icon_box_description_text'] != '') { ?>
+                <p><?php echo ele_kses($settings['ele_icon_box_description_text']); ?></p>
+            <?php } ?>
+            <?php if ($settings['ele_icon_box_enable_btn'] == 'yes') { ?>
+                <div class="box-footer <?php if ($settings['ele_icon_box_enable_hover_btn'] == 'yes') { echo esc_attr("enable_hover_btn"); } else { echo esc_attr("disable_hover_button"); } ?>">
+                    <div class="btn-wrapper">
+                        <?php
+                        switch ($settings['ele_icon_box_icon_align']) {
+                            case 'right': ?>
+                                <a href="<?php echo esc_url($button_url); ?>" target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-' . esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
+                                    <?php echo esc_html($button_text); ?>
+                                    <?php
+                                    $migrated = isset($settings['__fa4_migrated']['ele_icon_box_icons']);
+                                    $is_new = empty($settings['ele_icon_box_icon']);
+                                    if ($is_new || $migrated) {
+                                        \Elementor\Icons_Manager::render_icon($settings['ele_icon_box_icons'], ['aria-hidden' => 'true']);
+                                    } else {
+                                        ?>
+                                        <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
+                                        <?php
+                                    }
+                                    ?>
+                                </a>
+                                <?php break;
+                            case 'left': ?>
+                                <a href="<?php echo esc_url($button_url); ?>" target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-' . esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
+                                    <?php
+                                    $migrated = isset($settings['__fa4_migrated']['ele_icon_box_icons']);
+                                    $is_new = empty($settings['ele_icon_box_icon']);
+                                    if ($is_new || $migrated) {
+                                        \Elementor\Icons_Manager::render_icon($settings['ele_icon_box_icons'], ['aria-hidden' => 'true']);
+                                    } else {
+                                        ?>
+                                        <i class="<?php echo esc_attr($settings['ele_icon_box_icon']); ?>" aria-hidden="true"></i>
+                                        <?php
+                                    }
+                                    ?>
+                                    <?php echo esc_html($button_text); ?>
+                                </a>
+                                <?php break;
+                            default: ?>
+                                <a href="<?php echo esc_url($button_url); ?>" target="<?php echo esc_attr($settings['ele_icon_box_btn_url']['is_external'] ? '_blank' : '_self');?>" rel="<?php echo esc_attr($settings['ele_icon_box_btn_url']['nofollow'] ? 'nofollow' : '');?>" class="ele-btn whitespace--normal <?php echo isset($settings['ele_icon_box_button_hover_animation']) ? 'elementor-animation-' . esc_attr($settings['ele_icon_box_button_hover_animation']) : ''; ?>">
+                                    <?php echo esc_html($button_text); ?>
+                                </a>
+                                <?php break;
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-        <?php if(!empty($settings['ele_icon_box_enable_water_mark']) && $settings['ele_icon_box_enable_water_mark'] == 'yes') :  ?>
-
-        <div class="icon-hover">
-            <?php
-                // new icon
-                $migrated = isset( $settings['__fa4_migrated']['ele_icon_box_water_mark_icons'] );
-                // Check if its a new widget without previously selected icon using the old Icon control
-                $is_new = empty( $settings['ele_icon_box_water_mark_icon'] );
-                if ( $is_new || $migrated ) {
-                    // new icon
-                    \Elementor\Icons_Manager::render_icon( $settings['ele_icon_box_water_mark_icons'], [ 'aria-hidden' => 'true' ] );
+        <?php if (!empty($settings['ele_icon_box_enable_water_mark']) && $settings['ele_icon_box_enable_water_mark'] == 'yes') { ?>
+            <div class="icon-hover">
+                <?php
+                $migrated = isset($settings['__fa4_migrated']['ele_icon_box_water_mark_icons']);
+                $is_new = empty($settings['ele_icon_box_water_mark_icon']);
+                if ($is_new || $migrated) {
+                    \Elementor\Icons_Manager::render_icon($settings['ele_icon_box_water_mark_icons'], ['aria-hidden' => 'true']);
                 } else {
                     ?>
                     <i class="<?php echo esc_attr($settings['ele_icon_box_water_mark_icon']); ?>" aria-hidden="true"></i>
                     <?php
                 }
-            ?>
-        </div>
-
-        <?php endif; ?>
-
-        <?php if(!empty($settings['ele_icon_box_show_image_overlay']) && $settings['ele_icon_box_show_image_overlay'] == 'yes') :  ?>
-            <?php echo wp_kses($image, \ele_Lite\Utils::get_kses_array()); ?>
-        <?php endif; ?>
-
-        <?php if($settings['ele_icon_box_badge_control'] == 'yes' && $settings['ele_icon_box_badge_title'] != '') : ?>
-            <div class="ele-box-badge ele_position_<?php echo esc_attr($settings['ele_icon_box_badge_position']);?>">
-                <span class="ele-badge"><?php echo esc_html($settings['ele_icon_box_badge_title'])?></span>
+                ?>
             </div>
-        <?php endif; ?>
+        <?php } ?>
+        <?php if (!empty($settings['ele_icon_box_show_image_overlay']) && $settings['ele_icon_box_show_image_overlay'] == 'yes') { ?>
+            <?php echo wp_kses($image_html, \ele_Lite\Utils::get_kses_array()); ?>
+        <?php } ?>
+        <?php if ($settings['ele_icon_box_badge_control'] == 'yes' && $settings['ele_icon_box_badge_title'] != '') { ?>
+            <div class="ele-box-badge ele_position_<?php echo esc_attr($settings['ele_icon_box_badge_position']); ?>">
+                <span class="ele-badge"><?php echo esc_html($settings['ele_icon_box_badge_title']); ?></span>
+            </div>
+        <?php } ?>
         </div>
         <?php
         // link Closing
-        if($settings['ele_icon_box_show_global_link'] == 'yes' && $settings['ele_icon_box_enable_btn'] != 'yes' && (!empty( $settings['ele_icon_box_global_link']['url']))) : ?>
-        </a>
-        <?php endif; // end link Closing
+        if ($settings['ele_icon_box_show_global_link'] == 'yes' && $settings['ele_icon_box_enable_btn'] != 'yes' && (!empty($settings['ele_icon_box_global_link']['url']))) { ?>
+            </a>
+        <?php } // end link Closing
     }
 }

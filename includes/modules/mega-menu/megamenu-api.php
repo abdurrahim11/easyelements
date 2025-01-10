@@ -8,7 +8,7 @@ use EasyElements\Core\Handler_Api;
 
 class Megamenu_Api extends Handler_Api {
 
-    public function config() {
+    public function initialize_config() {
         $this->prefix = 'megamenu';
     }
 

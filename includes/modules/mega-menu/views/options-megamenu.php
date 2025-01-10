@@ -6,10 +6,10 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <script>
-    var easyelements_options_megamenu_markup = `
+    var easyelements_megamenu_btn_markup = `
     <div class="ele-megamenu-trigger" id="ele-megamenu-trigger">
         <div class="ele-setting-switcher">
-            <input name="ele_is_enabled" type="checkbox" <?php checked( ( isset( $data['ele_is_enabled'] ) ? $data['ele_is_enabled'] : '' ), '1' ); ?> value="1" id="easyelements-menu-metabox-input-is-enabled" value="1">
+            <input name="ele_is_enabled" type="checkbox" <?php checked( ( isset( $megamenu_data['ele_is_enabled'] ) ? $megamenu_data['ele_is_enabled'] : '' ), '1' ); ?> value="1" id="easyelements-menu-metabox-input-is-enabled">
             <label for="easyelements-menu-metabox-input-is-enabled"></label>
         </div>
         <h3 class="ele-dashboard-widgets__item-title">

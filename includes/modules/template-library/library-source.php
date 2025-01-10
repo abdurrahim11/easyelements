@@ -26,7 +26,7 @@ class Library_Source extends Source_Local {
         $template_info = $this->get_api_request($template_api_url);
         $template_result = json_decode($template_info, true);
         if (!is_array($template_result) || !isset($template_result['json_url'])) {
-            throw new \Exception(__('Template missing', 'easy-elements'));
+            throw new \Exception(esc_html__('Template missing', 'easy-elements'));
         }
 
         $this->install_activate_required_plugins($template_result);
@@ -34,7 +34,7 @@ class Library_Source extends Source_Local {
         $template_data = $this->get_api_request($template_result['json_url']);
         $data = json_decode($template_data, true);
         if (empty($data) || empty($data['content'])) {
-            throw new \Exception(__('Template does not have any content', 'easy-elements'));
+            throw new \Exception(esc_html__('Template does not have any content', 'easy-elements'));
         }
 
         $data['content'] = $this->replace_elements_ids($data['content']);
@@ -68,14 +68,14 @@ class Library_Source extends Source_Local {
                 if (!$this->is_plugin_installed( dirname( $plugin_slug ) )) {
                     $install_result = $this->install_plugin_by_slug( dirname( $plugin_slug ) );
                     if (is_wp_error($install_result)) {
-                        throw new \Exception(__('Error installing plugin', 'easy-elements'));
+                        throw new \Exception(esc_html__('Error installing plugin', 'easy-elements'));
                     }
                 }
 
                 if (!is_plugin_active( $plugin_slug )) {
                     $activation_result = activate_plugin( $plugin_slug );
                     if (is_wp_error($activation_result)) {
-                        throw new \Exception(__('Error activating plugin', 'easy-elements'));
+                        throw new \Exception(esc_html__('Error activating plugin', 'easy-elements'));
                     }
                     $this->dependencies++;
                 }

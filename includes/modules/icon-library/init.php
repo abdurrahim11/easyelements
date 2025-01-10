@@ -9,6 +9,7 @@ class Init {
     public function __construct() {
         $this->icon_library_url = ELE_PLUGIN_URL . "includes/modules/icon-library/";
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend' ), 200000 );
+        add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'enqueue_frontend' ), 200000 );
         add_filter( 'elementor/icons_manager/additional_tabs', array( $this, 'add_easy_elements_icons_tab' ) );
     }
 

@@ -10,105 +10,34 @@ use Elementor\Group_Control_Text_Shadow;
 use Elementor\Group_Control_Typography;
 use Elementor\Widget_Base;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-/**
- * ele Elementor Addons
- *
- * Elementor widget.
- *
- * @since 1.0.0
- */
 class Step_Flow extends Widget_Base {
 
-	/**
-	 * Get widget name.
-	 *
-	 * Retrieve image widget name.
-	 *
-	 * @return string Widget name.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_name() {
 		return 'ele-step-flow';
 	}
 
-	/**
-	 * Get widget title.
-	 *
-	 * Retrieve image widget title.
-	 *
-	 * @return string Widget title.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_title() {
-		return __( 'Step Flow', 'easy-elements' );
+		return esc_html__( 'Step Flow', 'easy-elements' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * Retrieve image widget icon.
-	 *
-	 * @return string Widget icon.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_icon() {
 		return 'ele ele-step-flow ele-widget-icon';
 	}
 
-	/**
-	 * Get widget categories.
-	 *
-	 * Retrieve the list of categories the image widget belongs to.
-	 *
-	 * Used to determine where to display the widget in the editor.
-	 *
-	 * @return array Widget categories.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_categories() {
 		return array( 'easy-elements'  );
 	}
 
-	/**
-	 * Get widget keywords.
-	 *
-	 * Retrieve the list of keywords the widget belongs to.
-	 *
-	 * @return array Widget keywords.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
-	public function get_keywords() {
-		return array( 'step', 'steps', 'flow', 'flows' );
-	}
+    public function get_keywords() {
+        return array('step', 'steps', 'flow', 'flows', 'process', 'sequence', 'progress', 'actions', 'phases', 'stages', 'procedures', 'workflow', 'guideline', 'instruction', 'task');
+    }
 
-	/**
-	 * Register widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_news_ticker',
 			array(
-				'label' => __( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easy-elements' ),
 			)
 		);
 
@@ -128,11 +57,11 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'step_flow_title',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => __( 'Step Heading', 'easy-elements' ),
-				'placeholder' => __( 'Type Step Flow Title', 'easy-elements' ),
+				'default'     => esc_html__( 'Step Heading', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type Step Flow Title', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -146,7 +75,7 @@ class Step_Flow extends Widget_Base {
 				'type'        => Controls_Manager::WYSIWYG,
 				'rows'        => 5,
 				'placeholder' => esc_html__( 'Type your description here', 'easy-elements' ),
-				'default'     => __( 'Lorem Ipsum is simply dummy text of the printing and industry.', 'easy-elements' ),
+				'default'     => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and industry.', 'easy-elements' ),
 				'label_block' => true,
 			)
 		);
@@ -154,10 +83,10 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'step_flow_badge_text',
 			array(
-				'label'       => __( 'Badge Text', 'easy-elements' ),
+				'label'       => esc_html__( 'Badge Text', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => __( 'Type Icon Badge Text', 'easy-elements' ),
-				'default'     => __( '01', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type Icon Badge Text', 'easy-elements' ),
+				'default'     => esc_html__( '01', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -167,9 +96,9 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'step_flow_separator',
 			array(
-				'label'        => __( 'Separator', 'easy-elements' ),
+				'label'        => esc_html__( 'Separator', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'default'      => __( 'yes', 'easy-elements' ),
+				'default'      => esc_html__( 'yes', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -177,25 +106,25 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'general_align',
 			array(
-				'label'        => __( 'Alignment', 'easy-elements' ),
+				'label'        => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'separator'    => 'before',
 				'options'      => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
 				'prefix_class' => 'ele-content-align%s',
-				'default'      => __( 'center', 'easy-elements' ),
+				'default'      => esc_html__( 'center', 'easy-elements' ),
 				'selectors'    => array(
 					'{{WRAPPER}} .ele-step-flow-wrapper' => 'text-align: {{VALUE}};',
 				),
@@ -207,7 +136,7 @@ class Step_Flow extends Widget_Base {
 		$this->start_controls_section(
 			'step_flow_icon_style',
 			array(
-				'label' => __( 'Media', 'easy-elements' ),
+				'label' => esc_html__( 'Media', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -215,7 +144,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			array(
-				'label'      => __( 'Media Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Media Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -240,7 +169,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_box_icon',
 			array(
-				'label'      => __( 'Background Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -264,7 +193,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_margin_bottom',
 			array(
-				'label'      => __( 'Bottom Spacing', 'easy-elements' ),
+				'label'      => esc_html__( 'Bottom Spacing', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -287,7 +216,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'icon_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-icon > i' => 'color: {{VALUE}}',
@@ -300,7 +229,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'icon_content_bg',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-icon',
@@ -311,7 +240,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'icon_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-icon',
 			)
 		);
@@ -320,7 +249,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'icon_box_shadow',
-				'label'    => __( 'Box Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Box Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-icon',
 			)
 		);
@@ -328,7 +257,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -342,7 +271,7 @@ class Step_Flow extends Widget_Base {
 		$this->start_controls_section(
 			'section_step_flow_title_style',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'step_flow_title!' => '',
@@ -354,7 +283,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-title',
 			)
 		);
@@ -362,7 +291,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-title' => 'color: {{VALUE}}',
@@ -374,7 +303,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			array(
 				'name'     => 'title_text_shadow',
-				'label'    => __( 'Text Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Text Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-title',
 			)
 		);
@@ -382,7 +311,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -396,7 +325,7 @@ class Step_Flow extends Widget_Base {
 		$this->start_controls_section(
 			'section_step_flow_description_style',
 			array(
-				'label'     => __( 'Description', 'easy-elements' ),
+				'label'     => esc_html__( 'Description', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'step_flow_description!' => '',
@@ -408,7 +337,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'description_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-description, {{WRAPPER}} .ele-step-flow-description > *',
 			)
 		);
@@ -416,7 +345,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-description, {{WRAPPER}} .ele-step-flow-description > *' => 'color: {{VALUE}}',
@@ -427,7 +356,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'description_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -441,7 +370,7 @@ class Step_Flow extends Widget_Base {
 		$this->start_controls_section(
 			'section_step_flow_separator_style',
 			array(
-				'label'     => __( 'Separator', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'step_flow_separator' => 'yes',
@@ -452,14 +381,14 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_layout_style',
 			array(
-				'label'   => __( 'Layout', 'easy-elements' ),
+				'label'   => esc_html__( 'Layout', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'line',
 				'options' => array(
-					'line'       => __( 'Line', 'easy-elements' ),
-					'line-arrow' => __( 'Line Arrow', 'easy-elements' ),
-					'arrow'      => __( 'Arrow', 'easy-elements' ),
-					'circle'     => __( 'Circle', 'easy-elements' ),
+					'line'       => esc_html__( 'Line', 'easy-elements' ),
+					'line-arrow' => esc_html__( 'Line Arrow', 'easy-elements' ),
+					'arrow'      => esc_html__( 'Arrow', 'easy-elements' ),
+					'circle'     => esc_html__( 'Circle', 'easy-elements' ),
 				),
 			)
 		);
@@ -467,13 +396,13 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_border_type',
 			array(
-				'label'     => __( 'Border Type', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Type', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'solid',
 				'options'   => array(
-					'solid'  => __( 'Solid', 'easy-elements' ),
-					'dotted' => __( 'Dotted', 'easy-elements' ),
-					'dashed' => __( 'Dashed', 'easy-elements' ),
+					'solid'  => esc_html__( 'Solid', 'easy-elements' ),
+					'dotted' => esc_html__( 'Dotted', 'easy-elements' ),
+					'dashed' => esc_html__( 'Dashed', 'easy-elements' ),
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-line,
@@ -489,10 +418,10 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_transform_toggle',
 			array(
-				'label'        => __( 'Transform', 'easy-elements' ),
+				'label'        => esc_html__( 'Transform', 'easy-elements' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'None', 'easy-elements' ),
-				'label_on'     => __( 'Custom', 'easy-elements' ),
+				'label_off'    => esc_html__( 'None', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Custom', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -502,7 +431,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_offset_y',
 			array(
-				'label'      => __( 'Offset Top', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Top', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -530,7 +459,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_offset_x',
 			array(
-				'label'      => __( 'Offset Left', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Left', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -563,7 +492,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_rotate',
 			array(
-				'label'          => __( 'Rotate', 'easy-elements' ),
+				'label'          => esc_html__( 'Rotate', 'easy-elements' ),
 				'type'           => Controls_Manager::SLIDER,
 				'size_units'     => array( 'deg' ),
 				'default'        => array(
@@ -595,7 +524,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_width',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -628,7 +557,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_size',
 			array(
-				'label'      => __( 'Thickness', 'easy-elements' ),
+				'label'      => esc_html__( 'Thickness', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -656,7 +585,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_margin-left',
 			array(
-				'label'      => __( 'Distance', 'easy-elements' ),
+				'label'      => esc_html__( 'Distance', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -677,7 +606,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-line,
@@ -692,7 +621,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_circle_color',
 			array(
-				'label'     => __( 'Circle Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Circle Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-circle::after' => 'background-color: {{VALUE}}',
@@ -706,13 +635,13 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'separator_hide_on',
 			array(
-				'label'   => __( 'Hide On', 'easy-elements' ),
+				'label'   => esc_html__( 'Hide On', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'none',
 				'options' => array(
-					'none'   => __( 'None', 'easy-elements' ),
-					'tablet' => __( 'Tablet & Mobile', 'easy-elements' ),
-					'mobile' => __( 'Mobile Only', 'easy-elements' ),
+					'none'   => esc_html__( 'None', 'easy-elements' ),
+					'tablet' => esc_html__( 'Tablet & Mobile', 'easy-elements' ),
+					'mobile' => esc_html__( 'Mobile Only', 'easy-elements' ),
 				),
 			)
 		);
@@ -722,7 +651,7 @@ class Step_Flow extends Widget_Base {
 		$this->start_controls_section(
 			'section_step_flow_badge_style',
 			array(
-				'label'     => __( 'Badge', 'easy-elements' ),
+				'label'     => esc_html__( 'Badge', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'step_flow_badge_text!' => '',
@@ -733,19 +662,19 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'badge_position',
 			array(
-				'label'   => __( 'Position', 'easy-elements' ),
+				'label'   => esc_html__( 'Position', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'top-left',
 				'options' => array(
-					'top-left'      => __( 'Top Left', 'easy-elements' ),
-					'top-center'    => __( 'Top Center', 'easy-elements' ),
-					'top-right'     => __( 'Top Right', 'easy-elements' ),
-					'middle-left'   => __( 'Middle Left', 'easy-elements' ),
-					'middle-center' => __( 'Middle Center', 'easy-elements' ),
-					'middle-right'  => __( 'Middle Right', 'easy-elements' ),
-					'bottom-left'   => __( 'Bottom Left', 'easy-elements' ),
-					'bottom-center' => __( 'Bottom Center', 'easy-elements' ),
-					'bottom-right'  => __( 'Bottom Right', 'easy-elements' ),
+					'top-left'      => esc_html__( 'Top Left', 'easy-elements' ),
+					'top-center'    => esc_html__( 'Top Center', 'easy-elements' ),
+					'top-right'     => esc_html__( 'Top Right', 'easy-elements' ),
+					'middle-left'   => esc_html__( 'Middle Left', 'easy-elements' ),
+					'middle-center' => esc_html__( 'Middle Center', 'easy-elements' ),
+					'middle-right'  => esc_html__( 'Middle Right', 'easy-elements' ),
+					'bottom-left'   => esc_html__( 'Bottom Left', 'easy-elements' ),
+					'bottom-center' => esc_html__( 'Bottom Center', 'easy-elements' ),
+					'bottom-right'  => esc_html__( 'Bottom Right', 'easy-elements' ),
 				),
 			)
 		);
@@ -753,10 +682,10 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'badge_offset_toggle',
 			array(
-				'label'        => __( 'Offset', 'easy-elements' ),
+				'label'        => esc_html__( 'Offset', 'easy-elements' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'None', 'easy-elements' ),
-				'label_on'     => __( 'Custom', 'easy-elements' ),
+				'label_off'    => esc_html__( 'None', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Custom', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -766,7 +695,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_offset_x',
 			array(
-				'label'      => __( 'Offset Left', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Left', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'default'    => array(
@@ -794,7 +723,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_offset_y',
 			array(
-				'label'      => __( 'Offset Top', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Top', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'default'    => array(
@@ -824,7 +753,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'badge_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-badge',
 			)
 		);
@@ -832,7 +761,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_control(
 			'badge_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-step-flow-badge' => 'color: {{VALUE}}',
@@ -844,7 +773,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'badge_background',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-badge',
 			)
@@ -854,7 +783,7 @@ class Step_Flow extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'badge_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-step-flow-badge',
 			)
 		);
@@ -862,7 +791,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -874,7 +803,7 @@ class Step_Flow extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -886,15 +815,6 @@ class Step_Flow extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-
-	/**
-	 * Render image widget output on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();

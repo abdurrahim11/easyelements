@@ -12,8 +12,6 @@ use Elementor\Plugin;
 use Elementor\Widget_Base;
 
 class Navigation_Menu extends Widget_Base {
-    public $base;
-
     public function __construct( $data = [], $args = null ) {
         parent::__construct( $data, $args );
         $this->add_script_depends('ele-nav-menu');
@@ -39,20 +37,6 @@ class Navigation_Menu extends Widget_Base {
         return ['ele', 'menu', 'nav-menu', 'nav', 'navigation', 'navigation-menu', 'mega', 'megamenu', 'mega-menu', 'header-menu', 'footer-menu', 'sidebar-menu', 'primary-menu', 'secondary-menu', 'mobile-menu', 'dropdown-menu', 'horizontal-menu', 'vertical-menu', 'responsive-menu', 'custom-menu', 'menu-bar', 'site-menu', 'main-menu', 'top-menu', 'sub-menu', 'side-menu'];
     }
 
-    public function get_help_url() {
-        return 'https://wpmet.com/doc/nav-menu/';
-    }
-
-    public function get_menus(){
-        $list = [];
-        $menus = wp_get_nav_menus();
-        foreach($menus as $menu){
-            $list[$menu->slug] = $menu->name;
-        }
-
-        return $list;
-    }
-
     protected function register_controls() {
 
         $this->start_controls_section(
@@ -68,7 +52,7 @@ class Navigation_Menu extends Widget_Base {
             [
                 'label'     => esc_html__( 'Select menu', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
-                'options'   => $this->get_menus(),
+                'options'   => $this->get_navigation_menus(),
             ]
         );
 
@@ -152,12 +136,12 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_responsive_breakpoint',
             [
-                'label' => __( 'Responsive Breakpoint', 'easy-elements' ),
+                'label' => esc_html__( 'Responsive Breakpoint', 'easy-elements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'ele_menu_responsive_tablet',
                 'options' => [
-                    'ele_menu_responsive_tablet'  => __( 'Tablet', 'easy-elements' ),
-                    'ele_menu_responsive_mobile' => __( 'Mobile', 'easy-elements' ),
+                    'ele_menu_responsive_tablet'  => esc_html__( 'Tablet', 'easy-elements' ),
+                    'ele_menu_responsive_mobile' => esc_html__( 'Mobile', 'easy-elements' ),
                 ],
             ]
         );
@@ -220,7 +204,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_hamburger_icon',
             [
-                'label' => __( 'Hamburger Icon (Optional)', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon (Optional)', 'easy-elements' ),
                 'type' => Controls_Manager::ICONS,
                 'separator' => 'before',
             ]
@@ -1535,20 +1519,20 @@ class Navigation_Menu extends Widget_Base {
         );
 
         $this->end_controls_section();
-
-        //$this->insert_pro_message();
     }
 
-    protected function render( ) {
+    protected function render() {
         $settings = $this->get_settings_for_display();
 
         // Return if menu not selected
-        if(empty($settings['ele_control_nav_menu'])) {
+        if (empty($settings['ele_control_nav_menu'])) {
             return;
         }
 
         $hamburger_icon_value = '';
         $hamburger_icon_type = '';
+
+        // Determine the type and value of the hamburger icon
         if ($settings['easyelements_hamburger_icon'] != '' && $settings['easyelements_hamburger_icon']) {
             if ($settings['easyelements_hamburger_icon']['library'] !== 'svg') {
                 $hamburger_icon_value = esc_attr($settings['easyelements_hamburger_icon']['value']);
@@ -1559,128 +1543,120 @@ class Navigation_Menu extends Widget_Base {
             }
         }
 
-        // Responsive menu breakpoint
-        $responsive_menu_breakpoint = '';
+        // Set responsive menu breakpoint
+        $menu_breakpoint_value = '';
         if ($settings['easyelements_responsive_breakpoint'] === 'ele_menu_responsive_tablet') {
-            $responsive_menu_breakpoint = "1024";
+            $menu_breakpoint_value = "1024";
         } else {
-            $responsive_menu_breakpoint = "767";
+            $menu_breakpoint_value = "767";
         }
 
-        echo '<div class="ele-wid-con '.esc_attr($settings['easyelements_responsive_breakpoint']).'" data-hamburger-icon="'.esc_attr($hamburger_icon_value).'" data-hamburger-icon-type="'.esc_attr($hamburger_icon_type).'" data-responsive-breakpoint="'.esc_attr($responsive_menu_breakpoint).'">';
+        // Render the main container with data attributes for the hamburger icon and responsive breakpoint
+        echo '<div class="menu-widget-container ' . esc_attr($settings['easyelements_responsive_breakpoint']) . '" data-hamburger-icon="' . esc_attr($hamburger_icon_value) . '" data-hamburger-icon-type="' . esc_attr($hamburger_icon_type) . '" data-responsive-breakpoint="' . esc_attr($menu_breakpoint_value) . '">';
         $this->render_raw();
         echo '</div>';
     }
 
-    protected function render_raw( ) {
+    protected function render_raw() {
         $settings = $this->get_settings_for_display();
 
-        if($settings['ele_control_nav_menu'] != '' && wp_get_nav_menu_items($settings['ele_control_nav_menu']) !== false && count(wp_get_nav_menu_items($settings['ele_control_nav_menu'])) > 0){
-            /**
-             * Hamburger Toggler Button
-             */
+        if ($settings['ele_control_nav_menu'] != '' && wp_get_nav_menu_items($settings['ele_control_nav_menu']) !== false && count(wp_get_nav_menu_items($settings['ele_control_nav_menu'])) > 0) {
+            // Hamburger Toggler Button
             ?>
-            <button class="easyelements-menu-hamburger easyelements-menu-toggler"  type="button" aria-label="hamburger-icon">
+            <button class="easyelements-menu-hamburger easyelements-menu-toggler" type="button" aria-label="hamburger-icon">
                 <?php
-                /**
-                 * Show Default Icon
-                 */
-                if ( $settings['easyelements_hamburger_icon']['value'] === '' ):
+                // Show Default Icon if no custom icon is set
+                if ($settings['easyelements_hamburger_icon']['value'] === '') {
                     ?>
                     <i class="ele ele-menu"></i>
-                <?php
-                endif;
+                    <?php
+                }
 
-                /**
-                 * Show Icon or, SVG
-                 */
-                \Elementor\Icons_Manager::render_icon( $settings['easyelements_hamburger_icon'], [ 'aria-hidden' => 'true', 'class' => 'ele-menu-icon' ] );
+                // Show custom icon or SVG
+                \Elementor\Icons_Manager::render_icon($settings['easyelements_hamburger_icon'], ['aria-hidden' => 'true', 'class' => 'ele-menu-icon']);
                 ?>
             </button>
             <?php
 
-            /**
-             * Main Menu Container
-             */
-            $link = $target = $nofollow = '';
+            // Main Menu Container
+            $logo_link = $link_target = $link_nofollow = '';
 
+            // Set link for the logo
             if (isset($settings['easyelements_nav_menu_logo_link_to']) && $settings['easyelements_nav_menu_logo_link_to'] == 'home') {
-                $link = get_home_url();
-            }elseif(isset($settings['easyelements_nav_menu_logo_link'])){
-                $link = $settings['easyelements_nav_menu_logo_link']['url'];
-                $target = ($settings['easyelements_nav_menu_logo_link']['is_external'] != "on" ? "" : "_blank");
-                $nofollow = ($settings['easyelements_nav_menu_logo_link']['nofollow'] != "on" ? "" : "nofollow");
+                $logo_link = get_home_url();
+            } elseif (isset($settings['easyelements_nav_menu_logo_link'])) {
+                $logo_link = $settings['easyelements_nav_menu_logo_link']['url'];
+                $link_target = ($settings['easyelements_nav_menu_logo_link']['is_external'] != "on" ? "" : "_blank");
+                $link_nofollow = ($settings['easyelements_nav_menu_logo_link']['nofollow'] != "on" ? "" : "nofollow");
             }
 
-            $metadata = ele_attachment_meta(esc_attr($settings['easyelements_nav_menu_logo']['id']));
-            $markup = '<div class="easyelements-nav-identity-panel">';
-            // Use an if statement to conditionally display the site logo
-            if (!empty($settings['easyelements_nav_menu_logo']['id'])) :
-                $markup .= '
-				<div class="easyelements-site-title">
-					<a class="easyelements-nav-logo" href="'.esc_url($link).'" target="'.(!empty($target) ? esc_attr($target) : '_self').'" rel="'.esc_attr($nofollow).'">
-						'. ele_get_attachment_image_html($settings, 'easyelements_nav_menu_logo', 'full') .'
-					</a> 
-				</div>';
-            endif;
-            $markup .= '<button class="easyelements-menu-close easyelements-menu-toggler" type="button">X</button></div>';
+            $identity_markup = '<div class="easyelements-nav-identity-panel">';
 
+            // Conditionally display the site logo
+            if (!empty($settings['easyelements_nav_menu_logo']['id'])) {
+                $identity_markup .= '
+            <div class="easyelements-site-title">
+                <a class="easyelements-nav-logo" href="' . esc_url($logo_link) . '" target="' . (!empty($link_target) ? esc_attr($link_target) : '_self') . '" rel="' . esc_attr($link_nofollow) . '">
+                    ' . ele_get_attachment_image_html($settings, 'easyelements_nav_menu_logo', 'full') . '
+                </a> 
+            </div>';
+            }
+            $identity_markup .= '<button class="easyelements-menu-close easyelements-menu-toggler" type="button">X</button></div>';
 
-            $container_classes = [
+            $menu_container_classes = [
                 'easyelements-menu-container easyelements-menu-offcanvas-elements easyelements-navbar-nav-default',
                 'ele-nav-menu-one-page-' . $settings['easyelements_one_page_enable'],
                 !empty($settings['easyelements_nav_dropdown_as']) ? $settings['easyelements_nav_dropdown_as'] : 'ele-nav-dropdown-hover',
             ];
 
-            $args = [
-                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' . $markup,
+            $menu_arguments = [
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' . $identity_markup,
                 'container'       => 'div',
                 'container_id'    => 'ele-megamenu-' . $settings['ele_control_nav_menu'],
-                'container_class' => join(' ', $container_classes),
-                'menu'         	  => $settings['ele_control_nav_menu'],
-                'menu_class'      => 'easyelements-navbar-nav ' . $settings['easyelements_main_menu_position'] .' submenu-click-on-'. $settings['submenu_click_area'],
+                'container_class' => join(' ', $menu_container_classes),
+                'menu'            => $settings['ele_control_nav_menu'],
+                'menu_class'      => 'easyelements-navbar-nav ' . $settings['easyelements_main_menu_position'] . ' submenu-click-on-' . $settings['submenu_click_area'],
                 'depth'           => 4,
                 'echo'            => true,
                 'fallback_cb'     => 'wp_page_menu',
-                'walker' => (class_exists('\EasyElements\Modules\Mega_Menu\Nav_Menu_Walker') ? new \EasyElements\Modules\Mega_Menu\Nav_Menu_Walker() : '' )
+                'walker'          => (class_exists('\EasyElements\Modules\Mega_Menu\Nav_Menu_Walker') ? new \EasyElements\Modules\Mega_Menu\Nav_Menu_Walker() : '')
             ];
 
+            // Set submenu indicator icon
+            $menu_arguments['submenu_indicator_icon'] = $this->get_submenu_indicator_icon($settings);
 
-            // set submenu indicator icon
-            $args['submenu_indicator_icon'] = $this->get_indicator_icon($settings);
-
-            // WP 6.1 submenu issue
-            if(version_compare(get_bloginfo('version'), '6.1', '>=')){
-                unset($args['depth']);
+            // Fixed for WP 6.1 submenu issue
+            if (version_compare(get_bloginfo('version'), '6.1', '>=')) {
+                unset($menu_arguments['depth']);
             }
 
-            wp_nav_menu($args);
-
-            /**
-             * Mobile Menu Overlay
-             */
+            wp_nav_menu($menu_arguments);
             ?>
-
             <div class="easyelements-menu-overlay easyelements-menu-offcanvas-elements easyelements-menu-toggler ele-nav-menu--overlay"></div><?php
 
-
-            /**
-             * Editor: Widget Empty Fallback on Responsive View
-             */
-            if ( Plugin::$instance->editor->is_edit_mode() ) : ?>
+            if (Plugin::$instance->editor->is_edit_mode()) { ?>
                 <span class="ele-nav-menu--empty-fallback">&nbsp;</span>
-            <?php endif;
+            <?php }
         }
     }
+    public function get_navigation_menus() {
+        $menu_list = [];
+        $available_menus = wp_get_nav_menus();
 
-    protected function get_indicator_icon($settings) {
+        foreach ($available_menus as $menu) {
+            $menu_list[$menu->slug] = $menu->name;
+        }
+
+        return $menu_list;
+    }
+    protected function get_submenu_indicator_icon($settings) {
         extract($settings);
 
         $icon_html = '';
-        $indicator_class = 'easyelements-submenu-indicator';
+        $submenu_indicator_class = 'easyelements-submenu-indicator';
 
         if(!empty($easyelements_submenu_indicator_icon['value'])) {
-            return Icons_Manager::try_get_icon_html($settings['easyelements_submenu_indicator_icon'], ['class' => $indicator_class, 'aria-hidden' => 'true']);
+            return Icons_Manager::try_get_icon_html($settings['submenu_indicator_icon'], ['class' => $submenu_indicator_class , 'aria-hidden' => 'true']);
         }
 
         return $icon_html;

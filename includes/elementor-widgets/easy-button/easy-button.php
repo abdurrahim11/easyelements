@@ -1,8 +1,8 @@
 <?php
 
-namespace EasyElements\Elementor_Widgets\Creative_Button;
+namespace EasyElements\Elementor_Widgets\Easy_Button;
 
-use EasyElements\Traits\Creative_Button_Markup;
+use EasyElements\Traits\Easy_Button_Helper;
 use Elementor\Controls_Manager;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
@@ -12,19 +12,18 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 
-
-class Creative_Button extends Widget_Base {
-   use Creative_Button_Markup;
+class Easy_Button extends Widget_Base {
+   use Easy_Button_Helper;
     public function get_name() {
-        return 'ele-creative-button';
+        return 'ele-easy-button';
     }
 
     public function get_title() {
-        return __( 'Creative Button', 'easy-elements' );
+        return esc_html__( 'Easy Button', 'easy-elements' );
     }
 
     public function get_icon() {
-        return 'ele ele-creative-button ele-widget-icon';
+        return 'ele ele-easy-button ele-widget-icon';
     }
 
     public function get_categories() {
@@ -32,7 +31,7 @@ class Creative_Button extends Widget_Base {
     }
 
     public function get_keywords() {
-        return array( 'button', 'btn', 'advance', 'link', 'creative', 'creative-button', 'advanced button' );
+        return array( 'button', 'btn', 'easy', 'advance', 'link', 'creative-button', 'advanced button' );
     }
 
     protected function register_controls()
@@ -41,7 +40,7 @@ class Creative_Button extends Widget_Base {
         $this->start_controls_section(
             '_section_button',
             [
-                'label' => __( 'Creative Button', 'easy-elements' ),
+                'label' => esc_html__( 'Easy Button', 'easy-elements' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -49,15 +48,15 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'btn_style',
             [
-                'label'   => __( 'Style', 'easy-elements' ),
+                'label'   => esc_html__( 'Style', 'easy-elements' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'hermosa',
                 'options' => [
-                    'hermosa'  => __( 'Hermosa', 'easy-elements' ),
-                    'montino'  => __( 'Montino', 'easy-elements' ),
-                    'iconica'  => __( 'Iconica', 'easy-elements' ),
-                    'symbolab' => __( 'Symbolab', 'easy-elements' ),
-                    'estilo'   => __( 'Estilo', 'easy-elements' ),
+                    'hermosa'  => esc_html__( 'Hermosa', 'easy-elements' ),
+                    'montino'  => esc_html__( 'Montino', 'easy-elements' ),
+                    'iconica'  => esc_html__( 'Iconica', 'easy-elements' ),
+                    'symbolab' => esc_html__( 'Symbolab', 'easy-elements' ),
+                    'estilo'   => esc_html__( 'Estilo', 'easy-elements' ),
                 ],
             ]
         );
@@ -65,16 +64,16 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'estilo_effect',
             [
-                'label'     => __( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'dissolve',
                 'options'   => [
-                    'dissolve'     => __( 'Dissolve', 'easy-elements' ),
-                    'slide-down'   => __( 'Slide In Down', 'easy-elements' ),
-                    'slide-right'  => __( 'Slide In Right', 'easy-elements' ),
-                    'slide-x'      => __( 'Slide Out X', 'easy-elements' ),
-                    'cross-slider' => __( 'Cross Slider', 'easy-elements' ),
-                    'slide-y'      => __( 'Slide Out Y', 'easy-elements' ),
+                    'dissolve'     => esc_html__( 'Dissolve', 'easy-elements' ),
+                    'slide-down'   => esc_html__( 'Slide In Down', 'easy-elements' ),
+                    'slide-right'  => esc_html__( 'Slide In Right', 'easy-elements' ),
+                    'slide-x'      => esc_html__( 'Slide Out X', 'easy-elements' ),
+                    'cross-slider' => esc_html__( 'Cross Slider', 'easy-elements' ),
+                    'slide-y'      => esc_html__( 'Slide Out Y', 'easy-elements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'estilo',
@@ -85,14 +84,14 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'symbolab_effect',
             [
-                'label'     => __( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'back-in-right',
                 'options'   => [
-                    'back-in-right'  => __( 'Back In Right', 'easy-elements' ),
-                    'back-in-left'   => __( 'Back In Left', 'easy-elements' ),
-                    'back-out-right' => __( 'Back Out Right', 'easy-elements' ),
-                    'back-out-left'  => __( 'Back Out Left', 'easy-elements' ),
+                    'back-in-right'  => esc_html__( 'Back In Right', 'easy-elements' ),
+                    'back-in-left'   => esc_html__( 'Back In Left', 'easy-elements' ),
+                    'back-out-right' => esc_html__( 'Back Out Right', 'easy-elements' ),
+                    'back-out-left'  => esc_html__( 'Back Out Left', 'easy-elements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'symbolab',
@@ -103,14 +102,14 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'iconica_effect',
             [
-                'label'     => __( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'slide-in-down',
                 'options'   => [
-                    'slide-in-down'  => __( 'Slide In Down', 'easy-elements' ),
-                    'slide-in-top'   => __( 'Slide In Top', 'easy-elements' ),
-                    'slide-in-right' => __( 'Slide In Right', 'easy-elements' ),
-                    'slide-in-left'  => __( 'Slide In Left', 'easy-elements' ),
+                    'slide-in-down'  => esc_html__( 'Slide In Down', 'easy-elements' ),
+                    'slide-in-top'   => esc_html__( 'Slide In Top', 'easy-elements' ),
+                    'slide-in-right' => esc_html__( 'Slide In Right', 'easy-elements' ),
+                    'slide-in-left'  => esc_html__( 'Slide In Left', 'easy-elements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'iconica',
@@ -121,17 +120,17 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'montino_effect',
             [
-                'label'     => __( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'winona',
                 'options'   => [
-                    'winona'  => __( 'Winona', 'easy-elements' ),
-                    'rayen'   => __( 'Rayen', 'easy-elements' ),
-                    'aylen'   => __( 'Aylen', 'easy-elements' ),
-                    'wapasha' => __( 'Wapasha', 'easy-elements' ),
-                    'nina'    => __( 'Nina', 'easy-elements' ),
-                    'antiman' => __( 'Antiman', 'easy-elements' ),
-                    'sacnite' => __( 'Sacnite', 'easy-elements' ),
+                    'winona'  => esc_html__( 'Winona', 'easy-elements' ),
+                    'rayen'   => esc_html__( 'Rayen', 'easy-elements' ),
+                    'aylen'   => esc_html__( 'Aylen', 'easy-elements' ),
+                    'wapasha' => esc_html__( 'Wapasha', 'easy-elements' ),
+                    'nina'    => esc_html__( 'Nina', 'easy-elements' ),
+                    'antiman' => esc_html__( 'Antiman', 'easy-elements' ),
+                    'sacnite' => esc_html__( 'Sacnite', 'easy-elements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'montino',
@@ -142,19 +141,19 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'hermosa_effect',
             [
-                'label'     => __( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easy-elements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'exploit',
                 'options'   => [
-                    'exploit'    => __( 'Exploit', 'easy-elements' ),
-                    'upward'     => __( 'Upward', 'easy-elements' ),
-                    'newbie'     => __( 'Newbie', 'easy-elements' ),
-                    'render'     => __( 'Render', 'easy-elements' ),
-                    'reshape'    => __( 'Reshape', 'easy-elements' ),
-                    'expandable' => __( 'Expandable', 'easy-elements' ),
-                    'downhill'   => __( 'Downhill', 'easy-elements' ),
-                    'bloom'      => __( 'Bloom', 'easy-elements' ),
-                    'roundup'    => __( 'Roundup', 'easy-elements' ),
+                    'exploit'    => esc_html__( 'Exploit', 'easy-elements' ),
+                    'upward'     => esc_html__( 'Upward', 'easy-elements' ),
+                    'newbie'     => esc_html__( 'Newbie', 'easy-elements' ),
+                    'render'     => esc_html__( 'Render', 'easy-elements' ),
+                    'reshape'    => esc_html__( 'Reshape', 'easy-elements' ),
+                    'expandable' => esc_html__( 'Expandable', 'easy-elements' ),
+                    'downhill'   => esc_html__( 'Downhill', 'easy-elements' ),
+                    'bloom'      => esc_html__( 'Bloom', 'easy-elements' ),
+                    'roundup'    => esc_html__( 'Roundup', 'easy-elements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'hermosa',
@@ -165,7 +164,7 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_text',
             [
-                'label'       => __( 'Text', 'easy-elements' ),
+                'label'       => esc_html__( 'Text', 'easy-elements' ),
                 'label_block' => true,
                 'type'        => Controls_Manager::TEXT,
                 'default'     => 'Button Text',
@@ -178,9 +177,9 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_link',
             array(
-                'label'         => __( 'Link', 'easy-elements' ),
+                'label'         => esc_html__( 'Link', 'easy-elements' ),
                 'type'          => Controls_Manager::URL,
-                'placeholder'   => __( 'https://your-link.com', 'easy-elements' ),
+                'placeholder'   => esc_html__( 'https://your-link.com', 'easy-elements' ),
                 'show_external' => true,
                 'default'       => array(
                     'url'         => '#',
@@ -196,8 +195,8 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'icon',
             [
-                'label'                  => __( 'Icon', 'easy-elements' ),
-                'description'            => __( 'Please set an icon for the button.', 'easy-elements' ),
+                'label'                  => esc_html__( 'Icon', 'easy-elements' ),
+                'description'            => esc_html__( 'Please set an icon for the button.', 'easy-elements' ),
                 'label_block'            => false,
                 'type'                   => Controls_Manager::ICONS,
                 'skin'                   => 'inline',
@@ -247,27 +246,27 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'align_x',
             [
-                'label'       => __( 'Alignment', 'easy-elements' ),
+                'label'       => esc_html__( 'Alignment', 'easy-elements' ),
                 'type'        => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options'     => [
                     'left'   => [
-                        'title' => __( 'Left', 'easy-elements' ),
+                        'title' => esc_html__( 'Left', 'easy-elements' ),
                         'icon'  => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => __( 'Center', 'easy-elements' ),
+                        'title' => esc_html__( 'Center', 'easy-elements' ),
                         'icon'  => 'eicon-h-align-center',
                     ],
                     'right'  => [
-                        'title' => __( 'Right', 'easy-elements' ),
+                        'title' => esc_html__( 'Right', 'easy-elements' ),
                         'icon'  => 'eicon-h-align-right',
                     ],
                 ],
                 'toggle'      => true,
                 'selectors'   => [
                     '{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}};',
-                    // '{{WRAPPER}} .ele-creative-btn-wrap' => 'text-align: {{VALUE}};',
+                    // '{{WRAPPER}} .ele-easy-btn-wrap' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -275,7 +274,7 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'magnetic_enable',
             [
-                'label'        => __( 'Magnetic Effect', 'easy-elements' ),
+                'label'        => esc_html__( 'Magnetic Effect', 'easy-elements' ),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_block'  => false,
                 'return_value' => 'yes',
@@ -286,7 +285,7 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'threshold',
             [
-                'label'     => __( 'Threshold', 'easy-elements' ),
+                'label'     => esc_html__( 'Threshold', 'easy-elements' ),
                 'type'      => Controls_Manager::NUMBER,
                 'min'       => 0,
                 'max'       => 100,
@@ -296,7 +295,7 @@ class Creative_Button extends Widget_Base {
                     'magnetic_enable' => 'yes',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .ele-creative-btn' => 'margin: {{VALUE}}px;',
+                    '{{WRAPPER}} .ele-easy-btn' => 'margin: {{VALUE}}px;',
                 ],
             ]
         );
@@ -311,7 +310,7 @@ class Creative_Button extends Widget_Base {
         $this->start_controls_section(
             '_estilo_symbolab_iconica_style_section',
             [
-                'label' => __( 'Common', 'easy-elements' ),
+                'label' => esc_html__( 'Common', 'easy-elements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -319,7 +318,7 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_item_width',
             [
-                'label'      => __( 'Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Size', 'easy-elements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -329,9 +328,9 @@ class Creative_Button extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn.ele-eft--downhill' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-eft--roundup' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-eft--roundup .progress' => 'width: calc({{SIZE}}{{UNIT}} - (({{SIZE}}{{UNIT}} / 100) * 20) ); height:auto;',
+                    '{{WRAPPER}} .ele-easy-btn.ele-eft--downhill' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-eft--roundup' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-eft--roundup .progress' => 'width: calc({{SIZE}}{{UNIT}} - (({{SIZE}}{{UNIT}} / 100) * 20) ); height:auto;',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -367,7 +366,7 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_icon_size',
             [
-                'label'      => __( 'Icon Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Icon Size', 'easy-elements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -381,7 +380,7 @@ class Creative_Button extends Widget_Base {
                     'size' => 24,
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
                 'conditions' => [
                     'relation' => 'or',
@@ -425,8 +424,8 @@ class Creative_Button extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'button_typography',
-                'label'    => __( 'Typography', 'easy-elements' ),
-                'selector' => '{{WRAPPER}} .ele-creative-btn',
+                'label'    => esc_html__( 'Typography', 'easy-elements' ),
+                'selector' => '{{WRAPPER}} .ele-easy-btn',
                 'global' => [
                     'default' => Global_Typography::TYPOGRAPHY_ACCENT,
                 ],
@@ -438,7 +437,7 @@ class Creative_Button extends Widget_Base {
             [
                 'name'       => 'button_border',
                 'exclude'    => ['color'], //remove border color
-                'selector'   => '{{WRAPPER}} .ele-creative-btn, {{WRAPPER}} .ele-creative-btn.ele-eft--bloom div',
+                'selector'   => '{{WRAPPER}} .ele-easy-btn, {{WRAPPER}} .ele-easy-btn.ele-eft--bloom div',
                 'conditions' => [
                     'terms' => [
                         [
@@ -468,12 +467,12 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_border_radius',
             [
-                'label'      => __( 'Border Radius', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--hermosa.ele-eft--bloom div' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--hermosa.ele-eft--bloom div' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -481,7 +480,7 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_hermosa_roundup_stroke_width',
             [
-                'label'      => __( 'Stroke Width', 'easy-elements' ),
+                'label'      => esc_html__( 'Stroke Width', 'easy-elements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -491,7 +490,7 @@ class Creative_Button extends Widget_Base {
                     ],
                 ],
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn.ele-eft--roundup' => '--ele-ctv-btn-stroke-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-eft--roundup' => '--ele-ctv-btn-stroke-width: {{SIZE}}{{UNIT}};',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -524,19 +523,19 @@ class Creative_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_padding',
             [
-                'label'      => __( 'Padding', 'easy-elements' ),
+                'label'      => esc_html__( 'Padding', 'easy-elements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--iconica > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--winona > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--winona::after' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--rayen > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--rayen::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--nina' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--montino.ele-eft--nina::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                    '{{WRAPPER}} .ele-creative-btn.ele-stl--hermosa.ele-eft--bloom span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--iconica > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--winona > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--winona::after' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--rayen > span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--rayen::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--nina' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--montino.ele-eft--nina::before' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-easy-btn.ele-stl--hermosa.ele-eft--bloom span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'separator'  => 'before',
             ]
@@ -580,17 +579,17 @@ class Creative_Button extends Widget_Base {
         $this->start_controls_tab(
             '_tab_button_normal',
             [
-                'label' => __( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easy-elements' ),
             ]
         );
 
         $this->add_control(
             'button_text_color',
             [
-                'label'     => __( 'Text Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Text Color', 'easy-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-txt-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-txt-clr: {{VALUE}}',
                 ],
             ]
         );
@@ -598,10 +597,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_bg_color',
             [
-                'label'      => __( 'Background Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Background Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-bg-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-bg-clr: {{VALUE}}',
                 ],
                 'conditions' => $conditions,
             ]
@@ -610,10 +609,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_border_color',
             [
-                'label'      => __( 'Border Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-border-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-border-clr: {{VALUE}}',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -649,10 +648,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_roundup_circle_color',
             [
-                'label'      => __( 'Circle Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Circle Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn.ele-eft--roundup' => '--ele-ctv-btn-border-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn.ele-eft--roundup' => '--ele-ctv-btn-border-clr: {{VALUE}}',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -684,7 +683,7 @@ class Creative_Button extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'button_box_shadow',
-                'selector' => '{{WRAPPER}} .ele-creative-btn',
+                'selector' => '{{WRAPPER}} .ele-easy-btn',
             ]
         );
 
@@ -693,17 +692,17 @@ class Creative_Button extends Widget_Base {
         $this->start_controls_tab(
             '_tabs_button_hover',
             [
-                'label' => __( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easy-elements' ),
             ]
         );
 
         $this->add_control(
             'button_hover_text_color',
             [
-                'label'     => __( 'Text Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Text Color', 'easy-elements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-txt-hvr-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-txt-hvr-clr: {{VALUE}}',
                 ],
             ]
         );
@@ -711,10 +710,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_hover_bg_color',
             [
-                'label'      => __( 'Background Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Background Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-bg-hvr-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-bg-hvr-clr: {{VALUE}}',
                 ],
                 'conditions' => $conditions,
             ]
@@ -723,10 +722,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_hover_border_color',
             [
-                'label'      => __( 'Border Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -762,10 +761,10 @@ class Creative_Button extends Widget_Base {
         $this->add_control(
             'button_hover_roundup_circle_color',
             [
-                'label'      => __( 'Circle Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Circle Color', 'easy-elements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
-                    '{{WRAPPER}} .ele-creative-btn-wrap .ele-creative-btn.ele-eft--roundup' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',
+                    '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn.ele-eft--roundup' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',
                 ],
                 'conditions' => [
                     'terms' => [
@@ -797,7 +796,7 @@ class Creative_Button extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name'     => 'button_hover_box_shadow',
-                'selector' => '{{WRAPPER}} .ele-creative-btn:hover',
+                'selector' => '{{WRAPPER}} .ele-easy-btn:hover',
             ]
         );
 
@@ -806,9 +805,10 @@ class Creative_Button extends Widget_Base {
     }
 
     protected function render() {
-        $settings = $this->get_settings_for_display();
-        $this->add_render_attribute( 'wrap', 'data-magnetic', $settings['magnetic_enable'] ? $settings['magnetic_enable'] : 'no' );
-        $this->{'render_' . $settings['btn_style'] . '_markup'}( $settings );
+        $display_settings = $this->get_settings_for_display();
+        $this->add_render_attribute('wrap', 'data-magnetic', $display_settings['magnetic_enable'] ? $display_settings['magnetic_enable'] : 'no');
+        $this->{'render_' . $display_settings['btn_style'] . '_button'}($display_settings);
     }
+
 
 }

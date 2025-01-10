@@ -63,13 +63,13 @@ class Init {
         check_ajax_referer( 'easy_elements_cross_cp_import', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( __( 'Not a valid user', 'easy_elements-addons-for-elementor' ), 403 );
+            wp_send_json_error( esc_html__( 'Not a valid user', 'easy_elements-addons-for-elementor' ), 403 );
         }
 
         $media_import = isset( $_POST['copy_content'] ) ? wp_unslash( $_POST['copy_content'] ) : '';
 
         if ( empty( $media_import ) ) {
-            wp_send_json_error( __( 'Empty Content.', 'easy_elements-addons-for-elementor' ) );
+            wp_send_json_error( esc_html__( 'Empty Content.', 'easy_elements-addons-for-elementor' ) );
         }
 
         $media_import = array( json_decode( $media_import, true ) );

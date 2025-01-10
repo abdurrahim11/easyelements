@@ -5,11 +5,76 @@
     // Initialize color picker
     $(".easyelements-menu-wpcolor-picker").wpColorPicker();
 
+    // Define the icon library with the correct prefix
+    var easyElementsIcons = {
+        "easy-elements": {
+            regular: {
+                prefix: "ele ele-",
+                "icon-style": "ele-regular",
+                "list-icon": "ele ele-easy-elements",
+                icons: [
+                    "ele ele-easy-button", "ele ele-horizontal-timelines", "ele ele-info-box", "ele ele-nav-menu", "ele ele-post-grid",
+                    "ele ele-pricing-table", "ele ele-progress", "ele ele-step-flow", "ele ele-team-member", "ele ele-testimonials",
+                    "ele ele-activity", "ele ele-airplay", "ele ele-alert-circle", "ele ele-alert-octagon", "ele ele-alert-triangle",
+                    "ele ele-align-center", "ele ele-align-justify", "ele ele-align-left", "ele ele-align-right", "ele ele-anchor",
+                    "ele ele-aperture", "ele ele-archive", "ele ele-arrow-down", "ele ele-arrow-down-circle", "ele ele-arrow-down-left",
+                    "ele ele-arrow-down-right", "ele ele-arrow-left", "ele ele-arrow-left-circle", "ele ele-arrow-right",
+                    "ele ele-arrow-right-circle", "ele ele-arrow-up", "ele ele-arrow-up-circle", "ele ele-arrow-up-left",
+                    "ele ele-arrow-up-right", "ele ele-at-sign", "ele ele-award", "ele ele-bar-chart", "ele ele-bar-chart-2", "ele ele-battery",
+                    "ele ele-battery-charging", "ele ele-bell", "ele ele-bell-off", "ele ele-bluetooth", "ele ele-bold", "ele ele-book",
+                    "ele ele-bookmark", "ele ele-book-open", "ele ele-box", "ele ele-briefcase", "ele ele-calendar", "ele ele-camera",
+                    "ele ele-camera-off", "ele ele-cast", "ele ele-check", "ele ele-check-circle", "ele ele-check-square",
+                    "ele ele-chevrons-left", "ele ele-chevrons-up", "ele ele-chrome", "ele ele-circle", "ele ele-clipboard", "ele ele-clock",
+                    "ele ele-cloud", "ele ele-cloud-drizzle", "ele ele-cloud-lightning", "ele ele-cloud-off", "ele ele-cloud-rain",
+                    "ele ele-cloud-snow", "ele ele-code", "ele ele-codepen", "ele ele-codesandbox", "ele ele-coffee", "ele ele-columns",
+                    "ele ele-command", "ele ele-compass", "ele ele-copy", "ele ele-corner-down-left", "ele ele-corner-down-right",
+                    "ele ele-corner-left-down", "ele ele-corner-left-up", "ele ele-corner-right-down", "ele ele-corner-right-up",
+                    "ele ele-corner-up-left", "ele ele-corner-up-right", "ele ele-cpu", "ele ele-credit-card", "ele ele-crop",
+                    "ele ele-crosshair", "ele ele-database", "ele ele-delete", "ele ele-disc", "ele ele-divide", "ele ele-divide-circle",
+                    "ele ele-divide-square", "ele ele-dollar-sign", "ele ele-download", "ele ele-download-cloud", "ele ele-dribbble",
+                    "ele ele-droplet", "ele ele-edit", "ele ele-edit-2", "ele ele-edit-3", "ele ele-external-link", "ele ele-eye", "ele ele-eye-off",
+                    "ele ele-facebook", "ele ele-fast-forward", "ele ele-feather", "ele ele-figma", "ele ele-file", "ele ele-file-minus",
+                    "ele ele-file-plus", "ele ele-file-text", "ele ele-film", "ele ele-filter", "ele ele-flag", "ele ele-folder", "ele ele-folder-minus",
+                    "ele ele-folder-plus", "ele ele-framer", "ele ele-frown", "ele ele-gift", "ele ele-git-branch", "ele ele-git-commit",
+                    "ele ele-github", "ele ele-gitlab", "ele ele-git-merge", "ele ele-git-pull-request", "ele ele-globe", "ele ele-grid",
+                    "ele ele-hard-drive", "ele ele-hash", "ele ele-headphones", "ele ele-heart", "ele ele-help-circle", "ele ele-hexagon",
+                    "ele ele-home", "ele ele-image", "ele ele-inbox", "ele ele-info", "ele ele-instagram", "ele ele-italic", "ele ele-key", "ele ele-layers",
+                    "ele ele-layout", "ele ele-life-buoy", "ele ele-link-2", "ele ele-linkedin", "ele ele-list", "ele ele-loader", "ele ele-lock",
+                    "ele ele-log-in", "ele ele-log-out", "ele ele-mail", "ele ele-map", "ele ele-map-pin", "ele ele-maximize", "ele ele-maximize-2",
+                    "ele ele-meh", "ele ele-menu", "ele ele-message-circle", "ele ele-message-square", "ele ele-mic", "ele ele-mic-off",
+                    "ele ele-minimize", "ele ele-minimize-2", "ele ele-minus", "ele ele-minus-circle", "ele ele-minus-square", "ele ele-monitor",
+                    "ele ele-moon", "ele ele-more-horizontal", "ele ele-more-vertical", "ele ele-mouse-pointer", "ele ele-move", "ele ele-music",
+                    "ele ele-navigation", "ele ele-navigation-2", "ele ele-octagon", "ele ele-package", "ele ele-paperclip", "ele ele-pause",
+                    "ele ele-pause-circle", "ele ele-pen-tool", "ele ele-percent", "ele ele-phone", "ele ele-phone-call", "ele ele-phone-forwarded",
+                    "ele ele-phone-incoming", "ele ele-phone-missed", "ele ele-phone-off", "ele ele-phone-outgoing", "ele ele-pie-chart",
+                    "ele ele-play", "ele ele-play-circle", "ele ele-plus-circle", "ele ele-plus-square", "ele ele-pocket", "ele ele-power",
+                    "ele ele-printer", "ele ele-radio", "ele ele-refresh-ccw", "ele ele-refresh-cw", "ele ele-repeat", "ele ele-rewind",
+                    "ele ele-rotate-ccw", "ele ele-rotate-cw", "ele ele-rss", "ele ele-save", "ele ele-scissors", "ele ele-search", "ele ele-send",
+                    "ele ele-server", "ele ele-settings", "ele ele-share", "ele ele-share-2", "ele ele-shield", "ele ele-shield-off",
+                    "ele ele-shopping-bag", "ele ele-shopping-cart", "ele ele-shuffle", "ele ele-sidebar", "ele ele-skip-back",
+                    "ele ele-skip-forward", "ele ele-slack", "ele ele-slash", "ele ele-sliders", "ele ele-smartphone", "ele ele-smile",
+                    "ele ele-speaker", "ele ele-square", "ele ele-star", "ele ele-stop-circle", "ele ele-sun", "ele ele-sunrise", "ele ele-sunset",
+                    "ele ele-tablet", "ele ele-tag", "ele ele-target", "ele ele-terminal", "ele ele-thermometer", "ele ele-thumbs-down",
+                    "ele ele-thumbs-up", "ele ele-toggle-left", "ele ele-toggle-right", "ele ele-tool", "ele ele-trash", "ele ele-trash-2",
+                    "ele ele-trello", "ele ele-trending-down", "ele ele-trending-up", "ele ele-triangle", "ele ele-truck", "ele ele-tv",
+                    "ele ele-twitch", "ele ele-twitter", "ele ele-type", "ele ele-umbrella", "ele ele-underline", "ele ele-unlock", "ele ele-upload",
+                    "ele ele-upload-cloud", "ele ele-user", "ele ele-user-check", "ele ele-user-minus", "ele ele-user-plus", "ele ele-users",
+                    "ele ele-user-x", "ele ele-video", "ele ele-video-off", "ele ele-voicemail", "ele ele-volume", "ele ele-volume-1",
+                    "ele ele-volume-2", "ele ele-volume-x", "ele ele-watch", "ele ele-wifi", "ele ele-wifi-off", "ele ele-wind", "ele ele-x",
+                    "ele ele-x-circle", "ele ele-x-octagon", "ele ele-x-square", "ele ele-youtube", "ele ele-zap", "ele ele-zap-off",
+                    "ele ele-zoom-in", "ele ele-zoom-out", "ele ele-easy-elements", "ele ele-view", "ele ele-right-arrow",
+                    "ele ele-arrow-point-to-down", "ele ele-down-arrow", "ele ele-left-arrows", "ele ele-link", "ele ele-plus", "ele ele-up-arrow"
+                ]
+            }
+        }
+    };
+
     // Initialize AestheticIconPicker
     var iconPicker = AestheticIconPicker({
         'selector': '#ele-picker-wrap',
         // must be an ID
         'onClick': '#ele-select-icon',
+         'iconLibrary': easyElementsIcons,
     });
 
     // Save menu item settings
@@ -184,7 +249,7 @@
     });
 
     // Prepend Mega Menu markup and trigger change event
-    $(window.easyelements_options_megamenu_markup)
+    $(window.easyelements_megamenu_btn_markup)
         .insertAfter("#nav-menu-header #menu-name")
         .parent()
         .find("#easyelements-menu-metabox-input-is-enabled")

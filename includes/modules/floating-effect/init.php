@@ -5,25 +5,22 @@ use Elementor\Controls_Manager;
 use Elementor\Element_Base;
 
 class Init {
-    private $floating_effect_url_url;
-    private $should_script_enqueue = false;
+    private $is_script_enqueued = false;
 
     public function __construct() {
-        $this->floating_effect_url_url = ELE_PLUGIN_URL . 'includes/modules/floating-effect/';
-        add_action( 'elementor/element/common/_section_style/after_section_end', [ $this, 'register' ], 1 );
-
-        add_action( 'elementor/frontend/widget/before_render', [ $this, 'should_script_enqueue' ] );
-
+        add_action( 'elementor/element/common/_section_style/after_section_end', [ $this, 'register_controls' ], 1 );
+        add_action( 'elementor/frontend/widget/before_render', [ $this, 'check_should_enqueue_script' ] );
         add_action( 'elementor/preview/enqueue_scripts', [ $this, 'enqueue_scripts' ] );
     }
 
+    /**
+     * Enqueue required scripts for floating effects.
+     */
     public function enqueue_scripts() {
-        // Floating effects
         wp_enqueue_script( 'anime' );
-
         wp_enqueue_script(
             'ele-floating',
-            $this->floating_effect_url_url . 'js/floating-effect.min.js',
+            ELE_PLUGIN_URL . 'includes/modules/floating-effect/js/floating-effect.min.js',
             null,
             ELE_VERSION,
             true
@@ -31,30 +28,32 @@ class Init {
     }
 
     /**
-     * Set should_script_enqueue based extension settings
+     * Conditionally enqueue scripts based on element settings.
      *
-     * @param Element_Base $section
-     * @return void
+     * @param Element_Base $section The Elementor element instance.
      */
-    public  function should_script_enqueue( Element_Base $section ) {
-        if ( $this->should_script_enqueue ) {
+    public function check_should_enqueue_script( Element_Base $section ) {
+        if ( $this->is_script_enqueued ) {
             return;
         }
 
-        if ( 'yes' == $section->get_settings_for_display( 'ele_floating_fx' ) ) {
+        if ( 'yes' === $section->get_settings_for_display( 'ele_floating_fx' ) ) {
             $this->enqueue_scripts();
-
-            $this->should_script_enqueue = true;
-
-            remove_action( 'elementor/frontend/widget/before_render', [ $this, 'should_script_enqueue' ] );
+            $this->is_script_enqueued = true;
+            remove_action( 'elementor/frontend/widget/before_render', [ $this, 'check_should_enqueue_script' ] );
         }
     }
 
-    public function register( Element_Base $element ) {
+    /**
+     * Register floating effect controls for Elementor elements.
+     *
+     * @param Element_Base $element The Elementor element instance.
+     */
+    public function register_controls( Element_Base $element ) {
         $element->start_controls_section(
             '_section_ele_floating_effects',
             [
-                'label' => __( 'Floating Effects', 'easy-elements' ),
+                'label' => esc_html__( 'Floating Effects', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_ADVANCED,
             ]
         );
@@ -62,7 +61,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx',
             [
-                'label' => __( 'Enable', 'easy-elements' ),
+                'label' => esc_html__( 'Enable', 'easy-elements' ),
                 'type' => Controls_Manager::SWITCHER,
                 'return_value' => 'yes',
                 'frontend_available' => true,
@@ -72,7 +71,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_translate_toggle',
             [
-                'label' => __( 'Translate', 'easy-elements' ),
+                'label' => esc_html__( 'Translate', 'easy-elements' ),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
                 'return_value' => 'yes',
                 'frontend_available' => true,
@@ -87,7 +86,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_translate_x',
             [
-                'label' => __( 'Translate X', 'easy-elements' ),
+                'label' => esc_html__( 'Translate X', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -103,8 +102,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -120,7 +119,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_translate_y',
             [
-                'label' => __( 'Translate Y', 'easy-elements' ),
+                'label' => esc_html__( 'Translate Y', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -136,8 +135,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -153,7 +152,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_translate_duration',
             [
-                'label' => __( 'Duration', 'easy-elements' ),
+                'label' => esc_html__( 'Duration', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -178,7 +177,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_translate_delay',
             [
-                'label' => __( 'Delay', 'easy-elements' ),
+                'label' => esc_html__( 'Delay', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -202,7 +201,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_toggle',
             [
-                'label' => __( 'Rotate', 'easy-elements' ),
+                'label' => esc_html__( 'Rotate', 'easy-elements' ),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
                 'return_value' => 'yes',
                 'frontend_available' => true,
@@ -217,7 +216,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_x',
             [
-                'label' => __( 'Rotate X', 'easy-elements' ),
+                'label' => esc_html__( 'Rotate X', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -233,8 +232,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -250,7 +249,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_y',
             [
-                'label' => __( 'Rotate Y', 'easy-elements' ),
+                'label' => esc_html__( 'Rotate Y', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -266,8 +265,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -283,7 +282,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_z',
             [
-                'label' => __( 'Rotate Z', 'easy-elements' ),
+                'label' => esc_html__( 'Rotate Z', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -299,8 +298,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -316,7 +315,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_duration',
             [
-                'label' => __( 'Duration', 'easy-elements' ),
+                'label' => esc_html__( 'Duration', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -341,7 +340,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_rotate_delay',
             [
-                'label' => __( 'Delay', 'easy-elements' ),
+                'label' => esc_html__( 'Delay', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -365,7 +364,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_scale_toggle',
             [
-                'label' => __( 'Scale', 'easy-elements' ),
+                'label' => esc_html__( 'Scale', 'easy-elements' ),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
                 'return_value' => 'yes',
                 'frontend_available' => true,
@@ -380,7 +379,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_scale_x',
             [
-                'label' => __( 'Scale X', 'easy-elements' ),
+                'label' => esc_html__( 'Scale X', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -397,8 +396,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -414,7 +413,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_scale_y',
             [
-                'label' => __( 'Scale Y', 'easy-elements' ),
+                'label' => esc_html__( 'Scale Y', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'sizes' => [
@@ -431,8 +430,8 @@ class Init {
                     ]
                 ],
                 'labels' => [
-                    __( 'From', 'easy-elements' ),
-                    __( 'To', 'easy-elements' ),
+                    esc_html__( 'From', 'easy-elements' ),
+                    esc_html__( 'To', 'easy-elements' ),
                 ],
                 'scales' => 1,
                 'handles' => 'range',
@@ -448,7 +447,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_scale_duration',
             [
-                'label' => __( 'Duration', 'easy-elements' ),
+                'label' => esc_html__( 'Duration', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -473,7 +472,7 @@ class Init {
         $element->add_control(
             'ele_floating_fx_scale_delay',
             [
-                'label' => __( 'Delay', 'easy-elements' ),
+                'label' => esc_html__( 'Delay', 'easy-elements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [

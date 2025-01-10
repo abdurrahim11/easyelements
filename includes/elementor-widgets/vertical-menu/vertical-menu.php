@@ -184,7 +184,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_control_vertical_menu_toggle_title_icon_right',
             [
-                'label' => __( 'Menu Icon Left', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Icon Left', 'easy-elements' ),
                 'type' => Controls_Manager::ICONS,
             ]
         );
@@ -202,7 +202,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_control_vertical_menu_toggle_title_icon_left',
             [
-                'label' => __( 'Menu Icon Right', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Icon Right', 'easy-elements' ),
                 'type' => Controls_Manager::ICONS,
             ]
         );
@@ -229,7 +229,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_vertical_menu_toggle_style_tab',
             [
-                'label' => __( 'Toggle Button', 'easy-elements' ),
+                'label' => esc_html__( 'Toggle Button', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'ele_vertical_menu_toggle_visibility' => 'yes'
@@ -252,18 +252,18 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ele_vertical_menu_toggle_content_typography',
-                'label' => __( 'Typography', 'easy-elements' ),
-                'selector' => '{{WRAPPER}} .ele-vertical-menu-tigger',
+                'label' => esc_html__( 'Typography', 'easy-elements' ),
+                'selector' => '{{WRAPPER}} .ele-vertical-menu-trigger',
             ]
         );
 
         $this->add_control(
             'ele_vertical_menu_toggle_title_color',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ele-vertical-menu-tigger' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ele-vertical-menu-trigger' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -272,20 +272,20 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_vertical_menu_toggle_background',
-                'label' => __( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easy-elements' ),
                 'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .ele-vertical-menu-tigger',
+                'selector' => '{{WRAPPER}} .ele-vertical-menu-trigger',
             ]
         );
 
         $this->add_control(
             'ele_vertical_menu_toggle_padding',
             [
-                'label' => __( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .ele-vertical-menu-tigger' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-vertical-menu-trigger' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -293,11 +293,11 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_toggle_border_radius',
             [
-                'label' => __( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .ele-vertical-menu-tigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .ele-vertical-menu-trigger' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -314,10 +314,10 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_toggle_title_color_active',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .vertical-menu-active .ele-vertical-menu-tigger' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .vertical-menu-active .ele-vertical-menu-trigger' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -326,9 +326,9 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_vertical_menu_toggle_background_active',
-                'label' => __( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easy-elements' ),
                 'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .vertical-menu-active .ele-vertical-menu-tigger',
+                'selector' => '{{WRAPPER}} .vertical-menu-active .ele-vertical-menu-trigger',
             ]
         );
 
@@ -341,7 +341,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_section(
             'ele_vertical_menu_container_style_tab',
             [
-                'label' => __( 'Main Menu', 'easy-elements' ),
+                'label' => esc_html__( 'Main Menu', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -350,7 +350,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_vertical_menu_container_background',
-                'label' => __( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easy-elements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav',
             ]
@@ -360,7 +360,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ele_vertical_menu_container_box_shadow',
-                'label' => __( 'Box Shadow', 'easy-elements' ),
+                'label' => esc_html__( 'Box Shadow', 'easy-elements' ),
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav',
             ]
         );
@@ -368,7 +368,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_container_border_radius',
             [
-                'label' => __( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -382,7 +382,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_section(
             'ele_vertical_menu_items_style_tab',
             [
-                'label' => __( 'Menu Items', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Items', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -402,7 +402,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ele_vertical_menu_items_content_typography',
-                'label' => __( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easy-elements' ),
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav>li>a',
             ]
         );
@@ -410,7 +410,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_items_title_color',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-vertical-navbar-nav>li>a' => 'color: {{VALUE}}',
@@ -421,7 +421,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_items_padding',
             [
-                'label' => __( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -433,7 +433,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_items_icon_padding',
             [
-                'label' => __( 'Icon Spacing', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Spacing', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -446,7 +446,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_vertical_menu_items_border',
-                'label' => __( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easy-elements' ),
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav>li',
             ]
         );
@@ -463,7 +463,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_menu_items_title_color_active',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-vertical-navbar-nav>li>a:hover' => 'color: {{VALUE}}',
@@ -481,7 +481,7 @@ class Vertical_Menu extends Widget_Base {
         $this->start_controls_section(
             'ele_vertical_sub_menu_items_style_tab',
             [
-                'label' => __( 'Sub Menu Items', 'easy-elements' ),
+                'label' => esc_html__( 'Sub Menu Items', 'easy-elements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -520,7 +520,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ele_vertical_sub_menu_items_content_typography',
-                'label' => __( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easy-elements' ),
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav .easyelements-dropdown>li>a',
             ]
         );
@@ -528,7 +528,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_sub_menu_items_title_color',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-vertical-navbar-nav .easyelements-dropdown>li>a' => 'color: {{VALUE}}',
@@ -539,7 +539,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_sub_menu_items_padding',
             [
-                'label' => __( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easy-elements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -552,7 +552,7 @@ class Vertical_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_vertical_sub_menu_items_border',
-                'label' => __( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easy-elements' ),
                 'selector' => '{{WRAPPER}} .ele-vertical-navbar-nav .easyelements-dropdown>li',
             ]
         );
@@ -569,7 +569,7 @@ class Vertical_Menu extends Widget_Base {
         $this->add_control(
             'ele_vertical_sub_menu_items_title_color_active',
             [
-                'label' => __( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easy-elements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-vertical-navbar-nav .easyelements-dropdown>li>a:hover' => 'color: {{VALUE}}',
@@ -608,7 +608,7 @@ class Vertical_Menu extends Widget_Base {
         extract($display_settings);
 
         // Check if a menu is selected
-        if ($easyelements_nav_menu !== '') {
+        if ($ele_control_nav_menu !== '') {
             // Determine if the vertical menu should be active
             $active_vertical_menu_class = $easyelements_vertical_menu_show_active_or_not == 'yes' ? 'vertical-menu-active' : '';
 

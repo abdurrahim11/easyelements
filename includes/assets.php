@@ -53,6 +53,14 @@ class Assets {
         );
 
         wp_register_script(
+            'waypoints',
+            ELE_PLUGIN_URL . 'assets/libs/waypoints/jquery.waypoints.js',
+            array( 'jquery' ),
+            ELE_VERSION,
+            true
+        );
+
+        wp_register_script(
             'anime',
             ELE_PLUGIN_URL . 'assets/libs/anime/js/anime.min.js',
             array( 'jquery' ),

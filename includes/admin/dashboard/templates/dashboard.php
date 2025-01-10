@@ -19,28 +19,28 @@
         <div class="ele-body-content-wrapper">
             <div class="ele-body-content-left">
                 <div class="ele-support-info-wrapper">
-                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow" title="<?php echo esc_attr( __( 'Technical Support', 'easy-elements' ) ); ?>">
+                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow" title="<?php echo esc_attr( esc_html__( 'Technical Support', 'easy-elements' ) ); ?>">
                         <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/Email-Support-icon.svg" alt="Technical Support" />
-                        <h3><?php echo esc_html( __( 'Technical Support', 'easy-elements' ) ); ?></h3>
+                        <h3><?php echo esc_html( esc_html__( 'Technical Support', 'easy-elements' ) ); ?></h3>
                     </a>
-                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow" title="<?php echo esc_attr( __( 'Support Forum', 'easy-elements' ) ); ?>">
+                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow" title="<?php echo esc_attr( esc_html__( 'Support Forum', 'easy-elements' ) ); ?>">
                         <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/Support-Forum-icon.svg" alt="Support Forum" />
-                        <h3><?php echo esc_html( __( 'Support Forum', 'easy-elements' ) ); ?></h3> 
+                        <h3><?php echo esc_html( esc_html__( 'Support Forum', 'easy-elements' ) ); ?></h3> 
                     </a>
-                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow"  title="<?php echo esc_attr( __( 'Documentation', 'easy-elements' ) ); ?>">
+                    <a href="#" target="_blank" class="ele-support-item ele-box-shadow"  title="<?php echo esc_attr( esc_html__( 'Documentation', 'easy-elements' ) ); ?>">
                         <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/documentation.svg" alt="Documentation" />
-                        <h3><?php echo esc_html( __( 'Documentation', 'easy-elements' ) ); ?></h3>
+                        <h3><?php echo esc_html( esc_html__( 'Documentation', 'easy-elements' ) ); ?></h3>
                     </a>
                 </div>
                 <div class="ele-feature-request-wrapper">
                         <div class="ele-feature-request-header">
                             <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/request.svg" alt="" />
-                            <h3 class="ele-secondery-heading"><?php echo esc_html( __( 'Request a Feature', 'easy-elements' ) ); ?></h3>
+                            <h3 class="ele-secondery-heading"><?php echo esc_html( esc_html__( 'Request a Feature', 'easy-elements' ) ); ?></h3>
                         </div>
                         <p class="ele-secondery-p">
-                        <?php echo esc_html( __( 'Missing something? Share your IDEA/Requirements with us, drop us an feature topic and your feature description.', 'easy-elements' ) ); ?>
+                        <?php echo esc_html( esc_html__( 'Missing something? Share your IDEA/Requirements with us, drop us an feature topic and your feature description.', 'easy-elements' ) ); ?>
                         </p>
-                        <a class="ele-button" href="#" target="_blank"><?php echo esc_html( __( 'Request a Feature', 'easy-elements' ) ); ?></a>
+                        <a class="ele-button" href="#" target="_blank"><?php echo esc_html( esc_html__( 'Request a Feature', 'easy-elements' ) ); ?></a>
                     </div>
 
             </div>
@@ -49,11 +49,11 @@
                     <div class="ele-template-library">
                         <img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/starter-templates.png" alt="" />                       
                     </div>
-                    <h3 class="ele-secondery-heading"><?php echo esc_html( __( 'Build Websites 10x Faster with Templates', 'easy-elements' ) ); ?></h3>
+                    <h3 class="ele-secondery-heading"><?php echo esc_html( esc_html__( 'Build Websites 10x Faster with Templates', 'easy-elements' ) ); ?></h3>
                     <p class="ele-secondery-p">
-                    <?php echo esc_html( __( 'Copy and paste fully designed sections from the Easy Elements website directly to your website.', 'easy-elements' ) ); ?>
+                    <?php echo esc_html( esc_html__( 'Copy and paste fully designed sections from the Easy Elements website directly to your website.', 'easy-elements' ) ); ?>
                     </p>
-                    <a class="ele-button" href="#" target="_blank"><?php echo esc_html( __( 'How it works?', 'easy-elements' ) ); ?></a>
+                    <a class="ele-button" href="#" target="_blank"><?php echo esc_html( esc_html__( 'How it works?', 'easy-elements' ) ); ?></a>
                 </div>
 
             </div>
@@ -66,33 +66,33 @@
 <div id="elements" class="ele-body-wrapper">
     <div class="ele-elements-dashboard ele-box-shadow">
         <div class="ele-elements-header-content">
-            <h2 class="ele-secondery-heading"><?php echo esc_html( __('Elements Control', 'easy-elements') ); ?></h2>
-            <p class="ele-secondery-p"><?php echo esc_html( __('You can disable the default controls from these settings and enable the required controls.', 'easy-elements') ); ?></p>
+            <h2 class="ele-secondery-heading"><?php echo esc_html( esc_html__('Elements Control', 'easy-elements') ); ?></h2>
+            <p class="ele-secondery-p"><?php echo esc_html( esc_html__('You can disable the default controls from these settings and enable the required controls.', 'easy-elements') ); ?></p>
         </div>
         <div class="ele-elements-header-switcher-controls">
             <div class="ele-elements-header-switcher-control">
-                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( __('Disable All', 'easy-elements') ); ?></div>
+                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( esc_html__('Disable All', 'easy-elements') ); ?></div>
                 <div class="ele-elements-header-switcher">
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
                     </label>
                 </div>
-                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( __('Enable All', 'easy-elements') ); ?></div>
+                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( esc_html__('Enable All', 'easy-elements') ); ?></div>
             </div>
             <div class="ele-elements-header-save-settings">
-                <button class="ele-button"><?php echo esc_html( __('Save Settings', 'easy-elements') ); ?></button>
+                <button class="ele-button"><?php echo esc_html( esc_html__('Save Settings', 'easy-elements') ); ?></button>
             </div>
         </div>
     </div>
     <div class="ele-elements-control-switchers-wrapper">
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Nav Menu', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Nav Menu', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -101,12 +101,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-popular"><?php echo esc_html( __('Popular', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-popular"><?php echo esc_html( esc_html__('Popular', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Vertical Menu', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Vertical Menu', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox">
                         <span class="ele-elements-slider round"></span>
@@ -115,12 +115,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Post Grid', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Post Grid', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -129,12 +129,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Step Flow', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Step Flow', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -143,12 +143,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Team', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Team', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -157,12 +157,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Testimonial', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Testimonial', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -171,12 +171,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Horizontal Timeline', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Horizontal Timeline', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -185,12 +185,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Hotspot', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Hotspot', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -199,12 +199,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Progress Bar', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Progress Bar', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -213,12 +213,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Pricing', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Pricing', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -234,33 +234,33 @@
 <div id="features" class="ele-body-wrapper">
     <div class="ele-elements-dashboard ele-box-shadow">
         <div class="ele-elements-header-content">
-            <h2 class="ele-secondery-heading"><?php echo esc_html( __('Feature Control', 'easy-elements') ); ?></h2>
-            <p class="ele-secondery-p"><?php echo esc_html( __('Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus.', 'easy-elements') ); ?></p>
+            <h2 class="ele-secondery-heading"><?php echo esc_html( esc_html__('Feature Control', 'easy-elements') ); ?></h2>
+            <p class="ele-secondery-p"><?php echo esc_html( esc_html__('Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus.', 'easy-elements') ); ?></p>
         </div>
         <div class="ele-elements-header-switcher-controls">
             <div class="ele-elements-header-switcher-control">
-                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( __('Disable All', 'easy-elements') ); ?></div>
+                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( esc_html__('Disable All', 'easy-elements') ); ?></div>
                 <div class="ele-elements-header-switcher">
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
                     </label>
                 </div>
-                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( __('Enable All', 'easy-elements') ); ?></div>
+                <div class="ele-elements-header-switcher ele-secondery-p"><?php echo esc_html( esc_html__('Enable All', 'easy-elements') ); ?></div>
             </div>
             <div class="ele-elements-header-save-settings">
-                <button class="ele-button"><?php echo esc_html( __('Save Settings', 'easy-elements') ); ?></button>
+                <button class="ele-button"><?php echo esc_html( esc_html__('Save Settings', 'easy-elements') ); ?></button>
             </div>
         </div>
     </div>
     <div class="ele-elements-control-switchers-wrapper">
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Header & Footer Builder', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Header & Footer Builder', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -269,12 +269,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Megamenu Builder', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Megamenu Builder', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -283,12 +283,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Live Copy Paste', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Live Copy Paste', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -297,12 +297,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Floating Effects', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Floating Effects', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>
@@ -311,12 +311,12 @@
             </div>
         </div>
         <div class="ele-elements-control-item">
-            <span class="ele-elements-update-label ele-update"><?php echo esc_html( __('Updated', 'easy-elements') ); ?></span>
+            <span class="ele-elements-update-label ele-update"><?php echo esc_html( esc_html__('Updated', 'easy-elements') ); ?></span>
             <div class="ele-elements-controls">
-                <h3><?php echo esc_html( __('Custom Css', 'easy-elements') ); ?></h3>
+                <h3><?php echo esc_html( esc_html__('Custom Css', 'easy-elements') ); ?></h3>
                 <div class="ele-elements-control">
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Documentation', 'easy-elements') ); ?></span></a>
-                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( __('Tutorial', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/doc.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Documentation', 'easy-elements') ); ?></span></a>
+                    <a href="#" target="_blank"><img src="<?php echo esc_url( ELE_PLUGIN_URL . 'assets/admin/' );?>images/demo-play.svg" alt=""><span class="ele-tooltip"><?php echo esc_html( esc_html__('Tutorial', 'easy-elements') ); ?></span></a>
                     <label class="ele-elements-switch">
                         <input type="checkbox" checked>
                         <span class="ele-elements-slider round"></span>

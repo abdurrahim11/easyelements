@@ -21,7 +21,9 @@ class Register_Menus {
     public function __construct( $dashboard ) {
         $this->dashboard = $dashboard;
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-        //add_filter( 'plugin_action_links_appointment-booking-and-scheduling/appointment-booking-and-scheduling.php', array( $this, 'plugin_setting_link' ) );
+        // Hook to admin notices and remove them on your options page
+        add_action('admin_notices', array($this, 'remove_admin_notices'));
+        add_filter( 'plugin_action_links_easy-element/easy-element.php', array( $this, 'plugin_setting_link' ) );
     }
 
     /**
@@ -51,9 +53,19 @@ class Register_Menus {
      * @return mixed
      */
     public function plugin_setting_link( $link ) {
-        $new_link = sprintf("<a href='%s'>%s</a>","admin.php?page=calendar-manage",esc_html__("Setting","woo-address-auto-complete"));
+        $new_link = sprintf("<a href='%s'>%s</a>","admin.php?page=easy-elements",esc_html__("Setting","woo-address-auto-complete"));
         $link[]   = $new_link;
         return $link;
+    }
+
+    public function remove_admin_notices() {
+        // Check if the current page is your options page
+        $current_screen = get_current_screen();
+        if ($current_screen && $current_screen->id === 'toplevel_page_easy-elements') {
+            // Remove all notices
+            remove_all_actions('admin_notices');
+            remove_all_actions('all_admin_notices');
+        }
     }
 
 }

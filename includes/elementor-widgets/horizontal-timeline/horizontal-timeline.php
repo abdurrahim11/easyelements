@@ -30,7 +30,7 @@ class Horizontal_Timeline extends Widget_Base {
 	 *
 	 */
 	public function get_title() {
-		return __( 'Horizontal Timeline', 'easy-elements' );
+		return esc_html__( 'Horizontal Timeline', 'easy-elements' );
 	}
 
 	/**
@@ -109,7 +109,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_horizontal_timeline',
 			array(
-				'label' => __( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -119,20 +119,20 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'date_media_type',
 			array(
-				'label'       => __( 'Date Media', 'easy-elements' ),
+				'label'       => esc_html__( 'Date Media', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => array(
 					'none'   => array(
-						'title' => __( 'None', 'easy-elements' ),
+						'title' => esc_html__( 'None', 'easy-elements' ),
 						'icon'  => 'eicon-ban',
 					),
 					'image'  => array(
-						'title' => __( 'Image', 'easy-elements' ),
+						'title' => esc_html__( 'Image', 'easy-elements' ),
 						'icon'  => 'eicon-image',
 					),
 					'custom' => array(
-						'title' => __( 'Custom', 'easy-elements' ),
+						'title' => esc_html__( 'Custom', 'easy-elements' ),
 						'icon'  => ' eicon-font',
 					),
 				),
@@ -172,10 +172,10 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'title',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => __( 'Project Title', 'easy-elements' ),
+				'default'     => esc_html__( 'Project Title', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -188,7 +188,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'date_custom',
 			array(
-				'label'     => __( 'Date', 'easy-elements' ),
+				'label'     => esc_html__( 'Date', 'easy-elements' ),
 				'type'      => Controls_Manager::TEXT,
 				'default'   => gmdate( 'Y-m-d', strtotime( '+ 1 day' ) ),
 				'condition' => array(
@@ -200,17 +200,17 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'content_media_type',
 			array(
-				'label'       => __( 'Content Media', 'easy-elements' ),
+				'label'       => esc_html__( 'Content Media', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'separator'   => 'before',
 				'options'     => array(
 					'none'  => array(
-						'title' => __( 'None', 'easy-elements' ),
+						'title' => esc_html__( 'None', 'easy-elements' ),
 						'icon'  => 'eicon-ban',
 					),
 					'image' => array(
-						'title' => __( 'Image', 'easy-elements' ),
+						'title' => esc_html__( 'Image', 'easy-elements' ),
 						'icon'  => 'eicon-image',
 					),
 				),
@@ -250,10 +250,10 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'sub_title',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
-				'default'     => __( 'Heading', 'easy-elements' ),
+				'default'     => esc_html__( 'Heading', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -264,31 +264,31 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'description',
 			array(
-				'label'       => __( 'Description', 'easy-elements' ),
+				'label'       => esc_html__( 'Description', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'placeholder' => __( 'Type your description here', 'easy-elements' ),
-				'default'     => __( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type your description here', 'easy-elements' ),
+				'default'     => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
 			)
 		);
 
 		$repeater->add_control(
 			'bullet_media_type',
 			array(
-				'label'       => __( ' Bullet Media', 'easy-elements' ),
+				'label'       => esc_html__( ' Bullet Media', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'separator'   => 'before',
 				'options'     => array(
 					'icon'   => array(
-						'title' => __( 'Icon', 'easy-elements' ),
+						'title' => esc_html__( 'Icon', 'easy-elements' ),
 						'icon'  => 'eicon-star-o',
 					),
 					'image'  => array(
-						'title' => __( 'Image', 'easy-elements' ),
+						'title' => esc_html__( 'Image', 'easy-elements' ),
 						'icon'  => 'eicon-image',
 					),
 					'custom' => array(
-						'title' => __( 'Custom', 'easy-elements' ),
+						'title' => esc_html__( 'Custom', 'easy-elements' ),
 						'icon'  => ' eicon-font',
 					),
 				),
@@ -371,7 +371,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->start_controls_tab(
 			'inline_bullet_media_normal',
 			array(
-				'label'     => __( 'Normal', 'easy-elements' ),
+				'label'     => esc_html__( 'Normal', 'easy-elements' ),
 				'condition' => array(
 					'inline_style' => 'yes',
 				),
@@ -381,7 +381,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_date_bg',
 			array(
-				'label'     => __( 'Date Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Date Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}} .ele-horizontal-timeline-dates' => 'background-color: {{VALUE}};',
@@ -395,7 +395,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_normal_color',
 			array(
-				'label'     => __( 'Bullet Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Bullet Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}} .ele-horizontal-timeline-media > i'                                      => 'color: {{VALUE}};',
@@ -411,7 +411,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_normal_bg_color',
 			array(
-				'label'     => __( 'Bullet Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Bullet Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}} .ele-horizontal-timeline-media' => 'background-color: {{VALUE}};',
@@ -425,7 +425,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_separator_color',
 			array(
-				'label'     => __( 'Separator Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -443,7 +443,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_content_bg',
 			array(
-				'label'     => __( 'Content Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}} .ele-horizontal-timeline-content-inner' => 'background-color: {{VALUE}};',
@@ -459,7 +459,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->start_controls_tab(
 			'inline_bullet_media_hover',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'condition' => array(
 					'inline_style' => 'yes',
 				),
@@ -469,7 +469,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_hdate_bg',
 			array(
-				'label'     => __( 'Date Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Date Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}}:hover .ele-horizontal-timeline-dates' => 'background-color: {{VALUE}};',
@@ -483,7 +483,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_hover_color',
 			array(
-				'label'     => __( 'Bullet Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Bullet Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}}:hover .ele-horizontal-timeline-media > i,
@@ -499,7 +499,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_hover_bg_color',
 			array(
-				'label'     => __( 'Bullet Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Bullet Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}}:hover .ele-horizontal-timeline-media' => 'background-color: {{VALUE}};',
@@ -513,7 +513,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_bullet_media_separator_hcolor',
 			array(
-				'label'     => __( 'Separator Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -531,7 +531,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$repeater->add_control(
 			'inline_hcontent_bg',
 			array(
-				'label'     => __( 'Content Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} {{CURRENT_ITEM}}:hover .ele-horizontal-timeline-content-inner' => 'background-color: {{VALUE}};',
@@ -555,20 +555,20 @@ class Horizontal_Timeline extends Widget_Base {
 				'separator'   => 'after',
 				'default'     => array(
 					array(
-						'sub_title'   => __( 'Step 1', 'easy-elements' ),
-						'description' => __( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
+						'sub_title'   => esc_html__( 'Step 1', 'easy-elements' ),
+						'description' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
 					),
 					array(
-						'sub_title'   => __( 'Step 2', 'easy-elements' ),
-						'description' => __( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
+						'sub_title'   => esc_html__( 'Step 2', 'easy-elements' ),
+						'description' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
 					),
 					array(
-						'sub_title'   => __( 'Step 3', 'easy-elements' ),
-						'description' => __( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
+						'sub_title'   => esc_html__( 'Step 3', 'easy-elements' ),
+						'description' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
 					),
 					array(
-						'sub_title'   => __( 'Step 4', 'easy-elements' ),
-						'description' => __( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
+						'sub_title'   => esc_html__( 'Step 4', 'easy-elements' ),
+						'description' => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
 					),
 				),
 			)
@@ -577,16 +577,16 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'direction',
 			array(
-				'label'          => __( 'Direction', 'easy-elements' ),
+				'label'          => esc_html__( 'Direction', 'easy-elements' ),
 				'type'           => Controls_Manager::CHOOSE,
 				'default'        => 'col',
 				'options'        => array(
 					'col'         => array(
-						'title' => __( 'Top', 'easy-elements' ),
+						'title' => esc_html__( 'Top', 'easy-elements' ),
 						'icon'  => 'eicon-v-align-top',
 					),
 					'col-reverse' => array(
-						'title' => __( 'Bottom', 'easy-elements' ),
+						'title' => esc_html__( 'Bottom', 'easy-elements' ),
 						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
@@ -611,7 +611,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'direction_space_between',
 			array(
-				'label'      => __( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -634,7 +634,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'direction_space_bottom',
 			array(
-				'label'      => __( 'Space Bottom', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Bottom', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -662,7 +662,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_horiz_timeline_carousel',
 			array(
-				'label' => __( 'Settings', 'easy-elements' ),
+				'label' => esc_html__( 'Settings', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -670,8 +670,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'item_per_row',
 			array(
-				'label'              => __( 'Items To Show', 'easy-elements' ),
-				'description'        => __( 'Adjust items to show in a row.', 'easy-elements' ),
+				'label'              => esc_html__( 'Items To Show', 'easy-elements' ),
+				'description'        => esc_html__( 'Adjust items to show in a row.', 'easy-elements' ),
 				'type'               => Controls_Manager::NUMBER,
 				'placeholder'        => 2,
 				'desktop_default'    => 3,
@@ -685,8 +685,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'loop',
 			array(
-				'label'              => __( 'Loop', 'easy-elements' ),
-				'description'        => __( 'Duplicate last and first items to get loop illusion.', 'easy-elements' ),
+				'label'              => esc_html__( 'Loop', 'easy-elements' ),
+				'description'        => esc_html__( 'Duplicate last and first items to get loop illusion.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'frontend_available' => true,
@@ -697,8 +697,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'mouse_drag',
 			array(
-				'label'              => __( 'Mouse Drag', 'easy-elements' ),
-				'description'        => __( 'Mouse drag enabled.', 'easy-elements' ),
+				'label'              => esc_html__( 'Mouse Drag', 'easy-elements' ),
+				'description'        => esc_html__( 'Mouse drag enabled.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'default'            => 'yes',
@@ -710,8 +710,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'rtl',
 			array(
-				'label'              => __( 'RTL', 'easy-elements' ),
-				'description'        => __( 'Change direction from Right to left.', 'easy-elements' ),
+				'label'              => esc_html__( 'RTL', 'easy-elements' ),
+				'description'        => esc_html__( 'Change direction from Right to left.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'frontend_available' => true,
@@ -725,8 +725,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'auto_height',
 			array(
-				'label'              => __( 'Auto Height', 'easy-elements' ),
-				'description'        => __( 'Adaptive its height of the currently active item.', 'easy-elements' ),
+				'label'              => esc_html__( 'Auto Height', 'easy-elements' ),
+				'description'        => esc_html__( 'Adaptive its height of the currently active item.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'default'            => 'yes',
@@ -738,8 +738,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'autoplay',
 			array(
-				'label'              => __( 'Autoplay', 'easy-elements' ),
-				'description'        => __( 'To enable autoplay behaviour.', 'easy-elements' ),
+				'label'              => esc_html__( 'Autoplay', 'easy-elements' ),
+				'description'        => esc_html__( 'To enable autoplay behaviour.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'frontend_available' => true,
@@ -750,8 +750,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'autoplay_timeout',
 			array(
-				'label'              => __( 'Autoplay Timeout', 'easy-elements' ),
-				'description'        => __( 'Autoplay interval timeout in seconds(s).', 'easy-elements' ),
+				'label'              => esc_html__( 'Autoplay Timeout', 'easy-elements' ),
+				'description'        => esc_html__( 'Autoplay interval timeout in seconds(s).', 'easy-elements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px' ),
 				'default'            => array(
@@ -774,8 +774,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'nav',
 			array(
-				'label'              => __( 'Show Nav', 'easy-elements' ),
-				'description'        => __( 'Show next/prev buttons.', 'easy-elements' ),
+				'label'              => esc_html__( 'Show Nav', 'easy-elements' ),
+				'description'        => esc_html__( 'Show next/prev buttons.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'frontend_available' => true,
@@ -787,8 +787,8 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'dots',
 			array(
-				'label'              => __( 'Show Dots', 'easy-elements' ),
-				'description'        => __( 'Show dots navigation.', 'easy-elements' ),
+				'label'              => esc_html__( 'Show Dots', 'easy-elements' ),
+				'description'        => esc_html__( 'Show dots navigation.', 'easy-elements' ),
 				'type'               => Controls_Manager::SWITCHER,
 				'return_value'       => 'yes',
 				'frontend_available' => true,
@@ -802,7 +802,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_media_style',
 			array(
-				'label' => __( 'Date', 'easy-elements' ),
+				'label' => esc_html__( 'Date', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -812,7 +812,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'date_normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
@@ -820,7 +820,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'media_media_background',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-dates',
@@ -831,7 +831,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'media_box_shadow',
-				'label'    => __( 'Box Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Box Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-dates',
 			)
 		);
@@ -841,7 +841,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'date_hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
@@ -849,7 +849,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'media_media_background_hover',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-dates',
@@ -859,7 +859,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_border_hover_color',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-dates' => 'border-color: {{VALUE}};',
@@ -875,7 +875,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'media_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-dates',
 			)
 		);
@@ -883,7 +883,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -895,7 +895,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -907,7 +907,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_title_options',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -917,7 +917,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'media_title_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-title',
 			)
 		);
@@ -925,7 +925,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_title_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 
 				'selectors' => array(
@@ -937,7 +937,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_title_hcolor',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 
 				'selectors' => array(
@@ -949,7 +949,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -961,7 +961,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_date_options',
 			array(
-				'label'     => __( 'Date', 'easy-elements' ),
+				'label'     => esc_html__( 'Date', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -971,7 +971,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'media_date_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-time',
 			)
 		);
@@ -979,7 +979,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_date_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 
 				'selectors' => array(
@@ -991,7 +991,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_date_hcolor',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 
 				'selectors' => array(
@@ -1003,7 +1003,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_date_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1015,7 +1015,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'media_image_options',
 			array(
-				'label'     => __( 'Image', 'easy-elements' ),
+				'label'     => esc_html__( 'Image', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1024,7 +1024,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_image_width',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1050,7 +1050,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'media_image_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1065,7 +1065,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_bullet_media_style',
 			array(
-				'label' => __( 'Bullet', 'easy-elements' ),
+				'label' => esc_html__( 'Bullet', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1073,7 +1073,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'bullet_media_size',
 			array(
-				'label'      => __( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1093,7 +1093,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'bullet_media_bg_size',
 			array(
-				'label'      => __( 'Background Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1117,14 +1117,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'bullet_media_normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'bullet_media_normal_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-media > i'                                      => 'color: {{VALUE}};',
@@ -1137,7 +1137,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_normal_bg_color',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-media' => 'background-color: {{VALUE}};',
@@ -1148,7 +1148,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_separator_color',
 			array(
-				'label'     => __( 'Separator Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -1163,7 +1163,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'divider_line_color',
 			array(
-				'label'     => __( 'Divider Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Divider Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -1177,14 +1177,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'bullet_media_hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'bullet_media_hover_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-media > i,
@@ -1197,7 +1197,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_hover_bg_color',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-media' => 'background-color: {{VALUE}};',
@@ -1208,7 +1208,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_separator_hcolor',
 			array(
-				'label'     => __( 'Separator Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -1223,7 +1223,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_hover_border_color',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-media' => 'border-color: {{VALUE}};',
@@ -1240,7 +1240,7 @@ class Horizontal_Timeline extends Widget_Base {
 			array(
 				'name'      => 'bullet_media_border',
 				'separator' => 'before',
-				'label'     => __( 'Border', 'easy-elements' ),
+				'label'     => esc_html__( 'Border', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-horizontal-timeline-media',
 			)
 		);
@@ -1249,7 +1249,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'bullet_media_box_shadow',
-				'label'    => __( 'Box Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Box Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-media',
 			)
 		);
@@ -1257,7 +1257,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'bullet_media_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1269,7 +1269,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'bullet_media_custom_options',
 			array(
-				'label'     => __( 'Custom', 'easy-elements' ),
+				'label'     => esc_html__( 'Custom', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1279,7 +1279,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'bullet_media_custom_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-media > .ele-horizontal-timeline-media-custom',
 			)
 		);
@@ -1290,7 +1290,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_general_style_content',
 			array(
-				'label' => __( 'Content', 'easy-elements' ),
+				'label' => esc_html__( 'Content', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1298,19 +1298,19 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_alignment',
 			array(
-				'label'     => __( 'Alignment', 'easy-elements' ),
+				'label'     => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -1344,7 +1344,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'content_normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
@@ -1352,7 +1352,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'content_background',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-content-inner',
@@ -1363,7 +1363,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'content_box_shadow',
-				'label'    => __( 'Box Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Box Shadow', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-content-inner',
 			)
 		);
@@ -1373,7 +1373,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'content_hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
@@ -1381,7 +1381,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'content_background_hover',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-content-inner',
@@ -1391,7 +1391,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_border_hover_color',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-content-inner' => 'border-color: {{VALUE}};',
@@ -1408,7 +1408,7 @@ class Horizontal_Timeline extends Widget_Base {
 			array(
 				'name'      => 'content_border',
 				'separator' => 'before',
-				'label'     => __( 'Border', 'easy-elements' ),
+				'label'     => esc_html__( 'Border', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-horizontal-timeline-content-inner',
 			)
 		);
@@ -1416,7 +1416,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1428,7 +1428,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1440,7 +1440,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_image_heading',
 			array(
-				'label'     => __( 'Image', 'easy-elements' ),
+				'label'     => esc_html__( 'Image', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1449,17 +1449,17 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'inline',
 			array(
-				'label'       => __( 'Layout', 'easy-elements' ),
+				'label'       => esc_html__( 'Layout', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'default'     => 'inline-block',
 				'options'     => array(
 					'inline-flex'  => array(
-						'title' => __( 'Inline', 'easy-elements' ),
+						'title' => esc_html__( 'Inline', 'easy-elements' ),
 						'icon'  => 'eicon-editor-list-ul',
 					),
 					'inline-block' => array(
-						'title' => __( 'Block', 'easy-elements' ),
+						'title' => esc_html__( 'Block', 'easy-elements' ),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -1472,7 +1472,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_media_size',
 			array(
-				'label'      => __( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1495,7 +1495,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_media_space_between',
 			array(
-				'label'      => __( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1518,7 +1518,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_media_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1530,7 +1530,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_title_heading',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1540,7 +1540,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'content_title_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-sub-title',
 			)
 		);
@@ -1548,7 +1548,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_title_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-sub-title' => 'color: {{VALUE}}',
@@ -1559,7 +1559,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_title_hover',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-sub-title' => 'color: {{VALUE}}',
@@ -1570,7 +1570,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1582,7 +1582,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_description_heading',
 			array(
-				'label'     => __( 'Description', 'easy-elements' ),
+				'label'     => esc_html__( 'Description', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1592,7 +1592,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'content_desc_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-horizontal-timeline-text',
 			)
 		);
@@ -1600,7 +1600,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_desc_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-text' => 'color: {{VALUE}}',
@@ -1611,7 +1611,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'content_desc_hover',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-horizontal-timeline-item:hover .ele-horizontal-timeline-text' => 'color: {{VALUE}}',
@@ -1622,7 +1622,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'content_desc_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1637,7 +1637,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'section_horizontal_timeline_nav_style',
 			array(
-				'label'     => __( 'Nav', 'easy-elements' ),
+				'label'     => esc_html__( 'Nav', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'nav' => 'yes',
@@ -1648,16 +1648,16 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'nav_layout',
 			array(
-				'label'   => __( 'Layout', 'easy-elements' ),
+				'label'   => esc_html__( 'Layout', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'style-1' => __( 'Style 1', 'easy-elements' ),
-					'style-2' => __( 'Style 2', 'easy-elements' ),
-					'style-3' => __( 'Style 3', 'easy-elements' ),
-					'style-4' => __( 'Style 4', 'easy-elements' ),
-					'style-5' => __( 'Style 5', 'easy-elements' ),
-					'style-6' => __( 'Style 6', 'easy-elements' ),
-					'style-7' => __( 'Style 7', 'easy-elements' ),
+					'style-1' => esc_html__( 'Style 1', 'easy-elements' ),
+					'style-2' => esc_html__( 'Style 2', 'easy-elements' ),
+					'style-3' => esc_html__( 'Style 3', 'easy-elements' ),
+					'style-4' => esc_html__( 'Style 4', 'easy-elements' ),
+					'style-5' => esc_html__( 'Style 5', 'easy-elements' ),
+					'style-6' => esc_html__( 'Style 6', 'easy-elements' ),
+					'style-7' => esc_html__( 'Style 7', 'easy-elements' ),
 				),
 				'default' => 'style-1',
 			)
@@ -1666,7 +1666,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'nav_size',
 			array(
-				'label'      => __( 'Icon Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Icon Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1690,7 +1690,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'nav_bg_size',
 			array(
-				'label'      => __( 'Background Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1714,7 +1714,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'nav_offset_y',
 			array(
-				'label'      => __( 'Offset Y', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Offset Y', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1744,14 +1744,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'news_ticker_nav_normal_tab',
 			array(
-				'label' => __( 'Normal', 'ele-elementor-addons' ),
+				'label' => esc_html__( 'Normal', 'ele-elementor-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'nav_color',
 			array(
-				'label'     => __( 'Color', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Color', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-nav button.owl-prev,
@@ -1763,7 +1763,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'nav_bg_color',
 			array(
-				'label'     => __( 'Background', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Background', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -1778,14 +1778,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'news_ticker_nav_hover_tab_style',
 			array(
-				'label' => __( 'Hover', 'ele-elementor-addons' ),
+				'label' => esc_html__( 'Hover', 'ele-elementor-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'nav_hover_color',
 			array(
-				'label'     => __( 'Color', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Color', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-nav button.owl-prev:hover,
@@ -1797,7 +1797,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'nav_hover_bg',
 			array(
-				'label'     => __( 'Background', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Background', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'alpha'     => false,
 				'selectors' => array(
@@ -1810,7 +1810,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'nav_hover_border',
 			array(
-				'label'     => __( 'Border', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Border', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-nav button.owl-prev:hover,
@@ -1827,7 +1827,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'      => 'nav_border',
-				'label'     => __( 'Border', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Border', 'ele-elementor-addons' ),
 				'separator' => 'before',
 				'selector'  => '{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-nav button.owl-prev,
 				{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-nav button.owl-next',
@@ -1837,7 +1837,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'nav_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1853,7 +1853,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_section(
 			'timeline_dots_styling',
 			array(
-				'label'     => __( 'Dots', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Dots', 'ele-elementor-addons' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'dots' => 'yes',
@@ -1864,12 +1864,12 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'dots_layout',
 			array(
-				'label'   => __( 'Layout', 'ele-elementor-addons' ),
+				'label'   => esc_html__( 'Layout', 'ele-elementor-addons' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'style-1' => __( 'Style 1', 'ele-elementor-addons' ),
-					'style-2' => __( 'Style 2', 'ele-elementor-addons' ),
-					'style-3' => __( 'Style 3', 'ele-elementor-addons' ),
+					'style-1' => esc_html__( 'Style 1', 'ele-elementor-addons' ),
+					'style-2' => esc_html__( 'Style 2', 'ele-elementor-addons' ),
+					'style-3' => esc_html__( 'Style 3', 'ele-elementor-addons' ),
 				),
 				'default' => 'style-1',
 			)
@@ -1878,7 +1878,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_bg_height',
 			array(
-				'label'      => __( 'Height', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Height', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -1893,7 +1893,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_bg_width',
 			array(
-				'label'      => __( 'Width', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Width', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -1909,7 +1909,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_space_between',
 			array(
-				'label'      => __( 'Space Between', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Space Between', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -1930,7 +1930,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_space',
 			array(
-				'label'      => __( 'Spacing', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Spacing', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -1955,14 +1955,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'horiz_timeline_dots_normal_tab',
 			array(
-				'label' => __( 'Normal', 'ele-elementor-addons' ),
+				'label' => esc_html__( 'Normal', 'ele-elementor-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'dots_bg_color',
 			array(
-				'label'     => __( 'Background', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Background', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-dot' => 'background-color: {{VALUE}}',
@@ -1975,14 +1975,14 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->start_controls_tab(
 			'horiz_timeline_dots_active_tab_style',
 			array(
-				'label' => __( 'Active', 'ele-elementor-addons' ),
+				'label' => esc_html__( 'Active', 'ele-elementor-addons' ),
 			)
 		);
 
 		$this->add_control(
 			'dots_hover_bg',
 			array(
-				'label'     => __( 'Background', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Background', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-dot.active' => 'background-color: {{VALUE}}',
@@ -1993,7 +1993,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_control(
 			'dots_hover_border',
 			array(
-				'label'     => __( 'Border', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Border', 'ele-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-dot.active' => 'border-color: {{VALUE}}',
@@ -2009,7 +2009,7 @@ class Horizontal_Timeline extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'      => 'dots_border',
-				'label'     => __( 'Border', 'ele-elementor-addons' ),
+				'label'     => esc_html__( 'Border', 'ele-elementor-addons' ),
 				'separator' => 'before',
 				'selector'  => '{{WRAPPER}} .ele-owl-theme.owl-carousel .owl-dot',
 			)
@@ -2018,7 +2018,7 @@ class Horizontal_Timeline extends Widget_Base {
 		$this->add_responsive_control(
 			'dots_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'ele-elementor-addons' ),
+				'label'      => esc_html__( 'Border Radius', 'ele-elementor-addons' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(

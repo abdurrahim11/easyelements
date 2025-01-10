@@ -6,21 +6,16 @@ namespace EasyElements\Modules\Mega_Menu;
 
 class Init {
 
-    private $mega_menu_url;
-
     public static $menuitem_settings_key = 'easyelements_menuitem_settings';
     public static $megamenu_settings_key = 'megamenu_settings';
 
     public function __construct() {
-        $this->mega_menu_url = ELE_PLUGIN_URL . "includes/modules/mega-menu/assets/";
-
         $this->initialize();
-
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
     }
 
     public function initialize() {
-        new \EasyElements\Modules\Mega_Menu\Options();
+        new \EasyElements\Modules\Mega_Menu\Mega_Menu_Options();
         new \EasyElements\Modules\Mega_Menu\Megamenu_Api();
     }
 
@@ -29,6 +24,13 @@ class Init {
 
         if ( $screen->base == 'nav-menus' ) {
             wp_enqueue_style( 'wp-color-picker' );
+
+            wp_enqueue_style(
+                'easy-elements-icons',
+                ELE_PLUGIN_URL . 'includes/modules/icon-library/assets/css/eleicons.css',
+                null,
+                ELE_VERSION
+            );
 
             wp_enqueue_style(
                 'aesthetic-ele-picker-fonts',
@@ -46,7 +48,7 @@ class Init {
 
             wp_enqueue_style(
                 'ele-meag-menu',
-                $this->mega_menu_url . 'css/meag-menu-style.css',
+                ELE_PLUGIN_URL . 'includes/modules/mega-menu/assets/css/meag-menu-style.css',
                 false,
                 ELE_VERSION
             );
@@ -61,7 +63,7 @@ class Init {
 
             wp_enqueue_script(
                 'ele-meag-menu',
-                $this->mega_menu_url . 'js/meag-menu-script.js',
+                ELE_PLUGIN_URL . 'includes/modules/mega-menu/assets/js/meag-menu-script.js',
                 array( 'jquery', 'wp-color-picker' ),
                 ELE_VERSION,
                 true

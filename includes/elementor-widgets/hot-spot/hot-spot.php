@@ -11,13 +11,6 @@ use Elementor\Repeater;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 
-/**
- * ele Elementor Addons
- *
- * Elementor widget.
- *
- * @since 1.0.0
- */
 class Hot_Spot extends Widget_Base {
 
 	public function get_name() {
@@ -25,7 +18,7 @@ class Hot_Spot extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Hotspot', 'easy-elements' );
+		return esc_html__( 'Hotspot', 'easy-elements' );
 	}
 
 	public function get_icon() {
@@ -36,16 +29,16 @@ class Hot_Spot extends Widget_Base {
 		return array( 'easy-elements' );
 	}
 
-	public function get_keywords() {
-		return array( 'ele', 'hot', 'spot', 'spots' );
-	}
+    public function get_keywords() {
+        return array( 'ele', 'hot','hotspot', 'spot', 'spots', 'electronics', 'heat', 'location', 'areas', 'places' );
+    }
 
 	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_hotspot',
 			array(
-				'label' => __( 'Content', 'easy-elements' ),
+				'label' => esc_html__( 'Content', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -53,12 +46,12 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'type',
 			array(
-				'label'   => __( 'Type', 'easy-elements' ),
+				'label'   => esc_html__( 'Type', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'hover',
 				'options' => array(
-					'hover' => __( 'On Hover', 'easy-elements' ),
-					'click' => __( 'On Click', 'easy-elements' ),
+					'hover' => esc_html__( 'On Hover', 'easy-elements' ),
+					'click' => esc_html__( 'On Click', 'easy-elements' ),
 				),
 			)
 		);
@@ -66,7 +59,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'image',
 			array(
-				'label'   => __( 'Image', 'easy-elements' ),
+				'label'   => esc_html__( 'Image', 'easy-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'default' => array(
 					'url' => Utils::get_placeholder_image_src(),
@@ -95,20 +88,20 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'hot_media_type',
 			array(
-				'label'       => __( 'Media Type', 'easy-elements' ),
+				'label'       => esc_html__( 'Media Type', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => array(
 					'none'  => array(
-						'title' => __( 'None', 'easy-elements' ),
+						'title' => esc_html__( 'None', 'easy-elements' ),
 						'icon'  => 'eicon-ban',
 					),
 					'icon'  => array(
-						'title' => __( 'Icon', 'easy-elements' ),
+						'title' => esc_html__( 'Icon', 'easy-elements' ),
 						'icon'  => 'eicon-star-o',
 					),
 					'image' => array(
-						'title' => __( 'Image', 'easy-elements' ),
+						'title' => esc_html__( 'Image', 'easy-elements' ),
 						'icon'  => 'eicon-image',
 					),
 				),
@@ -136,7 +129,7 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'spots_image',
 			array(
-				'label'     => __( 'Image', 'easy-elements' ),
+				'label'     => esc_html__( 'Image', 'easy-elements' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => array(
 					'url' => Utils::get_placeholder_image_src(),
@@ -168,10 +161,10 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'hot_offset_toggle',
 			array(
-				'label'        => __( 'Offset', 'easy-elements' ),
+				'label'        => esc_html__( 'Offset', 'easy-elements' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'None', 'easy-elements' ),
-				'label_on'     => __( 'Custom', 'easy-elements' ),
+				'label_off'    => esc_html__( 'None', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Custom', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -181,7 +174,7 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_responsive_control(
 			'hot_offset_x',
 			array(
-				'label'      => __( 'Offset Left', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Left', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -210,7 +203,7 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_responsive_control(
 			'hot_offset_y',
 			array(
-				'label'      => __( 'Offset Top', 'easy-elements' ),
+				'label'      => esc_html__( 'Offset Top', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -241,10 +234,10 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'show_tooltip',
 			array(
-				'label'        => __( 'Show Tooltip ', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Tooltip ', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'separator'    => 'before',
 				'default'      => 'yes',
@@ -254,16 +247,16 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_responsive_control(
 			'position',
 			array(
-				'label'                => __( 'Position', 'easy-elements' ),
+				'label'                => esc_html__( 'Position', 'easy-elements' ),
 				'type'                 => Controls_Manager::SELECT,
 				'default'              => 'top',
 				'tablet_default'       => 'bottom',
 				'mobile_default'       => 'bottom',
 				'options'              => array(
-					'top'    => __( 'Top', 'easy-elements' ),
-					'right'  => __( 'Right', 'easy-elements' ),
-					'bottom' => __( 'Bottom', 'easy-elements' ),
-					'left'   => __( 'Left', 'easy-elements' ),
+					'top'    => esc_html__( 'Top', 'easy-elements' ),
+					'right'  => esc_html__( 'Right', 'easy-elements' ),
+					'bottom' => esc_html__( 'Bottom', 'easy-elements' ),
+					'left'   => esc_html__( 'Left', 'easy-elements' ),
 				),
 				'selectors_dictionary' => array(
 					'top'    => '--ele-hotspot-tooltip-top:auto; --ele-hotspot-tooltip-right:auto; --ele-hotspot-tooltip-bottom:100%; --ele-hotspot-tooltip-left:50%; --ele-hotspot-tooltip-transform-x: -50%; --ele-hotspot-tooltip-transform-y: 0; --ele-hotspot-tooltip-margin: 0 0 10px 0;
@@ -288,10 +281,10 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'tooltip_text',
 			array(
-				'label'       => __( 'Tooltip Text', 'easy-elements' ),
+				'label'       => esc_html__( 'Tooltip Text', 'easy-elements' ),
 				'type'        => Controls_Manager::WYSIWYG,
-				'default'     => __( 'Tooltip Content', 'easy-elements' ),
-				'placeholder' => __( 'Type tooltip text here.', 'easy-elements' ),
+				'default'     => esc_html__( 'Tooltip Content', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type tooltip text here.', 'easy-elements' ),
 				'condition'   => array(
 					'show_tooltip' => 'yes',
 				),
@@ -301,7 +294,7 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			array(
-				'label'       => __( 'Link', 'easy-elements' ),
+				'label'       => esc_html__( 'Link', 'easy-elements' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'dynamic'     => array(
@@ -313,10 +306,10 @@ class Hot_Spot extends Widget_Base {
 		$repeater->add_control(
 			'show_default_tooltip',
 			array(
-				'label'        => __( 'Default Active Tooltip ', 'easy-elements' ),
+				'label'        => esc_html__( 'Default Active Tooltip ', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'separator'    => 'before',
 			)
@@ -336,7 +329,7 @@ class Hot_Spot extends Widget_Base {
 							'value'   => 'fas fa-plus',
 							'library' => 'fa-solid',
 						),
-						'tooltip_text' => __( 'Tooltip Content', 'easy-elements' ),
+						'tooltip_text' => esc_html__( 'Tooltip Content', 'easy-elements' ),
 					),
 				),
 			)
@@ -348,7 +341,7 @@ class Hot_Spot extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_hot_image',
 			array(
-				'label' => __( 'Image', 'easy-elements' ),
+				'label' => esc_html__( 'Image', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -356,19 +349,19 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			array(
-				'label'     => __( 'Alignment', 'easy-elements' ),
+				'label'     => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -381,7 +374,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'hot_image_width_size',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'vw' ),
 				'range'      => array(
@@ -399,7 +392,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'hot_image_height_size',
 			array(
-				'label'      => __( 'Height', 'easy-elements' ),
+				'label'      => esc_html__( 'Height', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'vh' ),
 				'range'      => array(
@@ -417,14 +410,14 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'_hot_object-fit',
 			array(
-				'label'     => __( 'Object Fit', 'easy-elements' ),
+				'label'     => esc_html__( 'Object Fit', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'cover',
 				'options'   => array(
-					''        => __( 'Default', 'easy-elements' ),
-					'fill'    => __( 'Fill', 'easy-elements' ),
-					'cover'   => __( 'Cover', 'easy-elements' ),
-					'contain' => __( 'Contain', 'easy-elements' ),
+					''        => esc_html__( 'Default', 'easy-elements' ),
+					'fill'    => esc_html__( 'Fill', 'easy-elements' ),
+					'cover'   => esc_html__( 'Cover', 'easy-elements' ),
+					'contain' => esc_html__( 'Contain', 'easy-elements' ),
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-image > img' => 'object-fit: {{VALUE}};',
@@ -436,7 +429,7 @@ class Hot_Spot extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'hot_image_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-image > img',
 			)
 		);
@@ -444,7 +437,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'hot_image_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -467,7 +460,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'hot_image_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
@@ -482,7 +475,7 @@ class Hot_Spot extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_spot',
 			array(
-				'label' => __( 'Spot', 'easy-elements' ),
+				'label' => esc_html__( 'Spot', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -490,7 +483,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'spot_font_size',
 			array(
-				'label'      => __( 'Media Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Media Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -511,7 +504,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'spot_width_size',
 			array(
-				'label'      => __( 'Background Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -531,14 +524,14 @@ class Hot_Spot extends Widget_Base {
 		$this->start_controls_tab(
 			'spots_hot_normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'spot_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item .ele-hotspot-item-wrap > i' => 'color: {{VALUE}};',
@@ -550,7 +543,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'spot_bg_color',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item' => 'background-color: {{VALUE}};',
@@ -563,14 +556,14 @@ class Hot_Spot extends Widget_Base {
 		$this->start_controls_tab(
 			'spot_hot_hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'spot_hvr_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item:hover .ele-hotspot-item-wrap > i' => 'color: {{VALUE}};',
@@ -581,7 +574,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'spot_bg_hvr_color',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item:hover' => 'background-color: {{VALUE}};',
@@ -592,7 +585,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'spot_hvr_border_color',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item:hover' => 'border-color: {{VALUE}};',
@@ -608,7 +601,7 @@ class Hot_Spot extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'spot_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-hotspot-wrapper .ele-hotspot-item',
 			)
 		);
@@ -616,7 +609,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'spot_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -643,7 +636,7 @@ class Hot_Spot extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_tooltip',
 			array(
-				'label' => __( 'Tooltip', 'easy-elements' ),
+				'label' => esc_html__( 'Tooltip', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -651,19 +644,19 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'tooltip_alignment',
 			array(
-				'label'     => __( 'Alignment', 'easy-elements' ),
+				'label'     => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -677,7 +670,7 @@ class Hot_Spot extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'tooltip_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-hotspot-tooltip-text, {{WRAPPER}} .ele-hotspot-tooltip-text > *',
 			)
 		);
@@ -685,7 +678,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'tooltip_width_size',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -711,7 +704,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'tooltip_color',
 			array(
-				'label'     => __( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-tooltip-text, {{WRAPPER}} .ele-hotspot-tooltip-text > *' => 'color: {{VALUE}};',
@@ -722,7 +715,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_control(
 			'tooltip_bg_color',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-hotspot-tooltip-text,
@@ -734,7 +727,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'tooltip_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -754,7 +747,7 @@ class Hot_Spot extends Widget_Base {
 		$this->add_responsive_control(
 			'tooltip_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -766,14 +759,6 @@ class Hot_Spot extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-	/**
-	 * Render image widget output on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();

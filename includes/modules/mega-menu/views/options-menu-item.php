@@ -152,7 +152,7 @@
 <div class="ele-modal" id="ele-menu-builder-modal">
     <div class="ele-modal-content">
         <div class="ele-close-area">
-            <span class="ele-modal-close">&times;</span>
+            <span class="ele-modal-close" data-dismiss="modal">&times;</span>
         </div>
         <iframe id="easyelements-menu-builder-iframe" src="" frameborder="0"></iframe>
     </div>

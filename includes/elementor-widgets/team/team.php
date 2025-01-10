@@ -15,105 +15,34 @@ use Elementor\Widget_Base;
 use EasyElements\Control\Group_Control_Foreground;
 use EasyElements\Control\Image_Selector;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-/**
- * ele Elementor Addons
- *
- * Elementor widget.
- *
- * @since 1.0.0
- */
 class Team extends Widget_Base {
 
-	/**
-	 * Get widget name.
-	 *
-	 * Retrieve image widget name.
-	 *
-	 * @return string Widget name.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_name() {
 		return 'ele-team';
 	}
 
-	/**
-	 * Get widget title.
-	 *
-	 * Retrieve image widget title.
-	 *
-	 * @return string Widget title.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_title() {
-		return __( 'Team', 'easy-elements' );
+		return esc_html__( 'Team', 'easy-elements' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * Retrieve image widget icon.
-	 *
-	 * @return string Widget icon.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_icon() {
 		return 'ele ele-team-member ele-widget-icon';
 	}
 
-	/**
-	 * Get widget categories.
-	 *
-	 * Retrieve the list of categories the image widget belongs to.
-	 *
-	 * Used to determine where to display the widget in the editor.
-	 *
-	 * @return array Widget categories.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_categories() {
 		return array( 'easy-elements' );
 	}
 
-	/**
-	 * Get widget keywords.
-	 *
-	 * Retrieve the list of keywords the widget belongs to.
-	 *
-	 * @return array Widget keywords.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
-	public function get_keywords() {
-		return array( 'team', 'grid' );
-	}
+    public function get_keywords() {
+        return array( 'team', 'staff', 'members','grid', 'employees', 'profiles', 'directory', 'roster', 'personnel', 'bios', 'group' );
+    }
 
-	/**
-	 * Register widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_general',
 			array(
-				'label' => __( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easy-elements' ),
 			)
 		);
 
@@ -147,7 +76,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'image',
 			array(
-				'label'   => __( 'Choose Image', 'easy-elements' ),
+				'label'   => esc_html__( 'Choose Image', 'easy-elements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'dynamic' => array(
 					'active' => true,
@@ -161,10 +90,10 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'mask_image',
 			array(
-				'label'        => __( 'Mask Image', 'easy-elements' ),
+				'label'        => esc_html__( 'Mask Image', 'easy-elements' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'Default', 'easy-elements' ),
-				'label_on'     => __( 'Custom', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Default', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Custom', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -174,7 +103,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'mask_shape',
 			array(
-				'label'   => __( 'Mask Type', 'easy-elements' ),
+				'label'   => esc_html__( 'Mask Type', 'easy-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'default' => 'default',
 				'options' => array(
@@ -219,7 +148,7 @@ class Team extends Widget_Base {
 				'show_label'  => false,
 				'description' => sprintf(
 				/* translators: %s: Title */
-					__( 'Note: Make sure svg support is enable to upload svg file. %1$sRead More%2$s', 'easy-elements' ),
+					esc_html__( 'Note: Make sure svg support is enable to upload svg file. %1$sRead More%2$s', 'easy-elements' ),
 					'<a href="https://elementor.com/help/enable-svg-support-in-elementor/" target="_blank">',
 					'</a>'
 				),
@@ -381,9 +310,9 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'title',
 			array(
-				'label'       => __( 'Name', 'easy-elements' ),
+				'label'       => esc_html__( 'Name', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Jhon Walker', 'easy-elements' ),
+				'default'     => esc_html__( 'Jhon Walker', 'easy-elements' ),
 				'label_block' => true,
 				'separator'   => 'before',
 				'dynamic'     => array(
@@ -395,7 +324,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'title_link',
 			array(
-				'label'       => __( 'Link', 'easy-elements' ),
+				'label'       => esc_html__( 'Link', 'easy-elements' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://example.com',
 				'dynamic'     => array(
@@ -407,9 +336,9 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'designation',
 			array(
-				'label'       => __( 'Designation', 'easy-elements' ),
+				'label'       => esc_html__( 'Designation', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => __( 'Managing Director', 'easy-elements' ),
+				'default'     => esc_html__( 'Managing Director', 'easy-elements' ),
 				'label_block' => true,
 				'separator'   => 'before',
 				'dynamic'     => array(
@@ -421,10 +350,10 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'description',
 			array(
-				'label'       => __( 'Description', 'easy-elements' ),
+				'label'       => esc_html__( 'Description', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => __( 'It is a long established fact that a reader will be distracted by the content.', 'easy-elements' ),
-				'placeholder' => __( 'Type your description here', 'easy-elements' ),
+				'default'     => esc_html__( 'It is a long established fact that a reader will be distracted by the content.', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type your description here', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -434,19 +363,19 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'align',
 			array(
-				'label'     => __( 'Alignment', 'easy-elements' ),
+				'label'     => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -465,17 +394,17 @@ class Team extends Widget_Base {
 		$this->start_controls_section(
 			'section_social',
 			array(
-				'label' => __( 'Social', 'easy-elements' ),
+				'label' => esc_html__( 'Social', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'social_enable',
 			array(
-				'label'        => __( 'Enable', 'easy-elements' ),
+				'label'        => esc_html__( 'Enable', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -486,7 +415,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'social_icon',
 			array(
-				'label'   => __( 'Icon', 'easy-elements' ),
+				'label'   => esc_html__( 'Icon', 'easy-elements' ),
 				'type'    => Controls_Manager::ICONS,
 				'default' => array(
 					'value'   => 'fab fa-wordpress',
@@ -498,7 +427,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_link',
 			array(
-				'label'       => __( 'Link', 'easy-elements' ),
+				'label'       => esc_html__( 'Link', 'easy-elements' ),
 				'type'        => Controls_Manager::URL,
 				'default'     => array(
 					'is_external' => 'true',
@@ -506,17 +435,17 @@ class Team extends Widget_Base {
 				'dynamic'     => array(
 					'active' => true,
 				),
-				'placeholder' => __( 'https://your-link.com', 'easy-elements' ),
+				'placeholder' => esc_html__( 'https://your-link.com', 'easy-elements' ),
 			)
 		);
 
 		$repeater->add_control(
 			'icon_inline_style',
 			array(
-				'label'        => __( 'Inline Style', 'easy-elements' ),
+				'label'        => esc_html__( 'Inline Style', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -526,7 +455,7 @@ class Team extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_inline_normal',
 			array(
-				'label'     => __( 'Normal', 'easy-elements' ),
+				'label'     => esc_html__( 'Normal', 'easy-elements' ),
 				'condition' => array(
 					'icon_inline_style' => 'yes',
 				),
@@ -536,7 +465,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -552,7 +481,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_bg',
 			array(
-				'label'     => __( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -567,7 +496,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_border',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -584,7 +513,7 @@ class Team extends Widget_Base {
 		$repeater->start_controls_tab(
 			'icon_inline_hover',
 			array(
-				'label'     => __( 'Hover', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover', 'easy-elements' ),
 				'condition' => array(
 					'icon_inline_style' => 'yes',
 				),
@@ -594,7 +523,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_hover_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:hover > i, {{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:focus > i'     => 'color: {{VALUE}};',
@@ -609,7 +538,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_hover_bg',
 			array(
-				'label'     => __( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:hover, {{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:focus' => 'background: {{VALUE}};',
@@ -623,7 +552,7 @@ class Team extends Widget_Base {
 		$repeater->add_control(
 			'icon_inline_border_hcolor',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:hover, {{WRAPPER}} .ele-team-social-list {{CURRENT_ITEM}} .ele-team-social-icon:focus' => 'border-color: {{VALUE}};',
@@ -675,7 +604,7 @@ class Team extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_style',
 			array(
-				'label' => __( 'Image', 'easy-elements' ),
+				'label' => esc_html__( 'Image', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -683,7 +612,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'width',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'unit' => 'px',
@@ -704,7 +633,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			array(
-				'label'          => __( 'Height', 'easy-elements' ),
+				'label'          => esc_html__( 'Height', 'easy-elements' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => array(
 					'unit' => 'px',
@@ -731,16 +660,16 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'object-fit',
 			array(
-				'label'     => __( 'Object Fit', 'easy-elements' ),
+				'label'     => esc_html__( 'Object Fit', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'condition' => array(
 					'height[size]!' => '',
 				),
 				'options'   => array(
-					''        => __( 'Default', 'easy-elements' ),
-					'fill'    => __( 'Fill', 'easy-elements' ),
-					'cover'   => __( 'Cover', 'easy-elements' ),
-					'contain' => __( 'Contain', 'easy-elements' ),
+					''        => esc_html__( 'Default', 'easy-elements' ),
+					'fill'    => esc_html__( 'Fill', 'easy-elements' ),
+					'cover'   => esc_html__( 'Cover', 'easy-elements' ),
+					'contain' => esc_html__( 'Contain', 'easy-elements' ),
 				),
 				'default'   => '',
 				'selectors' => array(
@@ -754,14 +683,14 @@ class Team extends Widget_Base {
 		$this->start_controls_tab(
 			'normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'shape_color',
 			array(
-				'label'     => __( 'Shape Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Shape Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-layout-13::after' => 'background-color: {{VALUE}};',
@@ -785,14 +714,14 @@ class Team extends Widget_Base {
 		$this->start_controls_tab(
 			'hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'image_overlay',
 			array(
-				'label'     => __( 'Overlay Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Overlay Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-layout-5 .ele-team-image::before, {{WRAPPER}} .ele-team-layout-12 .ele-team-image::after' => 'background-color: {{VALUE}};',
@@ -806,7 +735,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'shape_hcolor',
 			array(
-				'label'     => __( 'Shape Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Shape Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-layout-13:hover::after' => 'background-color: {{VALUE}};',
@@ -828,7 +757,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'background_hover_transition',
 			array(
-				'label'     => __( 'Transition Duration', 'easy-elements' ),
+				'label'     => esc_html__( 'Transition Duration', 'easy-elements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -869,7 +798,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'image_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -881,7 +810,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'image_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -896,7 +825,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'image_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -911,7 +840,7 @@ class Team extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			array(
-				'label' => __( 'Content', 'easy-elements' ),
+				'label' => esc_html__( 'Content', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -966,7 +895,7 @@ class Team extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'content_background',
-				'label'     => __( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easy-elements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}} .ele-team-wrapper .ele-team-content,{{WRAPPER}} .ele-team-layout-9 .ele-team-inner-content',
@@ -987,7 +916,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -999,7 +928,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'separator_color',
 			array(
-				'label'     => __( 'Separator Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Separator Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-layout-9 .ele-team-description::before' => 'background-color: {{VALUE}}',
@@ -1013,7 +942,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1025,7 +954,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'heading_title',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1038,7 +967,7 @@ class Team extends Widget_Base {
 			Group_Control_Foreground::get_type(),
 			array(
 				'name'      => 'title_color',
-				'label'     => __( 'Title Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Title Color', 'easy-elements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'selector'  => '{{WRAPPER}} .ele-team-wrapper .ele-team-title',
 				'condition' => array(
@@ -1051,7 +980,7 @@ class Team extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'title_typography',
-				'label'     => __( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-team-wrapper .ele-team-title',
 				'condition' => array(
 					'title!' => '',
@@ -1062,7 +991,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1077,7 +1006,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'heading_designation',
 			array(
-				'label'     => __( 'Designation', 'easy-elements' ),
+				'label'     => esc_html__( 'Designation', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1089,7 +1018,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'designation_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-wrapper .ele-team-designation' => 'color: {{VALUE}}',
@@ -1104,7 +1033,7 @@ class Team extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'designation_typography',
-				'label'     => __( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-team-wrapper .ele-team-designation',
 				'condition' => array(
 					'designation!' => '',
@@ -1115,7 +1044,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'designation_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1130,7 +1059,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'heading_description',
 			array(
-				'label'     => __( 'Description', 'easy-elements' ),
+				'label'     => esc_html__( 'Description', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1142,7 +1071,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-wrapper .ele-team-description' => 'color: {{VALUE}}',
@@ -1157,7 +1086,7 @@ class Team extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'description_typography',
-				'label'     => __( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easy-elements' ),
 				'selector'  => '{{WRAPPER}} .ele-team-wrapper .ele-team-description',
 				'condition' => array(
 					'description!' => '',
@@ -1168,7 +1097,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'description_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1186,7 +1115,7 @@ class Team extends Widget_Base {
 		$this->start_controls_section(
 			'section_social_icon_style',
 			array(
-				'label'     => __( 'Social', 'easy-elements' ),
+				'label'     => esc_html__( 'Social', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'social_enable' => 'yes',
@@ -1197,7 +1126,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_size',
 			array(
-				'label'      => __( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1216,7 +1145,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_bg_size',
 			array(
-				'label'      => __( 'Background Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Background Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1234,7 +1163,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_space',
 			array(
-				'label'      => __( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1257,14 +1186,14 @@ class Team extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_normal',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'icon_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -1277,7 +1206,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'icon_bg',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -1289,7 +1218,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'icon_wrapper_bg',
 			array(
-				'label'     => __( 'Wrapper Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Wrapper Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -1306,14 +1235,14 @@ class Team extends Widget_Base {
 		$this->start_controls_tab(
 			'icon_hover',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'icon_hover_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-social-list .ele-team-social-icon:hover > i, {{WRAPPER}} .ele-team-social-list .ele-team-social-icon:focus > i'    => 'color: {{VALUE}};',
@@ -1325,7 +1254,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'icon_hbg',
 			array(
-				'label'     => __( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
@@ -1337,7 +1266,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'icon_border_hover_color',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-team-social-list .ele-team-social-icon:hover, {{WRAPPER}} .ele-team-social-list .ele-team-social-icon:focus' => 'border-color: {{VALUE}};',
@@ -1361,7 +1290,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1376,7 +1305,7 @@ class Team extends Widget_Base {
 		$this->add_control(
 			'heading_social_wrapper',
 			array(
-				'label'     => __( 'Wrapper', 'easy-elements' ),
+				'label'     => esc_html__( 'Wrapper', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1389,7 +1318,7 @@ class Team extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'icon_wrapper_background',
-				'label'     => __( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easy-elements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}} .ele-team-layout-8 .ele-team-social-list,{{WRAPPER}} .ele-team-layout-9 .ele-team-social-list,{{WRAPPER}} .ele-team-layout-15 .ele-team-social-list',
@@ -1413,7 +1342,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_wrapper_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1428,7 +1357,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_wrapper_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1445,7 +1374,7 @@ class Team extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_wrapper_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1460,14 +1389,6 @@ class Team extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-	/**
-	 * Render image widget output on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();

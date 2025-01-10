@@ -1,26 +1,25 @@
 <?php
 
-
 namespace EasyElements\Control;
-
 
 use Elementor\Base_Data_Control;
 
 class Image_Selector extends Base_Data_Control {
 
-
-
+    // Define the control type constant
     const TYPE = 'ele-image-selector';
 
     /**
-     * Set control type.
+     * Retrieve the control type.
+     *
+     * @return string The type of control.
      */
     public function get_type() {
         return self::TYPE;
     }
 
     /**
-     * control field markup
+     * Render the control output in the editor.
      */
     public function content_template() {
         $control_uid = $this->get_control_uid( '{{ value }}' );
@@ -44,7 +43,9 @@ class Image_Selector extends Base_Data_Control {
     }
 
     /**
-     * Set default settings
+     * Retrieve the default settings of the control.
+     *
+     * @return array Default settings.
      */
     protected function get_default_settings() {
         return array(

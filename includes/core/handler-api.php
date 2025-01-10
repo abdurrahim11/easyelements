@@ -12,11 +12,11 @@ class Handler_Api {
     public $request = null;
 
     public function __construct() {
-        $this->config();
+        $this->initialize_config();
         $this->init();
     }
 
-    public function config() {
+    public function initialize_config() {
     }
 
     public function init() {

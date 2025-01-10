@@ -16,7 +16,7 @@ class Init {
         add_action('save_post', array($this, 'save_meta'));
         add_filter('manage_ele-template-builder_posts_columns', array($this, 'add_template_type_column'));
         add_action('manage_ele-template-builder_posts_custom_column', array($this, 'render_template_type_column'), 10, 2);
-        //add_filter('views_edit-ele-template-builder', array( $this,  'add_template_type_tabs' ) );
+        add_filter('views_edit-ele-template-builder', array( $this,  'add_template_type_tabs' ) );
         add_action( 'pre_get_posts', array( $this, 'filter_by_template_type' ) );
 
         if ( is_admin() ) {

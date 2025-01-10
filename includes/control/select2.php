@@ -1,24 +1,24 @@
 <?php
-
-
 namespace EasyElements\Control;
-
 
 use Elementor\Base_Data_Control;
 
 class Select2 extends Base_Data_Control {
 
-
-
     const TYPE = 'ele-advanced-select2';
 
     /**
-     * Set control type.
+     * Retrieve the control type.
+     *
+     * @return string Control type.
      */
     public function get_type() {
         return self::TYPE;
     }
 
+    /**
+     * Enqueue control scripts and styles.
+     */
     public function enqueue() {
         wp_enqueue_script(
             'ele-advanced-select2',
@@ -39,7 +39,7 @@ class Select2 extends Base_Data_Control {
     }
 
     /**
-     * control field markup
+     * Render control field markup.
      */
     public function content_template() {
         $control_uid = $this->get_control_uid();
@@ -66,7 +66,9 @@ class Select2 extends Base_Data_Control {
     }
 
     /**
-     * Set default settings
+     * Retrieve the default settings for the control.
+     *
+     * @return array Control default settings.
      */
     protected function get_default_settings() {
         return array(

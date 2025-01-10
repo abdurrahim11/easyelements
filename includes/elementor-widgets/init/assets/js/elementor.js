@@ -40,6 +40,7 @@
         init: function () {
             let element_actions = {
                 "ele-nav-menu.default": easyelements.nav_menu,
+                "ele-vertical-menu.default": easyelements.vertical_menu,
                 "ele-post-grid.default": easyelements.post_grid,
                 "ele-team.default": easyelements.team,
                 "ele-horizontal-timeline.default": easyelements.horizontal_timeline,
@@ -159,12 +160,69 @@
             }
         },
 
+        vertical_menu: function (container_element) {
+            console.log('ready');
+            if (container_element.find(".ele-vertical-main-menu-on-click").length > 0) {
+                let vertical_menu = container_element.find(".ele-vertical-main-menu-on-click"),
+                    menu_trigger = container_element.find(".ele-vertical-menu-trigger"),
+                    device_mode = $("body").data("elementor-device-mode");
+
+                if (device_mode === "tablet" || device_mode === "mobile") {
+                    vertical_menu.removeClass("vertical-menu-active");
+                }
+
+                menu_trigger.on("click", function (event) {
+                    event.preventDefault();
+                    vertical_menu.toggleClass("vertical-menu-active");
+                });
+            }
+
+            if (container_element.find(".elementskit-megamenu-has").length > 0) {
+                let mega_menu_items = container_element.find(".elementskit-megamenu-has"),
+                    parent_container = container_element.parents(".elementor-container"),
+                    menu_wrapper = container_element.find(".ele-vertical-main-menu-wrapper");
+
+                const update_mega_menu_width = () => {
+                    let container_width = Math.floor(parent_container.width() - menu_wrapper.width());
+                    if ($(document).width() > 1024) {
+                        mega_menu_items.children(".elementskit-megamenu-panel").css({ width: container_width - 10 + "px" });
+                    } else {
+                        mega_menu_items.children(".elementskit-megamenu-panel").removeAttr("style");
+                    }
+                };
+
+                mega_menu_items.on("mouseenter", function () {
+                    let menu_width = $(this).data("vertical-menu"),
+                        panel = $(this).children(".elementskit-megamenu-panel");
+
+                    if (menu_width && typeof menu_width === "string") {
+                        if (/^[0-9]/.test(menu_width)) {
+                            panel.css({ width: menu_width });
+                        } else {
+                            $(window).bind("resize", update_mega_menu_width).trigger("resize");
+                        }
+                    } else {
+                        $(window).bind("resize", update_mega_menu_width).trigger("resize");
+                    }
+                });
+
+                mega_menu_items.trigger("mouseenter");
+            }
+
+            if (container_element.find(".megamenu-ajax-load").length > 0) {
+                let menu_wrapper = container_element.find(".ele-vertical-main-menu-wrapper");
+                menu_wrapper.on("mouseenter", ".easyelements-megamenu-has", function () {
+                    easyelements_helper.mega_menu_ajax_load($(this));
+                });
+            }
+        },
+
         progress_bar: function (element) {
             let settings = easyelements.getElementSettings(element),
                 progressCount = element.find(".ele-progress-count"),
                 progressTrack = element.find(".ele-progress-track");
 
-            element.find(".ele-progress-bar").elementorWaypoint(
+            element.find(".ele-progress-bar").waypoint(
                 function () {
                     if ("yes" === settings.show_count) {
                         progressCount.animate(
@@ -192,7 +250,7 @@
 
             element.find(".ele-hotspot-type-click").on("click", function (event) {
                 event.preventDefault();
-                e(this).find(".ele-hotspot-tooltip-text").toggleClass("active");
+                $(this).find(".ele-hotspot-tooltip-text").toggleClass("active");
             });
         },
 
@@ -319,45 +377,45 @@
                 );
             }
         },
-
-
         post_grid: function (element) {
-            let elementSettings = easyelements.getElementSettings(element),
-                gridMain = element.find(".ele-post-grid-main");
-            element.find(".ele-post-grid-item"),
-                gridMain.cubeportfolio({
-                    layoutMode: "grid",
-                    gridAdjustment: "responsive",
-                    lightboxGallery: false,
-                    mediaQueries: [
-                        {
-                            width: elementorFrontend.config.breakpoints.lg,
-                            cols: elementSettings.desktopColumns || 3,
-                            options: {
-                                gapHorizontal: elementSettings.desktopGap || 0,
-                                gapVertical: elementSettings.desktopGap || 0
-                            }
+            let settings = easyelements.getElementSettings(element),
+                postGridMain = element.find(".ele-post-grid-main");
+
+            element.find(".ele-post-grid-item");
+
+            postGridMain.cubeportfolio({
+                layoutMode: "grid",
+                gridAdjustment: "responsive",
+                lightboxGallery: false,
+                mediaQueries: [
+                    {
+                        width: elementorFrontend.config.breakpoints.lg,
+                        cols: settings.column_grid || 3,
+                        options: {
+                            gapHorizontal: settings.space_between.size,
+                            gapVertical: settings.space_between.size,
                         },
-                        {
-                            width: elementorFrontend.config.breakpoints.md,
-                            cols: elementSettings.tabletColumns || 2,
-                            options: {
-                                gapHorizontal: elementSettings.tabletGap || 0,
-                                gapVertical: elementSettings.tabletGap || 0
-                            }
+                    },
+                    {
+                        width: elementorFrontend.config.breakpoints.md,
+                        cols: settings.column_grid_tablet || 2,
+                        options: {
+                            gapHorizontal: settings.space_between_tablet.size || 0,
+                            gapVertical: settings.space_between_tablet.size || 0,
                         },
-                        {
-                            width: 0,
-                            cols: elementSettings.mobileColumns || 1,
-                            options: {
-                                gapHorizontal: elementSettings.mobileGap || 0,
-                                gapVertical: elementSettings.mobileGap || 0
-                            }
+                    },
+                    {
+                        width: 0,
+                        cols: settings.column_grid_mobile || 1,
+                        options: {
+                            gapHorizontal: settings.space_between_mobile.size || 0,
+                            gapVertical: settings.space_between_mobile.size || 0,
                         },
-                    ],
-                    displayType: "default",
-                    displayTypeSpeed: 0,
-                });
+                    },
+                ],
+                displayType: "default",
+                displayTypeSpeed: 0,
+            });
         },
         getElementSettings: function (element, modelCid) {
             var settings = {},
@@ -387,6 +445,7 @@
             }
             return settings;
         },
+
         model_popup: function ($scope, $) {
             var modalWrapper = $scope.find('.ele-modal').eq(0),
                 modalOverlayWrapper = $scope.find('.ele-modal-overlay'),

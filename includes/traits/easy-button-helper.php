@@ -1,22 +1,16 @@
 <?php
-/**
- * Creative Button Markup trait
- */
+
 namespace EasyElements\Traits;
 
 defined('ABSPATH') || exit;
 
-/**
- * Trait to load markup for creative button
- */
 
 
+trait Easy_Button_Helper {
 
-trait Creative_Button_Markup {
-
-    public function render_estilo_markup($settings) {
-        $this->add_render_attribute( 'wrap', 'class', 'ele-creative-btn-wrap' );
-        $this->add_render_attribute( 'button', 'class', [ 'ele-creative-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['estilo_effect'] ] );
+    public function render_estilo_button($settings) {
+        $this->add_render_attribute( 'wrap', 'class', 'ele-easy-btn-wrap' );
+        $this->add_render_attribute( 'button', 'class', [ 'ele-easy-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['estilo_effect'] ] );
 
         $this->add_link_attributes( 'button', $settings['button_link'] );
 
@@ -28,9 +22,9 @@ trait Creative_Button_Markup {
         echo wp_kses_post($markup);
     }
 
-    public function render_symbolab_markup($settings){
-        $this->add_render_attribute( 'wrap', 'class', 'ele-creative-btn-wrap' );
-        $this->add_render_attribute( 'button', 'class', [ 'ele-creative-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['symbolab_effect'] ] );
+    public function render_symbolab_button($settings){
+        $this->add_render_attribute( 'wrap', 'class', 'ele-easy-btn-wrap' );
+        $this->add_render_attribute( 'button', 'class', [ 'ele-easy-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['symbolab_effect'] ] );
 
         $this->add_link_attributes( 'button', $settings['button_link'] );
 
@@ -43,9 +37,9 @@ trait Creative_Button_Markup {
         echo wp_kses_post($markup);
     }
 
-    public function render_iconica_markup($settings){
-        $this->add_render_attribute( 'wrap', 'class', 'ele-creative-btn-wrap' );
-        $this->add_render_attribute( 'button', 'class', [ 'ele-creative-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['iconica_effect'] ] );
+    public function render_iconica_button($settings){
+        $this->add_render_attribute( 'wrap', 'class', 'ele-easy-btn-wrap' );
+        $this->add_render_attribute( 'button', 'class', [ 'ele-easy-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['iconica_effect'] ] );
 
         $this->add_link_attributes( 'button', $settings['button_link'] );
 
@@ -58,9 +52,9 @@ trait Creative_Button_Markup {
         echo wp_kses_post($markup);
     }
 
-    public function render_montino_markup($settings){
-        $this->add_render_attribute( 'wrap', 'class', 'ele-creative-btn-wrap' );
-        $this->add_render_attribute( 'button', 'class', [ 'ele-creative-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['montino_effect'] ] );
+    public function render_montino_button($settings){
+        $this->add_render_attribute( 'wrap', 'class', 'ele-easy-btn-wrap' );
+        $this->add_render_attribute( 'button', 'class', [ 'ele-easy-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['montino_effect'] ] );
         $this->add_link_attributes( 'button', $settings['button_link'] );
 
         if( 'winona' == $settings['montino_effect'] || 'rayen' == $settings['montino_effect'] || 'nina' == $settings['montino_effect'] ) {
@@ -81,9 +75,9 @@ trait Creative_Button_Markup {
         echo wp_kses_post($markup);
     }
 
-    public function render_hermosa_markup($settings){
-        $this->add_render_attribute( 'wrap', 'class', 'ele-creative-btn-wrap' );
-        $this->add_render_attribute( 'button', 'class', [ 'ele-creative-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['hermosa_effect'] ] );
+    public function render_hermosa_button($settings){
+        $this->add_render_attribute( 'wrap', 'class', 'ele-easy-btn-wrap' );
+        $this->add_render_attribute( 'button', 'class', [ 'ele-easy-btn', 'ele-stl--' . $settings['btn_style'], 'ele-eft--' .$settings['hermosa_effect'] ] );
         $this->add_link_attributes( 'button', $settings['button_link'] );
 
         $wrap_attr = $this->get_render_attribute_string( 'wrap' );

@@ -1,5 +1,4 @@
 <?php
-
 namespace EasyElements\Control;
 
 use Elementor\Controls_Manager;
@@ -7,47 +6,38 @@ use Elementor\Group_Control_Base;
 
 class Group_Control_Foreground extends Group_Control_Base {
 
-
     /**
-     * Fields.
-     *
-     * Holds all the background control fields.
+     * Holds all the foreground control fields.
      *
      * @access protected
      * @static
-     *
-     * @var array Background control fields.
+     * @var array Foreground control fields.
      */
     protected static $fields;
 
     /**
-     * Get background control type.
-     *
-     * Retrieve the control type, in this case.
+     * Retrieve the control type, in this case, 'foreground'.
      *
      * @return string Control type.
      * @since 1.0.0
      * @access public
      * @static
-     *
      */
     public static function get_type() {
         return 'foreground';
     }
 
     /**
-     * Init fields.
-     *
-     * Initialize background control fields.
+     * Initialize foreground control fields.
      *
      * @return array Control fields.
      * @since 1.0.0
      * @access public
-     *
      */
     public function init_fields() {
         $fields = array();
 
+        // Define the color type selection field (Classic or Gradient).
         $fields['color_type'] = array(
             'label'       => _x( 'Color Type', 'Background Control', 'easy-elements' ),
             'type'        => Controls_Manager::CHOOSE,
@@ -62,9 +52,10 @@ class Group_Control_Foreground extends Group_Control_Base {
                     'title' => _x( 'Gradient', 'Text Color Control', 'easy-elements' ),
                     'icon'  => 'eicon-barcode',
                 ),
-            )
+            ),
         );
 
+        // Define the color field for text color.
         $fields['color'] = array(
             'label'     => _x( 'Color', 'Background Control', 'easy-elements' ),
             'type'      => Controls_Manager::COLOR,
@@ -75,9 +66,10 @@ class Group_Control_Foreground extends Group_Control_Base {
             ),
             'condition' => array(
                 'color_type' => array( 'classic', 'gradient' ),
-            )
+            ),
         );
 
+        // Define the color stop location for gradient color.
         $fields['color_stop'] = array(
             'label'       => _x( 'Location', 'Background Control', 'easy-elements' ),
             'type'        => Controls_Manager::SLIDER,
@@ -93,6 +85,7 @@ class Group_Control_Foreground extends Group_Control_Base {
             'of_type'     => 'gradient',
         );
 
+        // Define the second color field for gradient color.
         $fields['color_b'] = array(
             'label'       => _x( 'Second Color', 'Background Control', 'easy-elements' ),
             'type'        => Controls_Manager::COLOR,
@@ -104,6 +97,7 @@ class Group_Control_Foreground extends Group_Control_Base {
             'of_type'     => 'gradient',
         );
 
+        // Define the second color stop location for gradient color.
         $fields['color_b_stop'] = array(
             'label'       => _x( 'Location', 'Background Control', 'easy-elements' ),
             'type'        => Controls_Manager::SLIDER,
@@ -119,6 +113,7 @@ class Group_Control_Foreground extends Group_Control_Base {
             'of_type'     => 'gradient',
         );
 
+        // Define the gradient type selection field (Linear or Radial).
         $fields['gradient_type'] = array(
             'label'       => _x( 'Type', 'Background Control', 'easy-elements' ),
             'type'        => Controls_Manager::SELECT,
@@ -134,6 +129,7 @@ class Group_Control_Foreground extends Group_Control_Base {
             'of_type'     => 'gradient',
         );
 
+        // Define the gradient angle field for linear gradients.
         $fields['gradient_angle'] = array(
             'label'      => _x( 'Angle', 'Background Control', 'easy-elements' ),
             'type'       => Controls_Manager::SLIDER,
@@ -157,6 +153,7 @@ class Group_Control_Foreground extends Group_Control_Base {
             'of_type'    => 'gradient',
         );
 
+        // Define the gradient position field for radial gradients.
         $fields['gradient_position'] = array(
             'label'     => _x( 'Position', 'Background Control', 'easy-elements' ),
             'type'      => Controls_Manager::SELECT,
@@ -186,32 +183,24 @@ class Group_Control_Foreground extends Group_Control_Base {
     }
 
     /**
-     * Get child default args.
-     *
-     * Retrieve the default arguments for all the child controls for a specific group
-     * control.
+     * Retrieve the default arguments for all the child controls for a specific group control.
      *
      * @return array Default arguments for all the child controls.
      * @since 1.0.0
      * @access protected
-     *
      */
     protected function get_child_default_args() {
         return array(
-            'types' => array( 'classic', 'gradient' )
+            'types' => array( 'classic', 'gradient' ),
         );
     }
 
     /**
-     * Filter fields.
-     *
-     * Filter which controls to display, using `include`, `exclude`, `condition`
-     * and `of_type` arguments.
+     * Filter which controls to display, using `include`, `exclude`, `condition`, and `of_type` arguments.
      *
      * @return array Control fields.
      * @since 1.0.0
      * @access protected
-     *
      */
     protected function filter_fields() {
         $fields = parent::filter_fields();
@@ -228,15 +217,11 @@ class Group_Control_Foreground extends Group_Control_Base {
     }
 
     /**
-     * Get default options.
+     * Retrieve the default options of the foreground control.
      *
-     * Retrieve the default options of the background control. Used to return the
-     * default options while initializing the background control.
-     *
-     * @return array Default background control options.
+     * @return array Default foreground control options.
      * @since 1.0.0
      * @access protected
-     *
      */
     protected function get_default_options() {
         return array(

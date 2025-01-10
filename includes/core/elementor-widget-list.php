@@ -65,9 +65,9 @@ class Elementor_Widget_List {
                 'title'           => 'Pricing Table',
                 'active'          => true,
             ),
-            'creative-button' => array(
-                'slug'            => 'creative-button',
-                'title'           => 'Creative Button',
+            'easy-button' => array(
+                'slug'            => 'easy-button',
+                'title'           => 'Easy Button',
                 'active'          => true,
             ),
             'info-box' => array(

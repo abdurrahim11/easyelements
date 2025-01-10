@@ -14,127 +14,42 @@ use Elementor\Widget_Base;
 
 class Pricing_Table extends Widget_Base {
 
-	private static function get_currency_symbol( $symbol_name ) {
-		$symbols = array(
-			'dollar'       => '&#36;',
-			'baht'         => '&#3647;',
-			'bdt'          => '&#2547;',
-			'euro'         => '&#128;',
-			'franc'        => '&#8355;',
-			'guilder'      => '&fnof;',
-			'indian_rupee' => '&#8377;',
-			'pound'        => '&#163;',
-			'peso'         => '&#8369;',
-			'peseta'       => '&#8359',
-			'lira'         => '&#8356;',
-			'ruble'        => '&#8381;',
-			'shekel'       => '&#8362;',
-			'rupee'        => '&#8360;',
-			'real'         => 'R$',
-			'krona'        => 'kr',
-			'won'          => '&#8361;',
-			'yen'          => '&#165;'
-		);
-
-		return isset( $symbols[ $symbol_name ] ) ? $symbols[ $symbol_name ] : '';
-	}
-
-	/**
-	 * Get widget name.
-	 *
-	 * Retrieve image widget name.
-	 *
-	 * @return string Widget name.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_name() {
 		return 'ele-pricing';
 	}
 
-	/**
-	 * Get widget title.
-	 *
-	 * Retrieve image widget title.
-	 *
-	 * @return string Widget title.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_title() {
-		return __( 'Pricing', 'easy-elements' );
+		return esc_html__( 'Pricing', 'easy-elements' );
 	}
 
-	/**
-	 * Get widget icon.
-	 *
-	 * Retrieve image widget icon.
-	 *
-	 * @return string Widget icon.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_icon() {
 		return 'ele ele-pricing-table ele-widget-icon';
 	}
 
-	/**
-	 * Get widget categories.
-	 *
-	 * Retrieve the list of categories the image widget belongs to.
-	 *
-	 * Used to determine where to display the widget in the editor.
-	 *
-	 * @return array Widget categories.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
 	public function get_categories() {
 		return array( 'easy-elements' );
 	}
 
-	/**
-	 * Get widget keywords.
-	 *
-	 * Retrieve the list of keywords the widget belongs to.
-	 *
-	 * @return array Widget keywords.
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 */
-	public function get_keywords() {
-		return array( 'pricing', 'price', 'card', 'table' );
-	}
+    public function get_keywords() {
+        return array( 'pricing', 'price', 'card', 'table', 'cost', 'rate', 'fee', 'charge', 'billing', 'invoice', 'payment' );
+    }
 
-	/**
-	 * Register Pricing widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 
 		$this->start_controls_section(
 			'section_header',
 			array(
-				'label' => __( 'Header', 'easy-elements' ),
+				'label' => esc_html__( 'Header', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'title',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => __( 'Basic', 'easy-elements' ),
+				'default'     => esc_html__( 'Basic', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -144,16 +59,16 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'media_type',
 			array(
-				'label'       => __( 'Media Type', 'easy-elements' ),
+				'label'       => esc_html__( 'Media Type', 'easy-elements' ),
 				'type'        => Controls_Manager::CHOOSE,
 				'label_block' => false,
 				'options'     => array(
 					'icon'  => array(
-						'title' => __( 'Icon', 'easy-elements' ),
+						'title' => esc_html__( 'Icon', 'easy-elements' ),
 						'icon'  => 'eicon-star-o',
 					),
 					'image' => array(
-						'title' => __( 'Image', 'easy-elements' ),
+						'title' => esc_html__( 'Image', 'easy-elements' ),
 						'icon'  => 'eicon-image',
 					),
 				),
@@ -165,7 +80,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'icon',
 			array(
-				'label'     => __( 'Icon', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon', 'easy-elements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'far fa-clone',
@@ -180,7 +95,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'image',
 			array(
-				'label'     => __( 'Image', 'easy-elements' ),
+				'label'     => esc_html__( 'Image', 'easy-elements' ),
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => array(
 					'url' => Utils::get_placeholder_image_src(),
@@ -212,12 +127,12 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'media_position',
 			array(
-				'label'   => __( 'Position', 'easy-elements' ),
+				'label'   => esc_html__( 'Position', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'before_header',
 				'options' => array(
-					'after_header'  => __( 'After Title', 'easy-elements' ),
-					'before_header' => __( 'Before Title', 'easy-elements' ),
+					'after_header'  => esc_html__( 'After Title', 'easy-elements' ),
+					'before_header' => esc_html__( 'Before Title', 'easy-elements' ),
 				),
 			)
 		);
@@ -227,18 +142,18 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_price',
 			array(
-				'label' => __( 'Price', 'easy-elements' ),
+				'label' => esc_html__( 'Price', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'currency',
 			array(
-				'label'       => __( 'Currency', 'easy-elements' ),
+				'label'       => esc_html__( 'Currency', 'easy-elements' ),
 				'type'        => Controls_Manager::SELECT,
 				'label_block' => false,
 				'options'     => array(
-					''             => __( 'None', 'easy-elements' ),
+					''             => esc_html__( 'None', 'easy-elements' ),
 					'dollar'       => '&#36; ' . _x( 'Dollar', 'Currency Symbol', 'easy-elements' ),
 					'baht'         => '&#3647; ' . _x( 'Baht', 'Currency Symbol', 'easy-elements' ),
 					'bdt'          => '&#2547; ' . _x( 'BD Taka', 'Currency Symbol', 'easy-elements' ),
@@ -257,7 +172,7 @@ class Pricing_Table extends Widget_Base {
 					'shekel'       => '&#8362; ' . _x( 'Shekel', 'Currency Symbol', 'easy-elements' ),
 					'won'          => '&#8361; ' . _x( 'Won', 'Currency Symbol', 'easy-elements' ),
 					'yen'          => '&#165; ' . _x( 'Yen/Yuan', 'Currency Symbol', 'easy-elements' ),
-					'custom'       => __( 'Custom', 'easy-elements' ),
+					'custom'       => esc_html__( 'Custom', 'easy-elements' ),
 				),
 				'default'     => 'dollar',
 			)
@@ -266,7 +181,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'currency_custom',
 			array(
-				'label'     => __( 'Custom Symbol', 'easy-elements' ),
+				'label'     => esc_html__( 'Custom Symbol', 'easy-elements' ),
 				'type'      => Controls_Manager::TEXT,
 				'condition' => array(
 					'currency' => 'custom',
@@ -277,7 +192,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price',
 			array(
-				'label'   => __( 'Price', 'easy-elements' ),
+				'label'   => esc_html__( 'Price', 'easy-elements' ),
 				'type'    => Controls_Manager::TEXT,
 				'default' => '9.99',
 				'dynamic' => array(
@@ -289,9 +204,9 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'period',
 			array(
-				'label'   => __( 'Period', 'easy-elements' ),
+				'label'   => esc_html__( 'Period', 'easy-elements' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => __( 'Per Month', 'easy-elements' ),
+				'default' => esc_html__( 'Per Month', 'easy-elements' ),
 				'dynamic' => array(
 					'active' => true,
 				),
@@ -301,12 +216,12 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_position',
 			array(
-				'label'   => __( 'Position', 'easy-elements' ),
+				'label'   => esc_html__( 'Position', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'before_features',
 				'options' => array(
-					'before_features' => __( 'Before Features', 'easy-elements' ),
-					'after_features'  => __( 'After Features', 'easy-elements' ),
+					'before_features' => esc_html__( 'Before Features', 'easy-elements' ),
+					'after_features'  => esc_html__( 'After Features', 'easy-elements' ),
 				),
 			)
 		);
@@ -316,17 +231,17 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_features',
 			array(
-				'label' => __( 'Features', 'easy-elements' ),
+				'label' => esc_html__( 'Features', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'show_feature',
 			array(
-				'label'        => __( 'Show', 'easy-elements' ),
+				'label'        => esc_html__( 'Show', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -335,9 +250,9 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_title',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => __( 'Features', 'easy-elements' ),
+				'default'   => esc_html__( 'Features', 'easy-elements' ),
 				'dynamic'   => array(
 					'active' => true,
 				),
@@ -352,7 +267,7 @@ class Pricing_Table extends Widget_Base {
 		$repeater->add_control(
 			'icon',
 			array(
-				'label'       => __( 'Icon', 'easy-elements' ),
+				'label'       => esc_html__( 'Icon', 'easy-elements' ),
 				'type'        => Controls_Manager::ICONS,
 				'default'     => array(
 					'value'   => 'fas fa-check',
@@ -372,9 +287,9 @@ class Pricing_Table extends Widget_Base {
 		$repeater->add_control(
 			'title_text',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
-				'placeholder' => __( 'Type list item content.', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type list item content.', 'easy-elements' ),
 				'label_block' => true,
 				'dynamic'     => array(
 					'active' => true,
@@ -385,10 +300,10 @@ class Pricing_Table extends Widget_Base {
 		$repeater->add_control(
 			'tooltip_text',
 			array(
-				'label'       => __( 'Tooltip Text', 'easy-elements' ),
+				'label'       => esc_html__( 'Tooltip Text', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXTAREA,
 				'rows'        => 3,
-				'placeholder' => __( 'Type tooltip text here.', 'easy-elements' ),
+				'placeholder' => esc_html__( 'Type tooltip text here.', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -398,12 +313,12 @@ class Pricing_Table extends Widget_Base {
 		$repeater->add_control(
 			'status',
 			array(
-				'label'   => __( 'Status', 'easy-elements' ),
+				'label'   => esc_html__( 'Status', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'active',
 				'options' => array(
-					'active'   => __( 'Active', 'easy-elements' ),
-					'inactive' => __( 'Inactive', 'easy-elements' ),
+					'active'   => esc_html__( 'Active', 'easy-elements' ),
+					'inactive' => esc_html__( 'Inactive', 'easy-elements' ),
 				),
 			)
 		);
@@ -416,7 +331,7 @@ class Pricing_Table extends Widget_Base {
 				'show_label'  => false,
 				'title_field' => sprintf(
 				/* translators: %s: Title */
-					__( 'Item: %1$s', 'easy-elements' ),
+					esc_html__( 'Item: %1$s', 'easy-elements' ),
 					'{{title_text}}'
 				),
 				'render_type' => 'template',
@@ -426,7 +341,7 @@ class Pricing_Table extends Widget_Base {
 							'value'   => 'fas fa-check',
 							'library' => 'fa-solid',
 						),
-						'title_text' => __( 'Feature List 1', 'easy-elements' ),
+						'title_text' => esc_html__( 'Feature List 1', 'easy-elements' ),
 						'status'     => 'active',
 					),
 					array(
@@ -434,8 +349,8 @@ class Pricing_Table extends Widget_Base {
 							'value'   => 'fas fa-check',
 							'library' => 'fa-solid',
 						),
-						'title_text'   => __( 'Feature List 2', 'easy-elements' ),
-						'tooltip_text' => __( 'Tooltip Text Here', 'easy-elements' ),
+						'title_text'   => esc_html__( 'Feature List 2', 'easy-elements' ),
+						'tooltip_text' => esc_html__( 'Tooltip Text Here', 'easy-elements' ),
 						'status'       => 'active',
 					),
 					array(
@@ -443,7 +358,7 @@ class Pricing_Table extends Widget_Base {
 							'value'   => 'fas fa-times',
 							'library' => 'fa-solid',
 						),
-						'title_text' => __( 'Feature List 3', 'easy-elements' ),
+						'title_text' => esc_html__( 'Feature List 3', 'easy-elements' ),
 						'status'     => 'inactive',
 					),
 					array(
@@ -451,7 +366,7 @@ class Pricing_Table extends Widget_Base {
 							'value'   => 'fas fa-times',
 							'library' => 'fa-solid',
 						),
-						'title_text' => __( 'Feature List 4', 'easy-elements' ),
+						'title_text' => esc_html__( 'Feature List 4', 'easy-elements' ),
 						'status'     => 'inactive',
 					),
 				),
@@ -466,7 +381,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_description',
 			array(
-				'label' => __( 'Description', 'easy-elements' ),
+				'label' => esc_html__( 'Description', 'easy-elements' ),
 			)
 		);
 
@@ -475,19 +390,19 @@ class Pricing_Table extends Widget_Base {
 			array(
 				'label'   => '',
 				'type'    => Controls_Manager::WYSIWYG,
-				'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'easy-elements' ),
+				'default' => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'description_position',
 			array(
-				'label'   => __( 'Position', 'easy-elements' ),
+				'label'   => esc_html__( 'Position', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'before_features',
 				'options' => array(
-					'before_features' => __( 'Before Features', 'easy-elements' ),
-					'after_features'  => __( 'After Features', 'easy-elements' ),
+					'before_features' => esc_html__( 'Before Features', 'easy-elements' ),
+					'after_features'  => esc_html__( 'After Features', 'easy-elements' ),
 				),
 			)
 		);
@@ -497,17 +412,17 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_button',
 			array(
-				'label' => __( 'Button', 'easy-elements' ),
+				'label' => esc_html__( 'Button', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'button_title',
 			array(
-				'label'       => __( 'Title', 'easy-elements' ),
+				'label'       => esc_html__( 'Title', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => __( 'Get Started', 'easy-elements' ),
+				'default'     => esc_html__( 'Get Started', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -517,7 +432,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'button_link',
 			array(
-				'label'       => __( 'Link', 'easy-elements' ),
+				'label'       => esc_html__( 'Link', 'easy-elements' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
 				'placeholder' => 'https://yoursite.com/',
@@ -533,12 +448,12 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'button_position',
 			array(
-				'label'   => __( 'Position', 'easy-elements' ),
+				'label'   => esc_html__( 'Position', 'easy-elements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'after_features',
 				'options' => array(
-					'before_features' => __( 'Before Features', 'easy-elements' ),
-					'after_features'  => __( 'After Features', 'easy-elements' ),
+					'before_features' => esc_html__( 'Before Features', 'easy-elements' ),
+					'after_features'  => esc_html__( 'After Features', 'easy-elements' ),
 				),
 			)
 		);
@@ -546,13 +461,13 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'button_css_id',
 			array(
-				'label'       => __( 'Button ID', 'easy-elements' ),
+				'label'       => esc_html__( 'Button ID', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => array(
 					'active' => true,
 				),
 				'placeholder' => 'myID',
-				'title'       => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'easy-elements' ),
+				'title'       => esc_html__( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'easy-elements' ),
 
 			)
 		);
@@ -571,17 +486,17 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_badge',
 			array(
-				'label' => __( 'Badge', 'easy-elements' ),
+				'label' => esc_html__( 'Badge', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'show_badge',
 			array(
-				'label'        => __( 'Show', 'easy-elements' ),
+				'label'        => esc_html__( 'Show', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -590,10 +505,10 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_text',
 			array(
-				'label'       => __( 'Text', 'easy-elements' ),
+				'label'       => esc_html__( 'Text', 'easy-elements' ),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => false,
-				'default'     => __( 'Recommended', 'easy-elements' ),
+				'default'     => esc_html__( 'Recommended', 'easy-elements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -609,7 +524,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_general',
 			array(
-				'label' => __( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -617,19 +532,19 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'align',
 			array(
-				'label'        => __( 'Alignment', 'easy-elements' ),
+				'label'        => esc_html__( 'Alignment', 'easy-elements' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'options'      => array(
 					'left'   => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => __( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -645,7 +560,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_header',
 			array(
-				'label' => __( 'Header', 'easy-elements' ),
+				'label' => esc_html__( 'Header', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -654,7 +569,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'header_title_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-title',
 			)
 		);
@@ -662,7 +577,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'header_title_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-title' => 'color: {{VALUE}}',
@@ -674,7 +589,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'header_title_background',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-title',
 			)
@@ -684,7 +599,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'header_title_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-title',
 			)
 		);
@@ -692,16 +607,16 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'header_title_display',
 			array(
-				'label'     => __( 'Display', 'easy-elements' ),
+				'label'     => esc_html__( 'Display', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'default'   => 'block',
 				'options'   => array(
 					'block'        => array(
-						'title' => __( 'Block', 'easy-elements' ),
+						'title' => esc_html__( 'Block', 'easy-elements' ),
 						'icon'  => 'eicon-menu-bar',
 					),
 					'inline-block' => array(
-						'title' => __( 'Inline', 'easy-elements' ),
+						'title' => esc_html__( 'Inline', 'easy-elements' ),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -714,7 +629,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_title_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -726,7 +641,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -738,7 +653,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'header_media',
 			array(
-				'label'     => __( 'Media', 'easy-elements' ),
+				'label'     => esc_html__( 'Media', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -747,7 +662,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'header_media_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'media_type' => 'icon',
@@ -762,7 +677,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_media_size',
 			array(
-				'label'      => __( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -791,7 +706,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'          => __( 'Height', 'easy-elements' ),
+				'label'          => esc_html__( 'Height', 'easy-elements' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => array(
 					'unit' => 'px',
@@ -825,13 +740,13 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'object-fit',
 			array(
-				'label'     => __( 'Object Fit', 'easy-elements' ),
+				'label'     => esc_html__( 'Object Fit', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					''        => __( 'Default', 'easy-elements' ),
-					'fill'    => __( 'Fill', 'easy-elements' ),
-					'cover'   => __( 'Cover', 'easy-elements' ),
-					'contain' => __( 'Contain', 'easy-elements' ),
+					''        => esc_html__( 'Default', 'easy-elements' ),
+					'fill'    => esc_html__( 'Fill', 'easy-elements' ),
+					'cover'   => esc_html__( 'Cover', 'easy-elements' ),
+					'contain' => esc_html__( 'Contain', 'easy-elements' ),
 				),
 				'default'   => '',
 				'condition' => array(
@@ -847,7 +762,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'header_media_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -861,7 +776,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_price',
 			array(
-				'label' => __( 'Price', 'easy-elements' ),
+				'label' => esc_html__( 'Price', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -869,16 +784,16 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_style',
 			array(
-				'label'   => __( 'Layout', 'easy-elements' ),
+				'label'   => esc_html__( 'Layout', 'easy-elements' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'default' => '2',
 				'options' => array(
 					'1' => array(
-						'title' => __( 'Block', 'easy-elements' ),
+						'title' => esc_html__( 'Block', 'easy-elements' ),
 						'icon'  => 'eicon-menu-bar',
 					),
 					'2' => array(
-						'title' => __( 'Inline', 'easy-elements' ),
+						'title' => esc_html__( 'Inline', 'easy-elements' ),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -888,7 +803,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-price-tag' => 'color: {{VALUE}}',
@@ -900,7 +815,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'price_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-price-tag',
 			)
 		);
@@ -908,7 +823,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'price_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -920,7 +835,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_currency_title',
 			array(
-				'label'     => __( 'Currency', 'easy-elements' ),
+				'label'     => esc_html__( 'Currency', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -929,7 +844,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_currency_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-currency' => 'color: {{VALUE}}',
@@ -941,7 +856,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'price_currency_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-currency',
 			)
 		);
@@ -949,7 +864,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'price_currency_vertical_offset',
 			array(
-				'label'      => __( 'Vertical Offset', 'easy-elements' ),
+				'label'      => esc_html__( 'Vertical Offset', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -970,7 +885,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'price_currency_space_between',
 			array(
-				'label'      => __( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'default'    => array(
@@ -991,7 +906,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_period_title',
 			array(
-				'label'     => __( 'Period', 'easy-elements' ),
+				'label'     => esc_html__( 'Period', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1000,7 +915,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'price_period_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-price-period' => 'color: {{VALUE}}',
@@ -1012,7 +927,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'price_period_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-price-period',
 			)
 		);
@@ -1020,7 +935,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'price_period_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1034,7 +949,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_style_features',
 			array(
-				'label'     => __( 'Features', 'easy-elements' ),
+				'label'     => esc_html__( 'Features', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_feature' => 'yes',
@@ -1045,7 +960,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_margin',
 			array(
-				'label'      => __( 'Wrapper Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Wrapper Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1057,7 +972,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_title_heading',
 			array(
-				'label'     => __( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1066,7 +981,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_title_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-title' => 'color: {{VALUE}}',
@@ -1078,7 +993,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'features_title_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-features-title',
 			)
 		);
@@ -1086,7 +1001,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_title_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1098,7 +1013,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_heading',
 			array(
-				'label'     => __( 'Feature List', 'easy-elements' ),
+				'label'     => esc_html__( 'Feature List', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1107,7 +1022,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Icon Size', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1135,7 +1050,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_icon_space',
 			array(
-				'label'      => __( 'Icon Space', 'easy-elements' ),
+				'label'      => esc_html__( 'Icon Space', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1159,15 +1074,15 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_align',
 			array(
-				'label'     => __( 'Content Align', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Align', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'flex-start' => array(
-						'title' => __( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center'     => array(
-						'title' => __( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easy-elements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 				),
@@ -1181,7 +1096,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'features_list_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-features-list li',
 			)
 		);
@@ -1189,7 +1104,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_list_space_between',
 			array(
-				'label'      => __( 'Space between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space between', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1214,14 +1129,14 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_tab(
 			'features_list_active',
 			array(
-				'label' => __( 'Active', 'easy-elements' ),
+				'label' => esc_html__( 'Active', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'features_list_active_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-list li.active' => 'color: {{VALUE}}',
@@ -1233,7 +1148,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_active_icon_color',
 			array(
-				'label'     => __( 'Icon Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-list li.active .ele-pricing-feature-icon' => 'color: {{VALUE}}',
@@ -1246,14 +1161,14 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_tab(
 			'features_list_inactive',
 			array(
-				'label' => __( 'Inactive', 'easy-elements' ),
+				'label' => esc_html__( 'Inactive', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'features_list_inactive_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-list li.inactive' => 'color: {{VALUE}}',
@@ -1264,7 +1179,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_inactive_icon_color',
 			array(
-				'label'     => __( 'Icon Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-features-list li.inactive .ele-pricing-feature-icon' => 'color: {{VALUE}}',
@@ -1279,7 +1194,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_tooltip',
 			array(
-				'label'     => __( 'Tooltip', 'easy-elements' ),
+				'label'     => esc_html__( 'Tooltip', 'easy-elements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1288,7 +1203,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_tooltip_color',
 			array(
-				'label'     => __( 'Icon Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-item .ele-pricing-tooltip-toggle' => 'color: {{VALUE}}',
@@ -1299,7 +1214,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_tooltip_bg',
 			array(
-				'label'     => __( 'Icon Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-item .ele-pricing-tooltip-toggle' => 'background-color: {{VALUE}}',
@@ -1311,7 +1226,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'features_tooltip_typography',
-				'label'    => __( 'Content Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Content Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-item .ele-pricing-tooltip',
 			)
 		);
@@ -1319,7 +1234,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_list_tooltip_width',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1346,7 +1261,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_tooltip_content_color',
 			array(
-				'label'     => __( 'Content Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-item .ele-pricing-tooltip' => 'color: {{VALUE}}',
@@ -1357,7 +1272,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_list_tooltip_content_bg',
 			array(
-				'label'     => __( 'Content Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Background', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-item .ele-pricing-tooltip'        => 'background-color: {{VALUE}};',
@@ -1369,7 +1284,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'features_list_icon_tooltip_padding',
 			array(
-				'label'      => __( 'Content Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Content Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1383,7 +1298,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_description_style',
 			array(
-				'label' => __( 'Description', 'easy-elements' ),
+				'label' => esc_html__( 'Description', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1391,7 +1306,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'features_description_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-description,{{WRAPPER}} .ele-pricing-description > *' => 'color: {{VALUE}}',
@@ -1403,7 +1318,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'description_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-description, {{WRAPPER}} .ele-pricing-description > *',
 			)
 		);
@@ -1411,7 +1326,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'description_width',
 			array(
-				'label'      => __( 'Max Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Max Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1438,7 +1353,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'description_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1452,7 +1367,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_separator_style',
 			array(
-				'label' => __( 'Separator', 'easy-elements' ),
+				'label' => esc_html__( 'Separator', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1460,10 +1375,10 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'show_separator',
 			array(
-				'label'        => __( 'Show', 'easy-elements' ),
+				'label'        => esc_html__( 'Show', 'easy-elements' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'easy-elements' ),
-				'label_off'    => __( 'Hide', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Show', 'easy-elements' ),
+				'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -1471,7 +1386,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'separator_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-separator:before' => 'border-color: {{VALUE}}',
@@ -1485,15 +1400,15 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'separator_style',
 			array(
-				'label'     => __( 'Style', 'easy-elements' ),
+				'label'     => esc_html__( 'Style', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'solid',
 				'options'   => array(
-					'solid'  => __( 'Solid', 'easy-elements' ),
-					'double' => __( 'Double', 'easy-elements' ),
-					'dotted' => __( 'Dotted', 'easy-elements' ),
-					'dashed' => __( 'Dashed', 'easy-elements' ),
-					'groove' => __( 'Groove', 'easy-elements' ),
+					'solid'  => esc_html__( 'Solid', 'easy-elements' ),
+					'double' => esc_html__( 'Double', 'easy-elements' ),
+					'dotted' => esc_html__( 'Dotted', 'easy-elements' ),
+					'dashed' => esc_html__( 'Dashed', 'easy-elements' ),
+					'groove' => esc_html__( 'Groove', 'easy-elements' ),
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-separator:before' => 'border-top-style: {{VALUE}};',
@@ -1507,7 +1422,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_width',
 			array(
-				'label'      => __( 'Width', 'easy-elements' ),
+				'label'      => esc_html__( 'Width', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -1537,7 +1452,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_height',
 			array(
-				'label'      => __( 'Height', 'easy-elements' ),
+				'label'      => esc_html__( 'Height', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1563,7 +1478,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1580,7 +1495,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			array(
-				'label' => __( 'Button', 'easy-elements' ),
+				'label' => esc_html__( 'Button', 'easy-elements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -1588,16 +1503,16 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'button_display',
 			array(
-				'label'     => __( 'Display', 'easy-elements' ),
+				'label'     => esc_html__( 'Display', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'default'   => 'inline-block',
 				'options'   => array(
 					'block'        => array(
-						'title' => __( 'Block', 'easy-elements' ),
+						'title' => esc_html__( 'Block', 'easy-elements' ),
 						'icon'  => 'eicon-menu-bar',
 					),
 					'inline-block' => array(
-						'title' => __( 'Inline', 'easy-elements' ),
+						'title' => esc_html__( 'Inline', 'easy-elements' ),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -1611,7 +1526,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'button_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-btn',
 			)
 		);
@@ -1623,14 +1538,14 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_tab(
 			'button_normal_tab',
 			array(
-				'label' => __( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'button_color',
 			array(
-				'label'     => __( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-btn' => 'color: {{VALUE}}',
@@ -1642,7 +1557,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'button_bg',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-btn',
 			)
@@ -1652,7 +1567,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'button_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-btn',
 			)
 		);
@@ -1662,14 +1577,14 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_tab(
 			'button_hover_tab_style',
 			array(
-				'label' => __( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easy-elements' ),
 			)
 		);
 
 		$this->add_control(
 			'button_hcolor',
 			array(
-				'label'     => __( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-btn:hover,{{WRAPPER}} .ele-pricing-btn:focus' => 'color: {{VALUE}}',
@@ -1681,7 +1596,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'button_hbg',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-btn:hover,{{WRAPPER}} .ele-pricing-btn:focus',
 			)
@@ -1690,7 +1605,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'button_hborder',
 			array(
-				'label'     => __( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-btn:hover,{{WRAPPER}} .ele-pricing-btn:focus' => 'border-color: {{VALUE}}',
@@ -1705,7 +1620,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'button_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1717,7 +1632,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'button_item_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1729,7 +1644,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'button_margin',
 			array(
-				'label'      => __( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1743,7 +1658,7 @@ class Pricing_Table extends Widget_Base {
 		$this->start_controls_section(
 			'section_badge_style',
 			array(
-				'label'     => __( 'Badge', 'easy-elements' ),
+				'label'     => esc_html__( 'Badge', 'easy-elements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_badge' => 'yes',
@@ -1754,16 +1669,16 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_display',
 			array(
-				'label'     => __( 'Display', 'easy-elements' ),
+				'label'     => esc_html__( 'Display', 'easy-elements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'default'   => 'auto',
 				'options'   => array(
 					'100%' => array(
-						'title' => __( 'Block', 'easy-elements' ),
+						'title' => esc_html__( 'Block', 'easy-elements' ),
 						'icon'  => 'eicon-menu-bar',
 					),
 					'auto' => array(
-						'title' => __( 'Inline', 'easy-elements' ),
+						'title' => esc_html__( 'Inline', 'easy-elements' ),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -1779,12 +1694,12 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_position',
 			array(
-				'label'     => __( 'Position', 'easy-elements' ),
+				'label'     => esc_html__( 'Position', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'top-left'   => __( 'Top Left', 'easy-elements' ),
-					'top-center' => __( 'Top Center', 'easy-elements' ),
-					'top-right'  => __( 'Top Right', 'easy-elements' ),
+					'top-left'   => esc_html__( 'Top Left', 'easy-elements' ),
+					'top-center' => esc_html__( 'Top Center', 'easy-elements' ),
+					'top-right'  => esc_html__( 'Top Right', 'easy-elements' ),
 				),
 				'default'   => 'top-right',
 				'condition' => array(
@@ -1796,10 +1711,10 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_transform_toggle',
 			array(
-				'label'        => __( 'Transform', 'easy-elements' ),
+				'label'        => esc_html__( 'Transform', 'easy-elements' ),
 				'type'         => Controls_Manager::POPOVER_TOGGLE,
-				'label_off'    => __( 'None', 'easy-elements' ),
-				'label_on'     => __( 'Custom', 'easy-elements' ),
+				'label_off'    => esc_html__( 'None', 'easy-elements' ),
+				'label_on'     => esc_html__( 'Custom', 'easy-elements' ),
 				'return_value' => 'yes',
 			)
 		);
@@ -1809,7 +1724,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_horizontal_offset',
 			array(
-				'label'      => __( 'Horizontal Offset', 'easy-elements' ),
+				'label'      => esc_html__( 'Horizontal Offset', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'default'    => array(
@@ -1837,7 +1752,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_vertical_offset',
 			array(
-				'label'      => __( 'Vertical Offset', 'easy-elements' ),
+				'label'      => esc_html__( 'Vertical Offset', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'default'    => array(
@@ -1865,7 +1780,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_rotate',
 			array(
-				'label'      => __( 'Rotate', 'easy-elements' ),
+				'label'      => esc_html__( 'Rotate', 'easy-elements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -1886,7 +1801,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_transform_origin',
 			array(
-				'label'       => __( 'Transform Origin', 'easy-elements' ),
+				'label'       => esc_html__( 'Transform Origin', 'easy-elements' ),
 				'type'        => Controls_Manager::SELECT,
 				'label_block' => true,
 				'options'     => array(
@@ -1915,7 +1830,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_overflow',
 			array(
-				'label'     => __( 'Overflow', 'easy-elements' ),
+				'label'     => esc_html__( 'Overflow', 'easy-elements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
 					''       => _x( 'Auto', 'Background Control', 'easy-elements' ),
@@ -1932,7 +1847,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'badge_typography',
-				'label'    => __( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-item .ele-badge',
 			)
 		);
@@ -1940,7 +1855,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_control(
 			'badge_color',
 			array(
-				'label'     => __( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easy-elements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-pricing-item .ele-badge' => 'color: {{VALUE}}',
@@ -1952,7 +1867,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'badge_background',
-				'label'    => __( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easy-elements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-item .ele-badge',
 			)
@@ -1962,7 +1877,7 @@ class Pricing_Table extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'badge_border',
-				'label'    => __( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easy-elements' ),
 				'selector' => '{{WRAPPER}} .ele-pricing-item .ele-badge',
 			)
 		);
@@ -1970,7 +1885,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1982,7 +1897,7 @@ class Pricing_Table extends Widget_Base {
 		$this->add_responsive_control(
 			'badge_padding',
 			array(
-				'label'      => __( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easy-elements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1994,14 +1909,33 @@ class Pricing_Table extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-	/**
-	 * Render image widget output on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @since 1.0.0
-	 * @access protected
-	 */
+    private static function get_currency_symbol_by_name( $currency_name ) {
+        // Define an array of currency symbols
+        $currency_symbols = array(
+            'won'          => '&#8361;',
+            'ruble'        => '&#8381;',
+            'dollar'       => '&#36;',
+            'yen'          => '&#165;',
+            'peso'         => '&#8369;',
+            'guilder'      => '&fnof;',
+            'krona'        => 'kr',
+            'indian_rupee' => '&#8377;',
+            'real'         => 'R$',
+            'euro'         => '&#128;',
+            'baht'         => '&#3647;',
+            'rupee'        => '&#8360;',
+            'shekel'       => '&#8362;',
+            'lira'         => '&#8356;',
+            'franc'        => '&#8355;',
+            'pound'        => '&#163;',
+            'peseta'       => '&#8359;',
+            'bdt'          => '&#2547;',
+        );
+
+        // Return the currency symbol if it exists in the array, otherwise return an empty string
+        return isset( $currency_symbols[ $currency_name ] ) ? $currency_symbols[ $currency_name ] : '';
+    }
+
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 

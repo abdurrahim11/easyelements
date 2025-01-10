@@ -146,7 +146,7 @@
             // Header area view
             EasyEditorViews.EleTemplateHeaderView = Marionette.LayoutView.extend({
                 id : "easy-elements-template-library-header",
-                template : "#view-easy-elements-template-library-header",
+                template : "#easy-elements-view-template-library-header",
                 ui : {
                     closeModal : "#easy-elements-template-library-header-close-modal",
                     syncBtn : "#easy-elements-template-library-header-sync.elementor-templates-modal__header__item>i"
@@ -181,7 +181,7 @@
 
             // Back button
             EasyEditorViews.EleTemplateHeaderBack = Marionette.ItemView.extend({
-                template: "#view-easy-elements-template-library-header-back",
+                template: "#easy-elements-view-template-library-header-back",
                 id: "easy-elements-template-library-header-back",
                 ui: {
                     button: "button"
