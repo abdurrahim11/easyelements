@@ -34,6 +34,7 @@
 .ele-button {
   display: inline-block;
   transition: 0.3s;
+  cursor: pointer;
   border-radius: 8px;
   padding: 16px 24px;
   font-style: normal;
@@ -41,6 +42,14 @@
   font-size: 16px;
   line-height: 140%;
   font-family: "Segoe UI";
+}
+
+.ele-submit-save-button {
+  border: none;
+  border-radius: 4px;
+  background: #3e77fc;
+  padding: 10px 20px;
+  color: #ffffff;
 }
 
 .ele-white {
@@ -421,6 +430,7 @@ img.ele-promo-banner-mobile {
 
 .ele-elements-dashboard-wrapper {
   display: flex;
+  align-items: flex-start;
   gap: 32px;
 }
 
@@ -429,12 +439,12 @@ img.ele-promo-banner-mobile {
   max-width: 1240px;
 }
 
-.ele-system-info-list {
+.ele-integration-info-list {
   width: 100%;
   overflow: auto;
 }
 
-.ele-system-info-list table {
+.ele-integration-info-list table {
   border-collapse: collapse;
   border-spacing: 1px;
   width: 100%;
@@ -443,21 +453,27 @@ img.ele-promo-banner-mobile {
   text-align: left;
 }
 
-.ele-system-info-list th {
+.ele-integration-info-list th {
   border-radius: 4px;
   background-color: var(--ele-color-secondery);
   padding: 14px 10px;
   color: var(--ele-color-black);
 }
 
-.ele-system-info-list td {
+.ele-integration-info-list td {
   background-color: var(--ele-color-white);
   padding: 10px;
   color: var(--ele-color-black);
 }
 
-.ele-system-info-list tbody tr {
-  border-bottom: 1px solid var(--ele-color-secondery);
+.ele-integration-info-list tbody tr:last-child {
+  border-bottom: none;
+}
+
+.ele-integration-info-list .ele-integration-field {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  width: 100%;
 }
 
 /******************* Support Tab ****************/
@@ -615,16 +631,16 @@ img.ele-promo-banner-mobile {
     gap: 30px;
   }
 
-  /************** System Info Responsive ***************/
+  /************** integration Info Responsive ***************/
   .ele-elements-dashboard {
     padding: 20px;
   }
 
-  .ele-system-info-list th {
+  .ele-integration-info-list th {
     padding: 10px 10px;
   }
 
-  .ele-system-info-list td {
+  .ele-integration-info-list td {
     padding: 10px;
   }
 }
