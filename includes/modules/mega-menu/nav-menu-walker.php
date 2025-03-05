@@ -215,7 +215,7 @@ class Nav_Menu_Walker extends \Walker_Nav_Menu {
 
                         $output .= $megamenu_output;
                     } else {
-                        $output .= esc_html__( 'No content found', 'easy-elements' );
+                        $output .= esc_html__( 'No content found', 'easyelements' );
                     }
 
                     $output .= '</div>';

@@ -11,8 +11,18 @@ class Api {
     }
 
     public function get_templates() {
-        isset($_REQUEST['tab']) || exit();
-        $tab = sanitize_text_field( $_REQUEST['tab'] );
+        // Verify the nonce
+        if ( ! isset( $_REQUEST['_ajax_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_REQUEST['_ajax_nonce'] ), 'easyelements_nonce' ) ) {
+            wp_send_json_error( array( 'message' => 'Invalid nonce' ), 400 );
+            exit();
+        }
+
+        if ( ! isset( $_REQUEST['tab'] ) ) {
+            exit();
+        }
+
+        // Unslash and sanitize the 'tab' parameter
+        $tab = sanitize_text_field( wp_unslash( $_REQUEST['tab'] ) );
         $kit_type = 1;
 
         switch ( $tab ) {
@@ -46,7 +56,7 @@ class Api {
             echo "Error: $error_message";
         } else {
             $data = wp_remote_retrieve_body( $response );
-            echo wp_send_json( json_decode( $data ),200);
+            echo wp_send_json( json_decode( $data ), 200 );
         }
     }
 }

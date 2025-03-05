@@ -39,7 +39,7 @@ $separator_layout_class = ( 'none' !== $settings['separator_layout_style'] ) ? '
 
         <!-- Render the step flow description if it is set -->
         <?php if ( $settings['step_flow_description'] ) { ?>
-            <div class="ele-step-flow-description"><?php ele_kses( $settings['step_flow_description'] ); ?></div>
+            <div class="ele-step-flow-description"><?php wp_kses_post( $settings['step_flow_description'] ); ?></div>
         <?php } ?>
 
     </div>

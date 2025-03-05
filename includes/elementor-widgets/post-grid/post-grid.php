@@ -20,7 +20,7 @@ class Post_Grid extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Post Grid', 'easy-elements' );
+		return esc_html__( 'Post Grid', 'easyelements' );
 	}
 
 	public function get_icon() {
@@ -28,7 +28,7 @@ class Post_Grid extends Widget_Base {
 	}
 
 	public function get_categories() {
-        return [ 'easy-elements' ];
+        return [ 'easyelements' ];
 	}
 
 	public function get_keywords() {
@@ -47,35 +47,35 @@ class Post_Grid extends Widget_Base {
 	protected function register_controls() {
 
 		$post_types                   = ele_elementor_get_post_types();
-		$post_types['by_id']          = esc_html__( 'Manual Selection', 'easy-elements' );
-		$post_types['source_dynamic'] = esc_html__( 'Dynamic', 'easy-elements' );
+		$post_types['by_id']          = esc_html__( 'Manual Selection', 'easyelements' );
+		$post_types['source_dynamic'] = esc_html__( 'Dynamic', 'easyelements' );
 
 		$taxonomies = get_taxonomies( array(), 'objects' );
 
 		$this->start_controls_section(
 			'section_general',
 			array(
-				'label' => esc_html__( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'layout',
 			array(
-				'label'   => esc_html__( 'Layout', 'easy-elements' ),
+				'label'   => esc_html__( 'Layout', 'easyelements' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => '1',
 				'options' => array(
-					'1'  => esc_html__( 'Layout 1', 'easy-elements' ),
-					'2'  => esc_html__( 'Layout 2', 'easy-elements' ),
-					'3'  => esc_html__( 'Layout 3', 'easy-elements' ),
-					'4'  => esc_html__( 'Layout 4', 'easy-elements' ),
-					'5'  => esc_html__( 'Layout 5', 'easy-elements' ),
-					'6'  => esc_html__( 'Layout 6', 'easy-elements' ),
-					'7'  => esc_html__( 'Layout 7', 'easy-elements' ),
-					'8'  => esc_html__( 'Layout 8', 'easy-elements' ),
-					'9'  => esc_html__( 'Layout 9', 'easy-elements' ),
-					'10' => esc_html__( 'Layout 10', 'easy-elements' ),
+					'1'  => esc_html__( 'Layout 1', 'easyelements' ),
+					'2'  => esc_html__( 'Layout 2', 'easyelements' ),
+					'3'  => esc_html__( 'Layout 3', 'easyelements' ),
+					'4'  => esc_html__( 'Layout 4', 'easyelements' ),
+					'5'  => esc_html__( 'Layout 5', 'easyelements' ),
+					'6'  => esc_html__( 'Layout 6', 'easyelements' ),
+					'7'  => esc_html__( 'Layout 7', 'easyelements' ),
+					'8'  => esc_html__( 'Layout 8', 'easyelements' ),
+					'9'  => esc_html__( 'Layout 9', 'easyelements' ),
+					'10' => esc_html__( 'Layout 10', 'easyelements' ),
 				),
 			)
 		);
@@ -83,18 +83,18 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'column_grid',
 			array(
-				'label'              => esc_html__( 'Columns', 'easy-elements' ),
+				'label'              => esc_html__( 'Columns', 'easyelements' ),
 				'type'               => Controls_Manager::SELECT,
 				'desktop_default'    => '3',
 				'tablet_default'     => '2',
 				'mobile_default'     => '1',
 				'options'            => array(
-					'1' => esc_html__( '1', 'easy-elements' ),
-					'2' => esc_html__( '2', 'easy-elements' ),
-					'3' => esc_html__( '3', 'easy-elements' ),
-					'4' => esc_html__( '4', 'easy-elements' ),
-					'5' => esc_html__( '5', 'easy-elements' ),
-					'6' => esc_html__( '6', 'easy-elements' ),
+					'1' => esc_html__( '1', 'easyelements' ),
+					'2' => esc_html__( '2', 'easyelements' ),
+					'3' => esc_html__( '3', 'easyelements' ),
+					'4' => esc_html__( '4', 'easyelements' ),
+					'5' => esc_html__( '5', 'easyelements' ),
+					'6' => esc_html__( '6', 'easyelements' ),
 				),
 				'render_type'        => 'template',
 				'frontend_available' => true,
@@ -104,7 +104,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_image',
 			array(
-				'label'        => esc_html__( 'Show Image', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Image', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -127,7 +127,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_content',
 			array(
-				'label'        => esc_html__( 'Show Excerpt', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Excerpt', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -137,7 +137,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'content_length',
 			array(
-				'label'     => esc_html__( 'Content Length', 'easy-elements' ),
+				'label'     => esc_html__( 'Content Length', 'easyelements' ),
 				'type'      => Controls_Manager::NUMBER,
 				'min'       => 0,
 				'max'       => 500,
@@ -152,7 +152,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_readmore',
 			array(
-				'label'        => esc_html__( 'Show Button', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Button', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 			)
@@ -161,9 +161,9 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'readmore_text',
 			array(
-				'label'     => esc_html__( 'Button Text', 'easy-elements' ),
+				'label'     => esc_html__( 'Button Text', 'easyelements' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Read More', 'easy-elements' ),
+				'default'   => esc_html__( 'Read More', 'easyelements' ),
 				'dynamic'   => array(
 					'active' => true,
 				),
@@ -176,7 +176,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_author',
 			array(
-				'label'        => esc_html__( 'Show Author', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Author', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -187,9 +187,9 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'author_title',
 			array(
-				'label'     => esc_html__( 'Author Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Author Title', 'easyelements' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Posted By', 'easy-elements' ),
+				'default'   => esc_html__( 'Posted By', 'easyelements' ),
 				'dynamic'   => array(
 					'active' => true,
 				),
@@ -202,7 +202,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_author_avatar',
 			array(
-				'label'        => esc_html__( 'Show Avatar', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Avatar', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 				'default'      => 'yes',
@@ -215,14 +215,14 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_meta',
 			array(
-				'label'     => esc_html__( 'Show Meta', 'easy-elements' ),
+				'label'     => esc_html__( 'Show Meta', 'easyelements' ),
 				'type'      => Controls_Manager::SELECT2,
 				'multiple'  => true,
 				'separator' => 'before',
 				'options'   => array(
-					'date'     => esc_html__( 'Date', 'easy-elements' ),
-					'category' => esc_html__( 'Category', 'easy-elements' ),
-					'comments' => esc_html__( 'Comments', 'easy-elements' ),
+					'date'     => esc_html__( 'Date', 'easyelements' ),
+					'category' => esc_html__( 'Category', 'easyelements' ),
+					'comments' => esc_html__( 'Comments', 'easyelements' ),
 				),
 				'default'   => array( 'date' ),
 			)
@@ -231,7 +231,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'date_icon',
 			array(
-				'label'     => esc_html__( 'Date Icon', 'easy-elements' ),
+				'label'     => esc_html__( 'Date Icon', 'easyelements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'far fa-calendar',
@@ -246,7 +246,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'category_icon',
 			array(
-				'label'     => esc_html__( 'Category Icon', 'easy-elements' ),
+				'label'     => esc_html__( 'Category Icon', 'easyelements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'far fa-folder',
@@ -261,7 +261,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'comments_icon',
 			array(
-				'label'     => esc_html__( 'Comment Icon', 'easy-elements' ),
+				'label'     => esc_html__( 'Comment Icon', 'easyelements' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'far fa-comment-alt',
@@ -279,14 +279,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_query',
 			array(
-				'label' => esc_html__( 'Query', 'easy-elements' ),
+				'label' => esc_html__( 'Query', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'post_type',
 			array(
-				'label'   => esc_html__( 'Source', 'easy-elements' ),
+				'label'   => esc_html__( 'Source', 'easyelements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => $post_types,
 				'default' => key( $post_types ),
@@ -296,7 +296,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'posts_ids',
 			array(
-				'label'       => esc_html__( 'Search & Select', 'easy-elements' ),
+				'label'       => esc_html__( 'Search & Select', 'easyelements' ),
 				'type'        => 'ele-advanced-select2',
 				'options'     => ele_elementor_get_query_post_list(),
 				'label_block' => true,
@@ -312,7 +312,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'authors',
 			array(
-				'label'       => esc_html__( 'Author', 'easy-elements' ),
+				'label'       => esc_html__( 'Author', 'easyelements' ),
 				'label_block' => true,
 				'type'        => Controls_Manager::SELECT2,
 				'multiple'    => true,
@@ -327,7 +327,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'terms',
 			array(
-				'label'     => esc_html__( 'Term', 'easy-elements' ),
+				'label'     => esc_html__( 'Term', 'easyelements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => $this->get_taxonomies(),
 				'default'   => '',
@@ -361,7 +361,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'post__not_in',
 			array(
-				'label'       => esc_html__( 'Exclude', 'easy-elements' ),
+				'label'       => esc_html__( 'Exclude', 'easyelements' ),
 				'type'        => 'ele-advanced-select2',
 				'label_block' => true,
 				'multiple'    => true,
@@ -376,7 +376,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'posts_per_page',
 			array(
-				'label'     => esc_html__( 'Per Page', 'easy-elements' ),
+				'label'     => esc_html__( 'Per Page', 'easyelements' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => 3,
 				'condition' => array(
@@ -388,7 +388,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'offset',
 			array(
-				'label'     => esc_html__( 'Offset', 'easy-elements' ),
+				'label'     => esc_html__( 'Offset', 'easyelements' ),
 				'type'      => Controls_Manager::NUMBER,
 				'condition' => array(
 					'orderby!'         => 'rand',
@@ -400,7 +400,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'orderby',
 			array(
-				'label'   => esc_html__( 'Order By', 'easy-elements' ),
+				'label'   => esc_html__( 'Order By', 'easyelements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => ele_elementor_get_post_orderby_options(),
 				'default' => 'date',
@@ -411,7 +411,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'order',
 			array(
-				'label'   => esc_html__( 'Order', 'easy-elements' ),
+				'label'   => esc_html__( 'Order', 'easyelements' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
 					'asc'  => 'Ascending',
@@ -425,7 +425,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'post_only_image',
 			array(
-				'label'        => esc_html__( 'Post With Image', 'easy-elements' ),
+				'label'        => esc_html__( 'Post With Image', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 			)
@@ -438,7 +438,7 @@ class Post_Grid extends Widget_Base {
 					'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => sprintf(
 					/* translators: %s: Title */
-						esc_html__( 'This option will show %1$s dynamically according to loop.', 'easy-elements' ),
+						esc_html__( 'This option will show %1$s dynamically according to loop.', 'easyelements' ),
 						'<strong>Posts</strong>'
 					),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
@@ -455,7 +455,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination',
 			array(
-				'label'     => esc_html__( 'Pagination', 'easy-elements' ),
+				'label'     => esc_html__( 'Pagination', 'easyelements' ),
 				'condition' => array(
 					'terms' => '',
 				),
@@ -465,7 +465,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'show_pagination',
 			array(
-				'label'        => esc_html__( 'Show Pagination', 'easy-elements' ),
+				'label'        => esc_html__( 'Show Pagination', 'easyelements' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'return_value' => 'yes',
 			)
@@ -474,9 +474,9 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'prev_label',
 			array(
-				'label'     => esc_html__( 'Prev Label', 'easy-elements' ),
+				'label'     => esc_html__( 'Prev Label', 'easyelements' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Prev', 'easy-elements' ),
+				'default'   => esc_html__( 'Prev', 'easyelements' ),
 				'dynamic'   => array(
 					'active' => true,
 				),
@@ -489,9 +489,9 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'next_label',
 			array(
-				'label'     => esc_html__( 'Next Label', 'easy-elements' ),
+				'label'     => esc_html__( 'Next Label', 'easyelements' ),
 				'type'      => Controls_Manager::TEXT,
-				'default'   => esc_html__( 'Next', 'easy-elements' ),
+				'default'   => esc_html__( 'Next', 'easyelements' ),
 				'dynamic'   => array(
 					'active' => true,
 				),
@@ -504,17 +504,17 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'arrow',
 			array(
-				'label'     => esc_html__( 'Arrows Type', 'easy-elements' ),
+				'label'     => esc_html__( 'Arrows Type', 'easyelements' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'fas fa-arrow-left'          => esc_html__( 'Arrow', 'easy-elements' ),
-					'fas fa-angle-left'          => esc_html__( 'Angle', 'easy-elements' ),
-					'fas fa-angle-double-left'   => esc_html__( 'Double Angle', 'easy-elements' ),
-					'fas fa-chevron-left'        => esc_html__( 'Chevron', 'easy-elements' ),
-					'fas fa-chevron-circle-left' => esc_html__( 'Chevron Circle', 'easy-elements' ),
-					'fas fa-caret-left'          => esc_html__( 'Caret', 'easy-elements' ),
-					'xi xi-long-arrow-left'      => esc_html__( 'Long Arrow', 'easy-elements' ),
-					'fas fa-arrow-circle-left'   => esc_html__( 'Arrow Circle', 'easy-elements' ),
+					'fas fa-arrow-left'          => esc_html__( 'Arrow', 'easyelements' ),
+					'fas fa-angle-left'          => esc_html__( 'Angle', 'easyelements' ),
+					'fas fa-angle-double-left'   => esc_html__( 'Double Angle', 'easyelements' ),
+					'fas fa-chevron-left'        => esc_html__( 'Chevron', 'easyelements' ),
+					'fas fa-chevron-circle-left' => esc_html__( 'Chevron Circle', 'easyelements' ),
+					'fas fa-caret-left'          => esc_html__( 'Caret', 'easyelements' ),
+					'xi xi-long-arrow-left'      => esc_html__( 'Long Arrow', 'easyelements' ),
+					'fas fa-arrow-circle-left'   => esc_html__( 'Arrow Circle', 'easyelements' ),
 				),
 				'default'   => 'fas fa-arrow-left',
 				'condition' => array(
@@ -529,7 +529,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_general_style',
 			array(
-				'label' => esc_html__( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easyelements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -537,19 +537,19 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'alignment',
 			array(
-				'label'        => esc_html__( 'Alignment', 'easy-elements' ),
+				'label'        => esc_html__( 'Alignment', 'easyelements' ),
 				'type'         => Controls_Manager::CHOOSE,
 				'options'      => array(
 					'left'   => array(
-						'title' => esc_html__( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easyelements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easyelements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => esc_html__( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easyelements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -560,7 +560,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'item_height',
 			array(
-				'label'              => esc_html__( 'Height', 'easy-elements' ),
+				'label'              => esc_html__( 'Height', 'easyelements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px', 'vh' ),
 				'default'            => array(
@@ -591,7 +591,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'              => esc_html__( 'Image Height', 'easy-elements' ),
+				'label'              => esc_html__( 'Image Height', 'easyelements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px', 'vh' ),
 				'range'              => array(
@@ -619,7 +619,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'space_between',
 			array(
-				'label'              => esc_html__( 'Space Between', 'easy-elements' ),
+				'label'              => esc_html__( 'Space Between', 'easyelements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px' ),
 				'default'            => array(
@@ -646,7 +646,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'item_background',
-				'label'    => esc_html__( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easyelements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .cbp-item-wrapper',
@@ -657,7 +657,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'item_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'easy-elements' ),
+				'label'    => esc_html__( 'Box Shadow', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-item',
 			)
 		);
@@ -666,7 +666,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'item_border',
-				'label'    => esc_html__( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .cbp-item-wrapper',
 			)
 		);
@@ -674,7 +674,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'item_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -686,7 +686,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'item_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -707,14 +707,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'overlay_normal_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'overlay_color',
 			array(
-				'label'     => esc_html__( 'Overlay Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Overlay Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-item .ele-post-grid-image::after' => 'background-color: {{VALUE}}',
@@ -727,14 +727,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'overlay_hover_tab_style',
 			array(
-				'label' => esc_html__( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'overlay_hover_color',
 			array(
-				'label'     => esc_html__( 'Overlay Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Overlay Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-item:hover .ele-post-grid-image::after' => 'background-color: {{VALUE}}',
@@ -752,7 +752,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			array(
-				'label' => esc_html__( 'Content', 'easy-elements' ),
+				'label' => esc_html__( 'Content', 'easyelements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -760,7 +760,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'content_height',
 			array(
-				'label'              => esc_html__( 'Min Height', 'easy-elements' ),
+				'label'              => esc_html__( 'Min Height', 'easyelements' ),
 				'type'               => Controls_Manager::SLIDER,
 				'size_units'         => array( 'px', 'vh' ),
 				'range'              => array(
@@ -788,7 +788,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'content_background',
-				'label'     => esc_html__( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easyelements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-content',
@@ -812,7 +812,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -827,7 +827,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -839,7 +839,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'heading_title',
 			array(
-				'label'     => esc_html__( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -849,7 +849,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'label'    => esc_html__( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-title',
 			)
 		);
@@ -857,7 +857,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'title_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-title' => 'color: {{VALUE}}',
@@ -868,7 +868,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'title_hover_color',
 			array(
-				'label'     => esc_html__( 'Hover Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Hover Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-title:hover' => 'color: {{VALUE}}',
@@ -879,7 +879,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'title_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -891,7 +891,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'heading_excerpt',
 			array(
-				'label'     => esc_html__( 'Content', 'easy-elements' ),
+				'label'     => esc_html__( 'Content', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -903,7 +903,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'excerpt_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-excerpt' => 'color: {{VALUE}}',
@@ -918,7 +918,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'description_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-excerpt',
 				'condition' => array(
 					'show_content' => 'yes',
@@ -929,7 +929,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'excerpt_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -947,7 +947,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_meta_style',
 			array(
-				'label' => esc_html__( 'Meta', 'easy-elements' ),
+				'label' => esc_html__( 'Meta', 'easyelements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -956,7 +956,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'meta_typography',
-				'label'    => esc_html__( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li',
 			)
 		);
@@ -964,7 +964,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_space_between',
 			array(
-				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
@@ -976,7 +976,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'meta_icon_color',
 			array(
-				'label'     => esc_html__( 'Icon Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Icon Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li > i'   => 'color: {{VALUE}}',
@@ -988,7 +988,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'meta_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li,{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li a' => 'color: {{VALUE}}',
@@ -999,7 +999,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'meta_bg_color',
 			array(
-				'label'     => esc_html__( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li' => 'background-color: {{VALUE}}',
@@ -1011,7 +1011,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'meta_border',
-				'label'    => esc_html__( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-meta-list > li',
 			)
 		);
@@ -1019,7 +1019,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1031,7 +1031,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1043,7 +1043,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1055,7 +1055,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'heading_meta_wrapper',
 			array(
-				'label'     => esc_html__( 'Wrapper', 'easy-elements' ),
+				'label'     => esc_html__( 'Wrapper', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1068,7 +1068,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'      => 'meta_wrapper_border',
-				'label'     => esc_html__( 'Border', 'easy-elements' ),
+				'label'     => esc_html__( 'Border', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-layout-7 .ele-post-grid-meta-list',
 				'condition' => array(
 					'layout' => '7',
@@ -1079,7 +1079,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_wrapper_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1094,7 +1094,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_wrapper_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1109,7 +1109,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'meta_wrapper_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1126,7 +1126,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_button_style',
 			array(
-				'label'     => esc_html__( 'Button', 'easy-elements' ),
+				'label'     => esc_html__( 'Button', 'easyelements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_readmore' => 'yes',
@@ -1138,7 +1138,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'button_typography',
-				'label'    => esc_html__( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-btn',
 			)
 		);
@@ -1150,14 +1150,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'button_normal_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'button_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-btn' => 'color: {{VALUE}}',
@@ -1169,7 +1169,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'button_bg',
-				'label'    => esc_html__( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easyelements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-btn',
@@ -1180,7 +1180,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'button_border',
-				'label'    => esc_html__( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-btn',
 			)
 		);
@@ -1190,14 +1190,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'button_hover_tab_style',
 			array(
-				'label' => esc_html__( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'button_hcolor',
 			array(
-				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-btn:hover,{{WRAPPER}} .ele-post-grid-btn:focus' => 'color: {{VALUE}}',
@@ -1209,7 +1209,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'button_hbg',
-				'label'    => esc_html__( 'Background', 'easy-elements' ),
+				'label'    => esc_html__( 'Background', 'easyelements' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'exclude'  => array( 'image' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-btn:hover,{{WRAPPER}} .ele-post-grid-btn:focus',
@@ -1219,7 +1219,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'button_hborder',
 			array(
-				'label'     => esc_html__( 'Border Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Border Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-btn:hover,{{WRAPPER}} .ele-post-grid-btn:focus' => 'border-color: {{VALUE}}',
@@ -1234,7 +1234,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'button_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1246,7 +1246,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'button_item_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1258,7 +1258,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'button_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1273,7 +1273,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_author_style',
 			array(
-				'label'     => esc_html__( 'Author', 'easy-elements' ),
+				'label'     => esc_html__( 'Author', 'easyelements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_author' => 'yes',
@@ -1284,7 +1284,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'avatar_size',
 			array(
-				'label'       => esc_html__( 'Avatar Size', 'easy-elements' ),
+				'label'       => esc_html__( 'Avatar Size', 'easyelements' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => array( 'px' ),
 				'selectors'   => array(
@@ -1301,7 +1301,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'author_space_between',
 			array(
-				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
@@ -1317,7 +1317,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'      => 'author_border',
-				'label'     => esc_html__( 'Border', 'easy-elements' ),
+				'label'     => esc_html__( 'Border', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-wrapper .ele-post-grid-author img',
 				'condition' => array(
 					'show_author_avatar' => 'yes',
@@ -1328,7 +1328,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'author_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1343,7 +1343,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'author_wrapper_margin',
 			array(
-				'label'      => esc_html__( 'Wrapper Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Wrapper Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1355,7 +1355,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'author_heading_title',
 			array(
-				'label'     => esc_html__( 'Title', 'easy-elements' ),
+				'label'     => esc_html__( 'Title', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -1368,7 +1368,7 @@ class Post_Grid extends Widget_Base {
             'foreground',
 			array(
 				'name'      => 'author_title_color',
-				'label'     => esc_html__( 'Title Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Title Color', 'easyelements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-author-title',
 				'condition' => array(
@@ -1381,7 +1381,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'author_title_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-post-grid-author-title',
 				'condition' => array(
 					'author_title!' => '',
@@ -1392,7 +1392,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'author_title_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1407,7 +1407,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'author_heading_name',
 			array(
-				'label'     => esc_html__( 'Name', 'easy-elements' ),
+				'label'     => esc_html__( 'Name', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1416,7 +1416,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'author_name_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-post-grid-author-name' => 'color: {{VALUE}}',
@@ -1428,7 +1428,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'author_name_typography',
-				'label'    => esc_html__( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-post-grid-author-name',
 			)
 		);
@@ -1436,7 +1436,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'author_name_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1451,7 +1451,7 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_section(
 			'section_pagination_style',
 			array(
-				'label'     => esc_html__( 'Pagination', 'easy-elements' ),
+				'label'     => esc_html__( 'Pagination', 'easyelements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_pagination' => 'yes',
@@ -1463,19 +1463,19 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_alignment',
 			array(
-				'label'     => esc_html__( 'Alignment', 'easy-elements' ),
+				'label'     => esc_html__( 'Alignment', 'easyelements' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => esc_html__( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easyelements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easyelements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => esc_html__( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easyelements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -1489,7 +1489,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'pagination_typography',
-				'label'    => esc_html__( 'Typography', 'easy-elements' ),
+				'label'    => esc_html__( 'Typography', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-elementor-post-pagination .page-numbers',
 			)
 		);
@@ -1497,7 +1497,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_space_between',
 			array(
-				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
@@ -1510,7 +1510,7 @@ class Post_Grid extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'pagination_border',
-				'label'    => esc_html__( 'Border', 'easy-elements' ),
+				'label'    => esc_html__( 'Border', 'easyelements' ),
 				'selector' => '{{WRAPPER}} .ele-elementor-post-pagination .page-numbers',
 			)
 		);
@@ -1518,7 +1518,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -1530,7 +1530,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1542,7 +1542,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1558,14 +1558,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_normal_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'pagination_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers' => 'color: {{VALUE}}',
@@ -1576,7 +1576,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'pagination_bg_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers' => 'background-color: {{VALUE}}',
@@ -1589,14 +1589,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_hover_tab',
 			array(
-				'label' => esc_html__( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'pagination_hover_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers:hover' => 'color: {{VALUE}}',
@@ -1607,7 +1607,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'pagination_bg_hover_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers:hover' => 'background-color: {{VALUE}}',
@@ -1620,14 +1620,14 @@ class Post_Grid extends Widget_Base {
 		$this->start_controls_tab(
 			'pagination_active_tab',
 			array(
-				'label' => esc_html__( 'Active', 'easy-elements' ),
+				'label' => esc_html__( 'Active', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'pagination_active_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Text Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers.current' => 'color: {{VALUE}}',
@@ -1638,7 +1638,7 @@ class Post_Grid extends Widget_Base {
 		$this->add_control(
 			'pagination_bg_arctive_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Background Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-elementor-post-pagination .page-numbers.current' => 'background-color: {{VALUE}}',
@@ -1738,7 +1738,7 @@ class Post_Grid extends Widget_Base {
                     ?>
 
                     <nav class="ele-elementor-post-pagination" role="navigation"
-                         aria-label="<?php esc_attr_e( 'Pagination', 'easy-elements' ); ?>">
+                         aria-label="<?php esc_attr_e( 'Pagination', 'easyelements' ); ?>">
                         <?php echo implode( PHP_EOL, $pagination_links ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                     </nav>
 
@@ -1749,8 +1749,8 @@ class Post_Grid extends Widget_Base {
             } else {
                 ?>
                 <p class="ele-alert ele-alert-warning">
-                    <span class="ele-alert-title"><?php esc_html_e( 'No Posts Found!', 'easy-elements' ); ?></span>
-                    <span class="ele-alert-description"><?php esc_html_e( 'Sorry, but nothing matched your selection. Please try again with some different keywords.', 'easy-elements' ); ?></span>
+                    <span class="ele-alert-title"><?php esc_html_e( 'No Posts Found!', 'easyelements' ); ?></span>
+                    <span class="ele-alert-description"><?php esc_html_e( 'Sorry, but nothing matched your selection. Please try again with some different keywords.', 'easyelements' ); ?></span>
                 </p>
                 <?php
             }
@@ -1765,7 +1765,7 @@ class Post_Grid extends Widget_Base {
     public static function get_taxonomies() {
 
         $taxonomie_list     = ele_elementor_get_taxonomies( array( 'public' => true ), 'object', true );
-        $taxonomie_list[''] = esc_html__( 'None', 'easy-elements' );
+        $taxonomie_list[''] = esc_html__( 'None', 'easyelements' );
         return $taxonomie_list;
     }
 }

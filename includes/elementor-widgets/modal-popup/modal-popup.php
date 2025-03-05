@@ -19,7 +19,7 @@ class Modal_Popup extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Modal Popup', 'easy-elements' );
+        return esc_html__( 'Modal Popup', 'easyelements' );
     }
 
     public function get_icon() {
@@ -27,7 +27,7 @@ class Modal_Popup extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'easy-elements' ];
+        return [ 'easyelements' ];
     }
 
     public function get_keywords() {
@@ -39,25 +39,25 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_content_section',
             [
-                'label' => esc_html__( 'Contents', 'easy-elements' )
+                'label' => esc_html__( 'Contents', 'easyelements' )
             ]
         );
 
         $this->add_control(
             'ele_modal_content',
             [
-                'label'   => esc_html__( 'Type of Modal', 'easy-elements' ),
+                'label'   => esc_html__( 'Type of Modal', 'easyelements' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'image',
                 'options' => [
-                    'image'          => esc_html__( 'Image', 'easy-elements' ),
-                    'image-gallery'  => esc_html__( 'Image Gallery', 'easy-elements' ),
-                    'html_content'   => esc_html__( 'HTML Content', 'easy-elements' ),
-                    'youtube'        => esc_html__( 'Youtube Video', 'easy-elements' ),
-                    'vimeo'          => esc_html__( 'Vimeo Video', 'easy-elements' ),
-                    'external-video' => esc_html__( 'Self Hosted Video', 'easy-elements' ),
-                    'external_page'  => esc_html__( 'External Page', 'easy-elements' ),
-                    'shortcode'      => esc_html__( 'ShortCode', 'easy-elements' )
+                    'image'          => esc_html__( 'Image', 'easyelements' ),
+                    'image-gallery'  => esc_html__( 'Image Gallery', 'easyelements' ),
+                    'html_content'   => esc_html__( 'HTML Content', 'easyelements' ),
+                    'youtube'        => esc_html__( 'Youtube Video', 'easyelements' ),
+                    'vimeo'          => esc_html__( 'Vimeo Video', 'easyelements' ),
+                    'external-video' => esc_html__( 'Self Hosted Video', 'easyelements' ),
+                    'external_page'  => esc_html__( 'External Page', 'easyelements' ),
+                    'shortcode'      => esc_html__( 'ShortCode', 'easyelements' )
                 ]
             ]
         );
@@ -68,7 +68,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image',
             [
-                'label'      => esc_html__( 'Image', 'easy-elements' ),
+                'label'      => esc_html__( 'Image', 'easyelements' ),
                 'type'       => Controls_Manager::MEDIA,
                 'default'    => [
                     'url' 	 => Utils::get_placeholder_image_src()
@@ -100,16 +100,16 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image_gallery_column',
             [
-                'label'   => esc_html__( 'Column', 'easy-elements' ),
+                'label'   => esc_html__( 'Column', 'easyelements' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'column-three',
                 'options' => [
-                    'column-one'   => esc_html__( 'Column 1', 'easy-elements' ),
-                    'column-two'   => esc_html__( 'Column 2', 'easy-elements' ),
-                    'column-three' => esc_html__( 'Column 3', 'easy-elements' ),
-                    'column-four'  => esc_html__( 'Column 4', 'easy-elements' ),
-                    'column-five'  => esc_html__( 'Column 5', 'easy-elements' ),
-                    'column-six'   => esc_html__( 'Column 6', 'easy-elements' )
+                    'column-one'   => esc_html__( 'Column 1', 'easyelements' ),
+                    'column-two'   => esc_html__( 'Column 2', 'easyelements' ),
+                    'column-three' => esc_html__( 'Column 3', 'easyelements' ),
+                    'column-four'  => esc_html__( 'Column 4', 'easyelements' ),
+                    'column-five'  => esc_html__( 'Column 5', 'easyelements' ),
+                    'column-six'   => esc_html__( 'Column 6', 'easyelements' )
                 ],
                 'condition' => [
                     'ele_modal_content' => 'image-gallery'
@@ -122,7 +122,7 @@ class Modal_Popup extends Widget_Base {
         $image_repeater->add_control(
             'ele_modal_image_gallery',
             [
-                'label'   => esc_html__( 'Image', 'easy-elements' ),
+                'label'   => esc_html__( 'Image', 'easyelements' ),
                 'type'    => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src()
@@ -144,7 +144,7 @@ class Modal_Popup extends Widget_Base {
         $image_repeater->add_control(
             'ele_modal_image_gallery_text',
             [
-                'label' => esc_html__( 'Description', 'easy-elements' ),
+                'label' => esc_html__( 'Description', 'easyelements' ),
                 'type'  => Controls_Manager::TEXTAREA,
                 'dynamic' => [
                     'active' => true,
@@ -155,7 +155,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image_gallery_repeater',
             [
-                'label'   => esc_html__( 'Image Gallery', 'easy-elements' ),
+                'label'   => esc_html__( 'Image Gallery', 'easyelements' ),
                 'type'    => Controls_Manager::REPEATER,
                 'fields'  => $image_repeater->get_controls(),
                 'default' => [
@@ -168,15 +168,16 @@ class Modal_Popup extends Widget_Base {
                 ]
             ]
         );
+
         /**
          * Modal Popup html content section
          */
         $this->add_control(
             'ele_modal_html_content',
             [
-                'label'     => esc_html__( 'Add your content here (HTML/Shortcode)', 'easy-elements' ),
+                'label'     => esc_html__( 'Add your content here (HTML/Shortcode)', 'easyelements' ),
                 'type'      => Controls_Manager::WYSIWYG,
-                'default'   => esc_html__( 'Add your popup content here', 'easy-elements' ),
+                'default'   => esc_html__( 'Add your popup content here', 'easyelements' ),
                 'dynamic'   => [ 'active' => true ],
                 'condition' => [
                     'ele_modal_content' => 'html_content'
@@ -191,12 +192,12 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_youtube_video_url',
             [
-                'label'       => esc_html__( 'Provide Youtube Video URL', 'easy-elements' ),
+                'label'       => esc_html__( 'Provide Youtube Video URL', 'easyelements' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default'     => 'https://www.youtube.com/watch?v=b1lyIT1FvDo',
-                'placeholder' => esc_html__( 'Place Youtube Video URL', 'easy-elements' ),
-                'title'       => esc_html__( 'Place Youtube Video URL', 'easy-elements' ),
+                'placeholder' => esc_html__( 'Place Youtube Video URL', 'easyelements' ),
+                'title'       => esc_html__( 'Place Youtube Video URL', 'easyelements' ),
                 'condition'   => [
                     'ele_modal_content' => 'youtube'
                 ],
@@ -210,12 +211,12 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_vimeo_video_url',
             [
-                'label'       => esc_html__( 'Provide Vimeo Video URL', 'easy-elements' ),
+                'label'       => esc_html__( 'Provide Vimeo Video URL', 'easyelements' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default'     => 'https://vimeo.com/347565673',
-                'placeholder' => esc_html__( 'Place Vimeo Video URL', 'easy-elements' ),
-                'title'       => esc_html__( 'Place Vimeo Video URL', 'easy-elements' ),
+                'placeholder' => esc_html__( 'Place Vimeo Video URL', 'easyelements' ),
+                'title'       => esc_html__( 'Place Vimeo Video URL', 'easyelements' ),
                 'condition'   => [
                     'ele_modal_content' => 'vimeo'
                 ],
@@ -231,7 +232,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_external_video',
             [
-                'label'      => esc_html__( 'External Video', 'easy-elements' ),
+                'label'      => esc_html__( 'External Video', 'easyelements' ),
                 'type'       => Controls_Manager::MEDIA,
                 'media_type' => 'video',
                 'dynamic' => [
@@ -246,11 +247,11 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_external_page_url',
             [
-                'label'       => esc_html__( 'Provide External URL', 'easy-elements' ),
+                'label'       => esc_html__( 'Provide External URL', 'easyelements' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
                 'default'     => 'https://joydevs.com',
-                'placeholder' => esc_html__( 'Place External Page URL', 'easy-elements' ),
+                'placeholder' => esc_html__( 'Place External Page URL', 'easyelements' ),
                 'condition'   => [
                     'ele_modal_content' => 'external_page'
                 ],
@@ -263,7 +264,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_video_width',
             [
-                'label'        => esc_html__( 'Content Width', 'easy-elements' ),
+                'label'        => esc_html__( 'Content Width', 'easyelements' ),
                 'type'         => Controls_Manager::SLIDER,
                 'size_units'   => [ 'px', '%' ],
                 'range'        => [
@@ -295,7 +296,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_video_height',
             [
-                'label'        => esc_html__( 'Content Height', 'easy-elements' ),
+                'label'        => esc_html__( 'Content Height', 'easyelements' ),
                 'type'         => Controls_Manager::SLIDER,
                 'size_units'   => [ 'px', '%' ],
                 'range'        => [
@@ -326,10 +327,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_shortcode',
             [
-                'label'       => esc_html__( 'Enter your shortcode', 'easy-elements' ),
+                'label'       => esc_html__( 'Enter your shortcode', 'easyelements' ),
                 'type'        => Controls_Manager::TEXT,
                 'label_block' => true,
-                'placeholder' => esc_html__( '[gallery]', 'easy-elements' ),
+                'placeholder' => esc_html__( '[gallery]', 'easyelements' ),
                 'condition'   => [
                     'ele_modal_content' => 'shortcode'
                 ]
@@ -339,7 +340,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_content_width',
             [
-                'label' => esc_html__( 'Content Width', 'easy-elements' ),
+                'label' => esc_html__( 'Content Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -364,9 +365,9 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_text',
             [
-                'label'       => esc_html__( 'Button Text', 'easy-elements' ),
+                'label'       => esc_html__( 'Button Text', 'easyelements' ),
                 'type'        => Controls_Manager::TEXT,
-                'default'     => esc_html__( '', 'easy-elements' ),
+                'default'     => '',
                 'dynamic'     => [
                     'active'  => true
                 ]
@@ -376,7 +377,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_icon',
             [
-                'label'       => esc_html__( 'Button Icon', 'easy-elements' ),
+                'label'       => esc_html__( 'Button Icon', 'easyelements' ),
                 'label_block' => true,
                 'type'        => Controls_Manager::ICONS,
                 'default'     => [
@@ -394,17 +395,17 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_setting_section',
             [
-                'label' => esc_html__( 'Settings', 'easy-elements' )
+                'label' => esc_html__( 'Settings', 'easyelements' )
             ]
         );
 
         $this->add_control(
             'ele_modal_overlay',
             [
-                'label'        => esc_html__( 'Overlay', 'easy-elements' ),
+                'label'        => esc_html__( 'Overlay', 'easyelements' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Show', 'easy-elements' ),
-                'label_off'    => esc_html__( 'Hide', 'easy-elements' ),
+                'label_on'     => esc_html__( 'Show', 'easyelements' ),
+                'label_off'    => esc_html__( 'Hide', 'easyelements' ),
                 'return_value' => 'yes',
                 'default'      => 'yes'
             ]
@@ -413,10 +414,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_overlay_click_close',
             [
-                'label'     => esc_html__( 'Close While Clicked Outside', 'easy-elements' ),
+                'label'     => esc_html__( 'Close While Clicked Outside', 'easyelements' ),
                 'type'      => Controls_Manager::SWITCHER,
-                'label_on'  => esc_html__( 'ON', 'easy-elements' ),
-                'label_off' => esc_html__( 'OFF', 'easy-elements' ),
+                'label_on'  => esc_html__( 'ON', 'easyelements' ),
+                'label_off' => esc_html__( 'OFF', 'easyelements' ),
                 'default'   => 'yes',
                 'condition' => [
                     'ele_modal_overlay' => 'yes'
@@ -433,7 +434,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_display_settings',
             [
-                'label' => esc_html__( 'Button', 'easy-elements' ),
+                'label' => esc_html__( 'Button', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -444,12 +445,12 @@ class Modal_Popup extends Widget_Base {
          */
         $this->start_controls_tabs( 'ele_modal_btn_typhography_color', ['separator' => 'before' ] );
 
-        $this->start_controls_tab( 'ele_modal_btn_typhography_color_normal_tab', [ 'label' => esc_html__( 'Normal', 'easy-elements' )] );
+        $this->start_controls_tab( 'ele_modal_btn_typhography_color_normal_tab', [ 'label' => esc_html__( 'Normal', 'easyelements' )] );
 
         $this->add_control(
             'ele_modal_btn_typhography_color_normal',
             [
-                'label'     => esc_html__( 'Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
@@ -461,7 +462,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_background_normal',
             [
-                'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Background Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#4243DC',
                 'selectors' => [
@@ -473,22 +474,22 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_align',
             [
-                'label'         => esc_html__( 'Alignment', 'easy-elements' ),
+                'label'         => esc_html__( 'Alignment', 'easyelements' ),
                 'type'          => Controls_Manager::CHOOSE,
                 'default'       => 'center',
                 'toggle'        => false,
                 'separator'     => 'before',
                 'options'       => [
                     'left'      => [
-                        'title' => esc_html__( 'Left', 'easy-elements' ),
+                        'title' => esc_html__( 'Left', 'easyelements' ),
                         'icon'  => 'eicon-text-align-left'
                     ],
                     'center'    => [
-                        'title' => esc_html__( 'Center', 'easy-elements' ),
+                        'title' => esc_html__( 'Center', 'easyelements' ),
                         'icon'  => 'eicon-text-align-center'
                     ],
                     'right'     => [
-                        'title' => esc_html__( 'Right', 'easy-elements' ),
+                        'title' => esc_html__( 'Right', 'easyelements' ),
                         'icon'  => 'eicon-text-align-right'
                     ]
                 ],
@@ -501,7 +502,7 @@ class Modal_Popup extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'      => 'ele_modal_btn_typhography',
-                'label'     => esc_html__( 'Button Typography', 'easy-elements' ),
+                'label'     => esc_html__( 'Button Typography', 'easyelements' ),
                 'selector'  => '{{WRAPPER}} .ele-modal-button .ele-modal-image-action span'
             ]
         );
@@ -509,10 +510,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_enable_fixed_width_height',
             [
-                'label' => esc_html__( 'Enable Fixed Height & Width?', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Fixed Height & Width?', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'easy-elements' ),
-                'label_off' => esc_html__( 'Hide', 'easy-elements' ),
+                'label_on' => esc_html__( 'Show', 'easyelements' ),
+                'label_off' => esc_html__( 'Hide', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -521,10 +522,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_fixed_width_height',
             [
-                'label' => esc_html__( 'Fixed Height & Width', 'easy-elements' ),
+                'label' => esc_html__( 'Fixed Height & Width', 'easyelements' ),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__( 'Default', 'easy-elements' ),
-                'label_on' => esc_html__( 'Custom', 'easy-elements' ),
+                'label_off' => esc_html__( 'Default', 'easyelements' ),
+                'label_on' => esc_html__( 'Custom', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -538,7 +539,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_fixed_width',
             [
-                'label'      => esc_html__( 'Width', 'easy-elements' ),
+                'label'      => esc_html__( 'Width', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range'      => [
@@ -569,7 +570,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_fixed_height',
             [
-                'label'      => esc_html__( 'Height', 'easy-elements' ),
+                'label'      => esc_html__( 'Height', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range'      => [
@@ -601,7 +602,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_width',
             [
-                'label'        => esc_html__( 'Width', 'easy-elements' ),
+                'label'        => esc_html__( 'Width', 'easyelements' ),
                 'type'         => Controls_Manager::SLIDER,
                 'size_units'   => [ 'px', '%' ],
                 'range'        => [
@@ -639,7 +640,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Radius', 'easyelements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'default'    => [
@@ -658,7 +659,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_padding',
             [
-                'label'        => esc_html__( 'Padding', 'easy-elements' ),
+                'label'        => esc_html__( 'Padding', 'easyelements' ),
                 'type'         => Controls_Manager::DIMENSIONS,
                 'size_units'   => [ 'px', '%' ],
                 'default'      => [
@@ -677,12 +678,12 @@ class Modal_Popup extends Widget_Base {
 
         $this->end_controls_tab();
 
-        $this->start_controls_tab( 'ele_modal_btn_typhography_color_hover_tab', [ 'label' => esc_html__( 'Hover', 'easy-elements' ) ] );
+        $this->start_controls_tab( 'ele_modal_btn_typhography_color_hover_tab', [ 'label' => esc_html__( 'Hover', 'easyelements' ) ] );
 
         $this->add_control(
             'ele_modal_btn_color_hover',
             [
-                'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Text Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#fff',
                 'selectors' => [
@@ -694,7 +695,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_background_hover',
             [
-                'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Background Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#EF2469',
                 'selectors' => [
@@ -721,7 +722,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_icon_section',
             [
-                'label' => esc_html__( 'Icon', 'easy-elements' ),
+                'label' => esc_html__( 'Icon', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -729,7 +730,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_icon_color',
             [
-                'label'     => esc_html__( 'Icon Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Icon Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
@@ -741,12 +742,12 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_btn_icon_align',
             [
-                'label'     => esc_html__( 'Icon Position', 'easy-elements' ),
+                'label'     => esc_html__( 'Icon Position', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'left',
                 'options'   => [
-                    'left'  => esc_html__( 'Before', 'easy-elements' ),
-                    'right' => esc_html__( 'After', 'easy-elements' )
+                    'left'  => esc_html__( 'Before', 'easyelements' ),
+                    'right' => esc_html__( 'After', 'easyelements' )
                 ],
                 'condition' => [
                     'ele_modal_btn_icon[value]!' => ''
@@ -757,7 +758,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_btn_icon_indent',
             [
-                'label'       => esc_html__( 'Icon Spacing', 'easy-elements' ),
+                'label'       => esc_html__( 'Icon Spacing', 'easyelements' ),
                 'type'        => Controls_Manager::SLIDER,
                 'range'       => [
                     'px'      => [
@@ -781,7 +782,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_container_section',
             [
-                'label' => esc_html__( 'Container', 'easy-elements' ),
+                'label' => esc_html__( 'Container', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -789,21 +790,21 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_content_align',
             [
-                'label'     => esc_html__( 'Alignment', 'easy-elements' ),
+                'label'     => esc_html__( 'Alignment', 'easyelements' ),
                 'type'      => Controls_Manager::CHOOSE,
                 'toggle'    => false,
                 'default'   => 'center',
                 'options'   => [
                     'left'  => [
-                        'title' => esc_html__( 'Left', 'easy-elements' ),
+                        'title' => esc_html__( 'Left', 'easyelements' ),
                         'icon'  => 'eicon-text-align-left'
                     ],
                     'center'    => [
-                        'title' => esc_html__( 'Center', 'easy-elements' ),
+                        'title' => esc_html__( 'Center', 'easyelements' ),
                         'icon'  => 'eicon-text-align-center'
                     ],
                     'right'     => [
-                        'title' => esc_html__( 'Right', 'easy-elements' ),
+                        'title' => esc_html__( 'Right', 'easyelements' ),
                         'icon'  => 'eicon-text-align-right'
                     ]
                 ],
@@ -819,7 +820,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_content_height',
             [
-                'label' => esc_html__( 'Contant Height for Tablet & Mobile', 'easy-elements' ),
+                'label' => esc_html__( 'Contant Height for Tablet & Mobile', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range'        => [
@@ -853,7 +854,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image_gallery_description_color',
             [
-                'label'     => esc_html__( 'Description Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Description Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-modal-content .ele-modal-element .ele-modal-element-card .ele-modal-element-card-body p'  => 'color: {{VALUE}};'
@@ -875,7 +876,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image_gallery_bg',
             [
-                'label'     => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Background Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
@@ -890,7 +891,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_image_gallery_padding',
             [
-                'label'      => esc_html__( 'Padding', 'easy-elements' ),
+                'label'      => esc_html__( 'Padding', 'easyelements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -913,7 +914,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_image_gallery_description_margin',
             [
-                'label'      => esc_html__('Margin(Description)', 'easy-elements'),
+                'label'      => esc_html__('Margin(Description)', 'easyelements'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors'  => [
@@ -928,10 +929,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_overlay_overflow_x',
             [
-                'label'        => esc_html__( 'Overflow X', 'easy-elements' ),
+                'label'        => esc_html__( 'Overflow X', 'easyelements' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off'    => esc_html__( 'No', 'easy-elements' ),
+                'label_on'     => esc_html__( 'Yes', 'easyelements' ),
+                'label_off'    => esc_html__( 'No', 'easyelements' ),
                 'default'      => 'yes',
             ]
         );
@@ -939,10 +940,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_overlay_overflow_y',
             [
-                'label'        => esc_html__( 'Overflow Y', 'easy-elements' ),
+                'label'        => esc_html__( 'Overflow Y', 'easyelements' ),
                 'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off'    => esc_html__( 'No', 'easy-elements' ),
+                'label_on'     => esc_html__( 'Yes', 'easyelements' ),
+                'label_off'    => esc_html__( 'No', 'easyelements' ),
                 'default'      => 'yes',
             ]
         );
@@ -952,7 +953,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_animation_tab',
             [
-                'label' => esc_html__( 'Animation', 'easy-elements' ),
+                'label' => esc_html__( 'Animation', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -960,17 +961,17 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_transition',
             [
-                'label'   => esc_html__( 'Style', 'easy-elements' ),
+                'label'   => esc_html__( 'Style', 'easyelements' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'top-to-middle',
                 'options' => [
-                    'top-to-middle'    => esc_html__( 'Top To Middle', 'easy-elements' ),
-                    'bottom-to-middle' => esc_html__( 'Bottom To Middle', 'easy-elements' ),
-                    'right-to-middle'  => esc_html__( 'Right To Middle', 'easy-elements' ),
-                    'left-to-middle'   => esc_html__( 'Left To Middle', 'easy-elements' ),
-                    'zoom-in'          => esc_html__( 'Zoom In', 'easy-elements' ),
-                    'zoom-out'         => esc_html__( 'Zoom Out', 'easy-elements' ),
-                    'left-rotate'      => esc_html__( 'Rotation', 'easy-elements' )
+                    'top-to-middle'    => esc_html__( 'Top To Middle', 'easyelements' ),
+                    'bottom-to-middle' => esc_html__( 'Bottom To Middle', 'easyelements' ),
+                    'right-to-middle'  => esc_html__( 'Right To Middle', 'easyelements' ),
+                    'left-to-middle'   => esc_html__( 'Left To Middle', 'easyelements' ),
+                    'zoom-in'          => esc_html__( 'Zoom In', 'easyelements' ),
+                    'zoom-out'         => esc_html__( 'Zoom Out', 'easyelements' ),
+                    'left-rotate'      => esc_html__( 'Rotation', 'easyelements' )
                 ]
             ]
         );
@@ -984,7 +985,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_overlay_tab',
             [
-                'label'     => esc_html__( 'Overlay', 'easy-elements' ),
+                'label'     => esc_html__( 'Overlay', 'easyelements' ),
                 'tab'       => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'ele_modal_overlay' => 'yes'
@@ -1018,7 +1019,7 @@ class Modal_Popup extends Widget_Base {
         $this->start_controls_section(
             'ele_modal_close_btn_style',
             [
-                'label' => esc_html__( 'Close Button', 'easy-elements' ),
+                'label' => esc_html__( 'Close Button', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE
             ]
         );
@@ -1026,10 +1027,10 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_close_btn_position',
             [
-                'label' => esc_html__( 'Close Button Position', 'easy-elements' ),
+                'label' => esc_html__( 'Close Button Position', 'easyelements' ),
                 'type' => Controls_Manager::POPOVER_TOGGLE,
-                'label_off' => esc_html__( 'Default', 'easy-elements' ),
-                'label_on' => esc_html__( 'Custom', 'easy-elements' ),
+                'label_off' => esc_html__( 'Default', 'easyelements' ),
+                'label_on' => esc_html__( 'Custom', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -1040,7 +1041,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_close_btn_position_x_offset',
             [
-                'label' => esc_html__( 'X Offset', 'easy-elements' ),
+                'label' => esc_html__( 'X Offset', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1062,7 +1063,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_close_btn_position_y_offset',
             [
-                'label' => esc_html__( 'Y Offset', 'easy-elements' ),
+                'label' => esc_html__( 'Y Offset', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1086,7 +1087,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_responsive_control(
             'ele_modal_close_btn_icon_size',
             [
-                'label'      => esc_html__( 'Icon Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Icon Size', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range'      => [
@@ -1109,7 +1110,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_close_btn_color',
             [
-                'label'     => esc_html__( 'Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '#ffffff',
                 'selectors' => [
@@ -1121,7 +1122,7 @@ class Modal_Popup extends Widget_Base {
         $this->add_control(
             'ele_modal_close_btn_bg_color',
             [
-                'label'    => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'    => esc_html__( 'Background Color', 'easyelements' ),
                 'type'     => Controls_Manager::COLOR,
                 'default'  => 'transparent',
                 'selectors' => [
@@ -1179,7 +1180,7 @@ class Modal_Popup extends Widget_Base {
             <div class="ele-modal-wrapper">
 
                 <div class="ele-modal-button ele-modal-btn-fixed-width-<?php echo esc_attr($settings['ele_modal_btn_enable_fixed_width_height']);?>">
-                    <a href="#" <?php echo $this->get_render_attribute_string('ele_modal_action');?> >
+                    <a href="#" <?php echo $this->get_render_attribute_string('ele_modal_action'); ?> >
                     <span class="ele-modal-action-icon-<?php echo esc_attr($settings['ele_modal_btn_icon_align']);?>">
                         <!-- Render icon if it is aligned to the left -->
                         <?php if( 'left' === $settings['ele_modal_btn_icon_align'] && !empty($settings['ele_modal_btn_icon']['value']) ) {
@@ -1201,7 +1202,7 @@ class Modal_Popup extends Widget_Base {
                             <?php
                             // Render image content
                             if ( 'image' === $settings['ele_modal_content'] ) {
-                                echo Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'ele_modal_image');
+                                echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html($settings, 'thumbnail', 'ele_modal_image') );
                             }
 
                             // Render image gallery content
@@ -1209,7 +1210,7 @@ class Modal_Popup extends Widget_Base {
                                 foreach ( $settings['ele_modal_image_gallery_repeater'] as $gallery_item ) : ?>
                                     <div class="ele-modal-element-card">
                                         <div class="ele-modal-element-card-thumb">
-                                            <?php echo Group_Control_Image_Size::get_attachment_image_html($gallery_item, 'thumbnail', 'ele_modal_image_gallery');?>
+                                            <?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html($gallery_item, 'thumbnail', 'ele_modal_image_gallery') );?>
                                         </div>
                                         <?php if ( !empty($gallery_item['ele_modal_image_gallery_text']) ) {?>
                                             <div class="ele-modal-element-card-body">

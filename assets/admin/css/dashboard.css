@@ -11,6 +11,14 @@
   text-decoration: none;
 }
 
+.ele-btn-loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .ele-secondery-heading {
   margin: 0;
   margin-bottom: 8px;
@@ -272,6 +280,9 @@ img.ele-promo-banner-mobile {
   border: none;
   background: var(--Primary-primary-500);
   color: var(--ele-color-white);
+  height: 55px;
+  width: 146px;
+  position: relative;
 }
 
 .ele-elements-control-switchers-wrapper {
@@ -584,11 +595,11 @@ img.ele-promo-banner-mobile {
     gap: 5px;
     padding: 8px 12px;
   }
-  
+
   .ele-dashboard-tabs a svg {
     width: 16px;
     height: 16px;
-}
+  }
   .ele-body-wrapper {
     padding: 10px;
     padding-left: 0;

@@ -25,11 +25,14 @@ class build_Elementor_Widget {
 
     public function register_widget( $widgets_manager ) {
         foreach ( $this->widgets as $widget_slug => $widget ) {
-            $class_name = '\\EasyElements\Elementor_Widgets\\' . ele_make_classname( $widget_slug ) . '\\' . ele_make_classname( $widget_slug );
-            if ( class_exists( $class_name ) ) {
-                $widgets_manager->register( new $class_name() );
-            }
-        }
+            if ( $widget['active'] == true ) {
+                $class_name = '\\EasyElements\Elementor_Widgets\\' . ele_generate_class_name( $widget_slug ) . '\\' . ele_generate_class_name( $widget_slug );
 
+                if ( class_exists( $class_name ) ) {
+                    $widgets_manager->register( new $class_name() );
+                }
+            }
+
+        }
     }
 }

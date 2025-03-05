@@ -32,7 +32,7 @@ class Select2 extends Base_Data_Control {
             'ele_elementor_select_localize',
             array(
                 'ajaxurl'     => admin_url( 'admin-ajax.php' ),
-                'search_text' => esc_html__( 'Search', 'ele-elementor-addons' ),
+                'search_text' => esc_html__( 'Search', 'easyelements' ),
                 'nonce'       => wp_create_nonce( 'ele-select-nonce' ),
             )
         );

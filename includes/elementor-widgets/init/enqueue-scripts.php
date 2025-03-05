@@ -3,6 +3,8 @@
 namespace EasyElements\Elementor_Widgets\Init;
 
 
+use Elementor\Plugin;
+
 class Enqueue_Scripts {
 
     private $widgets_assets_url;
@@ -16,6 +18,7 @@ class Enqueue_Scripts {
         add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'editor_enqueue_styles'] );
         add_action( 'elementor/frontend/before_enqueue_scripts', array( $this, 'editor_enqueue_script' ) );
         //add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'editor_enqueue_script' ) );
+
     }
 
     public function load_frontend_widget_assets() {

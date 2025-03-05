@@ -21,7 +21,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonial', 'easy-elements' );
+		return esc_html__( 'Testimonial', 'easyelements' );
 	}
 
 	public function get_icon() {
@@ -29,7 +29,7 @@ class Testimonial extends Widget_Base {
 	}
 
 	public function get_categories() {
-        return array( 'easy-elements' );
+        return array( 'easyelements' );
 	}
 
     public function get_keywords() {
@@ -41,27 +41,27 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_general',
 			array(
-				'label' => esc_html__( 'General', 'easy-elements' ),
+				'label' => esc_html__( 'General', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'layout',
 			array(
-				'label'          => esc_html__( 'Layout', 'easy-elements' ),
+				'label'          => esc_html__( 'Layout', 'easyelements' ),
 				'type'           => Controls_Manager::SELECT,
 				'default'        => '1',
 				'options'        => array(
-					'1'  => esc_html__( 'Style 1', 'easy-elements' ),
-					'2'  => esc_html__( 'Style 2', 'easy-elements' ),
-					'3'  => esc_html__( 'Style 3', 'easy-elements' ),
-					'4'  => esc_html__( 'Style 4', 'easy-elements' ),
-					'5'  => esc_html__( 'Style 5', 'easy-elements' ),
-					'6'  => esc_html__( 'Style 6', 'easy-elements' ),
-					'7'  => esc_html__( 'Style 7', 'easy-elements' ),
-					'8'  => esc_html__( 'Style 8', 'easy-elements' ),
-					'9'  => esc_html__( 'Style 9', 'easy-elements' ),
-					'10' => esc_html__( 'Style 10', 'easy-elements' ),
+					'1'  => esc_html__( 'Style 1', 'easyelements' ),
+					'2'  => esc_html__( 'Style 2', 'easyelements' ),
+					'3'  => esc_html__( 'Style 3', 'easyelements' ),
+					'4'  => esc_html__( 'Style 4', 'easyelements' ),
+					'5'  => esc_html__( 'Style 5', 'easyelements' ),
+					'6'  => esc_html__( 'Style 6', 'easyelements' ),
+					'7'  => esc_html__( 'Style 7', 'easyelements' ),
+					'8'  => esc_html__( 'Style 8', 'easyelements' ),
+					'9'  => esc_html__( 'Style 9', 'easyelements' ),
+					'10' => esc_html__( 'Style 10', 'easyelements' ),
 				),
 				'prefix_class'   => 'ele-testimonial-layout-',
 				'render_type'    => 'template',
@@ -72,7 +72,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'image',
 			array(
-				'label'   => esc_html__( 'Choose Image', 'easy-elements' ),
+				'label'   => esc_html__( 'Choose Image', 'easyelements' ),
 				'type'    => Controls_Manager::MEDIA,
 				'dynamic' => array(
 					'active' => true,
@@ -96,9 +96,9 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'name',
 			array(
-				'label'       => esc_html__( 'Name', 'easy-elements' ),
+				'label'       => esc_html__( 'Name', 'easyelements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Jhon Walker', 'easy-elements' ),
+				'default'     => esc_html__( 'Jhon Walker', 'easyelements' ),
 				'label_block' => true,
 				'separator'   => 'before',
 				'dynamic'     => array(
@@ -110,7 +110,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'name_link',
 			array(
-				'label'       => esc_html__( 'Link', 'easy-elements' ),
+				'label'       => esc_html__( 'Link', 'easyelements' ),
 				'type'        => Controls_Manager::URL,
 				'placeholder' => 'https://example.com',
 				'dynamic'     => array(
@@ -122,9 +122,9 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'designation',
 			array(
-				'label'       => esc_html__( 'Designation', 'easy-elements' ),
+				'label'       => esc_html__( 'Designation', 'easyelements' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Managing Director', 'easy-elements' ),
+				'default'     => esc_html__( 'Managing Director', 'easyelements' ),
 				'label_block' => true,
 				'separator'   => 'before',
 				'dynamic'     => array(
@@ -136,10 +136,10 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'description',
 			array(
-				'label'       => esc_html__( 'Description', 'easy-elements' ),
+				'label'       => esc_html__( 'Description', 'easyelements' ),
 				'type'        => Controls_Manager::TEXTAREA,
-				'default'     => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easy-elements' ),
-				'placeholder' => esc_html__( 'Type your description here', 'easy-elements' ),
+				'default'     => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content.', 'easyelements' ),
+				'placeholder' => esc_html__( 'Type your description here', 'easyelements' ),
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -149,10 +149,10 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'show_quote',
 			array(
-				'label'       => esc_html__( 'Show Quote', 'easy-elements' ),
+				'label'       => esc_html__( 'Show Quote', 'easyelements' ),
 				'type'        => Controls_Manager::SWITCHER,
-				'label_on'    => esc_html__( 'Show', 'easy-elements' ),
-				'label_off'   => esc_html__( 'Hide', 'easy-elements' ),
+				'label_on'    => esc_html__( 'Show', 'easyelements' ),
+				'label_off'   => esc_html__( 'Hide', 'easyelements' ),
 				'default'     => 'yes',
 				'condition'   => array(
 					'layout!' => array( '6', '9', '10' ),
@@ -164,7 +164,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'quote_icon',
 			array(
-				'label'     => esc_html__( 'Icons', 'easy-elements' ),
+				'label'     => esc_html__( 'Icons', 'easyelements' ),
 				'type'      => \Elementor\Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'fas fa-quote-left',
@@ -180,19 +180,19 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'align',
 			array(
-				'label'          => esc_html__( 'Alignment', 'easy-elements' ),
+				'label'          => esc_html__( 'Alignment', 'easyelements' ),
 				'type'           => Controls_Manager::CHOOSE,
 				'options'        => array(
 					'left'   => array(
-						'title' => esc_html__( 'Left', 'easy-elements' ),
+						'title' => esc_html__( 'Left', 'easyelements' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'easy-elements' ),
+						'title' => esc_html__( 'Center', 'easyelements' ),
 						'icon'  => 'eicon-h-align-center',
 					),
 					'right'  => array(
-						'title' => esc_html__( 'Right', 'easy-elements' ),
+						'title' => esc_html__( 'Right', 'easyelements' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -210,19 +210,19 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_rating',
 			array(
-				'label' => esc_html__( 'Rating', 'easy-elements' ),
+				'label' => esc_html__( 'Rating', 'easyelements' ),
 			)
 		);
 
 		$this->add_control(
 			'rating_style',
 			array(
-				'label'          => esc_html__( 'Type', 'easy-elements' ),
+				'label'          => esc_html__( 'Type', 'easyelements' ),
 				'type'           => Controls_Manager::SELECT,
 				'options'        => array(
-					'none' => esc_html__( 'None', 'easy-elements' ),
-					'star' => esc_html__( 'Star', 'easy-elements' ),
-					'num'  => esc_html__( 'Number', 'easy-elements' ),
+					'none' => esc_html__( 'None', 'easyelements' ),
+					'star' => esc_html__( 'Star', 'easyelements' ),
+					'num'  => esc_html__( 'Number', 'easyelements' ),
 				),
 				'default'        => 'star',
 				'style_transfer' => true,
@@ -232,7 +232,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'rating',
 			array(
-				'label'      => esc_html__( 'Rating', 'easy-elements' ),
+				'label'      => esc_html__( 'Rating', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'default'    => array(
 					'unit' => 'px',
@@ -258,7 +258,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_style',
 			array(
-				'label' => esc_html__( 'Image', 'easy-elements' ),
+				'label' => esc_html__( 'Image', 'easyelements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -266,7 +266,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'width',
 			array(
-				'label'          => esc_html__( 'Width', 'easy-elements' ),
+				'label'          => esc_html__( 'Width', 'easyelements' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => array(
 					'unit' => '%',
@@ -301,7 +301,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'height',
 			array(
-				'label'          => esc_html__( 'Height', 'easy-elements' ),
+				'label'          => esc_html__( 'Height', 'easyelements' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => array(
 					'unit' => 'px',
@@ -332,16 +332,16 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'object-fit',
 			array(
-				'label'     => esc_html__( 'Object Fit', 'easy-elements' ),
+				'label'     => esc_html__( 'Object Fit', 'easyelements' ),
 				'type'      => Controls_Manager::SELECT,
 				'condition' => array(
 					'height[size]!' => '',
 				),
 				'options'   => array(
-					''        => esc_html__( 'Default', 'easy-elements' ),
-					'fill'    => esc_html__( 'Fill', 'easy-elements' ),
-					'cover'   => esc_html__( 'Cover', 'easy-elements' ),
-					'contain' => esc_html__( 'Contain', 'easy-elements' ),
+					''        => esc_html__( 'Default', 'easyelements' ),
+					'fill'    => esc_html__( 'Fill', 'easyelements' ),
+					'cover'   => esc_html__( 'Cover', 'easyelements' ),
+					'contain' => esc_html__( 'Contain', 'easyelements' ),
 				),
 				'default'   => '',
 				'selectors' => array(
@@ -355,7 +355,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'normal',
 			array(
-				'label' => esc_html__( 'Normal', 'easy-elements' ),
+				'label' => esc_html__( 'Normal', 'easyelements' ),
 			)
 		);
 
@@ -372,7 +372,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'hover',
 			array(
-				'label' => esc_html__( 'Hover', 'easy-elements' ),
+				'label' => esc_html__( 'Hover', 'easyelements' ),
 			)
 		);
 
@@ -387,7 +387,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'background_hover_transition',
 			array(
-				'label'     => esc_html__( 'Transition Duration', 'easy-elements' ),
+				'label'     => esc_html__( 'Transition Duration', 'easyelements' ),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -428,7 +428,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'image_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -440,7 +440,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'image_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -455,7 +455,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_style',
 			array(
-				'label' => esc_html__( 'Content', 'easy-elements' ),
+				'label' => esc_html__( 'Content', 'easyelements' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -464,7 +464,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'content_background',
-				'label'     => esc_html__( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easyelements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}}.ele-testimonial-layout-4 .ele-testimonial-inner-wrapper,{{WRAPPER}}.ele-testimonial-layout-5 .ele-testimonial-inner-wrapper,{{WRAPPER}}.ele-testimonial-layout-6 .ele-testimonial-content,{{WRAPPER}}.ele-testimonial-layout-8 .ele-testimonial-content',
@@ -488,7 +488,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -503,7 +503,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -519,7 +519,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'heading_name',
 			array(
-				'label'     => esc_html__( 'Name', 'easy-elements' ),
+				'label'     => esc_html__( 'Name', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'condition' => array(
 					'name!' => '',
@@ -531,7 +531,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'name_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-testimonial-title',
 				'condition' => array(
 					'name!' => '',
@@ -543,7 +543,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Foreground::get_type(),
 			array(
 				'name'      => 'name_color',
-				'label'     => esc_html__( 'Title Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Title Color', 'easyelements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'selector'  => '{{WRAPPER}} .ele-testimonial-title',
 				'condition' => array(
@@ -555,7 +555,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'name_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -570,7 +570,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'heading_designation',
 			array(
-				'label'     => esc_html__( 'Designation', 'easy-elements' ),
+				'label'     => esc_html__( 'Designation', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -582,7 +582,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'designation_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-testimonial-designation' => 'color: {{VALUE}}',
@@ -597,7 +597,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'designation_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-testimonial-designation',
 				'condition' => array(
 					'designation!' => '',
@@ -608,7 +608,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'designation_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -623,7 +623,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'heading_description',
 			array(
-				'label'     => esc_html__( 'Description', 'easy-elements' ),
+				'label'     => esc_html__( 'Description', 'easyelements' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 				'condition' => array(
@@ -635,7 +635,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'description_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-testimonial-description' => 'color: {{VALUE}}',
@@ -650,7 +650,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'description_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-testimonial-description',
 				'condition' => array(
 					'description!' => '',
@@ -661,7 +661,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'description_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -679,7 +679,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_rating_style',
 			array(
-				'label'     => esc_html__( 'Rating', 'easy-elements' ),
+				'label'     => esc_html__( 'Rating', 'easyelements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'rating_style!' => 'none',
@@ -691,7 +691,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'rating_typography',
-				'label'     => esc_html__( 'Typography', 'easy-elements' ),
+				'label'     => esc_html__( 'Typography', 'easyelements' ),
 				'selector'  => '{{WRAPPER}} .ele-rating-layout-num',
 				'condition' => array(
 					'rating_style' => 'num',
@@ -702,7 +702,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'ratting_size',
 			array(
-				'label'      => esc_html__( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'condition'  => array(
@@ -718,7 +718,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'ratting_space_between',
 			array(
-				'label'      => esc_html__( 'Space Between', 'easy-elements' ),
+				'label'      => esc_html__( 'Space Between', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -741,7 +741,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'rating_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-testimonial-rating, {{WRAPPER}} .ele-rating-layout-star > svg' => 'fill: {{VALUE}}',
@@ -752,7 +752,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'rating_fill',
 			array(
-				'label'     => esc_html__( 'Filled', 'easy-elements' ),
+				'label'     => esc_html__( 'Filled', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-rating-layout-star > svg.fill' => 'fill: {{VALUE}}',
@@ -767,7 +767,7 @@ class Testimonial extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'      => 'rating_background',
-				'label'     => esc_html__( 'Background', 'easy-elements' ),
+				'label'     => esc_html__( 'Background', 'easyelements' ),
 				'types'     => array( 'classic', 'gradient' ),
 				'exclude'   => array( 'image' ),
 				'selector'  => '{{WRAPPER}} .ele-rating-layout-num',
@@ -792,7 +792,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'rating_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+				'label'      => esc_html__( 'Border Radius', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
@@ -807,7 +807,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'rating_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'easy-elements' ),
+				'label'      => esc_html__( 'Padding', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -822,7 +822,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'rating_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -837,7 +837,7 @@ class Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_quote_style',
 			array(
-				'label'     => esc_html__( 'Quote', 'easy-elements' ),
+				'label'     => esc_html__( 'Quote', 'easyelements' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'show_quote' => 'yes',
@@ -849,7 +849,7 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'quote_color',
 			array(
-				'label'     => esc_html__( 'Color', 'easy-elements' ),
+				'label'     => esc_html__( 'Color', 'easyelements' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .ele-testimonial-quote > i' => 'color: {{VALUE}}',
@@ -861,7 +861,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_sizes',
 			array(
-				'label'      => esc_html__( 'Size', 'easy-elements' ),
+				'label'      => esc_html__( 'Size', 'easyelements' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
@@ -877,7 +877,7 @@ class Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'easy-elements' ),
+				'label'      => esc_html__( 'Margin', 'easyelements' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(

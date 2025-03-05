@@ -106,7 +106,8 @@ class Init {
                 ),
             ),
             "defaultTab" => "ele_page",
-            "new_demo_rang_date" => date('Ymd', strtotime('-31 days'))
+            "new_demo_rang_date" => gmdate('Ymd', strtotime('-31 days')),
+            "nonce" => wp_create_nonce('easyelements_nonce') // Generate the nonce
         );
 
         // Apply the filter so other developers can modify the data

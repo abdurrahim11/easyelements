@@ -20,10 +20,10 @@ use Elementor\Icons_Manager;
 									if ( 'custom' === $item['date_media_type'] && $item['title'] && $item['date_custom'] ) {
 										?>
 										<?php if ( $item['date_custom'] ) : ?>
-											<div class="ele-horizontal-timeline-title"><?php ele_kses( $item['title'] ); ?></div>
+											<div class="ele-horizontal-timeline-title"><?php wp_kses_post( $item['title'] ); ?></div>
 										<?php endif; ?>
 										<?php if ( $item['date_custom'] ) : ?>
-											<span class="ele-horizontal-timeline-time"><?php ele_kses( $item['date_custom'] ); ?></span>
+											<span class="ele-horizontal-timeline-time"><?php wp_kses_post( $item['date_custom'] ); ?></span>
 										<?php endif; ?>
 										<?php
 									}
@@ -49,7 +49,7 @@ use Elementor\Icons_Manager;
 
 								if ( 'custom' === $item['bullet_media_type'] && $item['custom'] ) {
 									?>
-									<span class="ele-horizontal-timeline-media-custom"><?php ele_kses( $item['custom'] ); ?></span>
+									<span class="ele-horizontal-timeline-media-custom"><?php wp_kses_post( $item['custom'] ); ?></span>
 								<?php } ?>
 							</div>
 						<?php endif; ?>

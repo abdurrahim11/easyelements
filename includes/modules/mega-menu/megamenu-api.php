@@ -22,7 +22,7 @@ class Megamenu_Api extends Handler_Api {
 
         return array(
             'saved'   => 1,
-            'message' => esc_html__( 'Saved', 'easy-elements' ),
+            'message' => esc_html__( 'Saved', 'easyelements' ),
         );
     }
 

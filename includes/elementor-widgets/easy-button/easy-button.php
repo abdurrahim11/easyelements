@@ -19,7 +19,7 @@ class Easy_Button extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Easy Button', 'easy-elements' );
+        return esc_html__( 'Easy Button', 'easyelements' );
     }
 
     public function get_icon() {
@@ -27,7 +27,7 @@ class Easy_Button extends Widget_Base {
     }
 
     public function get_categories() {
-        return array( 'easy-elements' );
+        return array( 'easyelements' );
     }
 
     public function get_keywords() {
@@ -40,7 +40,7 @@ class Easy_Button extends Widget_Base {
         $this->start_controls_section(
             '_section_button',
             [
-                'label' => esc_html__( 'Easy Button', 'easy-elements' ),
+                'label' => esc_html__( 'Easy Button', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -48,15 +48,15 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'btn_style',
             [
-                'label'   => esc_html__( 'Style', 'easy-elements' ),
+                'label'   => esc_html__( 'Style', 'easyelements' ),
                 'type'    => Controls_Manager::SELECT,
                 'default' => 'hermosa',
                 'options' => [
-                    'hermosa'  => esc_html__( 'Hermosa', 'easy-elements' ),
-                    'montino'  => esc_html__( 'Montino', 'easy-elements' ),
-                    'iconica'  => esc_html__( 'Iconica', 'easy-elements' ),
-                    'symbolab' => esc_html__( 'Symbolab', 'easy-elements' ),
-                    'estilo'   => esc_html__( 'Estilo', 'easy-elements' ),
+                    'hermosa'  => esc_html__( 'Hermosa', 'easyelements' ),
+                    'montino'  => esc_html__( 'Montino', 'easyelements' ),
+                    'iconica'  => esc_html__( 'Iconica', 'easyelements' ),
+                    'symbolab' => esc_html__( 'Symbolab', 'easyelements' ),
+                    'estilo'   => esc_html__( 'Estilo', 'easyelements' ),
                 ],
             ]
         );
@@ -64,16 +64,16 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'estilo_effect',
             [
-                'label'     => esc_html__( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'dissolve',
                 'options'   => [
-                    'dissolve'     => esc_html__( 'Dissolve', 'easy-elements' ),
-                    'slide-down'   => esc_html__( 'Slide In Down', 'easy-elements' ),
-                    'slide-right'  => esc_html__( 'Slide In Right', 'easy-elements' ),
-                    'slide-x'      => esc_html__( 'Slide Out X', 'easy-elements' ),
-                    'cross-slider' => esc_html__( 'Cross Slider', 'easy-elements' ),
-                    'slide-y'      => esc_html__( 'Slide Out Y', 'easy-elements' ),
+                    'dissolve'     => esc_html__( 'Dissolve', 'easyelements' ),
+                    'slide-down'   => esc_html__( 'Slide In Down', 'easyelements' ),
+                    'slide-right'  => esc_html__( 'Slide In Right', 'easyelements' ),
+                    'slide-x'      => esc_html__( 'Slide Out X', 'easyelements' ),
+                    'cross-slider' => esc_html__( 'Cross Slider', 'easyelements' ),
+                    'slide-y'      => esc_html__( 'Slide Out Y', 'easyelements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'estilo',
@@ -84,14 +84,14 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'symbolab_effect',
             [
-                'label'     => esc_html__( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'back-in-right',
                 'options'   => [
-                    'back-in-right'  => esc_html__( 'Back In Right', 'easy-elements' ),
-                    'back-in-left'   => esc_html__( 'Back In Left', 'easy-elements' ),
-                    'back-out-right' => esc_html__( 'Back Out Right', 'easy-elements' ),
-                    'back-out-left'  => esc_html__( 'Back Out Left', 'easy-elements' ),
+                    'back-in-right'  => esc_html__( 'Back In Right', 'easyelements' ),
+                    'back-in-left'   => esc_html__( 'Back In Left', 'easyelements' ),
+                    'back-out-right' => esc_html__( 'Back Out Right', 'easyelements' ),
+                    'back-out-left'  => esc_html__( 'Back Out Left', 'easyelements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'symbolab',
@@ -102,14 +102,14 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'iconica_effect',
             [
-                'label'     => esc_html__( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'slide-in-down',
                 'options'   => [
-                    'slide-in-down'  => esc_html__( 'Slide In Down', 'easy-elements' ),
-                    'slide-in-top'   => esc_html__( 'Slide In Top', 'easy-elements' ),
-                    'slide-in-right' => esc_html__( 'Slide In Right', 'easy-elements' ),
-                    'slide-in-left'  => esc_html__( 'Slide In Left', 'easy-elements' ),
+                    'slide-in-down'  => esc_html__( 'Slide In Down', 'easyelements' ),
+                    'slide-in-top'   => esc_html__( 'Slide In Top', 'easyelements' ),
+                    'slide-in-right' => esc_html__( 'Slide In Right', 'easyelements' ),
+                    'slide-in-left'  => esc_html__( 'Slide In Left', 'easyelements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'iconica',
@@ -120,17 +120,17 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'montino_effect',
             [
-                'label'     => esc_html__( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'winona',
                 'options'   => [
-                    'winona'  => esc_html__( 'Winona', 'easy-elements' ),
-                    'rayen'   => esc_html__( 'Rayen', 'easy-elements' ),
-                    'aylen'   => esc_html__( 'Aylen', 'easy-elements' ),
-                    'wapasha' => esc_html__( 'Wapasha', 'easy-elements' ),
-                    'nina'    => esc_html__( 'Nina', 'easy-elements' ),
-                    'antiman' => esc_html__( 'Antiman', 'easy-elements' ),
-                    'sacnite' => esc_html__( 'Sacnite', 'easy-elements' ),
+                    'winona'  => esc_html__( 'Winona', 'easyelements' ),
+                    'rayen'   => esc_html__( 'Rayen', 'easyelements' ),
+                    'aylen'   => esc_html__( 'Aylen', 'easyelements' ),
+                    'wapasha' => esc_html__( 'Wapasha', 'easyelements' ),
+                    'nina'    => esc_html__( 'Nina', 'easyelements' ),
+                    'antiman' => esc_html__( 'Antiman', 'easyelements' ),
+                    'sacnite' => esc_html__( 'Sacnite', 'easyelements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'montino',
@@ -141,19 +141,19 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'hermosa_effect',
             [
-                'label'     => esc_html__( 'Effects', 'easy-elements' ),
+                'label'     => esc_html__( 'Effects', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'default'   => 'exploit',
                 'options'   => [
-                    'exploit'    => esc_html__( 'Exploit', 'easy-elements' ),
-                    'upward'     => esc_html__( 'Upward', 'easy-elements' ),
-                    'newbie'     => esc_html__( 'Newbie', 'easy-elements' ),
-                    'render'     => esc_html__( 'Render', 'easy-elements' ),
-                    'reshape'    => esc_html__( 'Reshape', 'easy-elements' ),
-                    'expandable' => esc_html__( 'Expandable', 'easy-elements' ),
-                    'downhill'   => esc_html__( 'Downhill', 'easy-elements' ),
-                    'bloom'      => esc_html__( 'Bloom', 'easy-elements' ),
-                    'roundup'    => esc_html__( 'Roundup', 'easy-elements' ),
+                    'exploit'    => esc_html__( 'Exploit', 'easyelements' ),
+                    'upward'     => esc_html__( 'Upward', 'easyelements' ),
+                    'newbie'     => esc_html__( 'Newbie', 'easyelements' ),
+                    'render'     => esc_html__( 'Render', 'easyelements' ),
+                    'reshape'    => esc_html__( 'Reshape', 'easyelements' ),
+                    'expandable' => esc_html__( 'Expandable', 'easyelements' ),
+                    'downhill'   => esc_html__( 'Downhill', 'easyelements' ),
+                    'bloom'      => esc_html__( 'Bloom', 'easyelements' ),
+                    'roundup'    => esc_html__( 'Roundup', 'easyelements' ),
                 ],
                 'condition' => [
                     'btn_style' => 'hermosa',
@@ -164,7 +164,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_text',
             [
-                'label'       => esc_html__( 'Text', 'easy-elements' ),
+                'label'       => esc_html__( 'Text', 'easyelements' ),
                 'label_block' => true,
                 'type'        => Controls_Manager::TEXT,
                 'default'     => 'Button Text',
@@ -177,9 +177,9 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_link',
             array(
-                'label'         => esc_html__( 'Link', 'easy-elements' ),
+                'label'         => esc_html__( 'Link', 'easyelements' ),
                 'type'          => Controls_Manager::URL,
-                'placeholder'   => esc_html__( 'https://your-link.com', 'easy-elements' ),
+                'placeholder'   => esc_html__( 'https://your-link.com', 'easyelements' ),
                 'show_external' => true,
                 'default'       => array(
                     'url'         => '#',
@@ -195,8 +195,8 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'icon',
             [
-                'label'                  => esc_html__( 'Icon', 'easy-elements' ),
-                'description'            => esc_html__( 'Please set an icon for the button.', 'easy-elements' ),
+                'label'                  => esc_html__( 'Icon', 'easyelements' ),
+                'description'            => esc_html__( 'Please set an icon for the button.', 'easyelements' ),
                 'label_block'            => false,
                 'type'                   => Controls_Manager::ICONS,
                 'skin'                   => 'inline',
@@ -246,20 +246,20 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'align_x',
             [
-                'label'       => esc_html__( 'Alignment', 'easy-elements' ),
+                'label'       => esc_html__( 'Alignment', 'easyelements' ),
                 'type'        => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options'     => [
                     'left'   => [
-                        'title' => esc_html__( 'Left', 'easy-elements' ),
+                        'title' => esc_html__( 'Left', 'easyelements' ),
                         'icon'  => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'easy-elements' ),
+                        'title' => esc_html__( 'Center', 'easyelements' ),
                         'icon'  => 'eicon-h-align-center',
                     ],
                     'right'  => [
-                        'title' => esc_html__( 'Right', 'easy-elements' ),
+                        'title' => esc_html__( 'Right', 'easyelements' ),
                         'icon'  => 'eicon-h-align-right',
                     ],
                 ],
@@ -274,7 +274,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'magnetic_enable',
             [
-                'label'        => esc_html__( 'Magnetic Effect', 'easy-elements' ),
+                'label'        => esc_html__( 'Magnetic Effect', 'easyelements' ),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_block'  => false,
                 'return_value' => 'yes',
@@ -285,7 +285,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'threshold',
             [
-                'label'     => esc_html__( 'Threshold', 'easy-elements' ),
+                'label'     => esc_html__( 'Threshold', 'easyelements' ),
                 'type'      => Controls_Manager::NUMBER,
                 'min'       => 0,
                 'max'       => 100,
@@ -310,7 +310,7 @@ class Easy_Button extends Widget_Base {
         $this->start_controls_section(
             '_estilo_symbolab_iconica_style_section',
             [
-                'label' => esc_html__( 'Common', 'easy-elements' ),
+                'label' => esc_html__( 'Common', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -318,7 +318,7 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_item_width',
             [
-                'label'      => esc_html__( 'Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Size', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -366,7 +366,7 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_icon_size',
             [
-                'label'      => esc_html__( 'Icon Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Icon Size', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -424,7 +424,7 @@ class Easy_Button extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'button_typography',
-                'label'    => esc_html__( 'Typography', 'easy-elements' ),
+                'label'    => esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-easy-btn',
                 'global' => [
                     'default' => Global_Typography::TYPOGRAPHY_ACCENT,
@@ -467,7 +467,7 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_border_radius',
             [
-                'label'      => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Radius', 'easyelements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
@@ -480,7 +480,7 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_hermosa_roundup_stroke_width',
             [
-                'label'      => esc_html__( 'Stroke Width', 'easy-elements' ),
+                'label'      => esc_html__( 'Stroke Width', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
@@ -523,7 +523,7 @@ class Easy_Button extends Widget_Base {
         $this->add_responsive_control(
             'button_padding',
             [
-                'label'      => esc_html__( 'Padding', 'easy-elements' ),
+                'label'      => esc_html__( 'Padding', 'easyelements' ),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors'  => [
@@ -579,14 +579,14 @@ class Easy_Button extends Widget_Base {
         $this->start_controls_tab(
             '_tab_button_normal',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'button_text_color',
             [
-                'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Text Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-txt-clr: {{VALUE}}',
@@ -597,7 +597,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_bg_color',
             [
-                'label'      => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Background Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-bg-clr: {{VALUE}}',
@@ -609,7 +609,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_border_color',
             [
-                'label'      => esc_html__( 'Border Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-border-clr: {{VALUE}}',
@@ -648,7 +648,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_roundup_circle_color',
             [
-                'label'      => esc_html__( 'Circle Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Circle Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn.ele-eft--roundup' => '--ele-ctv-btn-border-clr: {{VALUE}}',
@@ -692,14 +692,14 @@ class Easy_Button extends Widget_Base {
         $this->start_controls_tab(
             '_tabs_button_hover',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'button_hover_text_color',
             [
-                'label'     => esc_html__( 'Text Color', 'easy-elements' ),
+                'label'     => esc_html__( 'Text Color', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-txt-hvr-clr: {{VALUE}}',
@@ -710,7 +710,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_hover_bg_color',
             [
-                'label'      => esc_html__( 'Background Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Background Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-bg-hvr-clr: {{VALUE}}',
@@ -722,7 +722,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_hover_border_color',
             [
-                'label'      => esc_html__( 'Border Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Border Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',
@@ -761,7 +761,7 @@ class Easy_Button extends Widget_Base {
         $this->add_control(
             'button_hover_roundup_circle_color',
             [
-                'label'      => esc_html__( 'Circle Color', 'easy-elements' ),
+                'label'      => esc_html__( 'Circle Color', 'easyelements' ),
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .ele-easy-btn-wrap .ele-easy-btn.ele-eft--roundup' => '--ele-ctv-btn-border-hvr-clr: {{VALUE}}',

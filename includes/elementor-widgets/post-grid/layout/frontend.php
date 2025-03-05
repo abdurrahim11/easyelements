@@ -67,7 +67,7 @@ $post_excerpt = preg_replace('`[[^]]*]`', '', $post_excerpt);
                         <!-- Display comments meta information -->
                         <li class="ele-post-grid-meta-comments">
                             <?php Icons_Manager::render_icon($display_settings['comments_icon'], array('aria-hidden' => 'true')); ?>
-                            <?php comments_number(esc_html__('No Comments', 'easy-elements'), esc_html__('1 Comment', 'easy-elements'), esc_html__('% Comments', 'easy-elements')); ?>
+                            <?php comments_number(esc_html__('No Comments', 'easyelements'), esc_html__('1 Comment', 'easyelements'), esc_html__('% Comments', 'easyelements')); ?>
                         </li>
                     <?php } ?>
                 <?php } ?>
@@ -98,7 +98,7 @@ $post_excerpt = preg_replace('`[[^]]*]`', '', $post_excerpt);
                     <?php if ('comments' === $meta_field) { ?>
                         <li class="ele-post-grid-meta-comments">
                             <?php Icons_Manager::render_icon($display_settings['comments_icon'], array('aria-hidden' => 'true')); ?>
-                            <?php comments_number(esc_html__('No Comments', 'easy-elements'), esc_html__('1 Comment', 'easy-elements'), esc_html__('% Comments', 'easy-elements')); ?>
+                            <?php comments_number(esc_html__('No Comments', 'easyelements'), esc_html__('1 Comment', 'easyelements'), esc_html__('% Comments', 'easyelements')); ?>
                         </li>
                     <?php } ?>
                 <?php } ?>
@@ -107,7 +107,7 @@ $post_excerpt = preg_replace('`[[^]]*]`', '', $post_excerpt);
 
         <?php if ('yes' === $display_settings['show_content']) { ?>
             <!-- Display post excerpt if show_content setting is enabled -->
-            <p class="ele-post-grid-excerpt"><?php ele_kses($post_excerpt); ?></p>
+            <p class="ele-post-grid-excerpt"><?php wp_kses_post($post_excerpt); ?></p>
         <?php } ?>
         <?php if ('yes' === $display_settings['show_readmore'] && '3' !== $display_settings['layout']) { ?>
             <!-- Display read more button if show_readmore setting is enabled and layout is not '3' -->
@@ -148,7 +148,7 @@ $post_excerpt = preg_replace('`[[^]]*]`', '', $post_excerpt);
                     <?php if ('comments' === $meta_field) { ?>
                         <li class="ele-post-grid-meta-comments">
                             <?php Icons_Manager::render_icon($display_settings['comments_icon'], array('aria-hidden' => 'true')); ?>
-                            <?php comments_number(esc_html__('No Comments', 'easy-elements'), esc_html__('1 Comment', 'easy-elements'), esc_html__('% Comments', 'easy-elements')); ?>
+                            <?php comments_number(esc_html__('No Comments', 'easyelements'), esc_html__('1 Comment', 'easyelements'), esc_html__('% Comments', 'easyelements')); ?>
                         </li>
                     <?php } ?>
                 <?php } ?>

@@ -93,7 +93,11 @@ class Mega_Menu_Options {
     public function handle_megamenu_options_save() {
         $screen = get_current_screen();
 
-        if ( 'nav-menus' !== $screen->base || ! isset( $_POST['update-nav-menu-nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update-nav-menu-nonce'] ) ), 'update-nav_menu' ) ) {
+        if ( 'nav-menus' !== $screen->base ) {
+            return;
+        }
+
+        if ( ! isset( $_POST['update-nav-menu-nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update-nav-menu-nonce'] ) ), 'update-nav_menu' ) ) {
             return;
         }
 

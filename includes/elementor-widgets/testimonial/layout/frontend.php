@@ -18,7 +18,8 @@ if ( '4' === $settings['layout'] || '5' === $settings['layout'] || '10' === $set
             // Get image markup based on attachment ID or URL
             $image_markup = ( ! empty( $settings['image']['id'] ) ) ? wp_get_attachment_image( $settings['image']['id'], $settings['thumbnail_size'] ) : '';
             // Display the image
-            echo ! empty( $image_markup ) ? $image_markup : '<img src="' . esc_url( $settings['image']['url'] ) . '">';
+            $full_image_markup =  ! empty( $image_markup ) ? $image_markup : '<img src="' . esc_url( $settings['image']['url'] ) . '">';
+            echo wp_kses_post( $full_image_markup );
             ?>
         </div>
     <?php endif; ?>
@@ -63,7 +64,7 @@ echo ( '4' === $settings['layout'] || '5' === $settings['layout'] || '6' === $se
         // Display description if available
         if ( $settings['description'] ) : ?>
             <div class="ele-testimonial-description">
-                <?php ele_kses( $settings['description'] ); ?>
+                <?php wp_kses_post( $settings['description'] ); ?>
             </div>
         <?php endif; ?>
 
@@ -100,7 +101,8 @@ if ( '4' !== $settings['layout'] && '5' !== $settings['layout'] && '10' !== $set
             // Get author image markup based on attachment ID or URL
             $author_image_markup = ( ! empty( $settings['image']['id'] ) ) ? wp_get_attachment_image( $settings['image']['id'], $settings['thumbnail_size'] ) : '';
             // Display the image
-            echo ! empty( $author_image_markup ) ? $author_image_markup : '<img src="' . esc_url( $settings['image']['url'] ) . '">';
+            $full_author_image_markup = ! empty( $author_image_markup ) ? $author_image_markup : '<img src="' . esc_url( $settings['image']['url'] ) . '">';
+            wp_kses_post( $full_author_image_markup );
             ?>
         </div>
     <?php endif; ?>
@@ -112,7 +114,7 @@ if ( $settings['name'] || $settings['designation'] ) { ?>
     <?php
     // Check if name is provided and display it
     if ( $settings['name'] ) : ?>
-        <<?php echo esc_attr( $title_tag ); ?><?php ele_kses( $title_attributes ); ?>
+        <<?php echo esc_attr( $title_tag ); ?><?php wp_kses_post( $title_attributes ); ?>
         class="ele-testimonial-title"><?php echo esc_attr( $settings['name'] ); ?></<?php echo esc_attr( $title_tag ); ?>>
     <?php endif; ?>
     <?php

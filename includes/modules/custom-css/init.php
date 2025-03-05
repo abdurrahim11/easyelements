@@ -31,7 +31,7 @@ class Init {
             $element->start_controls_section(
                 'section_ele_elementor_custom_css',
                 [
-                    'label' => esc_html__( 'Custom CSS', 'ele-elementor-addons' ),
+                    'label' => esc_html__( 'Custom CSS', 'easyelements' ),
                     'tab'   => Controls_Manager::TAB_ADVANCED,
                 ]
             );
@@ -40,7 +40,7 @@ class Init {
                 'ele_custom_css',
                 [
                     'type'        => Controls_Manager::CODE,
-                    'label'       => esc_html__( 'Custom CSS', 'ele-elementor-addons' ),
+                    'label'       => esc_html__( 'Custom CSS', 'easyelements' ),
                     'render_type' => 'ui',
                     'show_label'  => false,
                     'language'    => 'css',
@@ -50,7 +50,7 @@ class Init {
             $element->add_control(
                 'ele_custom_css_description',
                 [
-                    'raw'             => esc_html__( 'Use "selector" to target wrapper element. Examples:<br>selector {color: red;} // For main element<br>selector .child-element {margin: 10px;} // For child element<br>.my-class {text-align: center;} // Or use any custom selector', 'ele-elementor-addons' ),
+                    'raw'             => esc_html__( 'Use "selector" to target wrapper element. Examples:<br>selector {color: red;} // For main element<br>selector .child-element {margin: 10px;} // For child element<br>.my-class {text-align: center;} // Or use any custom selector', 'easyelements' ),
                     'type'            => Controls_Manager::RAW_HTML,
                     'content_classes' => 'elementor-descriptor',
                 ]

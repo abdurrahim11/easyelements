@@ -594,7 +594,8 @@
                     dataType : "json",
                     data : {
                         action : "ele_get_templates",
-                        tab : i
+                        tab : i,
+                        _ajax_nonce: EasyTempsData.nonce // Include nonce in the data
                     },
                     success : function(res) {
                         var templatesCollection = new EasyEditorViews.EleTemplateCollection(res.data.templates);

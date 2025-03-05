@@ -22,14 +22,14 @@ class Import {
                 $editor_post_id = absint( $data['editor_post_id'] );
 
                 if ( ! get_post( $editor_post_id ) ) {
-                    throw new \Exception( esc_html__( 'Post not found', 'easy-elements' ) );
+                    throw new \Exception( esc_html__( 'Post not found', 'easyelements' ) );
                 }
 
                 \Elementor\Plugin::instance()->db->switch_to_post( $editor_post_id );
             }
 
             if ( empty( $data['template_id'] ) ) {
-                throw new \Exception( esc_html__( 'Template id missing', 'easy-elements' ) );
+                throw new \Exception( esc_html__( 'Template id missing', 'easyelements' ) );
             }
 
             $result = $this->get_template_data( $data );

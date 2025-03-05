@@ -34,7 +34,7 @@
 
     ?>
     <!-- Render each hotspot item -->
-    <<?php echo esc_attr($html_tag); ?> <?php ele_kses($attributes); ?> class="elementor-repeater-item-<?php echo esc_attr($hotspot_item['_id']); ?> ele-hotspot-item">
+    <<?php echo esc_attr($html_tag); ?> <?php wp_kses_post($attributes); ?> class="elementor-repeater-item-<?php echo esc_attr($hotspot_item['_id']); ?> ele-hotspot-item">
 
     <span class="ele-hotspot-item-wrap ele-hotspot-type-<?php echo esc_attr($settings['type']); ?> ">
 

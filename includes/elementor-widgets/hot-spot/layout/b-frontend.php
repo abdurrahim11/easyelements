@@ -29,7 +29,7 @@
 		}
 
 		?>
-	<<?php echo esc_attr( $html_tag ); ?> <?php ele_kses( $attr ); ?> class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?> ele-hotspot-item">
+	<<?php echo esc_attr( $html_tag ); ?> <?php wp_kses_post( $attr ); ?> class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?> ele-hotspot-item">
 
 		<span class="ele-hotspot-item-wrap ele-hotspot-type-<?php echo esc_attr( $settings['type'] ); ?> ">
 

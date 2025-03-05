@@ -39,17 +39,17 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the color type selection field (Classic or Gradient).
         $fields['color_type'] = array(
-            'label'       => _x( 'Color Type', 'Background Control', 'easy-elements' ),
+            'label'       => _x( 'Color Type', 'Background Control', 'easyelements' ),
             'type'        => Controls_Manager::CHOOSE,
             'label_block' => false,
             'render_type' => 'ui',
             'options'     => array(
                 'classic'  => array(
-                    'title' => _x( 'Classic', 'Text Color Control', 'easy-elements' ),
+                    'title' => _x( 'Classic', 'Text Color Control', 'easyelements' ),
                     'icon'  => 'eicon-paint-brush',
                 ),
                 'gradient' => array(
-                    'title' => _x( 'Gradient', 'Text Color Control', 'easy-elements' ),
+                    'title' => _x( 'Gradient', 'Text Color Control', 'easyelements' ),
                     'icon'  => 'eicon-barcode',
                 ),
             ),
@@ -57,10 +57,10 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the color field for text color.
         $fields['color'] = array(
-            'label'     => _x( 'Color', 'Background Control', 'easy-elements' ),
+            'label'     => _x( 'Color', 'Background Control', 'easyelements' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '',
-            'title'     => _x( 'Color', 'Background Control', 'easy-elements' ),
+            'title'     => _x( 'Color', 'Background Control', 'easyelements' ),
             'selectors' => array(
                 '{{SELECTOR}}' => 'color: {{VALUE}};',
             ),
@@ -71,7 +71,7 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the color stop location for gradient color.
         $fields['color_stop'] = array(
-            'label'       => _x( 'Location', 'Background Control', 'easy-elements' ),
+            'label'       => _x( 'Location', 'Background Control', 'easyelements' ),
             'type'        => Controls_Manager::SLIDER,
             'size_units'  => array( '%' ),
             'default'     => array(
@@ -87,7 +87,7 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the second color field for gradient color.
         $fields['color_b'] = array(
-            'label'       => _x( 'Second Color', 'Background Control', 'easy-elements' ),
+            'label'       => _x( 'Second Color', 'Background Control', 'easyelements' ),
             'type'        => Controls_Manager::COLOR,
             'default'     => '#f2295b',
             'render_type' => 'ui',
@@ -99,7 +99,7 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the second color stop location for gradient color.
         $fields['color_b_stop'] = array(
-            'label'       => _x( 'Location', 'Background Control', 'easy-elements' ),
+            'label'       => _x( 'Location', 'Background Control', 'easyelements' ),
             'type'        => Controls_Manager::SLIDER,
             'size_units'  => array( '%' ),
             'default'     => array(
@@ -115,11 +115,11 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the gradient type selection field (Linear or Radial).
         $fields['gradient_type'] = array(
-            'label'       => _x( 'Type', 'Background Control', 'easy-elements' ),
+            'label'       => _x( 'Type', 'Background Control', 'easyelements' ),
             'type'        => Controls_Manager::SELECT,
             'options'     => array(
-                'linear' => _x( 'Linear', 'Background Control', 'easy-elements' ),
-                'radial' => _x( 'Radial', 'Background Control', 'easy-elements' ),
+                'linear' => _x( 'Linear', 'Background Control', 'easyelements' ),
+                'radial' => _x( 'Radial', 'Background Control', 'easyelements' ),
             ),
             'default'     => 'linear',
             'render_type' => 'ui',
@@ -131,7 +131,7 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the gradient angle field for linear gradients.
         $fields['gradient_angle'] = array(
-            'label'      => _x( 'Angle', 'Background Control', 'easy-elements' ),
+            'label'      => _x( 'Angle', 'Background Control', 'easyelements' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => array( 'deg' ),
             'default'    => array(
@@ -155,18 +155,18 @@ class Group_Control_Foreground extends Group_Control_Base {
 
         // Define the gradient position field for radial gradients.
         $fields['gradient_position'] = array(
-            'label'     => _x( 'Position', 'Background Control', 'easy-elements' ),
+            'label'     => _x( 'Position', 'Background Control', 'easyelements' ),
             'type'      => Controls_Manager::SELECT,
             'options'   => array(
-                'center center' => _x( 'Center Center', 'Background Control', 'easy-elements' ),
-                'center left'   => _x( 'Center Left', 'Background Control', 'easy-elements' ),
-                'center right'  => _x( 'Center Right', 'Background Control', 'easy-elements' ),
-                'top center'    => _x( 'Top Center', 'Background Control', 'easy-elements' ),
-                'top left'      => _x( 'Top Left', 'Background Control', 'easy-elements' ),
-                'top right'     => _x( 'Top Right', 'Background Control', 'easy-elements' ),
-                'bottom center' => _x( 'Bottom Center', 'Background Control', 'easy-elements' ),
-                'bottom left'   => _x( 'Bottom Left', 'Background Control', 'easy-elements' ),
-                'bottom right'  => _x( 'Bottom Right', 'Background Control', 'easy-elements' ),
+                'center center' => _x( 'Center Center', 'Background Control', 'easyelements' ),
+                'center left'   => _x( 'Center Left', 'Background Control', 'easyelements' ),
+                'center right'  => _x( 'Center Right', 'Background Control', 'easyelements' ),
+                'top center'    => _x( 'Top Center', 'Background Control', 'easyelements' ),
+                'top left'      => _x( 'Top Left', 'Background Control', 'easyelements' ),
+                'top right'     => _x( 'Top Right', 'Background Control', 'easyelements' ),
+                'bottom center' => _x( 'Bottom Center', 'Background Control', 'easyelements' ),
+                'bottom left'   => _x( 'Bottom Left', 'Background Control', 'easyelements' ),
+                'bottom right'  => _x( 'Bottom Right', 'Background Control', 'easyelements' ),
             ),
             'default'   => 'center center',
             'selectors' => array(

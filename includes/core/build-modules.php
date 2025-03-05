@@ -14,15 +14,17 @@ class Build_Modules {
         $this->modules = \EasyElements\Core\Modules_List::get_active_modules_list();
 
         foreach ( $this->modules as $module_slug => $module ) {
-            // make the class name and call it.
-            $class_name = (
-            isset( $module['base_class_name'] )
-                ? $module['base_class_name']
-                : '\EasyElements\Modules\\' . ele_make_classname( $module_slug ) . '\Init'
-            );
+            if ( $module['active'] == true ) {
+                // make the class name and call it.
+                $class_name = (
+                isset( $module['base_class_name'] )
+                    ? $module['base_class_name']
+                    : '\EasyElements\Modules\\' . ele_generate_class_name( $module_slug ) . '\Init'
+                );
 
-            if ( class_exists( $class_name ) ) {
-                new $class_name();
+                if ( class_exists( $class_name ) ) {
+                    new $class_name();
+                }
             }
         }
     }

@@ -22,7 +22,7 @@ class Navigation_Menu extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Nav Menu', 'easy-elements' );
+        return esc_html__( 'Nav Menu', 'easyelements' );
     }
 
     public function get_icon() {
@@ -30,7 +30,7 @@ class Navigation_Menu extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'easy-elements' ];
+        return [ 'easyelements' ];
     }
 
     public function get_keywords() {
@@ -42,7 +42,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_content_tab',
             [
-                'label' => esc_html__('Menu Settings', 'easy-elements'),
+                'label' => esc_html__('Menu Settings', 'easyelements'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -50,7 +50,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'ele_control_nav_menu',
             [
-                'label'     => esc_html__( 'Select menu', 'easy-elements' ),
+                'label'     => esc_html__( 'Select menu', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'options'   => $this->get_navigation_menus(),
             ]
@@ -59,14 +59,14 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_main_menu_position',
             [
-                'label' => esc_html__( 'Horizontal menu position', '-lite' ),
+                'label' => esc_html__( 'Horizontal menu position', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'easyelements-menu-po-left',
                 'options' => [
-                    'easyelements-menu-po-left'  => esc_html__( 'Left', 'easy-elements' ),
-                    'easyelements-menu-po-center' => esc_html__( 'Center', 'easy-elements' ),
-                    'easyelements-menu-po-right' => esc_html__( 'Right', 'easy-elements' ),
-                    'easyelements-menu-po-justified'  => esc_html__( 'Justified', 'easy-elements' ),
+                    'easyelements-menu-po-left'  => esc_html__( 'Left', 'easyelements' ),
+                    'easyelements-menu-po-center' => esc_html__( 'Center', 'easyelements' ),
+                    'easyelements-menu-po-right' => esc_html__( 'Right', 'easyelements' ),
+                    'easyelements-menu-po-justified'  => esc_html__( 'Justified', 'easyelements' ),
                 ],
             ]
         );
@@ -74,12 +74,12 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_nav_dropdown_as',
             [
-                'label' => esc_html__( 'Dropdown open as', 'easy-elements' ),
+                'label' => esc_html__( 'Dropdown open as', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'ele-nav-dropdown-hover',
                 'options' => [
-                    'ele-nav-dropdown-hover'  => esc_html__( 'Hover', 'easy-elements' ),
-                    'ele-nav-dropdown-click' => esc_html__( 'Click', 'easy-elements' ),
+                    'ele-nav-dropdown-hover'  => esc_html__( 'Hover', 'easyelements' ),
+                    'ele-nav-dropdown-click' => esc_html__( 'Click', 'easyelements' ),
                 ],
             ]
         );
@@ -87,18 +87,18 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_submenu_indicator_icon',
             [
-                'label' => esc_html__( 'Dropdown Indicator Icon', 'easy-elements' ),
+                'label' => esc_html__( 'Dropdown Indicator Icon', 'easyelements' ),
                 'type' => Controls_Manager::ICONS,
                 'skin' => 'inline',
                 'exclude_inline_options' => ['svg'],
                 'skin_settings' => [
                     'inline' => [
                         'none' => [
-                            'label' => esc_html__( 'Default', 'easy-elements' ),
+                            'label' => esc_html__( 'Default', 'easyelements' ),
                             'icon' => 'ele ele-down-arrow',
                         ],
                         'icon' => [
-                            'label' => esc_html__( 'Icon Library', 'easy-elements' ),
+                            'label' => esc_html__( 'Icon Library', 'easyelements' ),
                             'icon' => 'fas fa-external-link-alt',
                         ],
                     ],
@@ -124,24 +124,24 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_one_page_enable',
             [
-                'label' => esc_html__('Enable one page? ', 'easy-elements'),
-                'description'	=> esc_html__('This works in the current page.', 'easy-elements'),
+                'label' => esc_html__('Enable one page? ', 'easyelements'),
+                'description'	=> esc_html__('This works in the current page.', 'easyelements'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'no',
-                'label_on' =>esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' =>esc_html__( 'No', 'easy-elements' ),
+                'label_on' =>esc_html__( 'Yes', 'easyelements' ),
+                'label_off' =>esc_html__( 'No', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'easyelements_responsive_breakpoint',
             [
-                'label' => esc_html__( 'Responsive Breakpoint', 'easy-elements' ),
+                'label' => esc_html__( 'Responsive Breakpoint', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'ele_menu_responsive_tablet',
                 'options' => [
-                    'ele_menu_responsive_tablet'  => esc_html__( 'Tablet', 'easy-elements' ),
-                    'ele_menu_responsive_mobile' => esc_html__( 'Mobile', 'easy-elements' ),
+                    'ele_menu_responsive_tablet'  => esc_html__( 'Tablet', 'easyelements' ),
+                    'ele_menu_responsive_mobile' => esc_html__( 'Mobile', 'easyelements' ),
                 ],
             ]
         );
@@ -151,7 +151,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_mobile_menu',
             [
-                'label' => esc_html__('Mobile Menu Settings', 'easy-elements'),
+                'label' => esc_html__('Mobile Menu Settings', 'easyelements'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -159,7 +159,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_nav_menu_logo',
             [
-                'label' => esc_html__( 'Mobile Menu Logo', 'easy-elements' ),
+                'label' => esc_html__( 'Mobile Menu Logo', 'easyelements' ),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -174,12 +174,12 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_nav_menu_logo_link_to',
             [
-                'label' => esc_html__( 'Menu link', 'easy-elements' ),
+                'label' => esc_html__( 'Menu link', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'home',
                 'options' => [
-                    'home' => esc_html__( 'Default(Home)', 'easy-elements' ),
-                    'custom' => esc_html__( 'Custom URL', 'easy-elements' ),
+                    'home' => esc_html__( 'Default(Home)', 'easyelements' ),
+                    'custom' => esc_html__( 'Custom URL', 'easyelements' ),
                 ],
             ]
         );
@@ -187,7 +187,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_nav_menu_logo_link',
             [
-                'label' => esc_html__( ' Custom Link', 'easy-elements' ),
+                'label' => esc_html__( ' Custom Link', 'easyelements' ),
                 'type' => Controls_Manager::URL,
                 'dynamic' => [
                     'active' => true,
@@ -204,7 +204,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_hamburger_icon',
             [
-                'label' => esc_html__( 'Hamburger Icon (Optional)', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon (Optional)', 'easyelements' ),
                 'type' => Controls_Manager::ICONS,
                 'separator' => 'before',
             ]
@@ -213,10 +213,10 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'submenu_click_area',
             [
-                'label'         => esc_html__('Submenu Click Area', 'easy-elements'),
+                'label'         => esc_html__('Submenu Click Area', 'easyelements'),
                 'type'          => Controls_Manager::SWITCHER,
-                'label_on'      => esc_html__('Icon', 'easy-elements'),
-                'label_off'     => esc_html__('Text', 'easy-elements'),
+                'label_on'      => esc_html__('Icon', 'easyelements'),
+                'label_off'     => esc_html__('Text', 'easyelements'),
                 'return_value'  => 'icon',
                 'default'       => 'icon',
             ]
@@ -227,7 +227,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_menu_style_tab',
             [
-                'label' => esc_html__('Menu Wrapper', 'easy-elements'),
+                'label' => esc_html__('Menu Wrapper', 'easyelements'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -235,7 +235,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menubar_height',
             [
-                'label' => esc_html__( 'Menu Height', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Height', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -268,7 +268,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_wrap_h',
             [
-                'label' => esc_html__( 'Menu wrapper background', 'easy-elements' ),
+                'label' => esc_html__( 'Menu wrapper background', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -277,7 +277,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menubar_background',
-                'label' => esc_html__( 'Menu Panel Background', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Panel Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'devices' => [ 'desktop' ],
                 'selector' => '{{WRAPPER}} .easyelements-menu-container',
@@ -287,7 +287,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'wrapper_color_mobile',
             [
-                'label'     => esc_html__( 'Mobile Wrapper Background', 'easy-elements' ),
+                'label'     => esc_html__( 'Mobile Wrapper Background', 'easyelements' ),
                 'type'      => Controls_Manager::COLOR,
                 'devices'   => ['desktop', 'tablet', 'mobile'],
                 'selectors' => [
@@ -299,7 +299,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_panel_spacing',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'tablet_default' => [
@@ -319,7 +319,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_panel_width',
             [
-                'label' => esc_html__( 'Width', 'easy-elements' ),
+                'label' => esc_html__( 'Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'devices' => ['desktop', 'tablet', 'mobile'],
@@ -347,7 +347,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_border_radius',
             [
-                'label' => esc_html__( 'Menu border radius', 'easy-elements' ),
+                'label' => esc_html__( 'Menu border radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'separator' => [ 'before' ],
@@ -373,8 +373,8 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'ele_menu_item_icon_spacing',
             [
-                'label' => esc_html__( 'Menu Icon Spacing', 'easy-elements' ),
-                'description' => esc_html__( 'This is only work with Mega menu icon option', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Icon Spacing', 'easyelements' ),
+                'description' => esc_html__( 'This is only work with Mega menu icon option', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -388,7 +388,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_style_tab_menuitem',
             [
-                'label' => esc_html__('Menu item style', 'easy-elements'),
+                'label' => esc_html__('Menu item style', 'easyelements'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -399,7 +399,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'easyelements_content_typography',
-                'label' => esc_html__( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav > li > a',
             ]
         );
@@ -409,7 +409,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_item_h',
             [
-                'label' => esc_html__( 'Menu Item Style', 'easy-elements' ),
+                'label' => esc_html__( 'Menu Item Style', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -423,7 +423,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_nav_menu_normal_tab',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
@@ -431,7 +431,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_item_background',
-                'label' => esc_html__( 'Item background', 'easy-elements' ),
+                'label' => esc_html__( 'Item background', 'easyelements' ),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav > li > a',
             ]
@@ -440,7 +440,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_text_color',
             [
-                'label' => esc_html__( 'Item text color', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'desktop_default' => '#000000',
                 'tablet_default' => '#000000',
@@ -462,7 +462,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_text_border_radius',
             [
-                'label'      => esc_html__('Border Radius (px)', 'easy-elements'),
+                'label'      => esc_html__('Border Radius (px)', 'easyelements'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
@@ -477,7 +477,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_nav_menu_hover_tab',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
@@ -485,7 +485,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_item_background_hover',
-                'label' => esc_html__( 'Item background', 'easy-elements' ),
+                'label' => esc_html__( 'Item background', 'easyelements' ),
                 'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav > li > a:hover, {{WRAPPER}} .easyelements-navbar-nav > li > a:focus, {{WRAPPER}} .easyelements-navbar-nav > li > a:active, {{WRAPPER}} .easyelements-navbar-nav > li:hover > a',
             ]
@@ -494,7 +494,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_item_color_hover',
             [
-                'label' => esc_html__( 'Item text color', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#707070',
                 'selectors' => [
@@ -522,7 +522,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_text_border_radius_hover',
             [
-                'label'      => esc_html__('Border Radius (px)', 'easy-elements'),
+                'label'      => esc_html__('Border Radius (px)', 'easyelements'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
@@ -537,7 +537,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_nav_menu_active_tab',
             [
-                'label' => esc_html__( 'Active', 'easy-elements' ),
+                'label' => esc_html__( 'Active', 'easyelements' ),
             ]
         );
 
@@ -545,7 +545,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'		=> 'easyelements_nav_menu_active_bg_color',
-                'label' 	=> esc_html__( 'Item background', 'easy-elements' ),
+                'label' 	=> esc_html__( 'Item background', 'easyelements' ),
                 'types'		=> ['classic', 'gradient'],
                 'selector'	=> '{{WRAPPER}} .easyelements-navbar-nav > li.current-menu-item > a,{{WRAPPER}} .easyelements-navbar-nav > li.current-menu-ancestor > a'
             ]
@@ -554,7 +554,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_nav_menu_active_text_color',
             [
-                'label' => esc_html__( 'Item text color (Active)', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color (Active)', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#707070',
                 'selectors' => [
@@ -577,7 +577,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_text_border_radius_active',
             [
-                'label'      => esc_html__('Border Radius (px)', 'easy-elements'),
+                'label'      => esc_html__('Border Radius (px)', 'easyelements'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors'  => [
@@ -593,7 +593,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_item_spacing',
             [
-                'label' => esc_html__( 'Item Spacing', 'easy-elements' ),
+                'label' => esc_html__( 'Item Spacing', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'separator' => [ 'before' ],
                 'desktop_default' => [
@@ -620,7 +620,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_item_margin',
             [
-                'label' => esc_html__( 'Item Margin', 'easy-elements' ),
+                'label' => esc_html__( 'Item Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px' ],
                 'selectors' => [
@@ -634,7 +634,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_style_tab_submenu_indicator',
             [
-                'label' => esc_html__('Submenu indicator style', 'easy-elements'),
+                'label' => esc_html__('Submenu indicator style', 'easyelements'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -642,7 +642,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'ele_submenu_indicator_font_size',
             [
-                'label' => esc_html__( 'Font Size', 'easy-elements' ),
+                'label' => esc_html__( 'Font Size', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -662,7 +662,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_style_tab_submenu_indicator_color',
             [
-                'label' => esc_html__( 'Indicator color', 'easy-elements' ),
+                'label' => esc_html__( 'Indicator color', 'easyelements' ),
                 'type'  => Controls_Manager::COLOR,
                 'default'   =>  '#101010',
                 'alpha'     => false,
@@ -675,7 +675,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'ele_submenu_indicator_spacing',
             [
-                'label' => esc_html__( 'Indicator Margin (px)', 'easy-elements' ),
+                'label' => esc_html__( 'Indicator Margin (px)', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -690,7 +690,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_style_tab_submenu_item',
             [
-                'label' => esc_html__('Submenu item style', 'easy-elements'),
+                'label' => esc_html__('Submenu item style', 'easyelements'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -699,7 +699,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'easyelements_menu_item_typography',
-                'label' => esc_html__( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li > a',
             ]
         );
@@ -707,7 +707,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_submenu_item_spacing',
             [
-                'label' => esc_html__( 'Spacing', 'easy-elements' ),
+                'label' => esc_html__( 'Spacing', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'devices' => ['desktop', 'tablet'],
                 'desktop_default' => [
@@ -737,14 +737,14 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_submenu_normal_tab',
             [
-                'label'	=> esc_html__('Normal', 'easy-elements')
+                'label'	=> esc_html__('Normal', 'easyelements')
             ]
         );
 
         $this->add_responsive_control(
             'easyelements_submenu_item_color',
             [
-                'label' => esc_html__( 'Item text color', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -758,7 +758,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_item_background',
-                'label' => esc_html__( 'Item background', 'easy-elements' ),
+                'label' => esc_html__( 'Item background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li > a',
             ]
@@ -769,14 +769,14 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_submenu_hover_tab',
             [
-                'label'	=> esc_html__('Hover', 'easy-elements')
+                'label'	=> esc_html__('Hover', 'easyelements')
             ]
         );
 
         $this->add_responsive_control(
             'easyelements_item_text_color_hover',
             [
-                'label' => esc_html__( 'Item text color (hover)', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color (hover)', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#707070',
                 'selectors' => [
@@ -792,7 +792,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_item_background_hover',
-                'label' => esc_html__( 'Item background (hover)', 'easy-elements' ),
+                'label' => esc_html__( 'Item background (hover)', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '
 					{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li > a:hover,
@@ -807,14 +807,14 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_submenu_active_tab',
             [
-                'label'	=> esc_html__('Active', 'easy-elements')
+                'label'	=> esc_html__('Active', 'easyelements')
             ]
         );
 
         $this->add_responsive_control(
             'easyelements_nav_sub_menu_active_text_color',
             [
-                'label' => esc_html__( 'Item text color (Active)', 'easy-elements' ),
+                'label' => esc_html__( 'Item text color (Active)', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#707070',
                 'selectors' => [
@@ -827,7 +827,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name'		=> 'easyelements_nav_sub_menu_active_bg_color',
-                'label' 	=> esc_html__( 'Item background (Active)', 'easy-elements' ),
+                'label' 	=> esc_html__( 'Item background (Active)', 'easyelements' ),
                 'types'		=> ['classic', 'gradient'],
                 'selector'	=> '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li.current-menu-item > a',
             ]
@@ -840,7 +840,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_item_border_heading',
             [
-                'label' => esc_html__( 'Sub Menu Items Border', 'easy-elements' ),
+                'label' => esc_html__( 'Sub Menu Items Border', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -850,7 +850,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_item_border',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li > a',
             ]
         );
@@ -858,7 +858,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_item_border_last_child_heading',
             [
-                'label' => esc_html__( 'Border Last Child', 'easy-elements' ),
+                'label' => esc_html__( 'Border Last Child', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -868,7 +868,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_item_border_last_child',
-                'label' => esc_html__( 'Border last Child', 'easy-elements' ),
+                'label' => esc_html__( 'Border last Child', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li:last-child > a',
             ]
         );
@@ -876,7 +876,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_item_border_first_child_heading',
             [
-                'label' => esc_html__( 'Border First Child', 'easy-elements' ),
+                'label' => esc_html__( 'Border First Child', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -886,7 +886,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_item_border_first_child',
-                'label' => esc_html__( 'Border First Child', 'easy-elements' ),
+                'label' => esc_html__( 'Border First Child', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel > li:first-child > a',
             ]
         );
@@ -896,7 +896,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_style_tab_submenu_panel',
             [
-                'label' => esc_html__('Submenu panel style', 'easy-elements'),
+                'label' => esc_html__('Submenu panel style', 'easyelements'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -904,7 +904,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'sub_panel_padding',
             [
-                'label'         => esc_html__('Padding', 'easy-elements'),
+                'label'         => esc_html__('Padding', 'easyelements'),
                 'type'          => Controls_Manager::DIMENSIONS,
                 'default'       => [
                     'top'       => '15',
@@ -923,7 +923,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_panel_submenu_border',
-                'label' => esc_html__( 'Panel Menu Border', 'easy-elements' ),
+                'label' => esc_html__( 'Panel Menu Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel',
             ]
         );
@@ -932,7 +932,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_submenu_container_background',
-                'label' => esc_html__( 'Container background', 'easy-elements' ),
+                'label' => esc_html__( 'Container background', 'easyelements' ),
                 'types' => [ 'classic','gradient' ],
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel',
             ]
@@ -941,7 +941,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_submenu_panel_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'desktop_default' => [
                     'top' => 0,
@@ -967,7 +967,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_submenu_container_width',
             [
-                'label' => esc_html__( 'Conatiner width', 'easy-elements' ),
+                'label' => esc_html__( 'Conatiner width', 'easyelements' ),
                 'type' => Controls_Manager::TEXT,
                 'devices' => [ 'desktop' ],
                 'desktop_default' => '220px',
@@ -983,7 +983,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'easyelements_panel_box_shadow',
-                'label' => esc_html__( 'Box Shadow', 'easy-elements' ),
+                'label' => esc_html__( 'Box Shadow', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-navbar-nav .easyelements-submenu-panel',
             ]
         );
@@ -993,7 +993,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_menu_toggle_style_tab',
             [
-                'label' => esc_html__( 'Hamburger Style', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Style', 'easyelements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1001,7 +1001,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_toggle_style_title',
             [
-                'label' => esc_html__( 'Hamburger Toggle', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Toggle', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1010,16 +1010,16 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_toggle_icon_position',
             [
-                'label' => esc_html__( 'Position', 'easy-elements' ),
+                'label' => esc_html__( 'Position', 'easyelements' ),
                 'type' => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Top', 'easy-elements' ),
+                        'title' => esc_html__( 'Top', 'easyelements' ),
                         'icon' => 'fa fa-angle-left',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Middle', 'easy-elements' ),
+                        'title' => esc_html__( 'Middle', 'easyelements' ),
                         'icon' => 'fa fa-angle-right',
                     ],
                 ],
@@ -1033,7 +1033,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_toggle_spacing',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
                 'devices' => ['desktop', 'tablet'],
@@ -1053,7 +1053,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_toggle_width',
             [
-                'label' => esc_html__( 'Width', 'easy-elements' ),
+                'label' => esc_html__( 'Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -1077,7 +1077,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_toggle_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1105,7 +1105,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_open_typography',
             [
-                'label' => esc_html__( 'Icon Size', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Size', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -1131,7 +1131,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_menu_toggle_normal',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
@@ -1139,7 +1139,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_toggle_background',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic' ],
                 'selector' => '{{WRAPPER}} .easyelements-menu-hamburger',
             ]
@@ -1149,7 +1149,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_toggle_border',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'separator' => 'before',
                 'selector' => '{{WRAPPER}} .easyelements-menu-hamburger',
             ]
@@ -1158,7 +1158,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_toggle_icon_color',
             [
-                'label' => esc_html__( 'Hamburger Icon Color', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => 'rgba(0, 0, 0, 0.5)',
                 'selectors' => [
@@ -1174,7 +1174,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_menu_toggle_hover',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
@@ -1182,7 +1182,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_toggle_background_hover',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic' ],
                 'selector' => '{{WRAPPER}} .easyelements-menu-hamburger:hover',
             ]
@@ -1192,7 +1192,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_toggle_border_hover',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'separator' => 'before',
                 'selector' => '{{WRAPPER}} .easyelements-menu-hamburger:hover',
             ]
@@ -1201,7 +1201,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_toggle_icon_color_hover',
             [
-                'label' => esc_html__( 'Hamburger Icon Color', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => 'rgba(0, 0, 0, 0.5)',
                 'selectors' => [
@@ -1219,7 +1219,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_close_style_title',
             [
-                'label' => esc_html__( 'Close Toggle', 'easy-elements' ),
+                'label' => esc_html__( 'Close Toggle', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -1229,7 +1229,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'easyelements_menu_close_typography',
-                'label' => esc_html__( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .easyelements-menu-close',
             ]
         );
@@ -1237,7 +1237,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_close_spacing',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
                 'devices' => ['desktop', 'tablet'],
@@ -1257,7 +1257,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_close_margin',
             [
-                'label' => esc_html__( 'Margin', 'easy-elements' ),
+                'label' => esc_html__( 'Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', ],
                 'devices' => ['desktop', 'tablet'],
@@ -1277,7 +1277,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_close_width',
             [
-                'label' => esc_html__( 'Width', 'easy-elements' ),
+                'label' => esc_html__( 'Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -1301,7 +1301,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_menu_close_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -1333,7 +1333,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_menu_close_normal',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
@@ -1341,7 +1341,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_close_background',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic' ],
                 'selector' => '{{WRAPPER}} .easyelements-menu-close',
             ]
@@ -1351,7 +1351,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_close_border',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'separator' => 'before',
                 'selector' => '{{WRAPPER}} .easyelements-menu-close',
             ]
@@ -1360,7 +1360,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_close_icon_color',
             [
-                'label' => esc_html__( 'Hamburger Icon Color', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => 'rgba(51, 51, 51, 1)',
                 'selectors' => [
@@ -1374,7 +1374,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_tab(
             'easyelements_menu_close_hover',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
@@ -1382,7 +1382,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'easyelements_menu_close_background_hover',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic' ],
                 'selector' => '{{WRAPPER}} .easyelements-menu-close:hover',
             ]
@@ -1392,7 +1392,7 @@ class Navigation_Menu extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'easyelements_menu_close_border_hover',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'separator' => 'before',
                 'selector' => '{{WRAPPER}} .easyelements-menu-close:hover',
             ]
@@ -1401,7 +1401,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_control(
             'easyelements_menu_close_icon_color_hover',
             [
-                'label' => esc_html__( 'Hamburger Icon Color', 'easy-elements' ),
+                'label' => esc_html__( 'Hamburger Icon Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => 'rgba(0, 0, 0, 0.5)',
                 'selectors' => [
@@ -1419,7 +1419,7 @@ class Navigation_Menu extends Widget_Base {
         $this->start_controls_section(
             'easyelements_mobile_menu_logo_style_tab',
             [
-                'label' => esc_html__( 'Mobile Menu Logo', 'easy-elements' ),
+                'label' => esc_html__( 'Mobile Menu Logo', 'easyelements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -1427,7 +1427,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_logo_width',
             [
-                'label' => esc_html__( 'Width', 'easy-elements' ),
+                'label' => esc_html__( 'Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -1454,7 +1454,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_logo_height',
             [
-                'label' => esc_html__( 'Height', 'easy-elements' ),
+                'label' => esc_html__( 'Height', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -1481,7 +1481,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_logo_margin',
             [
-                'label' => esc_html__( 'Margin', 'easy-elements' ),
+                'label' => esc_html__( 'Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'tablet_default' => [
@@ -1501,7 +1501,7 @@ class Navigation_Menu extends Widget_Base {
         $this->add_responsive_control(
             'easyelements_mobile_menu_logo_padding',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'tablet_default' => [

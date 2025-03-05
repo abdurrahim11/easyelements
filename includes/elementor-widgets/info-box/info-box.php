@@ -16,7 +16,7 @@ class Info_Box extends Widget_Base {
     }
 
     public function get_title() {
-        return esc_html__( 'Info Box', 'easy-elements' );
+        return esc_html__( 'Info Box', 'easyelements' );
     }
 
     public function get_icon() {
@@ -24,7 +24,7 @@ class Info_Box extends Widget_Base {
     }
 
     public function get_categories() {
-        return [ 'easy-elements' ];
+        return [ 'easyelements' ];
     }
 
     public function get_keywords() {
@@ -36,18 +36,18 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box',
             [
-                'label' => esc_html__( 'Info Box', 'easy-elements' ),
+                'label' => esc_html__( 'Info Box', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'enable_equal_height',
             [
-                'label'     => esc_html__( 'Equal Height?', 'easy-elements' ),
+                'label'     => esc_html__( 'Equal Height?', 'easyelements' ),
                 'type'      => Controls_Manager::SELECT,
                 'options'   => [
-                    'enable' => esc_html__( 'Enable', 'easy-elements' ),
-                    'disable' => esc_html__( 'Disable', 'easy-elements' ),
+                    'enable' => esc_html__( 'Enable', 'easyelements' ),
+                    'disable' => esc_html__( 'Disable', 'easyelements' ),
                 ],
                 'default'   => 'disable',
                 'prefix_class'  => 'ele-equal-height-',
@@ -59,20 +59,20 @@ class Info_Box extends Widget_Base {
 
         $this->add_control(
             'ele_icon_box_enable_header_icon', [
-                'label'       => esc_html__( 'Icon Type', 'easy-elements' ),
+                'label'       => esc_html__( 'Icon Type', 'easyelements' ),
                 'type'        => Controls_Manager::CHOOSE,
                 'label_block' => false,
                 'options'     => [
                     'none' => [
-                        'title' => esc_html__( 'None', 'easy-elements' ),
+                        'title' => esc_html__( 'None', 'easyelements' ),
                         'icon'  => 'fa fa-ban',
                     ],
                     'icon' => [
-                        'title' => esc_html__( 'Icon', 'easy-elements' ),
+                        'title' => esc_html__( 'Icon', 'easyelements' ),
                         'icon'  => 'fa fa-paint-brush',
                     ],
                     'image' => [
-                        'title' => esc_html__( 'Image', 'easy-elements' ),
+                        'title' => esc_html__( 'Image', 'easyelements' ),
                         'icon'  => 'fa fa-image',
                     ],
                 ],
@@ -83,11 +83,11 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_header_icons__switch',
             [
-                'label' => esc_html__('Add icon? ', 'easy-elements'),
+                'label' => esc_html__('Add icon? ', 'easyelements'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'label_on' =>esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' =>esc_html__( 'No', 'easy-elements' ),
+                'label_on' =>esc_html__( 'Yes', 'easyelements' ),
+                'label_off' =>esc_html__( 'No', 'easyelements' ),
                 'condition' => [
                     'ele_icon_box_enable_header_icon!' => 'none',
                 ]
@@ -97,7 +97,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_header_icons',
             [
-                'label' => esc_html__( 'Header Icon', 'easy-elements' ),
+                'label' => esc_html__( 'Header Icon', 'easyelements' ),
                 'type' => Controls_Manager::ICONS,
                 'fa4compatibility' => 'ele_icon_box_header_icon',
                 'default' => [
@@ -115,7 +115,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_header_image',
             [
-                'label' => esc_html__( 'Choose Image', 'easy-elements' ),
+                'label' => esc_html__( 'Choose Image', 'easyelements' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
@@ -133,13 +133,13 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_title_text',
             [
-                'label' => esc_html__( 'Title ', 'easy-elements' ),
+                'label' => esc_html__( 'Title ', 'easyelements' ),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => esc_html__( 'Strategy and  Planning', 'easy-elements' ),
-                'placeholder' => esc_html__( 'Enter your title', 'easy-elements' ),
+                'default' => esc_html__( 'Strategy and  Planning', 'easyelements' ),
+                'placeholder' => esc_html__( 'Enter your title', 'easyelements' ),
                 'label_block' => true,
                 'separator' => 'before',
             ]
@@ -148,13 +148,13 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_description_text',
             [
-                'label' => esc_html__( 'Content', 'easy-elements' ),
+                'label' => esc_html__( 'Content', 'easyelements' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => esc_html__( 'We bring the right people together to challenge established thinking and drive transform in 2020', 'easy-elements' ),
-                'placeholder' => esc_html__( 'Enter your description', 'easy-elements' ),
+                'default' => esc_html__( 'We bring the right people together to challenge established thinking and drive transform in 2020', 'easyelements' ),
+                'placeholder' => esc_html__( 'Enter your description', 'easyelements' ),
                 'separator' => 'none',
                 'rows' => 10,
                 'show_label' => false,
@@ -168,16 +168,16 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_button',
             [
-                'label' => esc_html__( 'Read More', 'easy-elements' ),
+                'label' => esc_html__( 'Read More', 'easyelements' ),
             ]
         );
         $this->add_control(
             'ele_icon_box_enable_btn',
             [
-                'label' => esc_html__( 'Enable Button', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Button', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'no',
                 'separator' => 'before',
@@ -186,10 +186,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_enable_hover_btn',
             [
-                'label' => esc_html__( 'Enable Button on Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Button on Hover', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'no',
                 'separator' => 'before',
@@ -202,10 +202,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_btn_text',
             [
-                'label' =>esc_html__( 'Label', 'easy-elements' ),
+                'label' =>esc_html__( 'Label', 'easyelements' ),
                 'type' => Controls_Manager::TEXT,
-                'default' =>esc_html__( 'Learn more ', 'easy-elements' ),
-                'placeholder' =>esc_html__( 'Learn more ', 'easy-elements' ),
+                'default' =>esc_html__( 'Learn more ', 'easyelements' ),
+                'placeholder' =>esc_html__( 'Learn more ', 'easyelements' ),
                 'dynamic'     => array( 'active' => true ),
                 'condition' => [
                     'ele_icon_box_enable_btn' => 'yes',
@@ -217,7 +217,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_btn_url',
             [
-                'label' =>esc_html__( 'URL', 'easy-elements' ),
+                'label' =>esc_html__( 'URL', 'easyelements' ),
                 'type' => Controls_Manager::URL,
                 'placeholder' =>esc_url('https://wpmet.com'),
                 'default' => [
@@ -235,11 +235,11 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_icons__switch',
             [
-                'label' => esc_html__('Add icon? ', 'easy-elements'),
+                'label' => esc_html__('Add icon? ', 'easyelements'),
                 'type' => Controls_Manager::SWITCHER,
                 'default' => 'yes',
-                'label_on' =>esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' =>esc_html__( 'No', 'easy-elements' ),
+                'label_on' =>esc_html__( 'Yes', 'easyelements' ),
+                'label_off' =>esc_html__( 'No', 'easyelements' ),
                 'condition' => [
                     'ele_icon_box_enable_btn' => 'yes',
                 ]
@@ -249,7 +249,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_icons',
             [
-                'label' =>esc_html__( 'Icon', 'easy-elements' ),
+                'label' =>esc_html__( 'Icon', 'easyelements' ),
                 'type' => Controls_Manager::ICONS,
                 'fa4compatibility' => 'ele_icon_box_icon',
                 'default' => [
@@ -265,12 +265,12 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_icon_align',
             [
-                'label' =>esc_html__( 'Icon Position', 'easy-elements' ),
+                'label' =>esc_html__( 'Icon Position', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'left',
                 'options' => [
-                    'left' =>esc_html__( 'Before', 'easy-elements' ),
-                    'right' =>esc_html__( 'After', 'easy-elements' ),
+                    'left' =>esc_html__( 'Before', 'easyelements' ),
+                    'right' =>esc_html__( 'After', 'easyelements' ),
                 ],
                 'condition' => [
                     'ele_icon_box_icons__switch'   => 'yes',
@@ -282,10 +282,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_show_global_link',
             [
-                'label' => esc_html__( 'Global Link', 'easy-elements' ),
+                'label' => esc_html__( 'Global Link', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
                 'condition' => [
@@ -297,9 +297,9 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_global_link',
             [
-                'label' => esc_html__( 'Link', 'easy-elements' ),
+                'label' => esc_html__( 'Link', 'easyelements' ),
                 'type' => Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://wpmet.com', 'easy-elements' ),
+                'placeholder' => esc_html__( 'https://wpmet.com', 'easyelements' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',
@@ -320,17 +320,17 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_settings',
             [
-                'label' => esc_html__( 'Settings', 'easy-elements' ),
+                'label' => esc_html__( 'Settings', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'ele_icon_box_enable_water_mark',
             [
-                'label' => esc_html__( 'Enable Hover Water Mark ', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Hover Water Mark ', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => '',
             ]
@@ -339,7 +339,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_water_mark_icons',
             [
-                'label' => esc_html__( 'Social Icons', 'easy-elements' ),
+                'label' => esc_html__( 'Social Icons', 'easyelements' ),
                 'type' => Controls_Manager::ICONS,
                 'fa4compatibility' => 'ele_icon_box_water_mark_icon',
                 'default' => [
@@ -358,13 +358,13 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_icon_position',
             [
-                'label' => esc_html__( 'Icon Position', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Position', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'top',
                 'options' => [
-                    'top'  => esc_html__( 'Top', 'easy-elements' ),
-                    'left'  => esc_html__( 'Left', 'easy-elements' ),
-                    'right'  => esc_html__( 'Right', 'easy-elements' ),
+                    'top'  => esc_html__( 'Top', 'easyelements' ),
+                    'left'  => esc_html__( 'Left', 'easyelements' ),
+                    'right'  => esc_html__( 'Right', 'easyelements' ),
                 ],
                 'separator' => 'before',
                 'condition' => [
@@ -377,19 +377,19 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_text_align_responsive',
             [
-                'label' => esc_html__( 'Content Alignment', 'easy-elements' ),
+                'label' => esc_html__( 'Content Alignment', 'easyelements' ),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__( 'Left', 'easy-elements' ),
+                        'title' => esc_html__( 'Left', 'easyelements' ),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'easy-elements' ),
+                        'title' => esc_html__( 'Center', 'easyelements' ),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__( 'Right', 'easy-elements' ),
+                        'title' => esc_html__( 'Right', 'easyelements' ),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -400,7 +400,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_title_size',
             [
-                'label' => esc_html__( 'Title HTML Tag', 'easy-elements' ),
+                'label' => esc_html__( 'Title HTML Tag', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'h1' => 'H1',
@@ -422,7 +422,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_badge_control_tab',
             [
-                'label' => esc_html__( 'Badge', 'easy-elements' ),
+                'label' => esc_html__( 'Badge', 'easyelements' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -430,10 +430,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_badge_control',
             [
-                'label' => esc_html__( 'Show Badge', 'easy-elements' ),
+                'label' => esc_html__( 'Show Badge', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'easy-elements' ),
-                'label_off' => esc_html__( 'Hide', 'easy-elements' ),
+                'label_on' => esc_html__( 'Show', 'easyelements' ),
+                'label_off' => esc_html__( 'Hide', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -441,13 +441,13 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_badge_title',
             [
-                'label' => esc_html__( 'Title', 'easy-elements' ),
+                'label' => esc_html__( 'Title', 'easyelements' ),
                 'type' => Controls_Manager::TEXT,
                 'dynamic' => [
                     'active' => true,
                 ],
-                'default' => esc_html__( 'EXCLUSIVE', 'easy-elements' ),
-                'placeholder' => esc_html__( 'Type your title here', 'easy-elements' ),
+                'default' => esc_html__( 'EXCLUSIVE', 'easyelements' ),
+                'placeholder' => esc_html__( 'Type your title here', 'easyelements' ),
                 'condition' => [
                     'ele_icon_box_badge_control' => 'yes'
                 ]
@@ -457,19 +457,19 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_badge_position',
             [
-                'label' => esc_html__( 'Position', 'easy-elements' ),
+                'label' => esc_html__( 'Position', 'easyelements' ),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'top_left',
                 'options' => [
-                    'top_left'  => esc_html__( 'Top Left', 'easy-elements' ),
-                    'top_center' => esc_html__( 'Top Center', 'easy-elements' ),
-                    'top_right' => esc_html__( 'Top Right', 'easy-elements' ),
-                    'center_left' => esc_html__( 'Center Left', 'easy-elements' ),
-                    'center_right' => esc_html__( 'Center Right', 'easy-elements' ),
-                    'bottom_left' => esc_html__( 'Bottom Left', 'easy-elements' ),
-                    'bottom_center' => esc_html__( 'Bottom Center', 'easy-elements' ),
-                    'bottom_right' => esc_html__( 'Bottom Right', 'easy-elements' ),
-                    'custom' => esc_html__( 'Custom', 'easy-elements' ),
+                    'top_left'  => esc_html__( 'Top Left', 'easyelements' ),
+                    'top_center' => esc_html__( 'Top Center', 'easyelements' ),
+                    'top_right' => esc_html__( 'Top Right', 'easyelements' ),
+                    'center_left' => esc_html__( 'Center Left', 'easyelements' ),
+                    'center_right' => esc_html__( 'Center Right', 'easyelements' ),
+                    'bottom_left' => esc_html__( 'Bottom Left', 'easyelements' ),
+                    'bottom_center' => esc_html__( 'Bottom Center', 'easyelements' ),
+                    'bottom_right' => esc_html__( 'Bottom Right', 'easyelements' ),
+                    'custom' => esc_html__( 'Custom', 'easyelements' ),
                 ],
                 'condition' => [
                     'ele_icon_box_badge_control' => 'yes'
@@ -480,7 +480,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'badge_arrow_horizontal_position',
             [
-                'label' => esc_html__( 'Horizontal Position', 'easy-elements' ),
+                'label' => esc_html__( 'Horizontal Position', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -510,7 +510,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'badge_arrow_horizontal_position_vertial',
             [
-                'label' => esc_html__( 'Vertical Position', 'easy-elements' ),
+                'label' => esc_html__( 'Vertical Position', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px', '%' ],
                 'range' => [
@@ -543,7 +543,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_background_style',
             [
-                'label' => esc_html__( 'Icon Box Container', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Box Container', 'easyelements' ),
                 'tab' => controls_Manager::TAB_STYLE,
             ]
         );
@@ -551,14 +551,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_section_background_style_n_tab',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_infobox_bg_group',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient', 'video' ],
                 'selector' => '{{WRAPPER}} .ele-infobox',
             ]
@@ -566,7 +566,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_infobox_bg_padding',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default' =>     [
@@ -585,7 +585,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ele_icon_box_infobox_box_shadow_group',
-                'label' => esc_html__( 'Box Shadow', 'easy-elements' ),
+                'label' => esc_html__( 'Box Shadow', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox',
             ]
         );
@@ -593,7 +593,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_iocnbox_border_group',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox',
                 'fields_options' => [
                     'border' => [
@@ -617,7 +617,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_infobox_border_radious',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default' => [
@@ -636,14 +636,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_section_background_style_n_hv_tab',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
         $this->add_group_control(
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_infobox_bg_hover_group',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient', 'video' ],
                 'selector' => '{{WRAPPER}} .ele-infobox:hover',
             ]
@@ -651,7 +651,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_infobox_bg_padding_inner',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
 
@@ -665,7 +665,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ele_icon_box_infobox_box_shadow_hv_group',
-                'label' => esc_html__( 'Box Shadow', 'easy-elements' ),
+                'label' => esc_html__( 'Box Shadow', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox:hover',
             ]
         );
@@ -673,14 +673,14 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_icon_box_border_hv_group',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox:hover',
             ]
         );
         $this->add_responsive_control(
             'ele_icon_box_infobox_border_radious_hv',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -691,7 +691,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_info_box_hover_animation',
             [
-                'label' => esc_html__( 'Hover Animation', 'easy-elements' ),
+                'label' => esc_html__( 'Hover Animation', 'easyelements' ),
                 'type' => Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -703,7 +703,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_section_style_content',
             [
-                'label' => esc_html__( 'Content', 'easy-elements' ),
+                'label' => esc_html__( 'Content', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -711,19 +711,19 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_content_valign',
             [
-                'label' => esc_html__( 'Vertical Alignment', 'easy-elements' ),
+                'label' => esc_html__( 'Vertical Alignment', 'easyelements' ),
                 'type'  => Controls_Manager::CHOOSE,
                 'options' => [
                     'top'    => [
-                        'title' => esc_html__( 'Top', 'easy-elements' ),
+                        'title' => esc_html__( 'Top', 'easyelements' ),
                         'icon'  => 'eicon-v-align-top',
                     ],
                     'middle' => [
-                        'title' => esc_html__( 'Middle', 'easy-elements' ),
+                        'title' => esc_html__( 'Middle', 'easyelements' ),
                         'icon'  => 'eicon-v-align-middle',
                     ],
                     'bottom' => [
-                        'title' => esc_html__( 'Bottom', 'easy-elements' ),
+                        'title' => esc_html__( 'Bottom', 'easyelements' ),
                         'icon'  => 'eicon-v-align-bottom',
                     ],
                 ],
@@ -746,7 +746,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_heading_title',
             [
-                'label' => esc_html__( 'Title', 'easy-elements' ),
+                'label' => esc_html__( 'Title', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -754,7 +754,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_title_bottom_space',
             [
-                'label' => esc_html__( 'Margin', 'easy-elements' ),
+                'label' => esc_html__( 'Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -770,7 +770,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_title_padding',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -790,7 +790,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_title_color',
             [
-                'label' => esc_html__( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -801,7 +801,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_title_color_hover',
             [
-                'label' => esc_html__( 'Color Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Color Hover', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -821,7 +821,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_heading_description',
             [
-                'label' => esc_html__( 'Description', 'easy-elements' ),
+                'label' => esc_html__( 'Description', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -830,7 +830,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_description_color',
             [
-                'label' => esc_html__( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#656565',
                 'selectors' => [
@@ -841,7 +841,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_description_color_hover',
             [
-                'label' => esc_html__( 'Color Hover as', 'easy-elements' ),
+                'label' => esc_html__( 'Color Hover as', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#656565',
                 'selectors' => [
@@ -862,7 +862,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_margin',
             [
-                'label' => esc_html__( 'Margin', 'easy-elements' ),
+                'label' => esc_html__( 'Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -878,7 +878,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_watermark',
             [
-                'label' => esc_html__( 'Water Mark', 'easy-elements' ),
+                'label' => esc_html__( 'Water Mark', 'easyelements' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -890,7 +890,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_watermark_color',
             [
-                'label' => esc_html__( 'Water Mark Color', 'easy-elements' ),
+                'label' => esc_html__( 'Water Mark Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#000000',
                 'selectors' => [
@@ -906,7 +906,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_watermark_font_size',
             [
-                'label' => esc_html__( 'Water Mark Font Size', 'easy-elements' ),
+                'label' => esc_html__( 'Water Mark Font Size', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px' ],
                 'range' => [
@@ -936,7 +936,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_style_icon',
             [
-                'label' => esc_html__( 'Icon', 'easy-elements' ),
+                'label' => esc_html__( 'Icon', 'easyelements' ),
                 'tab'   => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'ele_icon_box_enable_header_icon!' => 'none',
@@ -950,14 +950,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_icon_colors_normal',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'ele_icon_box_icon_primary_color',
             [
-                'label' => esc_html__( 'Icon Color', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#656565',
                 'selectors' => [
@@ -973,7 +973,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_icon_secondary_color_normal',
             [
-                'label' => esc_html__( 'Icon BG Color', 'easy-elements' ),
+                'label' => esc_html__( 'Icon BG Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -986,7 +986,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_border',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-info-box-icon',
             ]
         );
@@ -996,7 +996,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1016,14 +1016,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_icon_colors_hover',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'ele_icon_box_hover_primary_color',
             [
-                'label' => esc_html__( 'Icon Hover Color', 'easy-elements' ),
+                'label' => esc_html__( 'Icon Hover Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1039,7 +1039,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_hover_background_color',
             [
-                'label' => esc_html__( 'Background Color', 'easy-elements' ),
+                'label' => esc_html__( 'Background Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1052,7 +1052,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_border_icon_group',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox:hover .ele-info-box-icon',
             ]
         );
@@ -1060,14 +1060,14 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_icons_hover_animation',
             [
-                'label' => esc_html__( 'Hover Animation', 'easy-elements' ),
+                'label' => esc_html__( 'Hover Animation', 'easyelements' ),
                 'type' =>   Controls_Manager::HOVER_ANIMATION,
             ]
         );
         $this->add_responsive_control(
             'ele_icon_box_icons_hover_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors' => [
@@ -1088,7 +1088,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_icon_size',
             [
-                'label' => esc_html__( 'Size', 'easy-elements' ),
+                'label' => esc_html__( 'Size', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1114,7 +1114,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_space',
             [
-                'label' => esc_html__( 'Spacing', 'easy-elements' ),
+                'label' => esc_html__( 'Spacing', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1134,7 +1134,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_icon_padding',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1150,7 +1150,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_rotate',
             [
-                'label' => esc_html__( 'Rotate', 'easy-elements' ),
+                'label' => esc_html__( 'Rotate', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'default' => [
                     'size' => 0,
@@ -1181,7 +1181,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_height',
             [
-                'label' => esc_html__( 'Height', 'easy-elements' ),
+                'label' => esc_html__( 'Height', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1199,7 +1199,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_width',
             [
-                'label' => esc_html__( 'Width', 'easy-elements' ),
+                'label' => esc_html__( 'Width', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1218,7 +1218,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_line_height',
             [
-                'label' => esc_html__( 'Line Height', 'easy-elements' ),
+                'label' => esc_html__( 'Line Height', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1237,7 +1237,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_icon_vertical_align',
             [
-                'label' => esc_html__( 'Vertical Position ', 'easy-elements' ),
+                'label' => esc_html__( 'Vertical Position ', 'easyelements' ),
                 'type' => Controls_Manager::SLIDER,
                 'range' => [
                     'px' => [
@@ -1260,7 +1260,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_style',
             [
-                'label' => esc_html__( 'Button', 'easy-elements' ),
+                'label' => esc_html__( 'Button', 'easyelements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'ele_icon_box_enable_btn' => 'yes',
@@ -1270,7 +1270,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_text_padding',
             [
-                'label' =>esc_html__( 'Padding', 'easy-elements' ),
+                'label' =>esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
@@ -1281,7 +1281,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_text_margin',
             [
-                'label' =>esc_html__( 'Margin', 'easy-elements' ),
+                'label' =>esc_html__( 'Margin', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
@@ -1294,14 +1294,14 @@ class Info_Box extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ele_icon_box_typography_group',
-                'label' =>esc_html__( 'Typography', 'easy-elements' ),
+                'label' =>esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-btn',
             ]
         );
         $this->add_responsive_control(
             'ele_icon_box_btn_icon_font_size',
             array(
-                'label'      => esc_html__( 'Icon Font Size', 'easy-elements' ),
+                'label'      => esc_html__( 'Icon Font Size', 'easyelements' ),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => array(
                     'px', 'em', 'rem',
@@ -1326,14 +1326,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_tab_button_normal',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'ele_icon_box_button_text_color',
             [
-                'label' => esc_html__( 'Text Color', 'easy-elements' ),
+                'label' => esc_html__( 'Text Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -1347,7 +1347,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_btn_background_group',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-btn',
             ]
@@ -1357,14 +1357,14 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_button_border_color_group',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-btn',
             ]
         );
         $this->add_responsive_control(
             'ele_icon_box_btn_border_radius',
             [
-                'label' =>esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' =>esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px'],
                 'default' => [
@@ -1391,14 +1391,14 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_tab_button_hover',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
         $this->add_control(
             'ele_icon_box_btn_hover_color',
             [
-                'label' => esc_html__( 'Text Color', 'easy-elements' ),
+                'label' => esc_html__( 'Text Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ele-infobox:hover .ele-btn' => 'color: {{VALUE}};',
@@ -1411,7 +1411,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_btn_background_hover_group',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-infobox:hover .ele-btn',
             ]
@@ -1421,14 +1421,14 @@ class Info_Box extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ele_icon_box_button_border_hv_color_group',
-                'label' => esc_html__( 'Border', 'easy-elements' ),
+                'label' => esc_html__( 'Border', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-infobox:hover .ele-btn',
             ]
         );
         $this->add_responsive_control(
             'ele_icon_box_btn_hover_border_radius',
             [
-                'label' =>esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' =>esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px'],
                 'default' => [
@@ -1453,7 +1453,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_button_hover_animation',
             [
-                'label' => esc_html__( 'Animation', 'easy-elements' ),
+                'label' => esc_html__( 'Animation', 'easyelements' ),
                 'type' => Controls_Manager::HOVER_ANIMATION,
             ]
         );
@@ -1469,7 +1469,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_section_bg_ovelry_style',
             [
-                'label' => esc_html__( 'Background Overlay ', 'easy-elements' ),
+                'label' => esc_html__( 'Background Overlay ', 'easyelements' ),
                 'tab' => controls_Manager::TAB_STYLE,
             ]
         );
@@ -1477,10 +1477,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_show_image_overlay',
             [
-                'label' => esc_html__( 'Enable Image Overlay', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Image Overlay', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => '',
             ]
@@ -1489,7 +1489,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_show_image',
             [
-                'label' => esc_html__( 'Choose Image', 'easy-elements' ),
+                'label' => esc_html__( 'Choose Image', 'easyelements' ),
                 'type' => Controls_Manager::MEDIA,
                 'dynamic' => [
                     'active' => true,
@@ -1508,7 +1508,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_image_ovelry_color',
-                'label' => esc_html__( 'Background Overlay Color', 'easy-elements' ),
+                'label' => esc_html__( 'Background Overlay Color', 'easyelements' ),
                 'types' => [ 'classic','gradient' ],
                 'selector' => '{{WRAPPER}} .ele-infobox.image-active::before',
                 'condition' => [
@@ -1520,10 +1520,10 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_show_overlay',
             [
-                'label' => esc_html__( 'Enable Overlay', 'easy-elements' ),
+                'label' => esc_html__( 'Enable Overlay', 'easyelements' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'easy-elements' ),
-                'label_off' => esc_html__( 'No', 'easy-elements' ),
+                'label_on' => esc_html__( 'Yes', 'easyelements' ),
+                'label_off' => esc_html__( 'No', 'easyelements' ),
                 'return_value' => 'yes',
                 'default' => '',
             ]
@@ -1539,7 +1539,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_section_bg_ov_style_n_tab',
             [
-                'label' => esc_html__( 'Normal', 'easy-elements' ),
+                'label' => esc_html__( 'Normal', 'easyelements' ),
             ]
         );
 
@@ -1547,7 +1547,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_bg_ovelry_color',
-                'label' => esc_html__( 'Background Overlay Color', 'easy-elements' ),
+                'label' => esc_html__( 'Background Overlay Color', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-infobox.gradient-active::before',
             ]
@@ -1556,7 +1556,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_tab(
             'ele_icon_box_section_bg_ov_style_n_hv_tab',
             [
-                'label' => esc_html__( 'Hover', 'easy-elements' ),
+                'label' => esc_html__( 'Hover', 'easyelements' ),
             ]
         );
 
@@ -1564,7 +1564,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_bg_ovelry_color_hv',
-                'label' => esc_html__( 'Background Overlay Color', 'easy-elements' ),
+                'label' => esc_html__( 'Background Overlay Color', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-infobox.gradient-active:hover::before',
             ]
@@ -1575,23 +1575,23 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'ele_icon_box_section_bg_hover_color_direction',
             [
-                'label' => esc_html__( 'Hover Direction', 'easy-elements' ),
+                'label' => esc_html__( 'Hover Direction', 'easyelements' ),
                 'type' =>   Controls_Manager::CHOOSE,
                 'options' => [
                     'hover_from_left' => [
-                        'title' => esc_html__( 'From Left', 'easy-elements' ),
+                        'title' => esc_html__( 'From Left', 'easyelements' ),
                         'icon' => 'fa fa-caret-right',
                     ],
                     'hover_from_top' => [
-                        'title' => esc_html__( 'From Top', 'easy-elements' ),
+                        'title' => esc_html__( 'From Top', 'easyelements' ),
                         'icon' => 'fa fa-caret-down',
                     ],
                     'hover_from_right' => [
-                        'title' => esc_html__( 'From Right', 'easy-elements' ),
+                        'title' => esc_html__( 'From Right', 'easyelements' ),
                         'icon' => 'fa fa-caret-left',
                     ],
                     'hover_from_bottom' => [
-                        'title' => esc_html__( 'From Bottom', 'easy-elements' ),
+                        'title' => esc_html__( 'From Bottom', 'easyelements' ),
                         'icon' => 'fa fa-caret-up',
                     ],
 
@@ -1608,7 +1608,7 @@ class Info_Box extends Widget_Base {
         $this->start_controls_section(
             'ele_icon_box_badge_style_tab',
             [
-                'label' => esc_html__( 'Badge', 'easy-elements' ),
+                'label' => esc_html__( 'Badge', 'easyelements' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'ele_icon_box_badge_control' => 'yes',
@@ -1620,7 +1620,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_badge_padding',
             [
-                'label' => esc_html__( 'Padding', 'easy-elements' ),
+                'label' => esc_html__( 'Padding', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -1639,7 +1639,7 @@ class Info_Box extends Widget_Base {
         $this->add_responsive_control(
             'ele_icon_box_badge_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'easy-elements' ),
+                'label' => esc_html__( 'Border Radius', 'easyelements' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'default'    => [
@@ -1658,7 +1658,7 @@ class Info_Box extends Widget_Base {
         $this->add_control(
             'badge_text_color',
             [
-                'label' => esc_html__( 'Color', 'easy-elements' ),
+                'label' => esc_html__( 'Color', 'easyelements' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -1671,7 +1671,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'ele_icon_box_badge_background',
-                'label' => esc_html__( 'Background', 'easy-elements' ),
+                'label' => esc_html__( 'Background', 'easyelements' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .ele-badge',
             ]
@@ -1681,7 +1681,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'ele_icon_box_badge_box_shadow',
-                'label' => esc_html__( 'Box Shadow', 'easy-elements' ),
+                'label' => esc_html__( 'Box Shadow', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-badge',
             ]
         );
@@ -1690,7 +1690,7 @@ class Info_Box extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'ele_icon_box_badge_typography',
-                'label' => esc_html__( 'Typography', 'easy-elements' ),
+                'label' => esc_html__( 'Typography', 'easyelements' ),
                 'selector' => '{{WRAPPER}} .ele-badge',
             ]
         );
@@ -1803,7 +1803,7 @@ class Info_Box extends Widget_Base {
                 <div class="ele-box-header">
                     <div class="ele-info-box-icon <?php echo ($settings['ele_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
                         <?php
-                        echo ele_kses(ele_get_attachment_image_html($settings, 'ele_icon_box_header_image'));
+                        echo wp_kses_post(ele_get_attachment_image_html($settings, 'ele_icon_box_header_image'));
                         ?>
                     </div>
                 </div>
@@ -1815,7 +1815,7 @@ class Info_Box extends Widget_Base {
             </<?php echo esc_attr($title_tag); ?>>
         <?php } ?>
             <?php if ($settings['ele_icon_box_description_text'] != '') { ?>
-                <p><?php echo ele_kses($settings['ele_icon_box_description_text']); ?></p>
+                <p><?php echo wp_kses_post($settings['ele_icon_box_description_text']); ?></p>
             <?php } ?>
             <?php if ($settings['ele_icon_box_enable_btn'] == 'yes') { ?>
                 <div class="box-footer <?php if ($settings['ele_icon_box_enable_hover_btn'] == 'yes') { echo esc_attr("enable_hover_btn"); } else { echo esc_attr("disable_hover_button"); } ?>">

@@ -20,7 +20,7 @@ class Init {
     public function add_easy_elements_icons_tab( $font ) {
         $font_new['easyelements'] = array(
             'name'          => 'easyelements',
-            'label'         => esc_html__( 'EasyElements Icon', 'easy-elements' ),
+            'label'         => esc_html__( 'EasyElements Icon', 'easyelements' ),
             'url'           => $this->icon_library_url . 'assets/css/eleicons.css?ver=' . ELE_VERSION,
             'prefix'        => 'ele-',
             'displayPrefix' => 'ele',

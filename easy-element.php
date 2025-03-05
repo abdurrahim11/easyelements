@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:       Easy Elements
- * Plugin URI:        http://joydevs.com/
+ * Plugin URI:        https://easyelementspro.com/
  * Description:       Easy Elements
  * Version:           1.0.0
  * Author:            JoyDevs
- * Author URI:        https://joydevs.com/
+ * Author URI:        https://codevibestudio.com/
  * License:           GPL v2 or later
- * Text Domain:       easy-elements
+ * Text Domain:       easyelements
  * Domain Path:       /languages/
  */
 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Easy_Elements' ) ) {
          * Plugin text domain loaded
          */
         public function plugins_loaded_text_domain() {
-            load_plugin_textdomain( 'easy-elements', false, ELE_PLUGIN_PATH . 'languages/' );
+            load_plugin_textdomain( 'easyelements', false, ELE_PLUGIN_PATH . 'languages/' );
         }
 
         /**
@@ -63,7 +63,7 @@ if ( ! class_exists( 'Easy_Elements' ) ) {
         public function define_constants() {
             define( 'ELE_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
             define( 'ELE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-            define( 'ELE_ADMIN_ASSETS_UR', plugin_dir_url( __FILE__ ) . 'assets/admin/' );
+            define( 'ELE_ADMIN_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/admin/' );
             define( 'ELE_WIDGET_ASSETS_PATH', plugin_dir_path( __FILE__ ) . 'includes/elementor-widgets/' );
             define( 'ELE_KITS_BASE_API_URL', 'https://api.easyelementspro.com/wp-json/custom-api/v1/' );
             define( 'ELE_VERSION', time() );
@@ -85,6 +85,7 @@ if ( ! class_exists( 'Easy_Elements' ) ) {
             flush_rewrite_rules();
             update_option('elementor_load_fa4_shim', 'yes');
             //update_option('elementor_load_fa4_shim', 'no');
+            update_option('uicore_elements_recaptcha_site_key', 'hhgfhf');
         }
     }
 
@@ -103,29 +104,3 @@ function easy_elements() {
  * Rick off the plugin
  */
 easy_elements();
-
-
- function add_elementor_widget_categories( $elements_manager ) {
-    $elements_manager->add_category(
-        'easy-elements',
-        [
-            'title' => esc_html__( 'EasyElements', 'easy-elements' ),
-            'icon' => 'fa fa-plug',
-        ]
-    );
-}
-
-//add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
-
-
-
-
-
-
-add_action( 'elementor/init', 'xprodsdsd_elementor_init' );
- function xprodsdsd_elementor_init() {
-
-
-
-
-}

@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
             <label for="easyelements-menu-metabox-input-is-enabled"></label>
         </div>
         <h3 class="ele-dashboard-widgets__item-title">
-            <label for="ele-menu-metabox-input-is-enabled"><?php esc_html_e( 'EasyElements Menu', 'easy-elements' ); ?></label>
+            <label for="ele-menu-metabox-input-is-enabled"><?php esc_html_e( 'EasyElements Menu', 'easyelements' ); ?></label>
         </h3>
     </div>
     `;

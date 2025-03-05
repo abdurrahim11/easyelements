@@ -7,7 +7,7 @@
 
     // Define the icon library with the correct prefix
     var easyElementsIcons = {
-        "easy-elements": {
+        "easyelements": {
             regular: {
                 prefix: "ele ele-",
                 "icon-style": "ele-regular",

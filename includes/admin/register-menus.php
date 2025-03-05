@@ -3,6 +3,8 @@
 namespace EasyElements\Admin;
 
 
+use EasyElements\Core\Modules_List;
+
 /**
  * Class Register_Menus
  *
@@ -31,20 +33,21 @@ class Register_Menus {
      */
     public function admin_menu() {
         $capability = 'manage_options';
-        $parent_slug = 'easy-elements';
+        $parent_slug = 'easyelements';
 
-        add_menu_page( esc_html__( 'Easy Elements', 'easy-elements' ), esc_html__( 'Easy Elements', 'easy-elements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ), ELE_PLUGIN_URL . 'assets/admin/images/logo-icon.gif', 58.50 );
-        add_submenu_page( $parent_slug, esc_html__( 'Easy Elements', 'easy-elements' ), esc_html__( 'Easy Elements', 'easy-elements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ) );
-        add_submenu_page(
-            $parent_slug,
-            esc_html__( 'Template Builder', 'easy-elements' ),
-            esc_html__( 'Template Builder', 'easy-elements' ),
-            $capability, "edit.php?post_type=ele-template-builder" );
+        add_menu_page( esc_html__( 'Easy Elements', 'easyelements' ), esc_html__( 'Easy Elements', 'easyelements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ), ELE_PLUGIN_URL . 'assets/admin/images/logo-icon.gif', 58.50 );
+        add_submenu_page( $parent_slug, esc_html__( 'Easy Elements', 'easyelements' ), esc_html__( 'Easy Elements', 'easyelements' ), $capability, $parent_slug, array( $this->dashboard, 'page' ) );
 
-
-
+        $modules = Modules_List::get_all_modules_list();
+        if ( $modules['template-builder']['active']  == true ) {
+            add_submenu_page(
+                $parent_slug,
+                esc_html__( 'Theme builder', 'easyelements' ),
+                esc_html__( 'Theme builder', 'easyelements' ),
+                $capability, "edit.php?post_type=ele-template-builder"
+            );
+        }
     }
-
 
     /**
      * Plugin setting page link
@@ -53,7 +56,7 @@ class Register_Menus {
      * @return mixed
      */
     public function plugin_setting_link( $link ) {
-        $new_link = sprintf("<a href='%s'>%s</a>","admin.php?page=easy-elements",esc_html__("Setting","woo-address-auto-complete"));
+        $new_link = sprintf("<a href='%s'>%s</a>","admin.php?page=easy-elements",esc_html__("Setting","easyelements"));
         $link[]   = $new_link;
         return $link;
     }

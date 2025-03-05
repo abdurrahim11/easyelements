@@ -1,343 +1,263 @@
 <?php
-if ( ! function_exists( 'ele_make_classname' ) ) {
-    function ele_make_classname( $dirname ) {
-        $dirname    = pathinfo( $dirname, PATHINFO_FILENAME );
-        $class_name = explode( '-', $dirname );
-        $class_name = array_map( 'ucfirst', $class_name );
-        $class_name = implode( '_', $class_name );
+/**
+ * Generate a class name from a directory name according to WordPress standards.
+ *
+ */
+function ele_generate_class_name( $directory_name ) {
+    $filename   = pathinfo( $directory_name, PATHINFO_FILENAME );
+    $name_parts = explode( '-', $filename );
+    $name_parts = array_map( 'ucfirst', $name_parts );
+    $class_name = implode( '_', $name_parts );
 
-        return $class_name;
-    }
+    return $class_name;
 }
 
-function ele_kses( $raw ) {
-    $allowed_tags = array(
-        'a'          => array(
-            'class'  => array(),
-            'href'   => array(),
-            'rel'    => array(),
-            'title'  => array(),
-            'target' => array(),
-        ),
-        'abbr'       => array(
-            'title' => array(),
-        ),
-        'b'          => array(),
-        'blockquote' => array(
-            'cite' => array(),
-        ),
-        'cite'       => array(
-            'title' => array(),
-        ),
-        'code'       => array(),
-        'pre'        => array(),
-        'del'        => array(
-            'datetime' => array(),
-            'title'    => array(),
-        ),
-        'dd'         => array(),
-        'div'        => array(
-            'class'                      => array(),
-            'id'                         => array(),
-            'title'                      => array(),
-            'style'                      => array(),
-            'data-template-source'       => array(),
-            'data-ele-widgetarea-key'   => array(),
-            'data-ele-widgetarea-index' => array(),
-        ),
-        'dl'         => array(),
-        'dt'         => array(),
-        'em'         => array(),
-        'strong'     => array(),
-        'h1'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'h2'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'h3'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'h4'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'h5'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'h6'         => array(
-            'id'    => array(),
-            'class' => array(),
-        ),
-        'i'          => array(
-            'id'          => array(),
-            'class'       => array(),
-            'title'       => array(),
-            'aria-hidden' => array(),
-        ),
-        'img'        => array(
-            'alt'    => array(),
-            'class'  => array(),
-            'height' => array(),
-            'src'    => array(),
-            'width'  => array(),
-        ),
-        'li'         => array(
-            'class' => array(),
-        ),
-        'ol'         => array(
-            'class' => array(),
-        ),
-        'p'          => array(
-            'class' => array(),
-        ),
-        'q'          => array(
-            'cite'  => array(),
-            'title' => array(),
-        ),
-        'span'       => array(
-            'class' => array(),
-            'title' => array(),
-            'style' => array(),
-        ),
-        'iframe'     => array(
-            'width'       => array(),
-            'height'      => array(),
-            'scrolling'   => array(),
-            'frameborder' => array(),
-            'allow'       => array(),
-            'src'         => array(),
-            'id'          => array(),
-            'class'       => array(),
-        ),
-        'strike'     => array(),
-        'br'         => array(),
-        'table'      => array(),
-        'thead'      => array(),
-        'tbody'      => array(),
-        'tfoot'      => array(),
-        'tr'         => array(),
-        'th'         => array(),
-        'td'         => array(),
-        'colgroup'   => array(),
-        'col'        => array(),
-        'ul'         => array(
-            'class' => array(),
-        ),
-        'svg'        => array(
-            'class'           => true,
-            'aria-hidden'     => true,
-            'aria-labelledby' => true,
-            'role'            => true,
-            'xmlns'           => true,
-            'width'           => true,
-            'height'          => true,
-            'viewbox'         => true, // <= Must be lower case!
-        ),
-        'g'          => array( 'fill' => true ),
-        'title'      => array( 'title' => true ),
-        'path'       => array(
-            'd'    => true,
-            'fill' => true,
-        ),
-        'style'      => array(
-            'type' => array(),
-        ),
+/**
+ * Validate and return a string if it exists within a set of allowed options.
+ *
+ * This function checks if a given string is present in an array of allowed options.
+ * If it is, the string is returned. Otherwise, a default value is returned.
+ *
+ */
+function ele_esc_options( $string, $allowed_options = array(), $default_value = '' ) {
+    if ( ! in_array( $string, $allowed_options, true ) ) {
+        return $default_value;
+    }
+
+    return $string;
+}
+
+/**
+ * Check if an Elementor template of a specific type is created and can be displayed based on the current page condition.
+ *
+ */
+function ele_is_template_created($type) {
+    global $wpdb;
+
+    // Build the SQL query to find templates of the specified type
+    $query = $wpdb->prepare(
+        "SELECT posts.ID FROM $wpdb->posts AS posts
+        LEFT JOIN $wpdb->postmeta AS postmeta ON posts.ID = postmeta.post_id
+        WHERE posts.post_type = %s
+        AND posts.post_status = 'publish'
+        AND postmeta.meta_key = 'ele_template_type'
+        AND postmeta.meta_value = %s",
+        'ele-template-builder',
+        $type
     );
 
-    echo wp_kses( $raw, $allowed_tags );
-}
+    // Execute the query to get template IDs
+    $template_ids = $wpdb->get_col($query);
 
-function ele_esc_options( $str, $options = array(), $default = '' ) {
-    if ( ! in_array( $str, $options ) ) {
-        return $default;
-    }
-
-    return $str;
-}
-
-if ( ! function_exists( 'ele_is_template_created' ) ) {
-    function ele_is_template_created($type) {
-        global $wpdb;
-
-        // Build the SQL query
-        $sql = $wpdb->prepare(
-            "SELECT ID FROM $wpdb->posts
-        LEFT JOIN $wpdb->postmeta ON $wpdb->posts.ID = $wpdb->postmeta.post_id
-        WHERE $wpdb->posts.post_type = %s
-        AND $wpdb->posts.post_status = 'publish'
-        AND $wpdb->postmeta.meta_key = 'ele_template_type'
-        AND $wpdb->postmeta.meta_value = %s",
-            'ele-template-builder',
-            $type
-        );
-
-        // Execute the query
-        $template_ids = $wpdb->get_col( $sql );
-
-        // Check if any template is found
-        if (empty($template_ids)) {
-            return false;
-        }
-
-
-        // Detect the current condition based on the page being visited
-        if (is_archive()) {
-            $condition = 'archive';
-        } elseif (is_singular()) {
-            $condition = 'singular';
-        } else {
-            $condition = 'entire-site';
-        }
-
-        // Check if any of the templates can be displayed based on the condition
-        foreach ($template_ids as $template_id) {
-            $template_condition = get_post_meta($template_id, 'ele_condition', true);
-            if ($template_condition === $condition || $template_condition === 'entire-site') {
-                return $template_id;
-            }
-        }
-
+    // Return false if no templates are found
+    if (empty($template_ids)) {
         return false;
     }
+
+    // Determine the current page condition
+    if (is_archive()) {
+        $current_condition = 'archive';
+    } elseif (is_singular()) {
+        $current_condition = 'singular';
+    } else {
+        $current_condition = 'entire-site';
+    }
+
+    // Check if any template matches the current page condition
+    foreach ($template_ids as $template_id) {
+        $template_condition = get_post_meta($template_id, 'ele_condition', true);
+        if ($template_condition === $current_condition || $template_condition === 'entire-site') {
+            return $template_id;
+        }
+    }
+
+    // Return false if no suitable template is found
+    return false;
 }
 
+/**
+ * Retrieves metadata for a specified attachment.
+ *
+ */
+function ele_attachment_meta($id) {
+    // Get the attachment post object
+    $attachment_post = get_post($id);
 
-function ele_attachment_meta( $id ) {
-    $attachment = get_post( $id );
-    if ( $attachment == null || $attachment->post_type != 'attachment' ) {
+    // Check if the post is a valid attachment
+    if ($attachment_post === null || $attachment_post->post_type !== 'attachment') {
         return null;
     }
+
+    // Return an associative array of attachment metadata
     return array(
-        'alt'         => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-        'caption'     => $attachment->post_excerpt,
-        'description' => $attachment->post_content,
-        'href'        => get_permalink( $attachment->ID ),
-        'src'         => $attachment->guid,
-        'title'       => $attachment->post_title,
+        'alt'         => get_post_meta($attachment_post->ID, '_wp_attachment_image_alt', true),
+        'caption'     => $attachment_post->post_excerpt,
+        'description' => $attachment_post->post_content,
+        'href'        => get_permalink($attachment_post->ID),
+        'src'         => $attachment_post->guid,
+        'title'       => $attachment_post->post_title,
     );
 }
 
-function ele_get_attachment_image_html( $settings, $image_key, $image_size_key = null, $image_attr = array() ) {
-    if ( ! $image_key ) {
+/**
+ * Generates HTML for an attachment image based on the provided settings.
+ *
+ */
+function ele_get_attachment_image_html($settings, $image_key, $image_size_key = null, $image_attr = array()) {
+    // Use image_size_key if image_key is not provided
+    if (!$image_key) {
         $image_key = $image_size_key;
     }
 
-    $image = $settings[ $image_key ];
+    // Get the image data from settings
+    $image_data = $settings[$image_key];
 
-    $size = $image_size_key;
+    // Set the size to image_size_key
+    $image_size = $image_size_key;
 
-    $html = '';
-    if ( ! empty( $image['id'] ) && $image['id'] != '-1' ) {
-        $html .= wp_get_attachment_image( $image['id'], $size, false, $image_attr );
+    // Initialize HTML string
+    $image_html = '';
+
+    // Check if the image ID is valid and not equal to '-1'
+    if (!empty($image_data['id']) && $image_data['id'] != '-1') {
+        // Get the attachment image HTML
+        $image_html .= wp_get_attachment_image($image_data['id'], $image_size, false, $image_attr);
     } else {
-        $html .= sprintf( '<img src="%s" title="%s" alt="%s" />', esc_attr( $image['url'] ), \Elementor\Control_Media::get_image_title( $image ), \Elementor\Control_Media::get_image_alt( $image ) );
+        // Construct the image HTML with URL, title, and alt attributes
+        $image_html .= sprintf(
+            '<img src="%s" title="%s" alt="%s" />',
+            esc_attr($image_data['url']),
+            \Elementor\Control_Media::get_image_title($image_data),
+            \Elementor\Control_Media::get_image_alt($image_data)
+        );
     }
 
-    $html = preg_replace( array( '/max-width:[^"]*;/', '/width:[^"]*;/', '/height:[^"]*;/' ), '', $html );
-
-    return $html;
-}
-
-
-function ele_save_option( $key, $value = '' ) {
-    $data_all         = get_option( 'easyelements_options' );
-    $data_all[ $key ] = $value;
-    update_option( 'easyelements_options', $data_all );
-}
-
-function ele_get_option( $key, $default = '' ) {
-    $data_all = get_option( 'easyelements_options' );
-    return ( isset( $data_all[ $key ] ) && $data_all[ $key ] != '' ) ? $data_all[ $key ] : $default;
-}
-
-
-function ele_get_page_by_title( $page_title, $post_type = 'page' ) {
-    $query = new \WP_Query(
-        array(
-            'post_type' => $post_type,
-            'title' => $page_title,
-        )
+    // Remove unwanted inline styles
+    $image_html = preg_replace(
+        array('/max-width:[^"]*;/', '/width:[^"]*;/', '/height:[^"]*;/'),
+        '',
+        $image_html
     );
 
-    if (!empty($query->post)) {
-        $page_got_by_title = $query->post;
-    } else {
-        $page_got_by_title = null;
-    }
-
-    return $page_got_by_title;
+    return $image_html;
 }
 
+/**
+ * Saves a specific option key and value to the 'easyelements_options' option.
+ *
+ */
+function ele_save_option($key, $value = '') {
+    $all_options = get_option('easyelements_options');
+    $all_options[$key] = $value;
+    update_option('easyelements_options', $all_options);
+}
 
+/**
+ * Retrieves the specified option from the 'easyelements_options' array.
+ *
+ */
+function ele_get_option( $key, $default = '' ) {
+    $easyelements_options = get_option( 'easyelements_options' );
+    return ( isset( $easyelements_options[ $key ] ) && $easyelements_options[ $key ] != '' ) ? $easyelements_options[ $key ] : $default;
+}
+
+/**
+ * Retrieves a page by its title.
+ *
+ */
+function ele_get_page_by_title( $page_title, $post_type = 'page' ) {
+    $query_args = array(
+        'post_type' => $post_type,
+        'title'     => $page_title,
+    );
+
+    $page_query = new \WP_Query( $query_args );
+
+    if ( ! empty( $page_query->post ) ) {
+        $page = $page_query->post;
+    } else {
+        $page = null;
+    }
+
+    return $page;
+}
+
+/**
+ * Retrieves an array of public post types excluding 'elementor_library' and 'attachment'.
+ *
+ */
 function ele_elementor_get_post_types() {
-    $post_types = get_post_types(
+    $public_post_types = get_post_types(
         array(
             'public' => true,
         ),
         'objects'
     );
-    $post_types = wp_list_pluck( $post_types, 'label', 'name' );
 
-    return array_diff_key( $post_types, array( 'elementor_library', 'attachment' ) );
+    $post_types_labels = wp_list_pluck( $public_post_types, 'label', 'name' );
+
+    return array_diff_key( $post_types_labels, array( 'elementor_library' => '', 'attachment' => '' ) );
 }
 
-function ele_elementor_get_query_post_list( $post_type = 'post', $limit = - 1, $search = '' ) {
+/**
+ * Retrieves a list of posts based on the specified post type, limit, and search term.
+ *
+ */
+function ele_elementor_get_query_post_list( $post_type = 'post', $limit = -1, $search = '' ) {
 
     global $wpdb;
-    $where = '';
-    $data  = array();
+    $where_clause = '';
+    $post_data    = array();
 
-    if ( - 1 === $limit ) {
-        $limit = '';
+    if ( -1 === $limit ) {
+        $limit_clause = '';
     } elseif ( 0 === $limit ) {
-        $limit = 'limit 0,1';
+        $limit_clause = 'LIMIT 0,1';
     } else {
-        $limit = $wpdb->prepare( ' limit 0,%d', esc_sql( $limit ) );
+        $limit_clause = $wpdb->prepare( ' LIMIT 0,%d', esc_sql( $limit ) );
     }
 
     if ( 'any' === $post_type ) {
-        $in_search_post_types = get_post_types( array( 'exclude_from_search' => false ) );
-        if ( empty( $in_search_post_types ) ) {
-            $where .= ' AND 1=0 ';
+        $searchable_post_types = get_post_types( array( 'exclude_from_search' => false ) );
+        if ( empty( $searchable_post_types ) ) {
+            $where_clause .= ' AND 1=0 ';
         } else {
-            $where .= " AND {$wpdb->posts}.post_type IN ('" . join( "', '", array_map( 'esc_sql', $in_search_post_types ) ) . "')";
+            $where_clause .= " AND {$wpdb->posts}.post_type IN ('" . join( "', '", array_map( 'esc_sql', $searchable_post_types ) ) . "')";
         }
     } elseif ( 'dynamic' === $post_type ) {
-        $in_search_post_types = array( 'elementor_library', 'ele-themer', 'ele_content' );
-        if ( empty( $in_search_post_types ) ) {
-            $where .= ' AND 1=0 ';
+        $dynamic_post_types = array( 'elementor_library', 'ele-themer', 'ele_content' );
+        if ( empty( $dynamic_post_types ) ) {
+            $where_clause .= ' AND 1=0 ';
         } else {
-            $where .= " AND {$wpdb->posts}.post_type IN ('" . join( "', '", array_map( 'esc_sql', $in_search_post_types ) ) . "')";
+            $where_clause .= " AND {$wpdb->posts}.post_type IN ('" . join( "', '", array_map( 'esc_sql', $dynamic_post_types ) ) . "')";
         }
     } elseif ( ! empty( $post_type ) ) {
-        $where .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", esc_sql( $post_type ) );
+        $where_clause .= $wpdb->prepare( " AND {$wpdb->posts}.post_type = %s", esc_sql( $post_type ) );
     }
 
     if ( ! empty( $search ) ) {
-        $where .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql( $search ) . '%' );
+        $where_clause .= $wpdb->prepare( " AND {$wpdb->posts}.post_title LIKE %s", '%' . esc_sql( $search ) . '%' );
     }
 
     $results = $wpdb->get_results(
-        sprintf( "select post_title,ID  from %s where post_status = 'publish' %s %s", $wpdb->posts, $where, $limit )  //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+        sprintf( "SELECT post_title, ID FROM %s WHERE post_status = 'publish' %s %s", $wpdb->posts, $where_clause, $limit_clause )  //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
     );
 
     if ( ! empty( $results ) ) {
         foreach ( $results as $row ) {
-            $data[ $row->ID ] = $row->post_title;
+            $post_data[ $row->ID ] = $row->post_title;
         }
     }
 
-    return $data;
+    return $post_data;
 }
 
-
+/**
+ * Retrieves a list of authors with their display names.
+ *
+ */
 function ele_elementor_get_authors_list() {
-    $users = get_users(
+    $authors = get_users(
         array(
             'fields' => array(
                 'ID',
@@ -346,59 +266,70 @@ function ele_elementor_get_authors_list() {
         )
     );
 
-    if ( ! empty( $users ) ) {
-        return wp_list_pluck( $users, 'display_name', 'ID' );
+    if ( ! empty( $authors ) ) {
+        return wp_list_pluck( $authors, 'display_name', 'ID' );
     }
 
     return array();
 }
 
-
+/**
+ * Retrieves an array of post orderby options for queries.
+ *
+ */
 function ele_elementor_get_post_orderby_options() {
-    $orderby = array(
+    $orderby_options = array(
         'ID'            => 'Post ID',
         'author'        => 'Post Author',
         'title'         => 'Title',
         'date'          => 'Date',
         'modified'      => 'Last Modified Date',
-        'parent'        => 'Parent Id',
+        'parent'        => 'Parent ID',
         'rand'          => 'Random',
         'comment_count' => 'Comment Count',
         'menu_order'    => 'Menu Order',
     );
 
-    return $orderby;
+    return $orderby_options;
 }
 
+/**
+ * Retrieves taxonomies based on the specified arguments.
+ *
+ */
 function ele_elementor_get_taxonomies( $args = array(), $output = 'object', $list = true, $diff_key = array() ) {
 
     $taxonomies = get_taxonomies( $args, $output );
     if ( 'object' === $output && $list ) {
-        $taxonomies = wp_list_pluck( $taxonomies, 'label', 'name' );
+        $taxonomy_labels = wp_list_pluck( $taxonomies, 'label', 'name' );
+    } else {
+        $taxonomy_labels = $taxonomies;
     }
 
     if ( ! empty( $diff_key ) ) {
-        $taxonomies = array_diff_key( $taxonomies, $diff_key );
+        $taxonomy_labels = array_diff_key( $taxonomy_labels, $diff_key );
     }
 
-    return $taxonomies;
+    return $taxonomy_labels;
 }
 
-
+/**
+ * Constructs and returns query arguments for fetching posts based on given settings.
+ *
+ */
 function ele_elementor_get_query_args( $settings = array(), $post_type = 'post' ) {
 
-    $settings = wp_parse_args(
-        $settings,
-        array(
-            'post_type'      => $post_type,
-            'posts_ids'      => array(),
-            'orderby'        => 'date',
-            'order'          => 'desc',
-            'posts_per_page' => 3,
-            'offset'         => '',
-            'post__not_in'   => array(),
-        )
+    $default_settings = array(
+        'post_type'      => $post_type,
+        'posts_ids'      => array(),
+        'orderby'        => 'date',
+        'order'          => 'desc',
+        'posts_per_page' => 3,
+        'offset'         => '',
+        'post__not_in'   => array(),
     );
+
+    $settings = wp_parse_args( $settings, $default_settings );
 
     $meta_query = array();
     if ( 'yes' === $settings['post_only_image'] ) {
@@ -408,7 +339,7 @@ function ele_elementor_get_query_args( $settings = array(), $post_type = 'post' 
         );
     }
 
-    $args = array(
+    $query_args = array(
         'orderby'             => $settings['orderby'],
         'order'               => $settings['order'],
         'ignore_sticky_posts' => true,
@@ -421,81 +352,79 @@ function ele_elementor_get_query_args( $settings = array(), $post_type = 'post' 
     );
 
     if ( 'by_id' === $settings['post_type'] ) {
-
-        $args['post_type'] = 'any';
-        $args['post__in']  = empty( $settings['posts_ids'] ) ? array( 0 ) : $settings['posts_ids'];
-
+        $query_args['post_type'] = 'any';
+        $query_args['post__in']  = empty( $settings['posts_ids'] ) ? array( 0 ) : $settings['posts_ids'];
     } elseif ( 'source_dynamic' === $settings['post_type'] ) {
-
-        $args['post_type'] = get_post_type();
+        $query_args['post_type'] = get_post_type();
 
         if ( ! empty( $settings['terms'] ) && 'category' === $settings['terms'] ) {
-            $args['post__not_in'] = array( get_the_ID() );
-            $current_cat          = get_the_category();
-            $args['tax_query'][]  = array(
+            $query_args['post__not_in'] = array( get_the_ID() );
+            $current_category = get_the_category();
+            $query_args['tax_query'][] = array(
                 'taxonomy' => 'category',
-                'terms'    => isset( $current_cat[0]->term_id ) ? $current_cat[0]->term_id : '',
+                'terms'    => isset( $current_category[0]->term_id ) ? $current_category[0]->term_id : '',
             );
         }
 
         if ( ! empty( $settings['terms'] ) && 'post_tag' === $settings['terms'] ) {
-            $args['post__not_in'] = array( get_the_ID() );
-            $tags                 = array();
-            $posttags             = get_the_tags();
-            if ( $posttags ) {
-                foreach ( $posttags as $tag ) {
+            $query_args['post__not_in'] = array( get_the_ID() );
+            $tags = array();
+            $post_tags = get_the_tags();
+            if ( $post_tags ) {
+                foreach ( $post_tags as $tag ) {
                     $tags[] = $tag->term_id;
                 }
             }
-            $args['tax_query'][] = array(
+            $query_args['tax_query'][] = array(
                 'taxonomy' => 'post_tag',
                 'terms'    => $tags,
             );
         }
     } else {
-
-        $args['post_type'] = $settings['post_type'];
-
+        $query_args['post_type'] = $settings['post_type'];
         $taxonomies = get_object_taxonomies( $settings['post_type'], 'objects' );
 
-        foreach ( $taxonomies as $object ) {
-            $setting_key = $object->name . '_ids';
+        foreach ( $taxonomies as $taxonomy ) {
+            $taxonomy_setting_key = $taxonomy->name . '_ids';
 
-            if ( ! empty( $settings[ $setting_key ] ) ) {
-                $args['tax_query'][] = array(
-                    'taxonomy' => $object->name,
+            if ( ! empty( $settings[ $taxonomy_setting_key ] ) ) {
+                $query_args['tax_query'][] = array(
+                    'taxonomy' => $taxonomy->name,
                     'field'    => 'term_id',
-                    'terms'    => $settings[ $setting_key ],
+                    'terms'    => $settings[ $taxonomy_setting_key ],
                 );
             }
         }
 
-        if ( ! empty( $args['tax_query'] ) ) {
-            $args['tax_query']['relation'] = 'AND';
+        if ( ! empty( $query_args['tax_query'] ) ) {
+            $query_args['tax_query']['relation'] = 'AND';
         }
     }
 
     if ( ! empty( $settings['authors'] ) ) {
-        $args['author__in'] = $settings['authors'];
+        $query_args['author__in'] = $settings['authors'];
     }
 
     if ( ! empty( $settings['authors'] ) ) {
-        $args['author__in'] = $settings['authors'];
+        $query_args['author__in'] = $settings['authors'];
     }
 
-    return $args;
+    return $query_args;
 }
 
-
+/**
+ * Modifies and returns query arguments for dynamic post fetching based on given settings and arguments.
+ *
+ */
 function ele_elementor_get_dynamic_args( array $settings, array $args ) {
 
     $args['suppress_filters'] = 1;
 
     if ( 'source_dynamic' === $settings['post_type'] ) {
-        $data = get_queried_object();
+        $queried_object = get_queried_object();
 
-        if ( isset( $data->post_type ) ) {
-            $args['post_type']      = $data->post_type;
+        if ( isset( $queried_object->post_type ) ) {
+            $args['post_type']      = $queried_object->post_type;
             $args['posts_per_page'] = get_option( 'posts_per_page' );
         } else {
             global $wp_query;
@@ -521,19 +450,11 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
             }
         }
 
-        if ( isset( $data->taxonomy ) ) {
+        if ( isset( $queried_object->taxonomy ) ) {
             $args['tax_query'][] = array(
-                'taxonomy' => $data->taxonomy,
+                'taxonomy' => $queried_object->taxonomy,
                 'field'    => 'term_id',
-                'terms'    => $data->term_id,
-            );
-        }
-
-        if ( isset( $data->taxonomy ) ) {
-            $args['tax_query'][] = array(
-                'taxonomy' => $data->taxonomy,
-                'field'    => 'term_id',
-                'terms'    => $data->term_id,
+                'terms'    => $queried_object->term_id,
             );
         }
 
@@ -553,7 +474,7 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
             );
         }
 
-        //Meta Query
+        // Meta Query for price range
         if ( isset( $_GET['min-price'] ) || isset( $_GET['max-price'] ) ) {
             $args['meta_query'][] = array(
                 array(
@@ -566,8 +487,8 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
         }
     }
 
+    // Meta Query for stock status
     if ( isset( $_GET['stock'] ) ) {
-
         if ( 'outofstock' === $_GET['stock'] ) {
             $args['meta_query'][] = array(
                 'key'     => '_stock_status',
@@ -583,8 +504,8 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
         }
     }
 
+    // Meta Query for sale status
     if ( isset( $_GET['sale'] ) ) {
-
         if ( 'on-sale' === $_GET['sale'] ) {
             $args['meta_query'][] = array(
                 'relation' => 'OR',
@@ -593,7 +514,6 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
                     'value'   => 0,
                     'compare' => '>',
                     'type'    => 'numeric',
-
                 ),
                 array(
                     'key'     => '_min_variation_sale_price',
@@ -612,7 +532,6 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
                     'value'   => 0,
                     'compare' => '=',
                     'type'    => 'numeric',
-
                 ),
                 array(
                     'key'     => '_min_variation_sale_price',
@@ -624,16 +543,16 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
         }
     }
 
-    //Tax Query
+    // Tax Query
     if ( ! empty( $args['tax_query'] ) ) {
         $args['tax_query']['relation'] = 'AND';
     }
 
-    $queries = array();
-    parse_str( $_SERVER['QUERY_STRING'], $queries );
+    $parsed_queries = array();
+    parse_str( $_SERVER['QUERY_STRING'], $parsed_queries );
     $woo_taxonomies = get_object_taxonomies( 'product' );
 
-    foreach ( $queries as $key => $querie ) {
+    foreach ( $parsed_queries as $key => $query ) {
         $taxonomy = str_replace( 'xa-', 'pa_ele-', $key );
         $taxonomy = str_replace( 'subcategory', 'product_cat', $taxonomy );
         $taxonomy = str_replace( 'category', 'product_cat', $taxonomy );
@@ -649,42 +568,28 @@ function ele_elementor_get_dynamic_args( array $settings, array $args ) {
     return $args;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
- * Contain masking shape list
+ * Generates a list of masking shapes with their titles and URLs based on the specified element type.
+ *
  */
 function ele_elementor_masking_shape_list( $element ) {
-    $dir        = ELE_PLUGIN_URL . 'includes/elementor-widgets/team/masking-shape/';
-    $shape_name = 'shape';
-    $extension  = '.svg';
-    $list       = array();
+    $shape_directory = ELE_PLUGIN_URL . 'includes/elementor-widgets/team/masking-shape/';
+    $shape_prefix = 'shape';
+    $file_extension = '.svg';
+    $shape_list = array();
+
     if ( 'list' === $element ) {
-        for ( $i = 1; $i <= 57; $i ++ ) {
-            $list[ $shape_name . $i ] = array(
-                'title' => ucwords( $shape_name . ' ' . $i ),
-                'url'   => $dir . $shape_name . $i . $extension,
+        for ( $i = 1; $i <= 57; $i++ ) {
+            $shape_list[ $shape_prefix . $i ] = array(
+                'title' => ucwords( $shape_prefix . ' ' . $i ),
+                'url'   => $shape_directory . $shape_prefix . $i . $file_extension,
             );
         }
     } elseif ( 'url' === $element ) {
-        for ( $i = 1; $i <= 57; $i ++ ) {
-            $list[ $shape_name . $i ] = $dir . $shape_name . $i . $extension;
+        for ( $i = 1; $i <= 57; $i++ ) {
+            $shape_list[ $shape_prefix . $i ] = $shape_directory . $shape_prefix . $i . $file_extension;
         }
     }
 
-    return array_merge( $list );
+    return array_merge( $shape_list );
 }
-

@@ -6,7 +6,7 @@
             <div class="elementor-loader-box"></div>
             <div class="elementor-loader-box"></div>
         </div>
-        <div class="elementor-loading-title"><?php esc_html_e( 'Loading', 'easy-elements' ); ?></div>
+        <div class="elementor-loading-title"><?php esc_html_e( 'Loading', 'easyelements' ); ?></div>
     </div>
 </script>
 
@@ -14,15 +14,15 @@
     <div id="easy-elements-template-library-header-logo-area">
         <div class="elementor-templates-modal__header__logo">
             <span class="ele-template-library-logo-area">
-                <img src="<?php echo esc_url( ELE_ADMIN_ASSETS_UR );?>images/logo.gif" alt="Easy Elements Logo" class="ele-template-library-logo">
+                <img src="<?php echo esc_url( ELE_ADMIN_ASSETS_URL );?>images/logo.gif" alt="Easy Elements Logo" class="ele-template-library-logo">
             </span>
-            <span class="elementor-templates-modal__header__logo__title"><?php esc_html_e( 'Easy Elements', 'easy-elements' ); ?></span>
+            <span class="elementor-templates-modal__header__logo__title"><?php esc_html_e( 'Easy Elements', 'easyelements' ); ?></span>
         </div>
     </div>
     <div id="easy-elements-template-library-header-tabs"></div>
     <div id="easy-elements-template-library-header-actions"></div>
-    <div id="easy-elements-template-library-header-close-modal" class="elementor-template-library-header-item" title="<?php esc_html_e('Close', 'easy-elements'); ?>">
-        <i class="eicon-close" title="<?php esc_attr_e( 'Close', 'easy-elements' ); ?>"></i>
+    <div id="easy-elements-template-library-header-close-modal" class="elementor-template-library-header-item" title="<?php esc_html_e('Close', 'easyelements'); ?>">
+        <i class="eicon-close" title="<?php esc_attr_e( 'Close', 'easyelements' ); ?>"></i>
     </div>
 </script>
 
@@ -31,14 +31,14 @@
     <div class="easy-elements-templates-wrap">
         <div id="elementor-template-library-toolbar">
 
-            <p class="search-result-counter" style="display: none"><span>0</span><?php esc_html_e( 'item(s) found!', 'easy-elements' ); ?></p>
+            <p class="search-result-counter" style="display: none"><span>0</span><?php esc_html_e( 'item(s) found!', 'easyelements' ); ?></p>
 
             <div id="elementor-template-library-filter-toolbar-remote" class="elementor-template-library-filter-toolbar"></div>
 
             <div id="elementor-template-library-filter-text-wrapper">
 
-                <label for="elementor-template-library-filter-text" class="elementor-screen-only"><?php esc_html_e( 'Search Templates:', 'easy-elements' ); ?></label>
-                <input id="elementor-template-library-filter-text" placeholder="<?php esc_attr_e( 'Search', 'easy-elements' ); ?>">
+                <label for="elementor-template-library-filter-text" class="elementor-screen-only"><?php esc_html_e( 'Search Templates:', 'easyelements' ); ?></label>
+                <input id="elementor-template-library-filter-text" placeholder="<?php esc_attr_e( 'Search', 'easyelements' ); ?>">
                 <i class="eicon-search"></i>
             </div>
         </div>
@@ -76,25 +76,25 @@
             <img src="{{ thumbnail }}" alt="">
         </div>
         <# if ( newDemoRateDate < date ) { #>
-        <span class="bdt-new-item"><?php esc_html_e( 'NEW', 'easy-elements' ); ?></span>
+        <span class="bdt-new-item"><?php esc_html_e( 'NEW', 'easyelements' ); ?></span>
         <# } #>
     </div>
     <div class="elementor-template-library-template-controls">
         <# if ( 1 != is_pro ) { #>
         <button class="elementor-template-library-template-action easy-elements-template-library-template-insert elementor-button elementor-button-success">
             <i class="eicon-file-download"></i>
-            <span class="elementor-button-title"><?php esc_html_e( 'Insert', 'easy-elements' ); ?></span>
+            <span class="elementor-button-title"><?php esc_html_e( 'Insert', 'easyelements' ); ?></span>
         </button>
         <# } else { #>
         <# if(isActivated) { #>
         <button class="elementor-template-library-template-action easy-elements-template-library-template-insert elementor-button elementor-button-success">
             <i class="eicon-file-download"></i>
-            <span class="elementor-button-title"><?php esc_html_e( 'Insert', 'easy-elements' ); ?></span>
+            <span class="elementor-button-title"><?php esc_html_e( 'Insert', 'easyelements' ); ?></span>
         </button>
         <# } else { #>
         <a class="elementor-template-library-template-action elementor-button easy-elements-template-library-template-go-pro" href="{{ proLink }}" target="_blank">
             <i class="eicon-external-link-square"></i><span class="elementor-button-title"><?php
-                esc_html_e( 'Get Access!', 'easy-elements' );
+                esc_html_e( 'Get Access!', 'easyelements' );
                 ?></span>
         </a>
         <# } #>
@@ -122,7 +122,7 @@
 <script type="text/html"  id="easy-elements-view-template-library-header-back">
     <button type="button" class="easy-elements-template-library-back">
         <i class="dashicons dashicons-arrow-left-alt2"></i>
-        <?php esc_html_e( 'Back to Library', 'easy-elements' ); ?>
+        <?php esc_html_e( 'Back to Library', 'easyelements' ); ?>
     </button>
 </script>
 
@@ -140,13 +140,13 @@
     </div>
     <button class="elementor-template-library-template-action easy-elements-template-library-template-insert elementor-button elementor-button-success">
         <i class="eicon-file-download"></i><span class="elementor-button-title"><?php
-            esc_html_e('Install Required Plugins & Import', 'easy-elements');
+            esc_html_e('Install Required Plugins & Import', 'easyelements');
             ?></span>
     </button>
     <# } else { #>
     <button class="elementor-template-library-template-action easy-elements-template-library-template-insert elementor-button elementor-button-success">
         <i class="eicon-file-download"></i><span class="elementor-button-title"><?php
-            esc_html_e('Import', 'easy-elements');
+            esc_html_e('Import', 'easyelements');
             ?></span>
     </button>
     <# } #>
@@ -156,7 +156,7 @@
 <script type="text/html"  id="view-easy-elements-template-library-error">
     <div class="elementor-library-error">
         <div class="elementor-library-error-message" style="color:red;"><?php
-            esc_html_e( 'Template couldn\'t be loaded. Please activate you license key before.', 'easy-elements' );
+            esc_html_e( 'Template couldn\'t be loaded. Please activate you license key before.', 'easyelements' );
             ?></div>
         <div class="elementor-library-error-link"><?php
 
